@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import faq from '../data/faq.json';
+import Waitlist from '../components/sections/Waitlist.astro';
+import WaitlistForm from '../components/forms/WaitlistForm.astro';
+---
+
+<BaseLayout title="FAQ | Couples Food System" description="Everything you need to know to get your shared kitchen running smoothly.">
+  <section class="py-20 max-w-3xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">Frequently Asked Questions</h1>
+      <p class="text-xl text-text-secondary">Everything you need to know to get your shared kitchen running smoothly.</p>
+    </div>
+
+    {faq.categories.map((category) => (
+      <div class="mb-12">
+        <h2 class="text-2xl font-semibold text-text-primary mb-6">{category.label}</h2>
+        <div class="space-y-6">
+          {faq.faq.filter(q => q.category === category.id).map((item) => (
+            <details class="bg-white rounded-2xl border border-border shadow-sm group">
+              <summary class="cursor-pointer p-8 list-none flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-text-primary pr-4">{item.question}</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-secondary w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-8 pb-8">
+                <p class="text-text-secondary text-lg leading-relaxed">{item.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <Waitlist>
+    <WaitlistForm />
+  </Waitlist>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import features from '../../data/features.json';
+import Waitlist from '../../components/sections/Waitlist.astro';
+import WaitlistForm from '../../components/forms/WaitlistForm.astro';
+
+const feature = features.features.find(f => f.id === 'meal-planning')!;
+---
+
+<BaseLayout title="Collaborative Meal Planning | Couples Food System" description="Plan your entire week in one tap. AI creates a shared meal plan that respects both partners' dietary preferences.">
+  <section class="py-20 max-w-4xl mx-auto px-6">
+    <a href="/features" class="text-sage hover:text-sage-dark mb-8 inline-block font-medium">&larr; Back to all features</a>
+    <div class="bg-white rounded-2xl border border-border p-8 md:p-16 shadow-sm">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">{feature.title}</h1>
+      <p class="text-xl text-text-secondary leading-relaxed mb-10">{feature.longDescription}</p>
+
+      <div class="rounded-xl aspect-video w-full overflow-hidden border border-border mb-10">
+        <img src="/images/screenshots/screenshot-mealplan.webp" alt="Shared weekly meal calendar on tablet with sage green and terracotta dots for each partner, coffee cups nearby" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+
+      <div class="text-lg text-text-secondary space-y-6">
+        <p>
+          Plan your entire week in one tap. Our AI creates a shared meal plan that respects both partners' dietary preferences and goals. Missing ingredients automatically populate your shared grocery list.
+        </p>
+        <p>
+          Both partners see and edit the same plan in real-time. Sunday planning becomes a 5-minute conversation, not an hour-long negotiation.
+        </p>
+        <p>
+          The "we" framing is throughout — this isn't your meal plan or your partner's meal plan. It's our meal plan, decided together.
+        </p>
+      </div>
+
+      <ul class="mt-10 space-y-3">
+        {feature.benefits.map((benefit) => (
+          <li class="flex items-start gap-3 text-lg text-text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sage w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            {benefit}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Waitlist>
+    <WaitlistForm />
+  </Waitlist>
+</BaseLayout>

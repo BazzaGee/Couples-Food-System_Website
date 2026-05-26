@@ -1,0 +1,108 @@
+{
+  "phases": [
+    {
+      "phase": "Phase 1",
+      "title": "Collaboration Core (MVP)",
+      "timeline": "Months 1-2",
+      "goal": "AnyList + Leanlife — simple, fast, useful. Prove couples will adopt.",
+      "features": [
+        { "name": "Real-time shared grocery list", "benefit": "Both partners see changes instantly; no duplicate purchases", "tech": "Durable Objects + WebSocket (<100ms)" },
+        { "name": "Pantry tracking", "benefit": "Know what's in the kitchen; reduce waste", "tech": "SQLite in Durable Object" },
+        { "name": "Meal scheduling", "benefit": "Weekly calendar view; plan ahead", "tech": "D1 database + React calendar" },
+        { "name": "Partner sync", "benefit": "Invite code pairing; household creation", "tech": "KV for invite codes (24hr TTL)" },
+        { "name": "Shared meals", "benefit": "Both see and edit same plan", "tech": "WebSocket broadcast" },
+        { "name": "Basic dietary preferences", "benefit": "Vegetarian, allergies, etc.", "tech": "Profile fields in D1" }
+      ],
+      "successCriteria": [
+        { "metric": "Couples use shared grocery list", "target": "≥2x per week" },
+        { "metric": "Both partners active within", "target": "48 hours" },
+        { "metric": "Grocery list sync latency", "target": "<200ms" },
+        { "metric": "Day-7 retention", "target": ">40%" }
+      ],
+      "proves": "Couples will adopt a shared food tool. The collaboration layer works."
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Smart Recommendations",
+      "timeline": "Months 3-4",
+      "goal": "Add intelligence layer. The app becomes an active assistant, not passive tool.",
+      "features": [
+        { "name": "Pantry-based meal suggestions", "benefit": "You have chicken, rice, spinach. Here's dinner.", "tech": "AI Gateway → Anthropic" },
+        { "name": "Natural language pantry input", "benefit": "Type/dictate: We have ground beef, taco shells...", "tech": "Claude NLP parsing" },
+        { "name": "Diet preference integration", "benefit": "Personalized filtering per partner", "tech": "Profile-based constraints" },
+        { "name": "Smart grocery population", "benefit": "One-tap from meal plan to grocery list", "tech": "D1 relations" },
+        { "name": "Expiration tracking", "benefit": "Use what's expiring first", "tech": "Pantry item dates" }
+      ],
+      "successCriteria": [
+        { "metric": "AI-generated meals", "target": "≥30% of weekly meals" },
+        { "metric": "Grocery list population", "target": ">50% adoption" },
+        { "metric": "Day-30 retention", "target": ">25%" }
+      ],
+      "proves": "The AI adds real value. Users rely on the app to decide dinner."
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Adaptive Nutrition Engine (THE MOAT)",
+      "timeline": "Months 5-6",
+      "goal": "The full moat. Multi-person nutrition optimization difficult to replicate.",
+      "features": [
+        { "name": "BMI calculation & body profiles", "benefit": "Personalized portions", "tech": "Height/weight/age/gender → BMI" },
+        { "name": "Macro targets per partner", "benefit": "Auto-calculated from goals", "tech": "TDEE + activity + goal calculation" },
+        { "name": "Dynamic portion adjustment", "benefit": "Same meal, different plate sizes", "tech": "AI plating instructions" },
+        { "name": "AI household optimization", "benefit": "One shared meal satisfies two goal sets", "tech": "Complex prompt engineering" },
+        { "name": "Adaptive meal generation", "benefit": "Plating instructions per person", "tech": "Partner A: chicken over spinach; Partner B: 1.5x chicken over rice" },
+        { "name": "One shared prep workflow", "benefit": "Cook together, not separately", "tech": "Single recipe with two outputs" }
+      ],
+      "successCriteria": [
+        { "metric": "Adaptive portions usage", "target": "≥50% of generated meals" },
+        { "metric": "Day-90 retention", "target": ">15%" },
+        { "metric": "Premium conversion", "target": ">10%" }
+      ],
+      "proves": "The adaptive engine is the moat. Users cannot get this elsewhere."
+    }
+  ],
+  "buildSteps": [
+    { "step": 1, "title": "Shared Grocery List", "duration": "2 weeks", "description": "Real-time sync foundation. Prove the tech." },
+    { "step": 2, "title": "PWA Install + Mobile Polish", "duration": "1 week", "description": "Make it feel like a real app." },
+    { "step": 3, "title": "Partner Profiles + D1 Database", "duration": "1 week", "description": "Who are you cooking for?" },
+    { "step": 4, "title": "Pantry Tracking", "duration": "1 week", "description": "What do you actually have?" },
+    { "step": 5, "title": "AI Meal Generation", "duration": "2 weeks", "description": "The magic moment — pantry to dinner." },
+    { "step": 6, "title": "Meal Calendar + Smart Grocery", "duration": "2 weeks", "description": "Plan the week, shop once." },
+    { "step": 7, "title": "Adaptive Shared Cooking", "duration": "3 weeks", "description": "One prep, two plates. THE MOAT." }
+  ],
+  "totalBuildTime": "~3 months to full MVP",
+  "gtmChannels": [
+    { "channel": "TikTok", "strategy": "Short-form demo videos", "angle": "The app that ends the 'what's for dinner' argument." },
+    { "channel": "Instagram Reels", "strategy": "Visual recipe + plating demos", "angle": "How we eat the exact same dinner, but he gains muscle and I lose weight." },
+    { "channel": "Pinterest", "strategy": "Recipe boards, meal planning templates", "angle": "Stop doing macro math for two people." },
+    { "channel": "Reddit", "strategy": "r/mealprep, r/EatCheapAndHealthy, r/relationships", "angle": "Authentic problem-solution posts" },
+    { "channel": "Product Hunt", "strategy": "Launch day", "angle": "Google Docs for food planning" },
+    { "channel": "Couples/Relationship Influencers", "strategy": "Partnerships", "angle": "This app reduced our dinner stress" }
+  ],
+  "kpis": {
+    "phase1": [
+      { "metric": "Total households created (Month 3)", "target": "100" },
+      { "metric": "Total households created (Month 6)", "target": "500" },
+      { "metric": "Second-partner activation rate", "target": ">80%" },
+      { "metric": "PWA install rate", "target": ">40%" },
+      { "metric": "Day-7 retention", "target": ">40%" }
+    ],
+    "phase2": [
+      { "metric": "Total households (Month 12)", "target": "3,000" },
+      { "metric": "AI-generated meals/week", "target": ">30%" },
+      { "metric": "Day-30 retention", "target": ">25%" }
+    ],
+    "phase3": [
+      { "metric": "Total households (Month 24)", "target": "15,000" },
+      { "metric": "Premium conversion rate", "target": ">12%" },
+      { "metric": "Monthly recurring revenue", "target": "$14,400-21,600" },
+      { "metric": "Day-90 retention", "target": ">15%" }
+    ],
+    "technical": [
+      { "metric": "Grocery list sync latency", "target": "<100ms" },
+      { "metric": "App shell load time", "target": "<500ms" },
+      { "metric": "AI meal plan generation", "target": "<5 seconds" },
+      { "metric": "Uptime", "target": ">99.9%" }
+    ]
+  }
+}

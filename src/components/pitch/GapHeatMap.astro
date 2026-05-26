@@ -1,0 +1,40 @@
+---
+import competitors from '../../data/pitch/competitors.json';
+
+const { capabilities, competitors: compData } = competitors.capabilityMatrix;
+const competitorNames = Object.keys(compData);
+
+function renderCell(value: boolean | string) {
+  if (value === true) return '<span class="text-sage font-bold text-base">✓</span>';
+  if (value === false) return '<span class="text-text-secondary/30 text-base">✗</span>';
+  if (value === 'partial') return '<span class="text-amber-500 font-bold text-sm">~</span>';
+  return '';
+}
+---
+<div class="py-8 overflow-x-auto">
+  <table class="comparison-table min-w-full text-xs">
+    <thead>
+      <tr>
+        <th class="rounded-tl-xl sticky left-0 bg-sage/10 z-10">Capability</th>
+        {competitorNames.map((name) => (
+          <th class={name === 'Cupla' ? 'bg-sage/20 font-bold text-sage' : ''}>{name}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {capabilities.map((cap, i) => (
+        <tr>
+          <td class="font-medium sticky left-0 bg-cream z-10 border-r border-border">{cap}</td>
+          {competitorNames.map((name) => (
+            <td class={name === 'Cupla' ? 'bg-sage/5 font-semibold' : 'text-center'} set:html={renderCell(compData[name][i])}></td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <div class="flex gap-6 mt-4 text-xs text-text-secondary">
+    <span><span class="text-sage font-bold">✓</span> Strong / Core</span>
+    <span><span class="text-amber-500 font-bold">~</span> Partial / Limited</span>
+    <span><span class="text-text-secondary/30">✗</span> Not available</span>
+  </div>
+</div>

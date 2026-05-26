@@ -1,0 +1,333 @@
+---
+import SpokeLayout from '../../layouts/SpokeLayout.astro';
+import VennDiagram from '../../components/pitch/VennDiagram.astro';
+import PositioningMap from '../../components/pitch/PositioningMap.astro';
+---
+
+<SpokeLayout
+  title="The Market Gap — CUPLA Proposal"
+  description="Nobody fully owns the category of real-time collaborative adaptive household nutrition. Here is why the gap exists, why it matters, and why it is closing."
+>
+  <!-- HERO -->
+  <section class="pt-20 md:pt-28 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">The Market Gap</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">The Center of the Venn Diagram<br/>Is Still Empty</h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        After exhaustive analysis of 34+ competitors across three independent assessments, the conclusion is unambiguous: <strong class="text-text-primary">nobody fully owns the category of "real-time collaborative adaptive household nutrition."</strong> The market is highly fragmented. Different apps own isolated pieces. No single product occupies the center. This is not an opinion — it is a verified structural gap.
+      </p>
+    </div>
+  </section>
+
+  <!-- VENN DIAGRAM -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">The Venn Diagram</h2>
+      <p class="text-center text-text-secondary mb-4">Four circles overlap. Nobody sits at the center.</p>
+      <VennDiagram />
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6 max-w-3xl mx-auto">
+        <div class="text-center p-3 bg-white rounded-xl border border-border">
+          <p class="text-sm font-bold text-sage">Real-Time Collaboration</p>
+          <p class="text-xs text-text-secondary mt-1">Leanlife, AnyList, DuoDine</p>
+        </div>
+        <div class="text-center p-3 bg-white rounded-xl border border-border">
+          <p class="text-sm font-bold text-terracotta-dark">Nutrition Intelligence</p>
+          <p class="text-xs text-text-secondary mt-1">Fitia, Eat This Much</p>
+        </div>
+        <div class="text-center p-3 bg-white rounded-xl border border-border">
+          <p class="text-sm font-bold text-sage">Relationship UX ("We")</p>
+          <p class="text-xs text-text-secondary mt-1">Leanlife, OurPlate</p>
+        </div>
+        <div class="text-center p-3 bg-white rounded-xl border border-border">
+          <p class="text-sm font-bold text-terracotta-dark">Adaptive Portions</p>
+          <p class="text-xs text-text-secondary mt-1">Yummo, PlateMates</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-text-secondary mt-4">
+        Each circle has owners. The intersection of all four is empty. <strong class="text-sage font-semibold">This is the gap.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPETITOR PROFILES -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-8">What Each Competitor Owns vs. What Is Missing</h2>
+      <div class="space-y-3">
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-3 h-3 rounded-full bg-sage"></span>
+            <h3 class="font-semibold">Leanlife</h3>
+            <span class="text-xs text-text-secondary">Owns: "Collaborative meal planning"</span>
+          </div>
+          <p class="text-sm text-text-secondary">Built specifically for 2 people. Real-time synced planning. Excellent emotional positioning ("Stop carrying the mental load of meal planning alone"). <strong class="text-text-primary">Lacks:</strong> AI recipe generation, adaptive nutrition, pantry-based cooking, body-specific portions, Android support.</p>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-3 h-3 rounded-full bg-terracotta"></span>
+            <h3 class="font-semibold">Fitia</h3>
+            <span class="text-xs text-text-secondary">Owns: "Nutrition intelligence"</span>
+          </div>
+          <p class="text-sm text-text-secondary">Synced meal plans, adaptive portions, recipe importing, AI coach, 10M+ users, $3.5M/year revenue. <strong class="text-text-primary">Lacks:</strong> Relationship-first UX, real-time collaborative editing, pantry-first AI, one-meal-two-plates workflow, shared kitchen paradigm. Still feels like a spreadsheet.</p>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-3 h-3 rounded-full bg-sage-light"></span>
+            <h3 class="font-semibold">AnyList</h3>
+            <span class="text-xs text-text-secondary">Owns: "What to buy"</span>
+          </div>
+          <p class="text-sm text-text-secondary">Extremely fast real-time synchronization. Simplicity and reliability. Users love it. <strong class="text-text-primary">Lacks:</strong> Nutrition intelligence, meal adaptation, AI generation, body profiles, dietary goal optimization. It is a utility, not a food system.</p>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-3 h-3 rounded-full bg-terracotta-dark"></span>
+            <h3 class="font-semibold">Yummo</h3>
+            <span class="text-xs text-text-secondary">Owns: "Adaptive portions"</span>
+          </div>
+          <p class="text-sm text-text-secondary">Same "one cook, two plates" concept. Handles different calorie needs. AI-powered. $9.99/mo pricing. <strong class="text-text-primary">Lacks:</strong> Real-time collaboration, relationship-first UX, pantry-first AI, offline support, PWA distribution. Solo founder, EU-only, zero marketing.</p>
+        </div>
+      </div>
+      <div class="mt-6 pitch-card">
+        <h3 class="font-bold text-lg mb-3">Also Surveyed (30+ Additional Competitors)</h3>
+        <p class="text-sm text-text-secondary mb-3">Beyond the four above, the full analysis included:</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">PlateMates</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Cloche</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">OttoChef</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">DuoDine</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Samsung Food</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">PlanEat AI</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Healthspan</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">OurPlate</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Eat This Much</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">KitchenSync</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Mealime</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Ollie AI</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Cozi</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Listonic</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">SummitPlate</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">eMeals</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">OurGroceries</span>
+          <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">+ 15 more</span>
+        </div>
+        <p class="text-xs text-text-secondary mt-3">All 34+ competitors were analyzed for capabilities, funding, user base, pricing, and strategic positioning. Zero out of 34 have all four pillars.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING MAP -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Competitive Positioning Map</h2>
+      <p class="text-center text-text-secondary mb-4">Where each competitor sits on the nutrition vs. collaboration vs. relationship spectrum.</p>
+      <PositioningMap />
+      <div class="mt-6 max-w-2xl mx-auto">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-text-primary">Notice the clustering:</strong> Most competitors occupy a single quadrant — either nutrition-focused (Fitia, Eat This Much) or collaboration-focused (AnyList, Leanlife). The upper-right quadrant — high nutrition intelligence AND high collaboration AND relationship-first — is empty. This is the strategic whitespace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USER DEMAND VALIDATION -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">User Demand Validation — People Want This</h2>
+      <p class="text-text-secondary mb-6">The gap is not just a product-analysis finding. User behavior signals confirm demand:</p>
+      <div class="space-y-4">
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">📋</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">Cloche: 500+ Waitlist Users</h4>
+              <p class="text-sm text-text-secondary">A pre-launch couples food app with a novel swipe UX has already attracted 500+ waitlist sign-ups. This proves demand exists before the product even ships.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">👫</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">DuoDine: 1,000+ Active Couples</h4>
+              <p class="text-sm text-text-secondary">A free, basic couples meal planning app with no AI, no adaptive portions, and no nutrition intelligence has 1,000+ couples using it regularly. This proves the collaboration layer alone has value.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">💬</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">Leanlife's "Mental Load" Framing</h4>
+              <p class="text-sm text-text-secondary">Leanlife's tagline — "Stop carrying the mental load of meal planning alone" — has resonated culturally. The emotional positioning proves that people are not buying meal planning features; they are buying relief from a daily stressor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">💰</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">Yummo: $9.99/mo and People Pay</h4>
+              <p class="text-sm text-text-secondary">A solo founder's web-only app with no marketing, no social media, and no app store presence charges $9.99/month for adaptive portions. People are paying. The willingness to pay is proven.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THE GAP EXISTS -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Why the Gap Exists — 4 Structural Reasons</h2>
+      <div class="space-y-6">
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-lg mb-2 text-sage-dark">1. Incumbent Architecture Bias</h3>
+          <p class="text-sm text-text-secondary">Most nutrition apps started as solo fitness tools. Adding multi-user features to a solo architecture creates bolted-on collaboration (Fitia's approach), not native collaboration. You cannot retrofit a solo app to feel like it was built for two people from the ground up. Fitia's Sync Plan uses a master/slave model that reportedly deletes the receiving user's existing meal plan — this is not real-time collaboration, it is data transfer.</p>
+        </div>
+        <div class="pitch-card-terracotta">
+          <h3 class="font-bold text-lg mb-2 text-terracotta-dark">2. Category Thinking</h3>
+          <p class="text-sm text-text-secondary">Each competitor defines itself in an existing category — diet tracker, grocery app, recipe app. The new category of "Collaborative Adaptive Nutrition" does not exist in their mental model. They do not see it as their space to claim because they are competing in different arenas. This is a classic innovator's dilemma: the best product for a new category looks like a bad product for the old one.</p>
+        </div>
+        <div class="pitch-card-terracotta">
+          <h3 class="font-bold text-lg mb-2 text-terracotta-dark">3. Complexity of the Problem</h3>
+          <p class="text-sm text-text-secondary">Adaptive shared cooking — one prep, two plates, dynamic portions based on biological profiles — is genuinely difficult. It requires combining real-time collaboration, nutrition intelligence, portion mathematics, recipe generation, and relationship-aware UX into a single workflow. <strong class="text-text-primary">The difficulty is the moat.</strong> Most founders cannot execute at this level of complexity.</p>
+        </div>
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-lg mb-2 text-sage-dark">4. UX Philosophy Mismatch</h3>
+          <p class="text-sm text-text-secondary">Nutrition apps are built by nutritionists who think in macros. The new category must be built by people who think in relationships, dinners, and shared kitchens. UX philosophy is deeply embedded in architecture and design decisions — a competitor cannot bolt on "relationship-first" any more than a relationship app could bolt on "clinical fitness."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE EXECUTION GAP -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">The Execution Gap — 12+ Failed Attempts Prove the Concept</h2>
+      <p class="text-text-secondary mb-6">The concept is not untested. Over a dozen indie developers have attempted couples food apps. They failed not because the idea is bad, but because execution is hard. Here are the common failure modes:</p>
+      <div class="space-y-3">
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">1. Concept Without Execution</h3>
+          <p class="text-sm text-text-secondary">YumTwo, OurPlate, MiseBook — landing pages with no product. The idea is right but the team or resources to build it are missing.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">2. Single-Feature Apps</h3>
+          <p class="text-sm text-text-secondary">Cookbond, WhatDinner — one gimmick (meal matching, dinner roulette), no system. Users try it once and leave because it does not solve the full problem.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">3. "Free Forever" With No Revenue Model</h3>
+          <p class="text-sm text-text-secondary">DuoDine, OttoChef, slrp — free apps with no sustainable business model. They prove demand but cannot fund development or marketing.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">4. Family-Only Positioning</h3>
+          <p class="text-sm text-text-secondary">Ollie AI, Cozi, SummitPlate, eMeals — deliberately targeting families, ignoring the couples niche. The couples market is too narrow for their growth targets.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">5. No Marketing Infrastructure</h3>
+          <p class="text-sm text-text-secondary">PlateMates, Leanlife, SplitPlate — build but do not tell anyone. Dead websites, no blog, no SEO, no social media. Great product, zero distribution.</p>
+        </div>
+      </div>
+      <div class="mt-6 pitch-card-sage">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-sage-dark">The meta-lesson:</strong> The concept is validated by 12+ attempts. What is missing is a well-executed, comprehensive system with real distribution. CUPLA has the distribution. The product is defined. The field is winnable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CONVERGENCE TIMELINE -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">The Convergence Timeline — The Gap Is Closing</h2>
+      <p class="text-text-secondary mb-6">The gap exists because nobody has assembled all the pieces yet. But the pieces are converging:</p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="timeline-dot"></div>
+          <div>
+            <h4 class="font-semibold text-text-primary">2024 — Fitia Begins Adding Shared Features</h4>
+            <p class="text-sm text-text-secondary">Sync Plan, Sync Shopping Lists, Social features. Fitia is actively moving from single-user to multi-user. But the UX remains clinical and the sync is not real-time collaborative editing.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="timeline-dot bg-amber-400 ring-amber-400/20"></div>
+          <div>
+            <h4 class="font-semibold text-text-primary">2024-2025 — Yummo Launches Adaptive Portions</h4>
+            <p class="text-sm text-text-secondary">Proves the "one cook, two plates" concept has market demand. But lacks collaboration, pantry-first, and relationship UX. Solo founder with no marketing infrastructure.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="timeline-dot bg-amber-400 ring-amber-400/20"></div>
+          <div>
+            <h4 class="font-semibold text-text-primary">2024-2025 — Leanlife Gains Traction with Emotional Positioning</h4>
+            <p class="text-sm text-text-secondary">"Mental load" framing resonates culturally. Real-time sync works well. But no AI, no adaptive nutrition, iOS only. The Android market is open.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="timeline-dot bg-red-400 ring-red-400/20"></div>
+          <div>
+            <h4 class="font-semibold text-text-primary">2025-2026 — The Window Is Open</h4>
+            <p class="text-sm text-text-secondary">All pieces exist separately. No one has assembled them. The center of the Venn diagram is still empty. <strong class="text-sage font-semibold">This is the moment to act.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WINDOW OF OPPORTUNITY TABLE -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">The Window of Opportunity</h2>
+      <div class="overflow-x-auto">
+        <table class="comparison-table w-full">
+          <thead>
+            <tr>
+              <th class="rounded-tl-xl">Factor</th>
+              <th>Status</th>
+              <th class="rounded-tr-xl">Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Yummo exists</td>
+              <td><span class="threat-high">Live</span></td>
+              <td class="text-text-secondary">Proves demand for adaptive portions — but lacks collaboration</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Fitia converging</td>
+              <td><span class="threat-medium">Active</span></td>
+              <td class="text-text-secondary">Adding shared features since 2024 but still clinical UX</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Leanlife iOS-only</td>
+              <td><span class="threat-medium">Opportunity</span></td>
+              <td class="text-text-secondary">Android/cross-platform market entirely open</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">No complete stack</td>
+              <td><span class="threat-low">Opportunity</span></td>
+              <td class="text-text-secondary">Center of Venn diagram still empty — 0 of 34 competitors have all 4 pillars</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">AI market growing</td>
+              <td><span class="threat-low">Tailwind</span></td>
+              <td class="text-text-secondary">28% CAGR = rising tide lifts all boats in the category</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">All direct competitors bootstrapped</td>
+              <td><span class="threat-low">Advantage</span></td>
+              <td class="text-text-secondary">Under-resourced indie apps — winnable race for a team with distribution</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-lg font-semibold text-sage mt-8">The window is open NOW. Act fast.</p>
+    </div>
+  </section>
+
+  <!-- BACK LINK -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+    </div>
+  </section>
+</SpokeLayout>

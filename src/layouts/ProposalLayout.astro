@@ -1,0 +1,35 @@
+---
+import BaseHead from '../components/layout/BaseHead.astro';
+import ProposalNav from '../components/layout/ProposalNav.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+}
+const { title, description, canonicalURL, ogImage } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage} />
+  </head>
+  <body class="bg-cream text-text-primary antialiased leading-relaxed overflow-x-hidden">
+    <ProposalNav />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <footer class="w-full py-12 bg-cream-dark border-t border-border">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-text-secondary text-sm">
+          A strategic proposal for CUPLA · Built with data from comprehensive market analysis
+        </p>
+        <p class="text-text-secondary text-xs mt-2">
+          <a href="http://localhost:4323/" class="text-sage hover:text-sage-dark transition-colors">← Back to Couples Food System</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

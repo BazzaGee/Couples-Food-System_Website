@@ -1,0 +1,38 @@
+---
+import features from '../../data/features.json';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { title = 'From Plan to Plate in 5 Steps', subtitle = "We've streamlined the entire process so you spend less time planning and more time enjoying dinner together." } = Astro.props;
+const steps = features.steps;
+---
+
+<section class="py-20 max-w-4xl mx-auto px-6">
+  <div class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">{title}</h1>
+    <p class="text-xl text-text-secondary">{subtitle}</p>
+  </div>
+
+  <div class="space-y-12">
+    {steps.map((step, index) => (
+      <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-start relative">
+        {index < steps.length - 1 && (
+          <div class="hidden md:block absolute left-8 top-20 bottom-[-3rem] w-0.5 bg-border"></div>
+        )}
+        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-sage text-white text-2xl font-semibold flex items-center justify-center z-10 shadow-sm border-4 border-cream">
+          {step.number}
+        </div>
+        <div class="bg-white flex-1 rounded-2xl border border-border p-8 shadow-sm">
+          <h3 class="text-2xl font-semibold mb-3 tracking-tight">{step.title}</h3>
+          <p class="text-lg text-text-secondary mb-4">{step.description}</p>
+          <div class="rounded-xl overflow-hidden border border-border mt-4">
+            <img src="/images/steps/step-{step.number}.png" alt="Step {step.number}: {step.title} illustration" class="w-full h-auto" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

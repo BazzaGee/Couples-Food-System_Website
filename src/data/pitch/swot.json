@@ -1,0 +1,152 @@
+{
+  "swot": {
+    "strengths": [
+      {
+        "title": "Category Creation",
+        "description": "Defines 'Collaborative Adaptive Nutrition' — a category that doesn't exist yet. First-mover advantage."
+      },
+      {
+        "title": "Adaptive Shared Cooking Moat",
+        "description": "One-prep-two-plates workflow is genuinely difficult to replicate. Addresses a real pain point no one else solves."
+      },
+      {
+        "title": "Cloudflare-Native Architecture",
+        "description": "Zero infrastructure cost at launch. Sub-100ms real-time sync. PWA distribution. Global edge deployment."
+      },
+      {
+        "title": "Relationship-First UX Philosophy",
+        "description": "'We' framing, shared kitchen metaphor, emotional design — fundamentally different from clinical nutrition apps."
+      },
+      {
+        "title": "Pantry-First AI",
+        "description": "Inverts the traditional recipe → grocery list model. Reduces waste and decisions simultaneously."
+      },
+      {
+        "title": "Fast Iteration",
+        "description": "PWA + single Cloudflare deployment = ship daily. No App Store review process."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "No Existing User Base",
+        "description": "Starting from zero. No recipe database, no community, no brand recognition."
+      },
+      {
+        "title": "Complexity Risk",
+        "description": "The product is ambitious. Balancing power with simplicity is the hardest design challenge."
+      },
+      {
+        "title": "Single-Platform Dependency",
+        "description": "Everything runs on Cloudflare. If Cloudflare has issues, the product has issues."
+      },
+      {
+        "title": "No Native App Presence",
+        "description": "PWA is technically capable but some users expect App Store presence for trust."
+      },
+      {
+        "title": "AI Dependency",
+        "description": "Core value prop requires AI. If Anthropic pricing changes, unit economics shift."
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Underserved Market",
+        "description": "No one owns the center of the Venn diagram. The category is fragmented and converging."
+      },
+      {
+        "title": "Growing AI Capabilities",
+        "description": "AI meal generation quality is improving rapidly. The product gets better as models improve."
+      },
+      {
+        "title": "Mental Load Conversation",
+        "description": "Cultural awareness of 'mental load' in relationships is growing. Market timing aligns."
+      },
+      {
+        "title": "Health-Conscious Couples Trend",
+        "description": "More couples are cooking at home, tracking nutrition, and pursuing fitness goals together."
+      },
+      {
+        "title": "PWA Adoption",
+        "description": "iOS 16.4+ added full PWA support including push notifications. Technical barriers disappearing."
+      },
+      {
+        "title": "Freemium Model",
+        "description": "Free tier drives adoption; premium tier monetizes the AI layer. Low-risk for users, scalable revenue."
+      }
+    ],
+    "threats": [
+      {
+        "title": "Yummo — Direct Moat Overlap",
+        "description": "Nearly identical positioning: 'One cooking session — two plates.' Lacks real-time collaboration and relationship UX."
+      },
+      {
+        "title": "Fitia Convergence",
+        "description": "Actively adding shared features and could pivot to relationship-first UX. 10M+ existing users."
+      },
+      {
+        "title": "PlateMates — Concept Similarity",
+        "description": "'One Meal, Two Ways' split-plate concept for dietary differences. 200+ recipes."
+      },
+      {
+        "title": "Large Players Entering",
+        "description": "Samsung Food, MyFitnessPal, or similar could add collaborative features. They have resources and distribution."
+      }
+    ]
+  },
+  "risks": [
+    {
+      "risk": "Yummo adds real-time sync",
+      "level": "high",
+      "timeline": "6-12 months",
+      "mitigation": "Own relationship UX + pantry-first first; build community"
+    },
+    {
+      "risk": "Fitia pivots to relationship-first",
+      "level": "high",
+      "timeline": "12-18 months",
+      "mitigation": "Speed to market; emotional positioning first"
+    },
+    {
+      "risk": "Overbuilding",
+      "level": "high",
+      "timeline": "Immediate",
+      "mitigation": "Strict 3-phase rollout; Phase 1 is just collaboration"
+    },
+    {
+      "risk": "Complexity",
+      "level": "high",
+      "timeline": "Immediate",
+      "mitigation": "Natural language input; 5-step onboarding max"
+    },
+    {
+      "risk": "User acquisition for Partner B",
+      "level": "medium",
+      "timeline": "Ongoing",
+      "mitigation": "Invite code is frictionless; push notifications pull them in"
+    },
+    {
+      "risk": "AI cost scaling",
+      "level": "medium",
+      "timeline": "At scale",
+      "mitigation": "AI Gateway caching; $10/mo covers costs with margin"
+    },
+    {
+      "risk": "No app store discovery",
+      "level": "medium",
+      "timeline": "Ongoing",
+      "mitigation": "Social media-driven acquisition; PWA install prompt"
+    },
+    {
+      "risk": "Feature copying",
+      "level": "medium",
+      "timeline": "6-12 months",
+      "mitigation": "Complex workflows are hard to copy; UX philosophy is embedded"
+    },
+    {
+      "risk": "Large players entering",
+      "level": "low",
+      "timeline": "18-24 months",
+      "mitigation": "Focus on couples is a moat; big companies move slowly"
+    }
+  ]
+}

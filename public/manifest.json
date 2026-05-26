@@ -1,0 +1,17 @@
+{
+  "name": "Couples Food System",
+  "short_name": "Couples Food",
+  "description": "The collaborative food operating system for couples with different dietary goals.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF6EE",
+  "theme_color": "#7A9E7E",
+  "icons": [
+    {
+      "src": "/images/logo/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

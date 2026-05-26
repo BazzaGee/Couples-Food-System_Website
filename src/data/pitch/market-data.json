@@ -1,0 +1,116 @@
+{
+  "marketSize": {
+    "aiMealPlanning2024": "$972.1M",
+    "aiMealPlanning2034": "$11.6B",
+    "cagr": "28.10%",
+    "overallMarket2025": "$1.8B",
+    "overallMarket2034": "$5.2B",
+    "overallCAGR": "12.5%",
+    "northAmericaShare": "34%+"
+  },
+  "tam": {
+    "label": "Total Addressable Market",
+    "value": "$1.8B",
+    "description": "Global meal planning app market (2025)"
+  },
+  "sam": {
+    "label": "Serviceable Addressable Market",
+    "value": "$300-500M",
+    "description": "Health-conscious couples aged 22-45 with different dietary goals"
+  },
+  "som": {
+    "label": "Serviceable Obtainable Market",
+    "value": "$1M+ ARR",
+    "description": "10,000 paying households at $10/month"
+  },
+  "targetSegments": [
+    {
+      "segment": "U.S. Couples Households (25-45)",
+      "size": "~35 Million",
+      "notes": "Census data estimate"
+    },
+    {
+      "segment": "Health-Conscious Couples",
+      "size": "~7-10 Million",
+      "notes": "20-30% with fitness/nutrition goals"
+    },
+    {
+      "segment": "Multi-Goal Households",
+      "size": "~3-5 Million",
+      "notes": "Couples with divergent dietary needs"
+    }
+  ],
+  "growthDrivers": [
+    "Health consciousness rising (post-pandemic trend)",
+    "Remote work = more home cooking",
+    "AI capabilities improving rapidly",
+    "Mental load conversation gaining cultural traction",
+    "Couples pursuing fitness goals together",
+    "Food waste awareness driving pantry-first solutions",
+    "PWA adoption eliminating app store barriers"
+  ],
+  "revenueProjections": [
+    {
+      "timeline": "Month 6",
+      "households": 500,
+      "premiumConversion": "8%",
+      "premiumHouseholds": 40,
+      "monthlyRevenue": "$320-480",
+      "annualRevenue": "$4.8K-7.2K"
+    },
+    {
+      "timeline": "Year 1",
+      "households": 3000,
+      "premiumConversion": "10%",
+      "premiumHouseholds": 300,
+      "monthlyRevenue": "$2,400-3,600",
+      "annualRevenue": "$28.8K-43.2K"
+    },
+    {
+      "timeline": "Year 2",
+      "households": 15000,
+      "premiumConversion": "12%",
+      "premiumHouseholds": 1800,
+      "monthlyRevenue": "$14,400-21,600",
+      "annualRevenue": "$172.8K-259.2K"
+    },
+    {
+      "timeline": "Year 3",
+      "households": 50000,
+      "premiumConversion": "12%",
+      "premiumHouseholds": 6000,
+      "monthlyRevenue": "$48,000-72,000",
+      "annualRevenue": "$576K-864K"
+    },
+    {
+      "timeline": "Year 5",
+      "households": 200000,
+      "premiumConversion": "12%",
+      "premiumHouseholds": 24000,
+      "monthlyRevenue": "$192K-288K",
+      "annualRevenue": "$2.3M-3.5M"
+    }
+  ],
+  "unitEconomics": {
+    "premiumPrice": "$10/mo per household",
+    "aiCostPerHousehold": "$1.00-1.50/mo (cached)",
+    "infraCostPerHousehold": "$0.00-0.02/mo (free tier)",
+    "grossMargin": "~85-90%",
+    "cacOrganic": "$0",
+    "cacPaid": "<$15 (recover in <2 months)"
+  },
+  "pricingTiers": [
+    {
+      "tier": "Free",
+      "price": "$0/mo",
+      "features": ["Shared grocery lists", "Basic shared meal planning", "Real-time sync", "Partner pairing"],
+      "purpose": "Lock the couple into the ecosystem. Drive network effect."
+    },
+    {
+      "tier": "Premium",
+      "price": "$8-12/mo",
+      "features": ["AI pantry-to-meal generation", "Automatic macro-splitting", "Adaptive portions", "One-tap grocery list", "Recipe history", "Goal tracking"],
+      "purpose": "The AI magic. This is where value compounds."
+    }
+  ]
+}

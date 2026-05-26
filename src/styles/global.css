@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-text-primary antialiased leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .card {
+    @apply bg-white p-8 rounded-2xl border border-border hover:border-sage transition-all shadow-sm hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-sage text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors shadow-sm hover:bg-sage-dark active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply border-2 border-sage text-sage px-8 py-4 rounded-xl text-lg font-medium transition-colors hover:bg-sage/5;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-4 rounded-xl border border-border bg-white text-text-primary focus:outline-none focus:ring-2 focus:ring-sage/50 focus:border-sage transition-all;
+  }
+
+  .badge-unique {
+    @apply bg-terracotta/20 text-terracotta-dark text-xs px-2 py-1 rounded-full uppercase tracking-wider font-semibold;
+  }
+
+  .badge-signature {
+    @apply bg-terracotta text-white text-xs px-3 py-1 rounded-full font-medium;
+  }
+
+  /* Proposal pitch styles */
+  .proposal-nav-glow {
+    animation: glowShift 10s ease-in-out infinite;
+  }
+
+  .proposal-nav-glow-subtle {
+    animation: glowShiftSubtle 12s ease-in-out infinite;
+  }
+
+  .pulse-link {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  .stat-card {
+    @apply bg-white rounded-2xl border border-border p-6 text-center shadow-sm;
+  }
+
+  .stat-number {
+    @apply text-4xl md:text-5xl font-bold text-sage tracking-tight;
+  }
+
+  .stat-label {
+    @apply text-sm text-text-secondary mt-2 font-medium;
+  }
+
+  .pitch-card {
+    @apply bg-white rounded-2xl border border-border p-8 shadow-sm hover:shadow-md transition-all;
+  }
+
+  .pitch-card-terracotta {
+    @apply bg-terracotta/10 border-terracotta/30 rounded-2xl p-8 shadow-sm;
+  }
+
+  .pitch-card-sage {
+    @apply bg-sage/10 border-sage/30 rounded-2xl p-8 shadow-sm;
+  }
+
+  .comparison-table {
+    @apply w-full border-collapse;
+  }
+
+  .comparison-table th {
+    @apply bg-sage/10 text-text-primary font-semibold px-4 py-3 text-left text-sm;
+  }
+
+  .comparison-table td {
+    @apply px-4 py-3 border-t border-border text-sm;
+  }
+
+  .comparison-table tr:hover td {
+    @apply bg-sage/5;
+  }
+
+  .threat-high {
+    @apply bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .threat-medium {
+    @apply bg-amber-100 text-amber-700 px-2 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .threat-low {
+    @apply bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .swot-card {
+    @apply bg-white rounded-2xl border border-border p-6 shadow-sm;
+  }
+
+  .swot-card-strengths {
+    @apply border-l-4 border-l-sage;
+  }
+
+  .swot-card-weaknesses {
+    @apply border-l-4 border-l-terracotta;
+  }
+
+  .swot-card-opportunities {
+    @apply border-l-4 border-l-sage-light;
+  }
+
+  .swot-card-threats {
+    @apply border-l-4 border-l-error;
+  }
+
+  .timeline-step {
+    @apply flex items-start gap-4;
+  }
+
+  .timeline-dot {
+    @apply w-4 h-4 rounded-full bg-sage mt-1 flex-shrink-0 ring-4 ring-sage/20;
+  }
+
+  .timeline-line {
+    @apply w-0.5 bg-sage/30 ml-2 flex-shrink-0;
+  }
+
+  .spoke-section {
+    @apply py-16 md:py-24;
+  }
+
+  .spoke-section-alt {
+    @apply bg-cream-dark py-16 md:py-24;
+  }
+
+  .proposal-hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+  }
+
+  .proposal-section-title {
+    @apply text-2xl md:text-3xl font-bold tracking-tight mb-4;
+  }
+
+  .proposal-section-subtitle {
+    @apply text-lg text-text-secondary max-w-2xl;
+  }
+}
+
+@layer utilities {
+  @keyframes glowShift {
+    0%, 100% { background-color: rgba(122, 158, 126, 0.08); }
+    50% { background-color: rgba(232, 168, 124, 0.08); }
+  }
+
+  @keyframes glowShiftSubtle {
+    0%, 100% { background-color: rgba(122, 158, 126, 0.05); }
+    50% { background-color: rgba(232, 168, 124, 0.05); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      text-shadow: 0 0 4px rgba(122, 158, 126, 0.3);
+      color: #7A9E7E;
+    }
+    50% {
+      text-shadow: 0 0 8px rgba(232, 168, 124, 0.4);
+      color: #E8A87C;
+    }
+  }
+}

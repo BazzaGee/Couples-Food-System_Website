@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import features from '../../data/features.json';
+import Waitlist from '../../components/sections/Waitlist.astro';
+import WaitlistForm from '../../components/forms/WaitlistForm.astro';
+
+const feature = features.features.find(f => f.id === 'shared-grocery-list')!;
+---
+
+<BaseLayout title="Real-Time Shared Grocery List | Couples Food System" description="Never buy milk twice. Our lightning-fast shared grocery list updates instantly for both of you.">
+  <section class="py-20 max-w-4xl mx-auto px-6">
+    <a href="/features" class="text-sage hover:text-sage-dark mb-8 inline-block font-medium">&larr; Back to all features</a>
+    <div class="bg-white rounded-2xl border border-border p-8 md:p-16 shadow-sm">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">{feature.title}</h1>
+      <p class="text-xl text-text-secondary leading-relaxed mb-10">{feature.longDescription}</p>
+
+      <div class="rounded-xl aspect-video w-full overflow-hidden border border-border mb-10">
+        <img src="/images/screenshots/screenshot-shopping.webp" alt="Two smartphones side by side showing real-time shared grocery list sync with green checkmarks" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+
+      <div class="text-lg text-text-secondary space-y-6">
+        <p>
+          Our shared grocery list uses lightning-fast real-time sync. Add an item from home and it appears on your partner's phone at the store in under 100ms. Check off an item at the store and it disappears from the shared list instantly.
+        </p>
+        <p>
+          No phone calls, no duplicate purchases, no confusion. Whether you're at home planning or in the aisle shopping, both of you see the same list in real time.
+        </p>
+        <p>
+          Lost signal in the supermarket? No problem. Your changes queue locally and sync automatically when you reconnect. You'll never lose data.
+        </p>
+      </div>
+
+      <ul class="mt-10 space-y-3">
+        {feature.benefits.map((benefit) => (
+          <li class="flex items-start gap-3 text-lg text-text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sage w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            {benefit}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Waitlist>
+    <WaitlistForm />
+  </Waitlist>
+</BaseLayout>

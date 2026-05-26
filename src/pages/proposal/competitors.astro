@@ -1,0 +1,494 @@
+---
+import SpokeLayout from '../../layouts/SpokeLayout.astro';
+import ThreatMatrix from '../../components/pitch/ThreatMatrix.astro';
+import GapHeatMap from '../../components/pitch/GapHeatMap.astro';
+import competitorsData from '../../data/pitch/competitors.json';
+---
+
+<SpokeLayout
+  title="Competitive Landscape — CUPLA Proposal"
+  description="34 competitors analyzed across 6 tiers. Complete threat matrix, capability comparison, funding landscape, pricing analysis, and competitive response timeline."
+>
+  <!-- HERO -->
+  <section class="pt-20 md:pt-28 pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">Competitive Landscape</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">34 Competitors.<br/>Zero Complete Stacks.</h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        The market is fragmented across 6 tiers: direct couples apps, nutrition intelligence, grocery collaboration, AI meal planning, emerging family organizers, and dead/parked domains. <strong class="text-text-primary">Only one product marks every capability checkbox — and it is not any of the incumbents.</strong> The entire direct-competitor field consists of bootstrapped indie developers and solo founders.
+      </p>
+    </div>
+  </section>
+
+  <!-- THREAT MATRIX -->
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Threat Matrix</h2>
+      <p class="text-center text-text-secondary mb-4">All major competitors ranked by threat level, with their core concept and critical gaps.</p>
+      <ThreatMatrix />
+    </div>
+  </section>
+
+  <!-- CAPABILITY GAP HEAT MAP -->
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Capability Gap Heat Map</h2>
+      <p class="text-center text-text-secondary mb-4">11 capabilities across 10 competitors. Only Cupla marks ✓ on every dimension.</p>
+      <GapHeatMap />
+    </div>
+  </section>
+
+  <!-- TIER BREAKDOWN (ALL 6 TIERS) -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Competitor Tier Breakdown</h2>
+      <div class="space-y-6">
+        <!-- TIER 1 -->
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="threat-high">Tier 1</span>
+            <h3 class="font-bold text-lg">Direct Couples & Shared Food</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">The most dangerous tier. These products are built for couples, understand the emotional positioning, and some already have adaptive portions. All are bootstrapped.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Yummo — VERY HIGH</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Fitia — HIGH</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">PlateMates — HIGH</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Leanlife — MEDIUM-HIGH</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Cloche — MEDIUM</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">OttoChef — MEDIUM</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">DuoDine — MEDIUM</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">PlanEat AI — MEDIUM</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Healthspan — LOW-MEDIUM</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">OurPlate — LOW-MEDIUM</span>
+          </div>
+        </div>
+        <!-- TIER 2 -->
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="threat-medium">Tier 2</span>
+            <h3 class="font-bold text-lg">Nutrition Intelligence</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">These products own the nutrition side but are fundamentally single-user experiences. Fitia is the only one actively moving toward collaboration.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Fitia — HIGH (also Tier 1)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Eat This Much — LOW-MEDIUM</span>
+          </div>
+        </div>
+        <!-- TIER 3 -->
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="threat-low">Tier 3</span>
+            <h3 class="font-bold text-lg">Grocery & Collaboration</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">Utilities, not competitors. They solve list syncing excellently but have zero nutritional intelligence. AnyList sets the bar for sync quality.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">AnyList — LOW (benchmark)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">OurGroceries — LOW</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">KitchenSync — LOW-MEDIUM</span>
+          </div>
+        </div>
+        <!-- TIER 4 -->
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="threat-medium">Tier 4</span>
+            <h3 class="font-bold text-lg">AI Meal Planning</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">AI-powered but single-user. Samsung Food is the only one with resources to potentially add collaboration, but their UX is bloated and unfocused.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Samsung Food — MEDIUM</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Mealime — LOW</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Ollie AI — MEDIUM</span>
+          </div>
+        </div>
+        <!-- TIER 5 -->
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="threat-low">Tier 5</span>
+            <h3 class="font-bold text-lg">Emerging Family Organizers</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">These products target families and households, not couples specifically. They deliberately ignore the couples niche — which is the opportunity. Some have real-time features but lack the relationship-first UX.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Cozi — LOW (17M+ users, family-focused)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">SummitPlate — LOW (family plans)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">eMeals — LOW (meal plans only)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Listonic — LOW (20M+ downloads, grocery only)</span>
+          </div>
+        </div>
+        <!-- TIER 6 -->
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="threat-low">Tier 6</span>
+            <h3 class="font-bold text-lg">Dead / Parked Domains</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">These products attempted the couples food space but failed or never launched. They prove the concept is validated but execution is the gap. Common failure modes: concept without execution, single-feature gimmicks, "free forever" with no revenue model, no marketing infrastructure.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">YumTwo — DEAD (landing page only)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">MiseBook — DEAD (no product)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">Cookbond — DEAD (one gimmick, no system)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">WhatDinner — DEAD (single feature)</span>
+            <span class="text-xs bg-cream-dark px-2 py-1 rounded border border-border">SplitPlate — PARKED (domain only)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL COMPETITOR DEEP-DIVES -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Individual Competitor Deep-Dives — Top 3 Threats</h2>
+      <p class="text-text-secondary mb-8">Understanding exactly what each top threat does today, what they cannot do, and why they are not positioned to close the gap quickly.</p>
+
+      <!-- YUMMO -->
+      <div class="pitch-card mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="threat-high">VERY HIGH THREAT</span>
+          <h3 class="font-bold text-xl">Yummo (yummo.ai)</h3>
+        </div>
+        <p class="text-sm text-text-secondary mb-4 italic">"One cooking session — two plates tailored to each of you"</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <h4 class="font-semibold text-sm text-text-primary mb-2">What They Have</h4>
+            <ul class="space-y-1 text-sm text-text-secondary">
+              <li>✓ Adaptive portions (same concept as SplitPlate)</li>
+              <li>✓ AI meal generation</li>
+              <li>✓ Handles different calorie needs per person</li>
+              <li>✓ 40+ allergen categories</li>
+              <li>✓ Household size 1-5 people</li>
+              <li>✓ $9.99/month pricing (proves willingness to pay)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm text-text-primary mb-2">What They Lack</h4>
+            <ul class="space-y-1 text-sm text-text-secondary">
+              <li>✗ No real-time sync</li>
+              <li>✗ No relationship-first UX</li>
+              <li>✗ No pantry-first AI</li>
+              <li>✗ No collaboration features</li>
+              <li>✗ EU-focused, zero US presence</li>
+              <li>✗ No marketing infrastructure</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-cream-dark rounded-lg p-3 mb-3">
+          <h4 class="font-semibold text-sm text-text-primary mb-1">Background</h4>
+          <p class="text-xs text-text-secondary">Founded by Wiktor Strzelczyk, a solo developer in Wroclaw, Poland. Tech stack: Next.js, AWS Bedrock (Frankfurt), Firebase, Stripe. EU-only infrastructure with zero data retention on AI. No social media presence, no blog (completely empty), no app store listing — web only. Team: solo founder + partner.</p>
+        </div>
+        <div class="bg-sage/10 rounded-lg p-3">
+          <h4 class="font-semibold text-sm text-sage-dark mb-1">Why They Cannot Close the Gap Quickly</h4>
+          <p class="text-xs text-text-secondary">Yummo proves market demand for adaptive portions. They validate the concept. But they have zero collaboration, zero pantry-first, zero real-time sync, and no marketing. A solo founder with no team, no funding, and no distribution cannot add real-time collaboration, pantry tracking, relationship UX, and a marketing engine in 6-12 months. <strong class="text-sage-dark">Window: 6-12 months to ship first, but they are not positioned to compete on distribution.</strong></p>
+        </div>
+      </div>
+
+      <!-- FITIA -->
+      <div class="pitch-card mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="threat-high">HIGH THREAT</span>
+          <h3 class="font-bold text-xl">Fitia (fitia.app)</h3>
+        </div>
+        <p class="text-sm text-text-secondary mb-4 italic">"AI nutrition app with synced plans"</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <h4 class="font-semibold text-sm text-text-primary mb-2">What They Have</h4>
+            <ul class="space-y-1 text-sm text-text-secondary">
+              <li>✓ 10M+ users (Google Play alone)</li>
+              <li>✓ $3.5M/year revenue (2024)</li>
+              <li>✓ Y Combinator S21 ($125K seed)</li>
+              <li>✓ 10M+ nutritionist-verified foods</li>
+              <li>✓ 25,000+ recipes</li>
+              <li>✓ Synced meal plans, adaptive portions</li>
+              <li>✓ AI coach, family plans ($89.99/yr)</li>
+              <li>✓ Apple "App of the Day"</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm text-text-primary mb-2">What They Lack</h4>
+            <ul class="space-y-1 text-sm text-text-secondary">
+              <li>✗ Clinical/fitness-focused UX (feels like a spreadsheet)</li>
+              <li>✗ Partial real-time sync only</li>
+              <li>✗ No pantry-first AI</li>
+              <li>✗ Not relationship-first</li>
+              <li>✗ Food photo recognition: 59.3% accuracy (9th of 10)</li>
+              <li>✗ Sync Plan uses master/slave model (deletes receiver's plan)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-cream-dark rounded-lg p-3 mb-3">
+          <h4 class="font-semibold text-sm text-text-primary mb-1">Background</h4>
+          <p class="text-xs text-text-secondary">Founded 2019 in Lima, Peru; SF HQ. Founders: Piero Linares (CEO), Ulises Olave (CTO). ~26-28 employees. Bootstrapped since YC. Actively adding shared features since 2024: Sync Plan, Sync Shopping Lists, Social features. Rating: 4.9/5 across both stores, 377K+ reviews.</p>
+        </div>
+        <div class="bg-sage/10 rounded-lg p-3">
+          <h4 class="font-semibold text-sm text-sage-dark mb-1">Why They Cannot Close the Gap Quickly</h4>
+          <p class="text-xs text-text-secondary">Fitia is the primary long-term threat. They have the users, the revenue, and the resources. But their entire UX philosophy is clinical — they feel like a medical chart, not a shared kitchen. Shifting from "hit your protein target" to "what are WE eating tonight?" requires a fundamental brand and UX reposition that would alienate their existing fitness-focused user base. <strong class="text-sage-dark">Window: 12-18 months. CUPLA must own the relationship-first category before Fitia can pivot.</strong></p>
+        </div>
+      </div>
+
+      <!-- LEANLIFE -->
+      <div class="pitch-card mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="threat-medium">MEDIUM-HIGH THREAT</span>
+          <h3 class="font-bold text-xl">Leanlife</h3>
+        </div>
+        <p class="text-sm text-text-secondary mb-4 italic">"Stop carrying the mental load of meal planning alone"</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <h4 class="font-semibold text-sm text-text-primary mb-2">What They Have</h4>
+            <ul class="space-y-1 text-sm text-text-secondary">
+              <li>✓ Built for 2 people (exactly the target)</li>
+              <li>✓ Real-time synced planning</li>
+              <li>✓ Excellent emotional positioning</li>
+              <li>✓ "Mental load" framing (culturally resonant)</li>
+              <li>✓ Cross-platform (iOS + Android)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm text-text-primary mb-2">What They Lack</h4>
+            <ul class="space-y-1 text-sm text-text-secondary">
+              <li>✗ No AI recipe generation</li>
+              <li>✗ No adaptive nutrition</li>
+              <li>✗ No pantry-based cooking</li>
+              <li>✗ No body-specific portions</li>
+              <li>✗ No AI capabilities whatsoever</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-cream-dark rounded-lg p-3 mb-3">
+          <h4 class="font-semibold text-sm text-text-primary mb-1">Background</h4>
+          <p class="text-xs text-text-secondary">Best emotional positioning in the space. Real-time sync works well. But the product is fundamentally a shared calendar with grocery lists — no intelligence layer. The "mental load" framing is powerful but the product does not deliver on the promise of reducing it through AI automation.</p>
+        </div>
+        <div class="bg-sage/10 rounded-lg p-3">
+          <h4 class="font-semibold text-sm text-sage-dark mb-1">Why They Cannot Close the Gap Quickly</h4>
+          <p class="text-xs text-text-secondary">Leanlife owns collaboration and emotional positioning but lacks all technical depth. Adding AI meal generation, adaptive portions, pantry tracking, and body profiles would require rebuilding the entire product from scratch. They have no AI team, no nutrition expertise, and no technical architecture for it. <strong class="text-sage-dark">Window: 12-24 months. CUPLA must ship the AI layer before Leanlife can hire the team to build it.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNDING LANDSCAPE -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Funding Landscape — The Field Is Under-Resourced</h2>
+      <p class="text-text-secondary mb-6">This is not a battle against well-funded startups. The entire competitive field consists of bootstrapped indie developers, solo founders, and hobby projects. The only exceptions are Fitia (YC-backed) and Samsung Food (acquired by Samsung NEXT).</p>
+      <div class="overflow-x-auto">
+        <table class="comparison-table w-full">
+          <thead>
+            <tr>
+              <th class="rounded-tl-xl">Competitor</th>
+              <th>Funding</th>
+              <th>Scale</th>
+              <th class="rounded-tr-xl">Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Fitia</td>
+              <td>YC S21 ($125K), bootstrapped since</td>
+              <td>10M+ users, ~$3.5M/yr</td>
+              <td class="text-text-secondary text-xs">Only well-funded player. But clinical UX limits couple appeal.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Samsung Food</td>
+              <td>Acquired by Samsung NEXT ($39.1M pre-acq)</td>
+              <td>6M+ users</td>
+              <td class="text-text-secondary text-xs">Resources but lacks focus. Narrow focus wins.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Eat This Much</td>
+              <td>Bootstrapped, profitable</td>
+              <td>6M+ users</td>
+              <td class="text-text-secondary text-xs">Single-user only. Not collaborative.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Listonic</td>
+              <td>Bootstrapped</td>
+              <td>20M+ downloads</td>
+              <td class="text-text-secondary text-xs">Grocery only. No nutrition intelligence.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Cozi</td>
+              <td>Revenue-funded</td>
+              <td>17M+ users</td>
+              <td class="text-text-secondary text-xs">Family-focused. Deliberately ignores couples niche.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Yummo</td>
+              <td>Bootstrapped (solo founder)</td>
+              <td>Unknown</td>
+              <td class="text-text-secondary text-xs">No marketing, no team, no distribution.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">All direct couples competitors</td>
+              <td>Bootstrapped / hobby</td>
+              <td>Minimal</td>
+              <td class="text-text-secondary text-xs">Under-resourced indie apps. Winnable race.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 pitch-card-sage">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-sage-dark">Key insight:</strong> The primary competitive battleground is against under-resourced indie apps and solo founders. The well-funded companies (Fitia, Samsung) target families, not couples. A focused execution team with real distribution (CUPLA) can win this niche.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING LANDSCAPE -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Pricing Landscape — The $7-10/mo Sweet Spot</h2>
+      <p class="text-text-secondary mb-6">23 competitors analyzed by price point. The market has established a clear pricing tier structure, and the $7-10/mo range is the sweet spot for AI-powered meal planning.</p>
+      <div class="overflow-x-auto">
+        <table class="comparison-table w-full">
+          <thead>
+            <tr>
+              <th class="rounded-tl-xl">Price Point</th>
+              <th>Competitors</th>
+              <th class="rounded-tr-xl">Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Free forever</td>
+              <td class="text-text-secondary text-xs">DuoDine, OttoChef, slrp</td>
+              <td class="text-text-secondary text-xs">Unsustainable. No revenue model. Prove demand but not a business.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">$2.99-5.99/mo</td>
+              <td class="text-text-secondary text-xs">PlateMates ($5.99), SplitPlate ($5), Cookbond ($2.99), Mealime ($5.99), KitchenSync ($5.99)</td>
+              <td class="text-text-secondary text-xs">Basic features. No AI. Low barrier but low perceived value.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">$7-10/mo</td>
+              <td class="text-text-secondary text-xs">Yummo ($9.99), Eat This Much ($9.99), Ollie AI (~$7-10), SummitPlate ($7.99)</td>
+              <td class="text-sage font-semibold text-xs">AI-powered features. Proven willingness to pay. The sweet spot.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Annual discounts</td>
+              <td class="text-text-secondary text-xs">Fitia ($89.99/yr family), AnyList ($9.99/yr), Cozi ($29.99/yr)</td>
+              <td class="text-text-secondary text-xs">Annual plans reduce churn. Fitia's family plan at $89.99/yr = $7.50/mo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 pitch-card">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-text-primary">Pricing recommendation:</strong> $8-12/mo with annual discount, positioning above free hobby apps and alongside established AI tools. This is the range where users expect real value (AI generation, adaptive portions, real-time sync) and are willing to pay for it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE RESPONSE TIMELINE -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Competitive Response Timeline</h2>
+      <div class="overflow-x-auto">
+        <table class="comparison-table w-full">
+          <thead>
+            <tr>
+              <th class="rounded-tl-xl">Competitor</th>
+              <th>Likely Response</th>
+              <th>Timeline</th>
+              <th>Defense Strategy</th>
+              <th class="rounded-tr-xl">Risk Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Yummo</td>
+              <td class="text-text-secondary">Add real-time collaboration + pantry</td>
+              <td><span class="threat-high">6-12 months</span></td>
+              <td class="text-text-secondary text-xs">Own relationship UX + pantry-first first; build community</td>
+              <td><span class="threat-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Fitia</td>
+              <td class="text-text-secondary">Add relationship UX, improve real-time sync</td>
+              <td><span class="threat-high">12-18 months</span></td>
+              <td class="text-text-secondary text-xs">Speed to market + emotional positioning; own the category definition</td>
+              <td><span class="threat-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Leanlife</td>
+              <td class="text-text-secondary">Add AI features (meal generation, adaptive portions)</td>
+              <td><span class="threat-medium">12-24 months</span></td>
+              <td class="text-text-secondary text-xs">Cross-platform + advanced AI; they lack technical depth</td>
+              <td><span class="threat-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">PlateMates</td>
+              <td class="text-text-secondary">Add AI generation, real-time sync</td>
+              <td><span class="threat-medium">12-18 months</span></td>
+              <td class="text-text-secondary text-xs">Dead website, no marketing, iOS only — not positioned to scale</td>
+              <td><span class="threat-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Cloche</td>
+              <td class="text-text-secondary">Add adaptive nutrition, pantry-first</td>
+              <td><span class="threat-medium">12-24 months</span></td>
+              <td class="text-text-secondary text-xs">Not yet launched, discovery-first not planning-first</td>
+              <td><span class="threat-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Eat This Much</td>
+              <td class="text-text-secondary">Add collaboration features</td>
+              <td><span class="threat-low">18-24 months</span></td>
+              <td class="text-text-secondary text-xs">Single-user focus, clinical UX — not relationship-oriented</td>
+              <td><span class="threat-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Samsung Food</td>
+              <td class="text-text-secondary">Ignore — too narrow for their scope</td>
+              <td><span class="threat-low">N/A</span></td>
+              <td class="text-text-secondary text-xs">Focus wins. They serve everyone, not couples specifically.</td>
+              <td><span class="threat-low">LOW</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IF A GIANT ENTERS? -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">What If a Well-Funded Giant Enters?</h2>
+      <p class="text-text-secondary mb-6">The question every investor asks: "What if MyFitnessPal, Instacart, or Amazon decides to add this feature set?" Here is why that scenario is less threatening than it appears:</p>
+      <div class="space-y-4">
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">1. The Couples Niche Is Too Narrow for Giants</h3>
+          <p class="text-sm text-text-secondary">MyFitnessPal serves 200M+ users. Instacart serves millions of households. Amazon serves everyone. A couples-specific food system is too narrow for their product roadmaps. They optimize for the broadest possible audience. CUPLA's focus is their blind spot.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">2. Giants Move Slowly</h3>
+          <p class="text-sm text-text-secondary">Samsung Food was acquired in 2020 and has barely iterated since. MyFitnessPal has been owned by three different companies in five years. Their product cycles are measured in quarters, not weeks. CUPLA can ship daily with a PWA + Cloudflare deployment. Speed is the moat.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">3. Brand Alignment Cannot Be Bought</h3>
+          <p class="text-sm text-text-secondary">A giant can add features. They cannot add authenticity. CUPLA's brand is about couples connection. A fitness app adding "couple features" would feel like a bolt-on, not a core experience. Users can tell the difference between a feature and a philosophy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY TAKEAWAY -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Key Takeaway</h2>
+      <div class="pitch-card-sage">
+        <p class="text-text-primary leading-relaxed">
+          <strong class="text-lg">Cupla is the only product that marks ✓ on every dimension across both matrices.</strong> This is not because it is better at any single thing — it is because it is the only product designed for the <em>intersection</em> of all of them. The moat is not one feature. The moat is the combination: adaptive portions + real-time sync + relationship UX + pantry-first AI. No competitor has all four pieces. The entire field is under-resourced. The window is open.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK LINK -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+    </div>
+  </section>
+</SpokeLayout>

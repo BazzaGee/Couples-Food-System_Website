@@ -1,0 +1,33 @@
+---
+import BaseHead from '../components/layout/BaseHead.astro';
+import SpokeNav from '../components/layout/SpokeNav.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+}
+const { title, description, canonicalURL, ogImage } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage} />
+  </head>
+  <body class="bg-cream text-text-primary antialiased leading-relaxed overflow-x-hidden">
+    <SpokeNav />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <footer class="w-full py-12 bg-cream-dark border-t border-border">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+        <p class="text-text-secondary text-xs mt-3">
+          A strategic proposal for CUPLA
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

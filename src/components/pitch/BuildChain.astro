@@ -1,0 +1,23 @@
+---
+import financials from '../../data/pitch/financials.json';
+
+const steps = financials.buildSteps;
+---
+<div class="py-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {steps.map((step, i) => (
+      <div class="bg-white rounded-xl border border-border p-4 shadow-sm relative">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-7 h-7 rounded-full bg-sage text-white text-xs font-bold flex items-center justify-center">{step.step}</span>
+          <span class="text-xs text-text-secondary font-medium">{step.duration}</span>
+        </div>
+        <h4 class="font-semibold text-text-primary text-sm mb-1">{step.title}</h4>
+        <p class="text-xs text-text-secondary">{step.description}</p>
+        {i < steps.length - 1 && (
+          <div class="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-sage text-lg">→</div>
+        )}
+      </div>
+    ))}
+  </div>
+  <p class="text-center text-xs text-text-secondary mt-6">Total: ~3 months to full MVP · Each step is shippable independently</p>
+</div>

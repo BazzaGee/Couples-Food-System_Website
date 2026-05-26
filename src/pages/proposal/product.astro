@@ -1,0 +1,355 @@
+---
+import SpokeLayout from '../../layouts/SpokeLayout.astro';
+import ProductCycle from '../../components/pitch/ProductCycle.astro';
+import RolloutTimeline from '../../components/pitch/RolloutTimeline.astro';
+import BuildChain from '../../components/pitch/BuildChain.astro';
+---
+
+<SpokeLayout
+  title="The Product — CUPLA Proposal"
+  description="Complete product walkthrough: day-in-the-life scenario, tab-by-tab walkthrough, technical architecture, working prototype evidence, 3-phase rollout plan, and 7-step build order."
+>
+  <!-- HERO -->
+  <section class="pt-20 md:pt-28 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">The Product</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">A Shared Household<br/>Food Operating System</h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        This is not a meal planner. Not a diet tracker. Not a grocery list app. It is a <strong class="text-text-primary">collaborative adaptive nutrition system</strong> — a shared household food operating system designed for couples who share groceries, plan meals together, manage different dietary goals, and need changes synced in real time.
+      </p>
+    </div>
+  </section>
+
+  <!-- DAY IN THE LIFE -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">A Day in the Life — What It Actually Feels Like</h2>
+      <p class="text-text-secondary mb-6">Features are abstract. Experiences are real. Here is what using this product actually looks like:</p>
+      <div class="space-y-4">
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">🌅</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">7:00 AM — Morning</h4>
+              <p class="text-sm text-text-secondary">Sarah opens the app on her phone while making coffee. She sees last night's checked-off grocery items have been moved to the pantry automatically. The app suggests: "You have chicken thighs, rice, and broccoli. How about a teriyaki stir-fry tonight?" She taps "Looks good" — it is added to tonight's meal plan. Her partner Mike will see this when he opens the app.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">🏪</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">5:30 PM — At the Store</h4>
+              <p class="text-sm text-text-secondary">Mike is at the grocery store. He opens the shared list: soy sauce, sesame oil, green onions. He checks off soy sauce — Sarah sees it disappear from her phone at home in under 100 milliseconds. He taps "Move to Pantry" on all three items. They are now in their shared kitchen inventory. When he gets home, the app already knows what they have.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">🍳</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">6:30 PM — Cooking Together</h4>
+              <p class="text-sm text-text-secondary">They cook the stir-fry together. The recipe shows one set of cooking instructions — but two plating instructions. Sarah's plate: 4oz chicken, 1 cup rice, 1.5 cups broccoli (she is cutting, 1,600 cal/day target). Mike's plate: 6oz chicken, 1.5 cups rice, 1 cup broccoli (he is bulking, 2,800 cal/day target). <strong class="text-text-primary">Same pan. Same recipe. Different plates. No arguments.</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="text-lg flex-shrink-0">📱</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">7:00 PM — After Dinner</h4>
+              <p class="text-sm text-text-secondary">The app asks: "How was dinner?" Both partners rate it. The AI learns their preferences. Next week, it will suggest similar meals. The chicken thighs are automatically removed from the pantry. The loop continues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 pitch-card-sage">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-sage-dark">This is the product:</strong> not a feature list, but a friction-free daily ritual. The AI handles the thinking. The sync handles the coordination. The adaptive plating handles the nutrition. The couple just cooks and eats together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CYCLE -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">The Full Product Cycle</h2>
+      <p class="text-center text-text-secondary mb-4">The loop is the product. Each step reinforces the next. The more you use it, the smarter it gets.</p>
+      <ProductCycle />
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-sage font-bold text-lg mb-1">1. Pantry</p>
+          <p class="text-xs text-text-secondary">Track what you have at home</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-terracotta-dark font-bold text-lg mb-1">2. AI Meals</p>
+          <p class="text-xs text-text-secondary">Generate meals from pantry + goals</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-sage font-bold text-lg mb-1">3. Shopping</p>
+          <p class="text-xs text-text-secondary">Missing ingredients auto-populate list</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-terracotta-dark font-bold text-lg mb-1">4. Repeat</p>
+          <p class="text-xs text-text-secondary">Check off → move to pantry → loop</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB-BY-TAB WALKTHROUGH -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Tab-by-Tab Walkthrough</h2>
+      <div class="space-y-6">
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center">1</span>
+            <h3 class="font-bold text-lg">Shopping Tab — "Our Shopping List"</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">Real-time shared grocery list with instant WebSocket sync. Add items manually or tap quick-add chips. Items auto-categorize into Produce, Meat, Dairy, Pantry, Other. Check off items — they move to a "Checked" section. Partner badges show who added each item. <strong class="text-text-primary">"Move to Pantry"</strong> — when you check off milk at the store, one tap moves it to your pantry inventory. This bridges shopping → cooking seamlessly.</p>
+          <p class="text-xs text-text-secondary bg-cream-dark p-3 rounded-lg border border-border"><strong>What competitors lack:</strong> AnyList has shared lists but charges for real-time sync. No competitor has "Move to Pantry."</p>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center">2</span>
+            <h3 class="font-bold text-lg">Pantry Tab — "Our Kitchen"</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">Natural language input: type "chicken, 2 cups rice, spinach" → becomes 3 separate items. Category grouping. Real-time sync — both partners see the same pantry. Delete items as you use them. Items from the shopping list auto-move to pantry when checked off.</p>
+          <p class="text-xs text-text-secondary bg-cream-dark p-3 rounded-lg border border-border"><strong>What competitors lack:</strong> No mainstream app has a pantry tab at all. Natural language input beats barcode scanning — faster and less friction.</p>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center">3</span>
+            <h3 class="font-bold text-lg">Meal Plan Tab — "What Should We Cook?"</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">AI generates dinner suggestions based on your pantry + both partners' dietary preferences. Recipe card shows name, description, time, calories, macros. Ingredients marked ✓ (in pantry) or 🔴 (need to buy). <strong class="text-text-primary">"Add Missing to Shopping List"</strong> — one tap populates your grocery list. Toggle to "Week" mode for weekly planning.</p>
+          <p class="text-xs text-text-secondary bg-cream-dark p-3 rounded-lg border border-border"><strong>The magic moment:</strong> The app looks at what you have and says "here's dinner."</p>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center">4</span>
+            <h3 class="font-bold text-lg">Profiles Tab — "Who Are You Cooking For?"</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-3">Dietary preference (Omnivore, Vegetarian, Vegan, Keto, Paleo, etc.), allergies, partner visibility. Body Profile (collapsible): weight, height, age, gender, activity level, goal. Auto-calculates <strong class="text-text-primary">TDEE</strong> using Mifflin-St Jeor. Shows target calories based on goal.</p>
+          <p class="text-xs text-text-secondary bg-cream-dark p-3 rounded-lg border border-border"><strong>What competitors lack:</strong> No competitor has dual-profile awareness. Body profile + TDEE calculation is unique — powers adaptive cooking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TDEE CALCULATION EXAMPLE -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">The Adaptive Cooking Math — How It Actually Works</h2>
+      <p class="text-text-secondary mb-6">The SplitPlate concept sounds magical. Here is the actual math behind it:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-3">Partner A — Sarah (Cutting)</h3>
+          <div class="space-y-2 text-sm text-text-secondary">
+            <p><strong class="text-text-primary">Profile:</strong> Female, 30, 5'6", 150 lbs, moderately active</p>
+            <p><strong class="text-text-primary">BMR (Mifflin-St Jeor):</strong> 10 × 68kg + 6.25 × 167.6cm - 5 × 30 - 161 = 1,392 cal/day</p>
+            <p><strong class="text-text-primary">TDEE (1.55 activity):</strong> 1,392 × 1.55 = 2,158 cal/day</p>
+            <p><strong class="text-text-primary">Cutting target (-500):</strong> 1,658 cal/day</p>
+            <p><strong class="text-sage font-semibold">Dinner allocation (30%):</strong> ~497 cal</p>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-3">Partner B — Mike (Bulking)</h3>
+          <div class="space-y-2 text-sm text-text-secondary">
+            <p><strong class="text-text-primary">Profile:</strong> Male, 32, 5'10", 180 lbs, very active</p>
+            <p><strong class="text-text-primary">BMR (Mifflin-St Jeor):</strong> 10 × 81.6kg + 6.25 × 177.8cm - 5 × 32 + 5 = 1,818 cal/day</p>
+            <p><strong class="text-text-primary">TDEE (1.725 activity):</strong> 1,818 × 1.725 = 3,136 cal/day</p>
+            <p><strong class="text-text-primary">Bulking target (+300):</strong> 3,436 cal/day</p>
+            <p><strong class="text-terracotta-dark font-semibold">Dinner allocation (30%):</strong> ~1,031 cal</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 pitch-card-sage">
+        <h3 class="font-bold text-lg mb-3 text-sage-dark">The Result: One Meal, Two Plates</h3>
+        <p class="text-sm text-text-secondary mb-3">The AI generates a teriyaki chicken stir-fry for the household. But the plating instructions differ:</p>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="font-semibold text-sage-dark">Sarah's Plate (497 cal):</p>
+            <p class="text-text-secondary">4oz chicken, 1 cup rice, 1.5 cups broccoli, 1 tsp oil</p>
+          </div>
+          <div>
+            <p class="font-semibold text-terracotta-dark">Mike's Plate (1,031 cal):</p>
+            <p class="text-text-secondary">6oz chicken, 1.5 cups rice, 1 cup broccoli, 2 tsp oil, side of edamame</p>
+          </div>
+        </div>
+        <p class="text-sm text-text-secondary mt-3"><strong class="text-text-primary">Same pan. Same recipe. Different plates.</strong> The AI handles the math. The couple just cooks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL ARCHITECTURE -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Technical Architecture — This Is Buildable</h2>
+      <p class="text-text-secondary mb-6">This is not vaporware. A working prototype already exists with the core real-time sync engine, TDEE calculator, and full React frontend. Here is the architecture:</p>
+      <div class="space-y-4">
+        <div class="overflow-x-auto">
+          <table class="comparison-table w-full">
+            <thead>
+              <tr>
+                <th class="rounded-tl-xl">Layer</th>
+                <th>Technology</th>
+                <th>Purpose</th>
+                <th class="rounded-tr-xl">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">Frontend</td>
+                <td>React + Vite (PWA)</td>
+                <td>Installable web app, offline-capable</td>
+                <td><span class="text-sage font-semibold text-xs">Built</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">API</td>
+                <td>Hono Worker</td>
+                <td>Edge API routing, REST endpoints</td>
+                <td><span class="text-sage font-semibold text-xs">Built</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Real-time</td>
+                <td>Durable Objects</td>
+                <td>WebSocket sync, sub-100ms latency</td>
+                <td><span class="text-sage font-semibold text-xs">Built</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Database</td>
+                <td>D1 (SQLite)</td>
+                <td>Profiles, meal plans, households</td>
+                <td><span class="text-sage font-semibold text-xs">Schema defined</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Sessions</td>
+                <td>KV</td>
+                <td>JWT validation, invite codes (24hr TTL)</td>
+                <td><span class="text-sage font-semibold text-xs">Designed</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">AI</td>
+                <td>AI Gateway → Anthropic</td>
+                <td>Meal plan generation with 24hr caching</td>
+                <td><span class="text-sage font-semibold text-xs">Designed</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Deployment</td>
+                <td>Cloudflare Pages</td>
+                <td>CDN-cached, zero-config HTTPS</td>
+                <td><span class="text-sage font-semibold text-xs">Ready</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mt-6 pitch-card">
+        <h3 class="font-bold text-lg mb-3">Working Prototype Evidence</h3>
+        <div class="space-y-3 text-sm text-text-secondary">
+          <p><strong class="text-text-primary">HouseholdSync.ts (448 lines):</strong> Full WebSocket real-time sync implementation with grocery list CRUD (add, check, delete, reorder), pantry management (add, delete), "Move to Pantry" bridge, bulk item addition, broadcast to all connected sessions, SQLite persistence inside the Durable Object.</p>
+          <p><strong class="text-text-primary">tdee.ts (54 lines):</strong> Full TDEE/BMI calculation engine using Mifflin-St Jeor equation, 5 activity level multipliers, goal adjustments (lose/maintain/gain), BMI calculation and categorization.</p>
+          <p><strong class="text-text-primary">React Frontend:</strong> ShoppingTab, PantryTab, MealPlanTab, ProfilesTab components. useHousehold.ts WebSocket hook. BodyProfileForm, PlatingView, WeekCalendar, SyncIndicator, OfflineBanner, InstallBanner. PWA configured with manifest and service worker.</p>
+          <p><strong class="text-text-primary">D1 Database Schema:</strong> households, partners (with body profiles), meal_plans (with plan_json and pantry_snapshot), push_subscriptions — all designed and ready to implement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTH FLOW -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Auth Flow — Designed for Exactly Two People</h2>
+      <p class="text-text-secondary mb-6">No email/password for MVP. The auth flow is designed for the simplest possible onboarding:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">Partner 1 Creates Household</h4>
+              <p class="text-sm text-text-secondary">Taps "Create Household" → gets a 6-digit invite code stored in KV with 24-hour TTL. Shares code with partner via text, WhatsApp, or in person.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card">
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <div>
+              <h4 class="font-semibold text-text-primary">Partner 2 Joins with Code</h4>
+              <p class="text-sm text-text-secondary">Taps "Join with Code" → enters 6-digit code → both partners get JWTs. The household is created. Both can now see and edit the same grocery list, pantry, and meal plan in real time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-PHASE ROLLOUT -->
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">3-Phase Rollout Plan</h2>
+      <p class="text-center text-text-secondary mb-8">Each phase is shippable independently. Each builds on the last.</p>
+      <RolloutTimeline />
+    </div>
+  </section>
+
+  <!-- 7-STEP BUILD -->
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">7-Step Build Order</h2>
+      <p class="text-center text-text-secondary mb-4">Conservative estimate: ~3 months to full MVP. Each step is shippable.</p>
+      <BuildChain />
+    </div>
+  </section>
+
+  <!-- WHAT TO CUT -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">What to Cut Entirely (For Now)</h2>
+      <p class="text-sm text-text-secondary mb-4">These features are explicitly out of scope for the first 6+ months:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="bg-white rounded-xl border border-border p-4 opacity-60">
+          <p class="text-sm font-semibold text-text-primary">Push notifications</p>
+          <p class="text-xs text-text-secondary mt-1">Phase 4+ if retention is an issue. PWA supports push on iOS 16.4+.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-4 opacity-60">
+          <p class="text-sm font-semibold text-text-primary">Barcode scanning</p>
+          <p class="text-xs text-text-secondary mt-1">Death trap. Natural language is faster and works for any item.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-4 opacity-60">
+          <p class="text-sm font-semibold text-text-primary">Recipe importing</p>
+          <p class="text-xs text-text-secondary mt-1">AI generates from pantry — enough for MVP. Phase 4+ if users demand it.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-4 opacity-60">
+          <p class="text-sm font-semibold text-text-primary">Social features</p>
+          <p class="text-xs text-text-secondary mt-1">Year 2+ if organic sharing emerges. Not core to the value prop.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-4 opacity-60">
+          <p class="text-sm font-semibold text-text-primary">Budget tracking</p>
+          <p class="text-xs text-text-secondary mt-1">Out of scope. Food app, not finance app.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-4 opacity-60">
+          <p class="text-sm font-semibold text-text-primary">Multi-household</p>
+          <p class="text-xs text-text-secondary mt-1">For couples, not roommates or families. Deliberately narrow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="pitch-card-sage max-w-2xl mx-auto">
+        <p class="text-text-primary leading-relaxed">
+          <strong class="text-lg">The hardest truth:</strong> Overbuilding is the #1 risk. Too many features = failure risk. The best MVP is a shared grocery list that syncs so fast it feels like magic. Everything else is an upgrade.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+      </div>
+    </div>
+  </section>
+</SpokeLayout>

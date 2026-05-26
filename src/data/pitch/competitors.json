@@ -1,0 +1,157 @@
+{
+  "competitors": [
+    {
+      "name": "Yummo",
+      "url": "yummo.ai",
+      "threat": "very-high",
+      "tagline": "One cooking session — two plates tailored to each of you",
+      "strengths": ["Adaptive portions", "AI meal generation", "Handles different calorie needs"],
+      "gaps": ["No real-time sync", "No relationship UX", "No pantry-first AI", "EU-focused"],
+      "notes": "Same 'one cook, two plates' concept. Highest threat. But lacks collaboration."
+    },
+    {
+      "name": "Fitia",
+      "url": "fitia.app",
+      "threat": "high",
+      "tagline": "AI nutrition app with synced plans",
+      "strengths": ["Synced meal plans", "Adaptive portions", "Recipe importing", "AI coach", "Family plans", "10M+ users"],
+      "gaps": ["Clinical/fitness-focused", "Partial real-time sync", "No pantry-first AI", "Not relationship-first"],
+      "notes": "Primary long-term threat. Converging from nutrition side. Still feels like a spreadsheet."
+    },
+    {
+      "name": "PlateMates",
+      "url": "platematesapp.com",
+      "threat": "high",
+      "tagline": "One Meal, Two Ways",
+      "strengths": ["200+ recipes for dietary splits", "Couples-focused", "Handles vegan/omnivore split"],
+      "gaps": ["No AI generation", "No adaptive portions based on body profiles", "No real-time sync", "Recipe-based not pantry-based"],
+      "notes": "Same concept but basic execution."
+    },
+    {
+      "name": "Leanlife",
+      "url": "App Store (iOS only)",
+      "threat": "medium-high",
+      "tagline": "Stop carrying the mental load of meal planning alone",
+      "strengths": ["Built for 2 people", "Real-time synced planning", "Excellent emotional positioning", "Mental load framing"],
+      "gaps": ["No AI recipe generation", "No adaptive nutrition", "No pantry-based cooking", "No body-specific portions", "iOS only"],
+      "notes": "Owns collaboration but lacks technical depth."
+    },
+    {
+      "name": "Cloche",
+      "url": "trycloche.com",
+      "threat": "medium",
+      "tagline": "Swipe. Match. Cook.",
+      "strengths": ["Novel swipe UX", "Consensus matching", "AI recipe parsing", "Real-time shared lists", "500+ waitlist"],
+      "gaps": ["Not yet launched", "No adaptive nutrition", "No pantry-first logic", "Discovery-first not planning-first"],
+      "notes": "Strong couples UX, different core value prop."
+    },
+    {
+      "name": "OttoChef",
+      "url": "ottochef.ai",
+      "threat": "medium",
+      "tagline": "Meal Planning That Brings Couples Together",
+      "strengths": ["AI-powered meal generation", "Handles different preferences", "Portion adjustments per partner"],
+      "gaps": ["Not real-time collaborative", "Limited nutrition intelligence", "Not relationship-first UX"],
+      "notes": "Similar AI couples angle."
+    },
+    {
+      "name": "DuoDine",
+      "url": "duodine.com.au",
+      "threat": "medium",
+      "tagline": "Plan meals together with your partner!",
+      "strengths": ["Real-time shopping list sync", "100% free", "Cross-platform", "1,000+ couples using it"],
+      "gaps": ["No AI generation", "No adaptive portions", "No pantry tracking", "No nutrition intelligence", "Australia-focused"],
+      "notes": "Proves demand for real-time collaboration."
+    },
+    {
+      "name": "Samsung Food",
+      "url": "food.samsung.com",
+      "threat": "medium",
+      "tagline": "Comprehensive food app (formerly Whisk)",
+      "strengths": ["Massive recipe database", "Samsung ecosystem integration", "Shared shopping lists", "Meal planning"],
+      "gaps": ["Bloated UX", "No individual adaptation", "No multi-diet optimization", "Not relationship-first", "Feels corporate"],
+      "notes": "Resources but lacks focus. Narrow focus wins."
+    },
+    {
+      "name": "PlanEat AI",
+      "url": "App Store",
+      "threat": "medium",
+      "tagline": "Meal planning for couples with different goals",
+      "strengths": ["AI-powered", "Handles different goals/portion sizes", "Base meal system with individual adjustments"],
+      "gaps": ["Not real-time collaborative", "Not relationship-first UX", "Not pantry-first"],
+      "notes": "Has the concept but lacks collaborative experience."
+    },
+    {
+      "name": "AnyList",
+      "url": "anylist.com",
+      "threat": "low",
+      "tagline": "Shared grocery lists",
+      "strengths": ["Extremely fast sync", "Simplicity and reliability", "Recipe integration", "Mature product"],
+      "gaps": ["No nutrition intelligence", "No meal adaptation", "No AI generation", "No body profiles"],
+      "notes": "Utility, not competitor. Benchmark for sync speed."
+    },
+    {
+      "name": "Eat This Much",
+      "url": "eatthismuch.com",
+      "threat": "low-medium",
+      "tagline": "AI meal planner based on calorie targets",
+      "strengths": ["AI-generated meal plans", "Calorie and macro optimization", "Budget-based planning"],
+      "gaps": ["Single-user only", "Not collaborative", "Not household-aware", "Feels clinical"],
+      "notes": "Single-user focus."
+    },
+    {
+      "name": "KitchenSync",
+      "url": "kitchensync.info",
+      "threat": "low-medium",
+      "tagline": "Your kitchen, perfectly in sync",
+      "strengths": ["Pantry-first AI", "Barcode scanning", "Expiry alerts", "Family sync"],
+      "gaps": ["Not couples-focused", "No adaptive portions", "No nutrition intelligence"],
+      "notes": "Owns pantry tracking but not couples/adaptive space."
+    },
+    {
+      "name": "OurPlate",
+      "url": "ourplate.app",
+      "threat": "low-medium",
+      "tagline": "Stop arguing about dinner",
+      "strengths": ["Fair turn-taking system", "Handles different diets", "Emotional positioning"],
+      "gaps": ["No AI generation", "No adaptive portions", "No pantry logic", "No real-time grocery sync"],
+      "notes": "Same target but lacks AI moat."
+    },
+    {
+      "name": "Healthspan",
+      "url": "usehealthspan.com",
+      "threat": "low-medium",
+      "tagline": "Meal Planning for Couples & Families",
+      "strengths": ["Couples/family focus", "Personalized portions", "Free"],
+      "gaps": ["No real-time collaboration", "Limited AI features", "No pantry-first approach"],
+      "notes": "Low-medium threat."
+    }
+  ],
+  "capabilityMatrix": {
+    "capabilities": [
+      "Couple-first UX",
+      "Real-time sync",
+      "Multi-diet adaptation",
+      "Pantry-first AI",
+      "Adaptive shared cooking",
+      "Body-specific portions",
+      "Relationship UX (we)",
+      "Grocery list sync",
+      "AI meal generation",
+      "Offline support",
+      "PWA (no app store)"
+    ],
+    "competitors": {
+      "Cupla": [true, true, true, true, true, true, true, true, true, true, true],
+      "Yummo": [false, false, true, false, true, true, false, false, true, false, false],
+      "Fitia": [false, "partial", true, false, false, true, false, true, "partial", false, false],
+      "Leanlife": [true, true, false, false, false, false, true, "partial", false, "partial", false],
+      "PlateMates": [true, false, true, false, "partial", false, true, true, false, false, false],
+      "AnyList": [false, true, false, false, false, false, false, true, false, "partial", false],
+      "Eat This Much": [false, false, false, false, false, false, false, false, true, false, false],
+      "Samsung Food": [false, "partial", false, false, false, false, false, true, "partial", false, false],
+      "Cloche": [true, "partial", "partial", false, false, false, true, true, true, false, false],
+      "OttoChef": [false, false, true, false, "partial", "partial", false, false, true, false, false]
+    }
+  }
+}

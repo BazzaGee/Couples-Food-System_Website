@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Features from '../components/sections/Features.astro';
+import Waitlist from '../components/sections/Waitlist.astro';
+import WaitlistForm from '../components/forms/WaitlistForm.astro';
+---
+
+<BaseLayout title="Couples Food System | One dinner. Two plates. Zero arguments." description="The collaborative food operating system for couples with different dietary goals.">
+  <Hero
+    badge="Now accepting Beta waitlist couples"
+    headline="One dinner.&#10;Two plates.&#10;Zero arguments."
+    subheadline="The first collaborative meal app for couples. Cook one meal together, and our AI adapts the plating so you both hit your unique goals."
+    ctaPrimaryText="Join Free Beta Waitlist"
+    ctaSecondaryText="See How It Works"
+    ctaSecondaryHref="/how-it-works"
+  />
+
+  <!-- Hero Image -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="rounded-2xl overflow-hidden shadow-lg border border-border">
+      <img src="/images/hero/hero-homepage.webp" alt="A happy couple cooking together in a bright modern kitchen with sage green accents and warm morning light" class="w-full h-auto" loading="eager" />
+    </div>
+  </section>
+
+  <!-- Problem Section with Image -->
+  <section class="bg-sage/10 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-text-primary">
+            The "What's for dinner?" argument ends tonight.
+          </h2>
+          <p class="text-xl text-text-secondary leading-relaxed mb-8">
+            Sharing a kitchen shouldn't mean compromising on your personal wellness goals. Whether one of you wants to feel lighter and the other wants to build strength, <strong>Couples Food System</strong> does the heavy lifting. No math, no separate cooking, just quality time together.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              <span class="text-lg text-text-secondary">Endless scrolling on delivery apps.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              <span class="text-lg text-text-secondary">Mismatched diet goals causing separate cooking.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              <span class="text-lg text-text-secondary">Forgotten ingredients rotting in the fridge.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-border">
+          <img src="/images/hero/problem-section.webp" alt="A couple standing together in a sun-drenched modern kitchen, preparing fresh vegetables on a terracotta cutting board" class="w-full h-auto" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Features
+    title="Your shared kitchen, smarter."
+  />
+
+  <Waitlist>
+    <WaitlistForm />
+  </Waitlist>
+</BaseLayout>

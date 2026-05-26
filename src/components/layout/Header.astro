@@ -1,0 +1,50 @@
+---
+import navigation from '../../data/navigation.json';
+
+const { primary, cta } = navigation.navigation;
+---
+
+<header class="fixed top-0 w-full bg-cream/90 backdrop-blur-md z-50 border-b border-border transition-all">
+  <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 text-text-primary hover:text-sage transition-colors">
+      <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-8 h-8" />
+      <span class="font-semibold text-xl tracking-tight">Couples Food System</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8 text-text-secondary font-medium">
+      {primary.map((item) => (
+        <a href={item.href} class="hover:text-sage transition-colors">{item.label}</a>
+      ))}
+      <a href="/proposal/" class="pulse-link font-semibold transition-colors" title="Strategic Proposal for CUPLA">
+        Proposal
+      </a>
+      <a href={cta.href} class="bg-sage text-white px-5 py-2.5 rounded-xl hover:bg-sage-dark transition-colors shadow-sm">
+        {cta.label}
+      </a>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <button id="mobile-menu-btn" class="md:hidden text-text-primary" aria-label="Toggle Menu">
+      <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-border px-6 py-4 flex flex-col gap-4 text-lg font-medium shadow-lg">
+    {primary.map((item) => (
+      <a href={item.href} class="text-text-secondary hover:text-sage">{item.label}</a>
+    ))}
+    <a href="/proposal/" class="pulse-link font-semibold">Proposal</a>
+    <a href={cta.href} class="bg-sage text-white text-center px-5 py-3 rounded-xl mt-4">{cta.label}</a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

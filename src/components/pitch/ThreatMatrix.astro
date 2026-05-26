@@ -1,0 +1,35 @@
+---
+import competitors from '../../data/pitch/competitors.json';
+
+const threatOrder = { 'very-high': 0, 'high': 1, 'medium-high': 2, 'medium': 3, 'low-medium': 4, 'low': 5 };
+const sorted = [...competitors.competitors].sort((a, b) => threatOrder[a.threat] - threatOrder[b.threat]);
+---
+<div class="py-8 overflow-x-auto">
+  <table class="comparison-table min-w-full">
+    <thead>
+      <tr>
+        <th class="rounded-tl-xl">Competitor</th>
+        <th>Threat</th>
+        <th>Core Concept</th>
+        <th class="rounded-tr-xl">Critical Gap</th>
+      </tr>
+    </thead>
+    <tbody>
+      {sorted.map((c) => (
+        <tr>
+          <td class="font-semibold">
+            {c.name}
+            <span class="block text-xs text-text-secondary font-normal">{c.url}</span>
+          </td>
+          <td>
+            <span class={c.threat === 'very-high' ? 'threat-high' : c.threat === 'high' ? 'threat-high' : c.threat === 'medium-high' ? 'threat-medium' : c.threat === 'medium' ? 'threat-medium' : 'threat-low'}>
+              {c.threat.replace('-', ' ')}
+            </span>
+          </td>
+          <td class="text-text-secondary">{c.tagline}</td>
+          <td class="text-text-secondary text-xs">{c.gaps[0]}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

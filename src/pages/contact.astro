@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
+---
+
+<BaseLayout title="Contact | Couples Food System" description="Have questions, feedback, or just want to chat about food? We're all ears.">
+  <section class="py-20 max-w-2xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">Say Hello</h1>
+      <p class="text-xl text-text-secondary">Have questions, feedback, or just want to chat about food? We're all ears.</p>
+    </div>
+
+    <div class="bg-white p-8 md:p-12 rounded-2xl border border-border shadow-sm">
+      <ContactForm />
+    </div>
+  </section>
+</BaseLayout>

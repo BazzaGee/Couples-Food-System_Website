@@ -1,0 +1,253 @@
+---
+import SpokeLayout from '../../layouts/SpokeLayout.astro';
+import SWOTGrid from '../../components/pitch/SWOTGrid.astro';
+import swotData from '../../data/pitch/swot.json';
+---
+
+<SpokeLayout
+  title="SWOT & Risks — CUPLA Proposal"
+  description="Full SWOT analysis, 9 risk scenarios with detailed mitigation strategies, probability/impact matrix, contingency plans, and moat sustainability assessment."
+>
+  <!-- HERO -->
+  <section class="pt-20 md:pt-28 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">SWOT & Risks</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">Understanding the Full<br/>Risk Landscape</h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        Every opportunity carries risk. The key is understanding which risks are existential, which are manageable, and which are illusory. This analysis covers the complete SWOT matrix, 9 specific risk scenarios with detailed mitigation strategies, financial sensitivity analysis, regulatory considerations, and an assessment of moat sustainability.
+      </p>
+    </div>
+  </section>
+
+  <!-- SWOT -->
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">SWOT Analysis</h2>
+      <p class="text-center text-text-secondary mb-4">Strengths, Weaknesses, Opportunities, and Threats — the complete picture.</p>
+      <SWOTGrid
+        strengths={swotData.swot.strengths}
+        weaknesses={swotData.swot.weaknesses}
+        opportunities={swotData.swot.opportunities}
+        threats={swotData.swot.threats}
+      />
+      <div class="mt-6 max-w-2xl mx-auto">
+        <p class="text-xs text-text-secondary bg-cream-dark p-3 rounded border border-border">
+          <strong class="text-text-primary">Note on "No Existing User Base":</strong> This weakness refers to the food product itself starting from zero users. However, CUPLA's existing audience serves as the distribution channel — this is addressed in the CUPLA Advantage section. The food product has no users, but the distribution channel (CUPLA) does. This is a critical distinction that transforms a weakness into a solvable challenge.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISK PROBABILITY/IMPACT MATRIX -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Risk Probability/Impact Matrix</h2>
+      <p class="text-text-secondary mb-6">Not all risks are equal. Here is how they map across probability and impact:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="pitch-card border-l-4 border-l-red-400">
+          <h3 class="font-bold text-lg mb-3 text-red-600">High Probability / High Impact</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li><strong class="text-text-primary">Overbuilding</strong> — Immediate risk. Too many features = failure. Mitigation: strict 3-phase rollout.</li>
+            <li><strong class="text-text-primary">Complexity</strong> — Immediate risk. Powerful systems must feel simple. Mitigation: natural language input, 5-step onboarding max.</li>
+          </ul>
+        </div>
+        <div class="pitch-card border-l-4 border-l-amber-400">
+          <h3 class="font-bold text-lg mb-3 text-amber-600">Medium Probability / High Impact</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li><strong class="text-text-primary">Yummo adds real-time sync</strong> — 6-12 months. They have the concept but lack resources. Mitigation: own relationship UX + pantry-first first.</li>
+            <li><strong class="text-text-primary">Fitia pivots to relationship-first</strong> — 12-18 months. They have users but clinical UX. Mitigation: speed to market + emotional positioning.</li>
+          </ul>
+        </div>
+        <div class="pitch-card border-l-4 border-l-amber-400">
+          <h3 class="font-bold text-lg mb-3 text-amber-600">High Probability / Medium Impact</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li><strong class="text-text-primary">User acquisition for Partner B</strong> — Ongoing. If one partner does not engage, no value. Mitigation: frictionless invite code, push notifications.</li>
+            <li><strong class="text-text-primary">AI cost scaling</strong> — At scale. Token costs increase with usage. Mitigation: AI Gateway caching, model tiering.</li>
+          </ul>
+        </div>
+        <div class="pitch-card border-l-4 border-l-green-400">
+          <h3 class="font-bold text-lg mb-3 text-green-600">Low Probability / Low Impact</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li><strong class="text-text-primary">Large players entering</strong> — 18-24 months. Too narrow for their roadmaps. Mitigation: focus wins, speed is the moat.</li>
+            <li><strong class="text-text-primary">Feature copying</strong> — 6-12 months. Individual features can be copied, not the combination. Mitigation: complex workflows are hard to replicate.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 RISK SCENARIOS WITH DETAILED MITIGATIONS -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-8">Risk Analysis — 9 Scenarios with Detailed Mitigations</h2>
+      <div class="space-y-4">
+        {swotData.risks.map((risk) => (
+          <div class="pitch-card">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-text-primary">{risk.risk}</h3>
+              <div class="flex items-center gap-2">
+                <span class={risk.level === 'high' ? 'threat-high' : risk.level === 'medium' ? 'threat-medium' : 'threat-low'}>
+                  {risk.level}
+                </span>
+                <span class="text-xs text-text-secondary">{risk.timeline}</span>
+              </div>
+            </div>
+            <p class="text-sm text-text-secondary mb-3"><strong class="text-text-primary">Mitigation:</strong> {risk.mitigation}</p>
+            {risk.risk === 'Yummo adds real-time sync' && (
+              <div class="bg-cream-dark rounded-lg p-3 border border-border">
+                <p class="text-xs text-text-secondary"><strong class="text-text-primary">Contingency plan:</strong> If Yummo announces real-time sync, accelerate Phase 3 (Adaptive Nutrition Engine) launch. Own the relationship-first category definition through content marketing and social media. Leverage CUPLA's existing audience for rapid user acquisition. Yummo's solo founder cannot match CUPLA's distribution speed.</p>
+              </div>
+            )}
+            {risk.risk === 'Fitia pivots to relationship-first' && (
+              <div class="bg-cream-dark rounded-lg p-3 border border-border">
+                <p class="text-xs text-text-secondary"><strong class="text-text-primary">Contingency plan:</strong> If Fitia announces relationship features, emphasize the architectural difference: native collaboration vs. bolted-on sync. Highlight Fitia's master/slave model that deletes receiver's plans. Position CUPLA as "built for two from day one" vs. Fitia's "retrofitted for families." The emotional positioning is the differentiator.</p>
+              </div>
+            )}
+            {risk.risk === 'Overbuilding' && (
+              <div class="bg-cream-dark rounded-lg p-3 border border-border">
+                <p class="text-xs text-text-secondary"><strong class="text-text-primary">Contingency plan:</strong> Enforce strict phase boundaries. Phase 1 is ONLY collaboration (grocery list, pantry, meal scheduling). No AI, no adaptive portions, no body profiles. Ship Phase 1, measure adoption, then build Phase 2. The best MVP is a shared grocery list that syncs so fast it feels like magic.</p>
+              </div>
+            )}
+            {risk.risk === 'Complexity' && (
+              <div class="bg-cream-dark rounded-lg p-3 border border-border">
+                <p class="text-xs text-text-secondary"><strong class="text-text-primary">Contingency plan:</strong> Natural language input for pantry ("chicken, rice, spinach" → 3 items). 5-step onboarding maximum. Progressive disclosure — advanced features (body profiles, TDEE) are collapsible and optional. The app should feel simple even though the backend is complex.</p>
+              </div>
+            )}
+            {risk.risk === 'AI cost scaling' && (
+              <div class="bg-cream-dark rounded-lg p-3 border border-border">
+                <p class="text-xs text-text-secondary"><strong class="text-text-primary">Contingency plan:</strong> AI Gateway caching with 24hr TTL reduces token costs by 40-60%. Model tiering: use Claude Haiku for routine meal generation ($0.0025/1K tokens), reserve Sonnet for complex adaptive cooking ($0.015/1K tokens). Weekly planning (one generation per week) is cheaper than daily. At $10/mo per household, even uncached AI costs are covered with 85%+ gross margin.</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REGULATORY & LEGAL RISKS -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Regulatory & Legal Risks</h2>
+      <p class="text-text-secondary mb-6">The product handles health data (BMI, weight, dietary goals, activity levels). This creates potential regulatory obligations:</p>
+      <div class="space-y-4">
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">GDPR (European Users)</h3>
+          <p class="text-sm text-text-secondary">If the product serves EU users, body profile data (weight, height, age, gender) constitutes personal data under GDPR. Mitigation: clear consent flow, data portability, right to deletion. The Cloudflare architecture (EU data centers available) supports GDPR compliance. AI Gateway with zero data retention on Anthropic's side further reduces risk.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Health Claims Liability</h3>
+          <p class="text-sm text-text-secondary">If the product makes specific health or nutrition recommendations, it could be subject to health claims regulations. Mitigation: position as a meal planning tool, not a health or medical device. Include disclaimers that AI-generated meal plans are suggestions, not medical advice. Do not claim to treat, cure, or prevent any condition.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Data Privacy Best Practices</h3>
+          <p class="text-sm text-text-secondary">Even without regulatory obligations, good privacy practices build trust: encrypt data at rest (D1 encryption), encrypt data in transit (HTTPS via Cloudflare Pages), minimize data collection (only collect what is needed for the product), provide clear privacy policy, allow data export and deletion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL RISK SCENARIOS -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Financial Risk Scenarios</h2>
+      <p class="text-text-secondary mb-6">Beyond competitive risks, here are the financial stress scenarios:</p>
+      <div class="space-y-4">
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Scenario: AI Costs Triple</h3>
+          <p class="text-sm text-text-secondary">If Anthropic pricing increases 3x, AI cost per household rises from $1.00-1.50/mo to $3.00-4.50/mo. Gross margin drops from 85-90% to 75-80%. Still highly profitable. Mitigation: AI Gateway caching reduces costs by 40-60%. Model tiering (Haiku for routine, Sonnet for complex) further optimizes.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Scenario: Cloudflare Free Tier Changes</h3>
+          <p class="text-sm text-text-secondary">If Cloudflare significantly changes its free tier, infrastructure costs would rise. At 50,000 households, estimated cost is $25-100/mo — negligible compared to $48,000-72,000/mo revenue. Mitigation: architecture is Cloudflare-native but not Cloudflare-locked. Durable Objects pattern can be replicated on Fly.io or Supabase Edge Functions.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Scenario: Premium Conversion Is 5% Instead of 10%</h3>
+          <p class="text-sm text-text-secondary">Revenue is cut in half. At Year 1: $1,200-1,800/mo instead of $2,400-3,600/mo. Path to $1M ARR extends from Year 3 to Year 4-5. Mitigation: the free tier is designed to lock couples into the ecosystem. Once both partners are active, the premium upgrade becomes natural. Even at 5%, the product covers infrastructure costs.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Scenario: Churn Is 40% in Month 2</h3>
+          <p class="text-sm text-text-secondary">Growth curve flattens significantly. Revenue projections change dramatically. Mitigation: the free tier maximizes retention by keeping couples engaged even without premium conversion. The viral loop (partner invites) means each household has two users — if one churns, the other may remain. Day-7 retention target of >40% is the key metric to watch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOAT SUSTAINABILITY -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-6">Moat Sustainability</h2>
+      <p class="text-center text-text-secondary mb-8">Why the moat is defensible over time:</p>
+      <div class="space-y-4">
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-sage-dark mb-2">1. Workflow Complexity</h3>
+          <p class="text-sm text-text-secondary">Adaptive shared cooking requires 4+ systems working together simultaneously: real-time sync, nutrition intelligence, AI generation, and relationship UX. Copying one piece is easy. Copying the integrated workflow is hard. Estimated 18-24 months for a well-funded team to replicate all four pillars.</p>
+        </div>
+        <div class="pitch-card-terracotta">
+          <h3 class="font-bold text-terracotta-dark mb-2">2. UX Philosophy Is Embedded</h3>
+          <p class="text-sm text-text-secondary">"Relationship-first" cannot be bolted on to a clinical nutrition app. It must be designed in from the start. The framing permeates every interaction, every notification, every piece of copy. This is a structural advantage that takes 6-12 months to replicate and risks alienating existing users during the transition.</p>
+        </div>
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-sage-dark mb-2">3. Data Network Effects</h3>
+          <p class="text-sm text-text-secondary">Recipe history improves AI over time. The more meals a couple generates, the better the suggestions become. After ~50 meals, the AI has enough household-specific data to generate noticeably better suggestions than a new entrant. After ~200 meals, the AI understands preferences, patterns, and seasonal trends. This creates a compounding advantage that grows with time and usage.</p>
+        </div>
+        <div class="pitch-card-terracotta">
+          <h3 class="font-bold text-terracotta-dark mb-2">4. Switching Costs</h3>
+          <p class="text-sm text-text-secondary">Couples who adopt the "shared kitchen" metaphor build pantry inventory, meal history, shopping habits, and adaptive cooking preferences. Leaving means losing all of that — and disrupting their partner's experience too. The social lock-in (two users per household) doubles the switching cost compared to single-user apps.</p>
+        </div>
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-sage-dark mb-2">5. Technical Architecture</h3>
+          <p class="text-sm text-text-secondary">Durable Objects + AI Gateway + PWA is an architectural choice that most competitors would need to rebuild from scratch to match. Cloudflare-native means zero infrastructure cost at launch and sub-100ms sync at the edge. The working prototype (HouseholdSync.ts, tdee.ts, full React frontend) proves the architecture is functional, not theoretical.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONEST ASSESSMENT -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-6">The Honest Assessment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-3 text-sage">What Gives Confidence</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> The gap is real and verified by 3 independent AI analyses</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> 34 competitors analyzed — zero have the complete stack</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Market is growing at 28% CAGR in the AI segment</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Technical architecture is proven (working prototype exists)</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Unit economics are strong (85-90% gross margin)</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Path to $1M ARR is clear and achievable</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> CUPLA has existing audience, brand, and distribution</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Infrastructure costs $0 at launch</li>
+          </ul>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-3 text-terracotta-dark">What Requires Vigilance</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Yummo is the most immediate competitive threat (6-12 months)</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Fitia's convergence is the most dangerous long-term threat (12-18 months)</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Overbuilding is the #1 internal risk — must resist feature creep</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Making powerful systems feel simple is the hardest design challenge</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Second-partner adoption is critical — if one partner does not engage, no value</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> AI cost scaling needs monitoring at volume (mitigated by caching)</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Health data privacy (GDPR) requires attention if serving EU users</li>
+            <li class="flex items-start gap-2"><span class="text-terracotta mt-0.5">!</span> Premium conversion rate assumptions need validation (target 10%, stress-test at 5%)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="pitch-card-sage max-w-2xl mx-auto">
+        <p class="text-lg text-text-primary leading-relaxed">
+          The risks are real but manageable. The gap is real and verified. The product is defined. The market is growing. The architecture is proven. <strong class="text-sage-dark">The only question is speed.</strong>
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+      </div>
+    </div>
+  </section>
+</SpokeLayout>

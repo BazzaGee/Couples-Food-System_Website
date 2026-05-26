@@ -1,0 +1,39 @@
+---
+import navigation from '../../data/navigation.json';
+
+const { product, company } = navigation.navigation.footer;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-cream-dark border-t border-border py-16">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="md:col-span-2">
+      <a href="/" class="font-semibold text-xl text-text-primary flex items-center gap-2 mb-4 tracking-tight">
+        <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-6 h-6" />
+        Couples Food System
+      </a>
+      <p class="text-text-secondary max-w-sm text-lg">
+        Your shared kitchen, smarter. End the dinnertime debate and enjoy meals together, perfectly portioned for both of you.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4 text-text-primary text-lg">Product</h4>
+      <ul class="space-y-3 text-text-secondary">
+        {product.map((item) => (
+          <li><a href={item.href} class="hover:text-sage transition-colors">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4 text-text-primary text-lg">Company</h4>
+      <ul class="space-y-3 text-text-secondary">
+        {company.map((item) => (
+          <li><a href={item.href} class="hover:text-sage transition-colors">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 mt-16 pt-8 border-t border-border text-center text-text-secondary">
+    &copy; {currentYear} Couples Food System. All rights reserved.
+  </div>
+</footer>

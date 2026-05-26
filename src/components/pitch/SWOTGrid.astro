@@ -1,0 +1,74 @@
+---
+interface Props {
+  strengths: Array<{title: string; description: string}>;
+  weaknesses: Array<{title: string; description: string}>;
+  opportunities: Array<{title: string; description: string}>;
+  threats: Array<{title: string; description: string}>;
+}
+const { strengths, weaknesses, opportunities, threats } = Astro.props;
+---
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
+  <!-- Strengths -->
+  <div class="swot-card swot-card-strengths">
+    <h3 class="font-bold text-sage text-lg mb-4 flex items-center gap-2">
+      <span class="w-3 h-3 rounded-full bg-sage"></span>
+      Strengths
+    </h3>
+    <ul class="space-y-3">
+      {strengths.map((s) => (
+        <li class="text-sm">
+          <span class="font-semibold text-text-primary">{s.title}</span>
+          <p class="text-text-secondary text-xs mt-0.5">{s.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Weaknesses -->
+  <div class="swot-card swot-card-weaknesses">
+    <h3 class="font-bold text-terracotta-dark text-lg mb-4 flex items-center gap-2">
+      <span class="w-3 h-3 rounded-full bg-terracotta"></span>
+      Weaknesses
+    </h3>
+    <ul class="space-y-3">
+      {weaknesses.map((w) => (
+        <li class="text-sm">
+          <span class="font-semibold text-text-primary">{w.title}</span>
+          <p class="text-text-secondary text-xs mt-0.5">{w.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Opportunities -->
+  <div class="swot-card swot-card-opportunities">
+    <h3 class="font-bold text-sage text-lg mb-4 flex items-center gap-2">
+      <span class="w-3 h-3 rounded-full bg-sage-light"></span>
+      Opportunities
+    </h3>
+    <ul class="space-y-3">
+      {opportunities.map((o) => (
+        <li class="text-sm">
+          <span class="font-semibold text-text-primary">{o.title}</span>
+          <p class="text-text-secondary text-xs mt-0.5">{o.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Threats -->
+  <div class="swot-card swot-card-threats">
+    <h3 class="font-bold text-error text-lg mb-4 flex items-center gap-2">
+      <span class="w-3 h-3 rounded-full bg-error"></span>
+      Threats
+    </h3>
+    <ul class="space-y-3">
+      {threats.map((t) => (
+        <li class="text-sm">
+          <span class="font-semibold text-text-primary">{t.title}</span>
+          <p class="text-text-secondary text-xs mt-0.5">{t.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
