@@ -1,0 +1,414 @@
+---
+import SpokeLayout from '../../layouts/SpokeLayout.astro';
+import namingData from '../../data/pitch/naming-data.json';
+---
+
+<SpokeLayout
+  title="Brand Identity & Naming Strategy — CUPLA Proposal"
+  description="Complete naming conventions, recommended brand architectures, tagline rankings, slogan analysis, and live-verified domain availability for .com and .app."
+>
+  <section class="pt-20 md:pt-28 pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">Brand Identity & Naming Strategy</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">The Name.<br/>The Line.<br/>The Domain.</h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        The right name communicates the moat before the user opens the app. The right tagline makes the TikTok write itself. The right domain closes the credibility gap. This section covers the naming convention formula, recommended brand architectures, <strong class="text-text-primary">107+ taglines and marketing hooks</strong>, competitor taglines to avoid, and <strong class="text-text-primary">live-verified domain availability</strong> for .com and .app.
+      </p>
+    </div>
+  </section>
+
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">The Naming Convention Formula</h2>
+      <p class="text-center text-text-secondary mb-8">Every candidate name follows a three-part structure designed to instantly communicate the product's positioning.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="pitch-card text-center">
+          <p class="text-xs text-text-secondary uppercase font-semibold tracking-wider mb-3">Part 1</p>
+          <h3 class="text-xl font-bold text-sage mb-2">Relationship Word</h3>
+          <div class="flex flex-wrap gap-1.5 justify-center mt-3">
+            {namingData.namingFormula.relationshipWords.map((word: string) => (
+              <span class="text-xs bg-sage/10 text-sage-dark px-2 py-1 rounded-full">{word}</span>
+            ))}
+          </div>
+        </div>
+        <div class="pitch-card text-center">
+          <p class="text-xs text-text-secondary uppercase font-semibold tracking-wider mb-3">Part 2</p>
+          <h3 class="text-xl font-bold text-terracotta-dark mb-2">Domain Word</h3>
+          <div class="flex flex-wrap gap-1.5 justify-center mt-3">
+            {namingData.namingFormula.domainWords.map((word: string) => (
+              <span class="text-xs bg-terracotta/10 text-terracotta-dark px-2 py-1 rounded-full">{word}</span>
+            ))}
+          </div>
+        </div>
+        <div class="pitch-card text-center">
+          <p class="text-xs text-text-secondary uppercase font-semibold tracking-wider mb-3">Part 3</p>
+          <h3 class="text-xl font-bold text-sage mb-2">Category Noun</h3>
+          <div class="flex flex-wrap gap-1.5 justify-center mt-3">
+            {namingData.namingFormula.categoryNouns.map((word: string) => (
+              <span class="text-xs bg-cream-dark text-text-primary px-2 py-1 rounded-full border border-border">{word}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Three Recommended Brand Architectures</h2>
+      <p class="text-center text-text-secondary mb-8">Each architecture layers a brand name, positioning statement, and marketing hook into a complete identity system.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {namingData.recommendedArchitectures.map((arch: any) => (
+          <div class="pitch-card-sage">
+            <div class="text-center mb-4">
+              <span class="text-xs text-text-secondary uppercase font-semibold tracking-wider">Architecture {arch.id.toUpperCase()}</span>
+              <p class="text-xs text-text-secondary mt-1">{arch.label}</p>
+            </div>
+            <div class="space-y-3">
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Brand Name</p>
+                <p class="font-bold text-lg text-sage-dark">{arch.brandName}</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Positioning</p>
+                <p class="text-sm text-text-primary font-medium">{arch.positioning}</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Tagline</p>
+                <p class="text-sm text-text-primary italic">"{arch.tagline}"</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Marketing Hook</p>
+                <p class="text-sm text-text-primary">"{arch.marketingHook}"</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="text-[10px] text-text-secondary uppercase tracking-wider mb-1">TikTok Angle</p>
+                <p class="text-sm text-text-secondary">"{arch.tikTokAngle}"</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Name Viability Matrix</h2>
+      <p class="text-center text-text-secondary mb-6">All candidate names ranked by strategic value, with live-verified availability status.</p>
+      <div class="overflow-x-auto">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Recommended Tagline</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {namingData.nameCandidates.map((c: any) => (
+              <tr>
+                <td class="font-bold text-sage">{c.rank}</td>
+                <td class="font-semibold">{c.name}</td>
+                <td>
+                  {c.status === 'available-fresh' && <span class="threat-low">Available</span>}
+                  {c.status === 'available-aftermarket' && <span class="threat-medium">Aftermarket</span>}
+                  {c.status === 'taken' && <span class="threat-high">Taken</span>}
+                  {c.status === 'mixed' && <span class="threat-medium">Mixed</span>}
+                </td>
+                <td class="text-text-secondary text-sm italic">{c.tagline || '—'}</td>
+                <td class="text-text-secondary text-xs">{c.notes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-2">Domain Availability & Pricing</h2>
+      <p class="text-center text-text-secondary mb-2">Live-verified on {namingData.domainAvailability.checked}. Source: {namingData.domainAvailability.source}.</p>
+      <p class="text-center text-xs text-text-secondary mb-8">
+        Namecheap pricing: <strong>.app</strong> {namingData.domainAvailability.namecheapAppPricing} &middot; <strong>.com</strong> {namingData.domainAvailability.namecheapComPricing}
+      </p>
+
+      <div class="mb-8">
+        <h3 class="font-bold text-lg mb-4 text-sage-dark">Available to Register Fresh</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {namingData.domainAvailability.results.filter((d: any) => d.com.status === 'available' || d.app.status === 'available').map((d: any) => (
+            <div class="pitch-card">
+              <p class="font-bold text-lg mb-3 capitalize">{d.name}</p>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium">{d.name}.com</span>
+                  {d.com.status === 'available'
+                    ? <span class="threat-low">{d.com.price}</span>
+                    : d.com.status === 'aftermarket'
+                      ? <span class="threat-medium">Aftermarket: {d.com.price}</span>
+                      : d.com.status === 'taken'
+                        ? <span class="threat-high">Taken</span>
+                        : <span class="text-xs text-text-secondary">{d.com.status}</span>
+                  }
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium">{d.name}.app</span>
+                  {d.app.status === 'available'
+                    ? <span class="threat-low">{d.app.price}</span>
+                    : d.app.status === 'taken'
+                      ? <span class="threat-high">Taken</span>
+                      : <span class="text-xs text-text-secondary">{d.app.status}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="font-bold text-lg mb-4 text-terracotta-dark">Aftermarket (Broker Sale)</h3>
+        <div class="overflow-x-auto">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>TLD</th>
+                <th>Price</th>
+                <th>Broker</th>
+              </tr>
+            </thead>
+            <tbody>
+              {namingData.domainAvailability.results.filter((d: any) => d.com.status === 'aftermarket').map((d: any) => (
+                <tr>
+                  <td class="font-semibold capitalize">{d.name}.com</td>
+                  <td>.com</td>
+                  <td class="font-bold text-terracotta-dark">{d.com.price}</td>
+                  <td class="text-text-secondary text-sm">{d.com.broker}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-text-secondary">Taken / Unavailable</h3>
+        <div class="flex flex-wrap gap-2">
+          {namingData.domainAvailability.results.filter((d: any) => d.com.status === 'taken' && d.app.status === 'taken').map((d: any) => (
+            <span class="text-xs bg-red-50 text-red-600 px-3 py-1.5 rounded-full border border-red-200 capitalize">{d.name}.com + .app</span>
+          ))}
+          {namingData.domainAvailability.results.filter((d: any) => (d.com.status === 'taken' && d.app.status !== 'taken') || (d.com.status !== 'taken' && d.app.status === 'taken')).map((d: any) => (
+            <span class="text-xs bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200 capitalize">
+              {d.name}{d.com.status === 'taken' ? '.com' : ''}{d.com.status === 'taken' && d.app.status === 'taken' ? ' + ' : ''}{d.app.status === 'taken' ? '.app' : ''}
+              {d.com.status !== 'taken' && d.app.status !== 'taken' ? ` (${d.com.status} / ${d.app.status})` : ''}
+              {d.com.status === 'taken' && d.app.status === 'available' ? ' (.app available)' : ''}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Taglines & Slogans</h2>
+      <p class="text-center text-text-secondary mb-8">107+ lines organized by positioning angle. Each ranked by emotional impact and differentiation potential.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-sage-dark">Adaptive Cooking (Core Moat)</h3>
+          <div class="space-y-2 mb-8">
+            {namingData.taglines.adaptiveCooking.map((t: any) => (
+              <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-border">
+                <span class="text-xs font-bold text-sage mt-0.5">#{t.rank}</span>
+                <p class="text-sm text-text-primary font-medium">"{t.text}"</p>
+              </div>
+            ))}
+          </div>
+          <h3 class="font-bold text-lg mb-4 text-terracotta-dark">Pain-Point Angles</h3>
+          <div class="space-y-2 mb-8">
+            {namingData.taglines.painPoint.map((t: any) => (
+              <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-border">
+                <span class="text-xs font-bold text-sage mt-0.5">#{t.rank}</span>
+                <p class="text-sm text-text-primary font-medium">"{t.text}"</p>
+              </div>
+            ))}
+          </div>
+          <h3 class="font-bold text-lg mb-4 text-sage-dark">Pantry-First AI</h3>
+          <div class="space-y-2">
+            {namingData.taglines.pantryFirst.map((t: any) => (
+              <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-border">
+                <span class="text-xs font-bold text-sage mt-0.5">#{t.rank}</span>
+                <p class="text-sm text-text-primary font-medium">"{t.text}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-terracotta-dark">Relationship-First</h3>
+          <div class="space-y-2 mb-8">
+            {namingData.taglines.relationshipFirst.map((t: any) => (
+              <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-border">
+                <span class="text-xs font-bold text-sage mt-0.5">#{t.rank}</span>
+                <p class="text-sm text-text-primary font-medium">"{t.text}"</p>
+              </div>
+            ))}
+          </div>
+          <h3 class="font-bold text-lg mb-4 text-sage-dark">Action-Oriented</h3>
+          <div class="space-y-2">
+            {namingData.taglines.actionOriented.map((t: any) => (
+              <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-border">
+                <span class="text-xs font-bold text-sage mt-0.5">#{t.rank}</span>
+                <p class="text-sm text-text-primary font-medium">"{t.text}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Top 10 Marketing Angles</h2>
+      <p class="text-center text-text-secondary mb-8">Ranked by emotional hook strength, differentiation, simplicity, and viral potential.</p>
+      <div class="overflow-x-auto">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Angle</th>
+              <th>Emotion</th>
+              <th>Differentiation</th>
+              <th>Simplicity</th>
+              <th>Viral</th>
+            </tr>
+          </thead>
+          <tbody>
+            {namingData.topAngles.map((a: any) => (
+              <tr>
+                <td class="font-bold text-sage">{a.rank}</td>
+                <td class="font-semibold text-sm max-w-xs">{a.angle}</td>
+                <td><span class={`text-xs font-semibold ${a.emotionalHook.includes('Very') ? 'text-sage' : 'text-text-secondary'}`}>{a.emotionalHook}</span></td>
+                <td><span class={`text-xs font-semibold ${a.differentiation.includes('Very') ? 'text-sage' : 'text-text-secondary'}`}>{a.differentiation}</span></td>
+                <td class="text-xs text-text-secondary">{a.simplicity}</td>
+                <td><span class={`text-xs font-semibold ${a.viralPotential.includes('Very') ? 'text-terracotta-dark' : 'text-text-secondary'}`}>{a.viralPotential}</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Branding Principles</h2>
+      <p class="text-center text-text-secondary mb-8">The rules that govern every word, color, and interaction in the product.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-lg mb-3 text-sage-dark">Language Rule: "We" Not "You"</h3>
+          <p class="text-sm text-text-secondary mb-3">{namingData.brandingPrinciples.languageRule}</p>
+          <div class="space-y-1">
+            {namingData.brandingPrinciples.uxPrinciples.slice(4).map((p: string) => (
+              <p class="text-xs text-text-secondary italic">"{p}"</p>
+            ))}
+          </div>
+        </div>
+        <div class="pitch-card-terracotta">
+          <h3 class="font-bold text-lg mb-3 text-terracotta-dark">The Category to Own</h3>
+          <p class="text-xl font-bold text-text-primary mb-3">{namingData.brandingPrinciples.categoryToOwn}</p>
+          <div class="space-y-1">
+            {Object.entries(namingData.brandingPrinciples.categoryBreakdown).map(([key, val]: [string, any]) => (
+              <p class="text-xs text-text-secondary"><strong class="text-text-primary capitalize">{key}:</strong> {val}</p>
+            ))}
+          </div>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-3">What NOT to Call It</h3>
+          <div class="flex flex-wrap gap-2">
+            {namingData.brandingPrinciples.avoidCalling.map((term: string) => (
+              <span class="text-xs bg-red-50 text-red-600 px-2 py-1 rounded-full border border-red-200">{term}</span>
+            ))}
+          </div>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-3">Emotional Framing</h3>
+          <p class="text-sm text-text-secondary italic leading-relaxed">"{namingData.brandingPrinciples.emotionalFraming}"</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-center">Design System Colors</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3 max-w-3xl mx-auto">
+          {Object.entries(namingData.brandingPrinciples.designSystem).map(([label, hex]: [string, any]) => (
+            <div class="text-center">
+              <div class="w-full aspect-square rounded-xl border border-border shadow-sm" style={`background-color: ${hex}`}></div>
+              <p class="text-[10px] text-text-secondary mt-1.5 font-medium">{label.replace(/([A-Z])/g, ' $1').trim()}</p>
+              <p class="text-[10px] text-text-secondary font-mono">{hex}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Names Eliminated (Do NOT Use)</h2>
+      <p class="text-center text-text-secondary mb-6">These names were evaluated and rejected due to direct competition, trademark conflicts, or active entities.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {namingData.eliminatedNames.map((n: any) => (
+          <div class="bg-white rounded-xl border border-border p-4">
+            <p class="font-semibold text-sm text-text-primary mb-1">{n.name}</p>
+            <p class="text-xs text-text-secondary">{n.reason}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section-alt">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">Competitor Taglines (Avoid)</h2>
+      <p class="text-center text-text-secondary mb-6">Active competitor positioning statements. Reference only — do not echo or approximate these.</p>
+      <div class="overflow-x-auto">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Competitor</th>
+              <th>Their Tagline</th>
+            </tr>
+          </thead>
+          <tbody>
+            {namingData.competitorTaglines.map((c: any) => (
+              <tr>
+                <td class="font-semibold">{c.competitor}</td>
+                <td class="text-text-secondary text-sm italic">"{c.tagline}"</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="proposal-section-title mb-4">Key Takeaway</h2>
+      <div class="pitch-card-sage max-w-3xl mx-auto">
+        <p class="text-text-primary leading-relaxed">
+          <strong class="text-lg">The strongest combination is a name that visualizes the moat, a tagline that fits in a TikTok caption, and a domain that costs less than $20.</strong> "Cook Two" with the tagline "Cook once. Plate twice." and both cooktwo.com and cooktwo.app available at registration price is the most capital-efficient play. For premium positioning, "One Dinner" at $8,000 for the .com paired with a $12.98 .app is the brand-forward move.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+    </div>
+  </section>
+</SpokeLayout>

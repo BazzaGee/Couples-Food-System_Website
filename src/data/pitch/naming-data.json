@@ -1,0 +1,281 @@
+{
+  "namingFormula": {
+    "pattern": "[Relationship Word] + [Domain Word] + [Category Noun]",
+    "relationshipWords": ["Couples", "Shared", "Our", "We", "Duo", "Pair", "Together", "Dual", "Two", "Joint", "Both"],
+    "domainWords": ["Food", "Meal", "Dinner", "Kitchen", "Plate", "Pantry", "Cook", "Table", "Nutrition", "Grocery"],
+    "categoryNouns": ["Planner", "System", "App", "Hub", "OS", "Companion", "Sync", "Guide", "Manager", "Kit"]
+  },
+  "recommendedArchitectures": [
+    {
+      "id": "a",
+      "label": "The One Dinner Approach",
+      "brandName": "One Dinner",
+      "positioning": "The Couples Food System",
+      "tagline": "Same meal. Two plates.",
+      "marketingHook": "The app that ends the 'what's for dinner' argument.",
+      "tikTokAngle": "How we eat the exact same dinner, but he gains muscle and I lose weight."
+    },
+    {
+      "id": "b",
+      "label": "The Two Plates Approach",
+      "brandName": "Two Plates",
+      "positioning": "The Couples Food System",
+      "tagline": "Cook once. Plate twice.",
+      "marketingHook": "Plan meals together without the mental load.",
+      "tikTokAngle": "Stop doing macro math for two people."
+    },
+    {
+      "id": "c",
+      "label": "The PairPlate Approach",
+      "brandName": "PairPlate",
+      "positioning": "The Couples Food System",
+      "tagline": "One dinner. Two plates. Both perfect.",
+      "marketingHook": "What are WE eating tonight?",
+      "tikTokAngle": "Two goals. One dinner. Zero arguments."
+    }
+  ],
+  "nameCandidates": [
+    {
+      "name": "One Dinner",
+      "rank": 1,
+      "status": "available-aftermarket",
+      "tagline": "Same meal. Two plates.",
+      "notes": "Directly communicates adaptive cooking moat. Short, memorable."
+    },
+    {
+      "name": "Two Plates",
+      "rank": 2,
+      "status": "available-aftermarket",
+      "tagline": "Cook once. Plate twice.",
+      "notes": "Visual, memorable, instantly communicates the concept. Perfect for TikTok demos."
+    },
+    {
+      "name": "PairPlate",
+      "rank": 3,
+      "status": "taken",
+      "tagline": "One dinner. Two plates.",
+      "notes": "Compound word, brandable. 'Pair' = couples, 'Plate' = food + portions. Good for App Store."
+    },
+    {
+      "name": "Our Dinner",
+      "rank": 5,
+      "status": "available-aftermarket",
+      "tagline": "What are WE eating tonight?",
+      "notes": "Intimate, shared ownership. Warm, 'our' framing."
+    },
+    {
+      "name": "Cook Two",
+      "rank": 7,
+      "status": "available-fresh",
+      "tagline": "Cook for two. Optimize for both.",
+      "notes": "Action-oriented. Both .com and .app available to register fresh."
+    },
+    {
+      "name": "Duo Kitchen",
+      "rank": 8,
+      "status": "available-aftermarket",
+      "tagline": "Your shared kitchen. Smarter.",
+      "notes": "Short, clear. .app available fresh."
+    },
+    {
+      "name": "Shared Kitchen",
+      "rank": 9,
+      "status": "taken",
+      "tagline": "Your shared kitchen. Smarter.",
+      "notes": "Descriptive but less brandable. .com aftermarket $94,888."
+    },
+    {
+      "name": "WeDine",
+      "rank": 10,
+      "status": "taken",
+      "tagline": "",
+      "notes": "Modern, 'we' framing. Both .com and .app taken."
+    },
+    {
+      "name": "WeKitchen",
+      "rank": 11,
+      "status": "mixed",
+      "tagline": "",
+      "notes": ".com taken, .app available fresh."
+    },
+    {
+      "name": "Feed",
+      "rank": 6,
+      "status": "taken",
+      "tagline": "Feed your relationship.",
+      "notes": "Dual meaning. Short. .com $750K aftermarket. Not viable."
+    }
+  ],
+  "eliminatedNames": [
+    { "name": "WePlate", "reason": "Defunct startup + Canadian entity" },
+    { "name": "WeCook", "reason": "3+ active entities (meal delivery, AI meal planning, food marketplace)" },
+    { "name": "OurPlate", "reason": "Direct competitor — ourplate.app is live couples meal planning" },
+    { "name": "DuoDine", "reason": "Direct competitor — duodine.com.au is live couples app" },
+    { "name": "MiseBook", "reason": "Direct competitor — misebook.com" },
+    { "name": "KitchenSync", "reason": "Multiple active entities (restaurant accounting + grocery app + trademark)" },
+    { "name": "DuoPlate", "reason": "Trademark registered — 4titude Ltd (EUIPO, 2008)" },
+    { "name": "WePlan", "reason": "Trademark filings exist in Spain and China" },
+    { "name": "SplitPlate", "reason": "Direct competitor — splitplate.app/.ai — same 'one meal, two portion sizes' concept" },
+    { "name": "Plateful", "reason": "Multiple conflicts — pl8ful.com, Google Play app, plateful.ai" },
+    { "name": "PlateMate", "reason": "Conflict exists — platematesapp.com — 'One Meal, Two Ways' couples app" },
+    { "name": "Nourish Together", "reason": "Multiple 'Nourish' branded entities" }
+  ],
+  "domainAvailability": {
+    "checked": "2026-05-26",
+    "source": "instantdomainsearch.com + namecheap.com",
+    "namecheapAppPricing": "$12.98/yr (1st year), $17.98/yr renewal",
+    "namecheapComPricing": "$6.79/yr (new customer promo), ~$10-12/yr standard",
+    "results": [
+      {
+        "name": "onedinner",
+        "com": { "status": "aftermarket", "price": "$8,000", "broker": "GoDaddy" },
+        "app": { "status": "available", "price": "$12.98/yr", "broker": "Namecheap" }
+      },
+      {
+        "name": "twoplates",
+        "com": { "status": "aftermarket", "price": "$2,295", "broker": "GoDaddy / Sedo" },
+        "app": { "status": "taken", "price": null, "broker": null }
+      },
+      {
+        "name": "pairplate",
+        "com": { "status": "taken", "price": null, "broker": null },
+        "app": { "status": "taken", "price": null, "broker": null }
+      },
+      {
+        "name": "ourdinner",
+        "com": { "status": "aftermarket", "price": "$3,488", "broker": "GoDaddy" },
+        "app": { "status": "available", "price": "$12.98/yr", "broker": "Namecheap" }
+      },
+      {
+        "name": "duokitchen",
+        "com": { "status": "aftermarket", "price": "$3,495", "broker": "GoDaddy / Sedo" },
+        "app": { "status": "available", "price": "$12.98/yr", "broker": "Namecheap" }
+      },
+      {
+        "name": "cooktwo",
+        "com": { "status": "available", "price": "~$6.79-12/yr", "broker": "Namecheap" },
+        "app": { "status": "available", "price": "$12.98/yr", "broker": "Namecheap" }
+      },
+      {
+        "name": "sharedkitchen",
+        "com": { "status": "aftermarket", "price": "$94,888", "broker": "GoDaddy / Sedo" },
+        "app": { "status": "taken", "price": null, "broker": null }
+      },
+      {
+        "name": "wedine",
+        "com": { "status": "taken", "price": null, "broker": null },
+        "app": { "status": "taken", "price": null, "broker": null }
+      },
+      {
+        "name": "wekitchen",
+        "com": { "status": "taken", "price": null, "broker": null },
+        "app": { "status": "available", "price": "$12.98/yr", "broker": "Namecheap" }
+      }
+    ]
+  },
+  "taglines": {
+    "adaptiveCooking": [
+      { "text": "Same meal. Two plates.", "rank": 1 },
+      { "text": "Cook once. Plate twice.", "rank": 2 },
+      { "text": "One dinner. Two plates.", "rank": 3 },
+      { "text": "Same pan. Different plans.", "rank": 4 },
+      { "text": "One recipe. Two plates. Both perfect.", "rank": 5 },
+      { "text": "Eat together. Differently.", "rank": 6 },
+      { "text": "One shared prep. Two distinct plates.", "rank": 7 },
+      { "text": "Same groceries. Same dinner prep. Different portions.", "rank": 8 }
+    ],
+    "painPoint": [
+      { "text": "The app that ends the 'what's for dinner' argument.", "rank": 1 },
+      { "text": "Plan meals together without the mental load.", "rank": 2 },
+      { "text": "No more 'I don't know, what do you want?'", "rank": 3 },
+      { "text": "Stop doing macro math for two people.", "rank": 4 },
+      { "text": "From 'what's for dinner?' to 'dinner's ready'.", "rank": 5 },
+      { "text": "Dinner decisions, solved.", "rank": 6 },
+      { "text": "Stop the nightly scramble.", "rank": 7 }
+    ],
+    "relationshipFirst": [
+      { "text": "What are WE eating tonight?", "rank": 1 },
+      { "text": "Your shared kitchen. Smarter.", "rank": 2 },
+      { "text": "Your relationship's secret ingredient.", "rank": 3 },
+      { "text": "Dinner should bring you together, not start an argument.", "rank": 4 },
+      { "text": "Your kitchen, together.", "rank": 5 },
+      { "text": "The app that feeds your relationship.", "rank": 6 },
+      { "text": "Cook together. Eat together.", "rank": 7 }
+    ],
+    "actionOriented": [
+      { "text": "Stop planning dinner. Start enjoying it.", "rank": 1 },
+      { "text": "You cook together. We'll do the math.", "rank": 2 },
+      { "text": "Less stress. More dinner.", "rank": 3 },
+      { "text": "Dinner, decided.", "rank": 4 },
+      { "text": "Plan once. Eat well all week.", "rank": 5 },
+      { "text": "The thinking is done. Just cook.", "rank": 6 }
+    ],
+    "pantryFirst": [
+      { "text": "Cook what you have. Not what you don't.", "rank": 1 },
+      { "text": "From pantry to plate — together.", "rank": 2 },
+      { "text": "The app that turns your fridge into a menu.", "rank": 3 },
+      { "text": "Stop buying more. Start cooking what you have.", "rank": 4 },
+      { "text": "Your pantry just got smarter.", "rank": 5 }
+    ]
+  },
+  "topAngles": [
+    { "rank": 1, "angle": "One dinner. Two plates.", "emotionalHook": "Very High", "differentiation": "Very High", "simplicity": "Very High — 4 words", "viralPotential": "Very High" },
+    { "rank": 2, "angle": "The app that ends the 'what's for dinner' argument", "emotionalHook": "Very High", "differentiation": "Medium", "simplicity": "Very High", "viralPotential": "Very High" },
+    { "rank": 3, "angle": "How we eat the exact same dinner, but he gains muscle and I lose weight", "emotionalHook": "Very High", "differentiation": "Very High", "simplicity": "Medium", "viralPotential": "Very High" },
+    { "rank": 4, "angle": "Stop doing macro math for two people", "emotionalHook": "High", "differentiation": "High", "simplicity": "Very High", "viralPotential": "High" },
+    { "rank": 5, "angle": "What are WE eating tonight?", "emotionalHook": "Very High", "differentiation": "High", "simplicity": "Very High", "viralPotential": "Medium" },
+    { "rank": 6, "angle": "Eat together. Differently.", "emotionalHook": "High", "differentiation": "Very High", "simplicity": "Very High", "viralPotential": "High" },
+    { "rank": 7, "angle": "Your shared digital kitchen", "emotionalHook": "High", "differentiation": "Medium", "simplicity": "High", "viralPotential": "Medium" },
+    { "rank": 8, "angle": "Cook once. Plate twice.", "emotionalHook": "High", "differentiation": "Very High", "simplicity": "Very High", "viralPotential": "Very High" },
+    { "rank": 9, "angle": "Existing groceries → optimized meals", "emotionalHook": "Low", "differentiation": "Very High", "simplicity": "Medium", "viralPotential": "Medium" },
+    { "rank": 10, "angle": "Google Docs for food planning", "emotionalHook": "Medium", "differentiation": "Medium", "simplicity": "High", "viralPotential": "Medium" }
+  ],
+  "brandingPrinciples": {
+    "languageRule": "Use 'We' instead of 'You' throughout the entire app",
+    "categoryToOwn": "Collaborative Adaptive Nutrition",
+    "categoryBreakdown": {
+      "Collaborative": "Multi-person, real-time, shared",
+      "Adaptive": "AI-generated, personalized, dynamic",
+      "Nutrition": "Food, health, goals, portions"
+    },
+    "avoidCalling": ["AI meal planner", "Shared grocery app", "Macro tracker", "Diet app"],
+    "emotionalFraming": "You are selling marital harmony, time-saving, and stress relief — the food is just the medium.",
+    "uxPrinciples": [
+      "No 'diet app' aesthetics — no neon colors, rigid speedometers, harsh red/green macro charts",
+      "Design for home — warm tones, soft typography, natural language",
+      "Frame notifications as nudges: 'Alex suggested Tacos for tonight. Approve?'",
+      "Feel like a shared digital kitchen, not a medical chart",
+      "App language: 'Our Shopping List', 'Our Kitchen', 'What Should We Cook?', 'Who Are You Cooking For?'"
+    ],
+    "designSystem": {
+      "background": "#FAF6EE",
+      "primary": "#7A9E7E",
+      "primaryDark": "#5A7E5E",
+      "accent": "#E8A87C",
+      "textPrimary": "#2C3E2D",
+      "textSecondary": "#6B7B6C",
+      "error": "#E07A5F"
+    }
+  },
+  "competitorTaglines": [
+    { "competitor": "Leanlife", "tagline": "Stop carrying the mental load of meal planning alone" },
+    { "competitor": "Yummo", "tagline": "One cooking session — two plates tailored to each of you" },
+    { "competitor": "PlateMates", "tagline": "One Meal, Two Ways" },
+    { "competitor": "Cloche", "tagline": "Swipe. Match. Cook." },
+    { "competitor": "OttoChef", "tagline": "Meal Planning That Brings Couples Together" },
+    { "competitor": "OurPlate", "tagline": "Stop arguing about dinner" },
+    { "competitor": "DuoDine", "tagline": "Plan meals together with your partner!" },
+    { "competitor": "MiseBook", "tagline": "The meal planning app for couples who love cooking together" },
+    { "competitor": "PlanEat AI", "tagline": "Meal planning for couples with different goals" },
+    { "competitor": "KitchenSync", "tagline": "Your kitchen, perfectly in sync" },
+    { "competitor": "WhatDinner", "tagline": "Swipe together — dine together" },
+    { "competitor": "Cookbond", "tagline": "Cook Together App for Couples" },
+    { "competitor": "SummitPlate", "tagline": "Stress-free dinners for your family" },
+    { "competitor": "slrp", "tagline": "Built for two cooks" },
+    { "competitor": "YumTwo", "tagline": "The Personalized Recipe & Cooking Companion for Couples" },
+    { "competitor": "Healthspan", "tagline": "Meal Planning for Couples & Families" },
+    { "competitor": "We Just Did Dinner", "tagline": "Plan dinners together with your favorite recipes, faster" },
+    { "competitor": "Eat This Much", "tagline": "Meal planning made simple" },
+    { "competitor": "AnyList", "tagline": "The best way to organize your grocery shopping and recipe collection" }
+  ]
+}
