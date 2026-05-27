@@ -146,17 +146,17 @@ import ProductCycle from '../../components/pitch/ProductCycle.astro';
           <p class="text-sm text-text-secondary">Partner A checks off "Salmon" at the store. Partner B sees it disappear from the list in real time at home. No duplicate purchases, no phone calls to confirm. Both partners see changes instantly — the app feels alive.</p>
         </div>
         <div class="pitch-card-sage">
-          <h3 class="font-bold text-sage-dark mb-2">The Architecture</h3>
-          <p class="text-sm text-text-secondary">Durable Objects with WebSockets deliver sub-100ms sync at the edge. One DO instance per couple, both phones connect via WebSocket. DO hibernates when both phones are closed (costs nothing). SQLite storage inside the DO persists grocery list and pantry state. Most competitors use Firebase or traditional polling.</p>
+          <h3 class="font-bold text-sage-dark mb-2">5. Proven Architecture</h3>
+          <p class="text-sm text-text-secondary">A working prototype demonstrates the full feature set — real-time sync, TDEE calculation, adaptive plating, and the complete React frontend. The architecture is functional, not theoretical. A production build would use a standard, robust technology stack chosen for scalability across all platforms (iOS, Android, web).</p>
         </div>
       </div>
       <div class="pitch-card-sage mt-6">
         <h3 class="font-bold text-sage-dark mb-2">Why This Is a Moat</h3>
-        <p class="text-sm text-text-secondary">Most competitors use Firebase or traditional polling for sync. Durable Objects provide single-digit-millisecond WebSocket propagation at the edge, with built-in SQLite storage per household. This is an architectural choice that most competitors would need to rebuild from scratch to match. But more importantly, the sync is not just fast — it is designed for exactly two people, with partner badges, shared state awareness, and the "Move to Pantry" bridge that no competitor has.</p>
+        <p class="text-sm text-text-secondary">Most competitors use Firebase or traditional polling for sync. Modern edge infrastructure provides single-digit-millisecond propagation with built-in persistent storage per household. This is an architectural choice that most competitors would need to rebuild from scratch to match. But more importantly, the sync is not just fast — it is designed for exactly two people, with partner badges, shared state awareness, and the "Move to Pantry" bridge that no competitor has.</p>
       </div>
       <div class="bg-cream-dark rounded-lg p-4 border border-border mt-4">
         <h4 class="font-semibold text-sm text-text-primary mb-2">Cost to Replicate</h4>
-        <p class="text-xs text-text-secondary">A competitor would need to: (1) Migrate from Firebase/polling to Durable Objects or equivalent — 4-6 weeks. (2) Redesign the data model for real-time collaborative editing — 2-3 weeks. (3) Implement WebSocket connection management and hibernation — 2-3 weeks. (4) Test and optimize for sub-100ms latency — 1-2 weeks. <strong class="text-text-primary">Total: 9-14 weeks of engineering, plus architectural risk.</strong></p>
+        <p class="text-xs text-text-secondary">A competitor would need to: (1) Migrate from Firebase/polling to modern real-time infrastructure — 4-6 weeks. (2) Redesign the data model for real-time collaborative editing — 2-3 weeks. (3) Implement persistent connection management — 2-3 weeks. (4) Test and optimize for sub-100ms latency — 1-2 weeks. <strong class="text-text-primary">Total: 9-14 weeks of engineering, plus architectural risk.</strong></p>
       </div>
     </div>
   </section>
@@ -202,8 +202,8 @@ import ProductCycle from '../../components/pitch/ProductCycle.astro';
           <p class="text-sm text-text-secondary">They could add features. They cannot add authenticity. A fitness app adding "couple features" would feel like a bolt-on, not a core experience. Users can tell the difference between a feature and a philosophy. Additionally, giants move slowly — Samsung Food was acquired in 2020 and has barely iterated since. The couples niche is too narrow for their product roadmaps.</p>
         </div>
         <div class="pitch-card">
-          <h3 class="font-bold text-lg mb-2">"Durable Objects are just infrastructure — any competitor can switch."</h3>
-          <p class="text-sm text-text-secondary">True, but switching infrastructure is not the same as having built the product on it from day one. The Durable Objects pattern is deeply integrated into the data model, the sync logic, and the household abstraction. A competitor migrating from Firebase would need to rewrite their entire sync layer, data model, and connection management. The architectural advantage is not the technology itself — it is the product built on top of it.</p>
+          <h3 class="font-bold text-lg mb-2">"Real-time sync is just infrastructure — any competitor can add it."</h3>
+          <p class="text-sm text-text-secondary">True, but switching to real-time sync is not the same as having built the product on it from day one. The real-time pattern is deeply integrated into the data model, the sync logic, and the household abstraction. A competitor migrating from polling or Firebase would need to rewrite their entire sync layer, data model, and connection management. The architectural advantage is not the technology itself — it is the product built on top of it.</p>
         </div>
       </div>
     </div>

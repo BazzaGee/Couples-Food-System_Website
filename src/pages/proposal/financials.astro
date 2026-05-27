@@ -86,9 +86,9 @@ import financials from '../../data/pitch/financials.json';
               <td class="text-text-secondary text-xs">$1,500-3,000/mo</td>
             </tr>
             <tr>
-              <td class="font-semibold">Cloudflare Infrastructure</td>
-              <td class="text-sage text-xs font-semibold">$0 (free tier)</td>
-              <td class="text-sage text-xs font-semibold">$0-5/mo</td>
+              <td class="font-semibold">Infrastructure</td>
+              <td class="text-sage text-xs font-semibold">~$0 (prototype)</td>
+              <td class="text-sage text-xs font-semibold">~$0-5/mo</td>
               <td class="text-text-secondary text-xs">$5-25/mo</td>
               <td class="text-text-secondary text-xs">$25-100/mo</td>
             </tr>
@@ -145,119 +145,48 @@ import financials from '../../data/pitch/financials.json';
     </div>
   </section>
 
-  <!-- INFRASTRUCTURE COST BREAKDOWN -->
+  <!-- AI COST OVERVIEW -->
   <section class="spoke-section-alt">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="proposal-section-title mb-6">Infrastructure Cost Breakdown — Cloudflare Free Tier</h2>
-      <p class="text-text-secondary mb-6">The entire stack runs on Cloudflare's free tier until hundreds of active households. This is not a theoretical cost advantage — it is structural:</p>
+      <h2 class="proposal-section-title mb-6">AI Cost Overview</h2>
+      <p class="text-text-secondary mb-6">The AI cost is the only meaningful variable cost. Here is how it breaks down:</p>
       <div class="overflow-x-auto">
         <table class="comparison-table w-full">
           <thead>
             <tr>
-              <th class="rounded-tl-xl">Service</th>
-              <th>Free Tier Limit</th>
-              <th>When You Start Paying</th>
-              <th class="rounded-tr-xl">Cost After Free Tier</th>
+              <th class="rounded-tl-xl">Scenario</th>
+              <th>Cost Per Generation</th>
+              <th>Monthly Cost (1 meal/day)</th>
+              <th class="rounded-tr-xl">With Caching</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="font-semibold">Cloudflare Pages</td>
-              <td>Unlimited builds & deploys</td>
-              <td class="text-sage font-semibold">Never</td>
-              <td class="text-text-secondary text-xs">$0</td>
+              <td class="font-semibold">Single meal plan</td>
+              <td>$0.01-0.02</td>
+              <td>$0.30-0.60</td>
+              <td class="text-sage text-xs font-semibold">$0.15-0.30 (estimated 50% cache hit rate)</td>
             </tr>
             <tr>
-              <td class="font-semibold">Workers</td>
-              <td>100,000 requests/day</td>
-              <td class="text-text-secondary text-xs">~500 active households</td>
-              <td class="text-text-secondary text-xs">$5/mo per 1M additional requests</td>
+              <td class="font-semibold">Daily plan (3 meals)</td>
+              <td>$0.03-0.05</td>
+              <td>$0.90-1.50</td>
+              <td class="text-sage text-xs font-semibold">$0.45-0.75 (estimated 50% cache hit rate)</td>
             </tr>
             <tr>
-              <td class="font-semibold">D1 (SQLite)</td>
-              <td>5M reads/day, 100K writes/day</td>
-              <td class="text-text-secondary text-xs">~5,000 active households</td>
-              <td class="text-text-secondary text-xs">$0.50/mo per 100K additional reads</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">KV</td>
-              <td>100,000 reads/day</td>
-              <td class="text-text-secondary text-xs">~2,000 active households</td>
-              <td class="text-text-secondary text-xs">$0.50/mo per 1M additional reads</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Durable Objects</td>
-              <td>Free (limited concurrent)</td>
-              <td class="text-text-secondary text-xs">~1,000 concurrent households</td>
-              <td class="text-text-secondary text-xs">$0.0003/10 min per object</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">AI Gateway</td>
-              <td>Unlimited</td>
-              <td class="text-sage font-semibold">Always free</td>
-              <td class="text-text-secondary text-xs">$0</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Anthropic API</td>
-              <td>Pay per token</td>
-              <td class="text-text-secondary text-xs">Immediately (only real cost)</td>
-              <td class="text-text-secondary text-xs">$0.01-0.03 per meal generation</td>
+              <td class="font-semibold">Weekly plan</td>
+              <td>$0.08-0.12</td>
+              <td>$0.32-0.48/month</td>
+              <td class="text-sage text-xs font-semibold">$0.16-0.24 (estimated 50% cache hit rate)</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="mt-4 pitch-card">
         <p class="text-sm text-text-secondary">
-          <strong class="text-text-primary">Bottom line:</strong> Infrastructure costs $0 until hundreds of active households. The only variable cost from Day 1 is Anthropic API tokens. At $0.01-0.03 per meal generation and 1 generation per household per day, the AI cost is $0.30-0.90 per household per month — well covered by the $10/mo premium price with 85-90% gross margin.
+          <strong class="text-text-primary">Bottom line:</strong> At $0.01-0.03 per meal generation and 1 generation per household per day, the AI cost is $0.30-0.90 per household per month — well covered by the $10/mo premium price with 85-90% gross margin. Caching reduces token costs by an estimated 40-60%.
         </p>
       </div>
-    </div>
-  </section>
-
-  <!-- AI COST DETAIL -->
-  <section class="spoke-section">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="proposal-section-title mb-6">AI Cost Per Household — Detailed Breakdown</h2>
-      <p class="text-text-secondary mb-6">The AI cost is the only meaningful variable cost. Here is exactly how it breaks down:</p>
-      <div class="overflow-x-auto">
-        <table class="comparison-table w-full">
-          <thead>
-            <tr>
-              <th class="rounded-tl-xl">Scenario</th>
-              <th>Token Estimate</th>
-              <th>Cost Per Generation</th>
-              <th>Monthly Cost (1 meal/day)</th>
-              <th class="rounded-tr-xl">With AI Gateway Caching</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-semibold">Single meal plan</td>
-              <td>~2,000 tokens</td>
-              <td>$0.01-0.02</td>
-              <td>$0.30-0.60</td>
-              <td class="text-sage text-xs font-semibold">$0.15-0.30 (50% cache hit rate)</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Daily plan (3 meals)</td>
-              <td>~5,000 tokens</td>
-              <td>$0.03-0.05</td>
-              <td>$0.90-1.50</td>
-              <td class="text-sage text-xs font-semibold">$0.45-0.75 (50% cache hit rate)</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Weekly plan</td>
-              <td>~15,000 tokens</td>
-              <td>$0.08-0.12</td>
-              <td>$0.32-0.48/month</td>
-              <td class="text-sage text-xs font-semibold">$0.16-0.24 (50% cache hit rate)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-xs text-text-secondary mt-4">
-        AI Gateway caching uses a 24-hour TTL. Identical requests (same pantry, same profiles, same preferences) return cached responses at zero token cost. As the user base grows, cache hit rates increase because similar household profiles generate similar meal plans. This creates a natural cost optimization at scale.
-      </p>
     </div>
   </section>
 
@@ -398,9 +327,9 @@ import financials from '../../data/pitch/financials.json';
           <p class="text-sm text-sage font-medium">Mitigation: AI Gateway caching reduces token usage by 40-60%. Additionally, the product can switch to cheaper models (Claude Haiku instead of Sonnet) for routine meal generation, reserving Sonnet for complex adaptive cooking scenarios.</p>
         </div>
         <div class="pitch-card">
-          <h3 class="font-bold text-lg mb-2">Scenario C: Cloudflare Ends Free Tier</h3>
-          <p class="text-sm text-text-secondary mb-2">If Cloudflare significantly changes its free tier pricing, infrastructure costs would rise. At 50,000 households, estimated infrastructure cost is $25-100/mo — still negligible compared to $48,000-72,000/mo in revenue.</p>
-          <p class="text-sm text-sage font-medium">Mitigation: The architecture is Cloudflare-native but not Cloudflare-locked. The Durable Objects pattern can be replicated on other edge platforms (Fly.io, Supabase Edge Functions) if needed.</p>
+          <h3 class="font-bold text-lg mb-2">Scenario C: Infrastructure Costs Rise Unexpectedly</h3>
+          <p class="text-sm text-text-secondary mb-2">If hosting infrastructure costs increase significantly, margins would be affected. At 50,000 households, estimated infrastructure cost is $25-100/mo — still negligible compared to $48,000-72,000/mo in revenue.</p>
+          <p class="text-sm text-sage font-medium">Mitigation: The architecture is designed for portability. Infrastructure patterns can be replicated on alternative platforms if needed. At scale, infrastructure costs remain a small fraction of revenue.</p>
         </div>
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-2">Scenario D: Churn Is Higher Than Expected</h3>
@@ -494,6 +423,23 @@ import financials from '../../data/pitch/financials.json';
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SOURCES & NOTES -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-sm font-semibold text-text-secondary mb-4">Sources &amp; Notes</h2>
+      <ol class="text-xs text-text-secondary space-y-2">
+        <li><sup>1</sup> Revenue projections are illustr and based on organic growth assumptions. Actual results will vary based on market conditions, execution quality, and competitive dynamics.</li>
+        <li><sup>2</sup> AI cost estimates ($0.01-0.03 per generation) based on Anthropic Claude API pricing (Sonnet model, ~2,000 tokens per meal generation). Actual costs depend on prompt complexity and model choice.</li>
+        <li><sup>3</sup> Infrastructure costs are estimates based on typical SaaS hosting patterns. Actual costs depend on chosen technology stack, traffic volume, and provider pricing.</li>
+        <li><sup>4</sup> Developer time estimates ($5,000-12,000/mo) vary significantly by region, experience level, and engagement model (full-time employee vs. contractor vs. agency).</li>
+        <li><sup>5</sup> Gross margin (85-90%) calculated as: ($10 revenue - $1.00-1.50 AI cost - $0.00-0.02 infra) / $10 revenue. Excludes developer time, marketing, and other operating costs.</li>
+        <li><sup>6</sup> Competitor pricing data sourced from public websites and app stores as of May 2026. Pricing may have changed.</li>
+        <li><sup>7</sup> CAC organic = $0 refers to paid acquisition cost only. Organic growth still requires content creation, community management, and social media effort.</li>
+        <li><sup>8</sup> Premium conversion rate assumptions (8-12%) are based on SaaS industry benchmarks for freemium products. Actual rates require validation.</li>
+      </ol>
     </div>
   </section>
 

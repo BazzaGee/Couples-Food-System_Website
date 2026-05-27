@@ -132,7 +132,7 @@ import swotData from '../../data/pitch/swot.json';
       <div class="space-y-4">
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-2">GDPR (European Users)</h3>
-          <p class="text-sm text-text-secondary">If the product serves EU users, body profile data (weight, height, age, gender) constitutes personal data under GDPR. Mitigation: clear consent flow, data portability, right to deletion. The Cloudflare architecture (EU data centers available) supports GDPR compliance. AI Gateway with zero data retention on Anthropic's side further reduces risk.</p>
+          <p class="text-sm text-text-secondary">If the product serves EU users, body profile data (weight, height, age, gender) constitutes personal data under GDPR. Mitigation: clear consent flow, data portability, right to deletion. A modern cloud infrastructure with EU data center options supports GDPR compliance. Zero data retention on the AI provider's side further reduces risk.</p>
         </div>
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-2">Health Claims Liability</h3>
@@ -140,7 +140,7 @@ import swotData from '../../data/pitch/swot.json';
         </div>
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-2">Data Privacy Best Practices</h3>
-          <p class="text-sm text-text-secondary">Even without regulatory obligations, good privacy practices build trust: encrypt data at rest (D1 encryption), encrypt data in transit (HTTPS via Cloudflare Pages), minimize data collection (only collect what is needed for the product), provide clear privacy policy, allow data export and deletion.</p>
+          <p class="text-sm text-text-secondary">Even without regulatory obligations, good privacy practices build trust: encrypt data at rest, encrypt data in transit (HTTPS), minimize data collection (only collect what is needed for the product), provide clear privacy policy, allow data export and deletion.</p>
         </div>
       </div>
     </div>
@@ -157,8 +157,8 @@ import swotData from '../../data/pitch/swot.json';
           <p class="text-sm text-text-secondary">If Anthropic pricing increases 3x, AI cost per household rises from $1.00-1.50/mo to $3.00-4.50/mo. Gross margin drops from 85-90% to 75-80%. Still highly profitable. Mitigation: AI Gateway caching reduces costs by 40-60%. Model tiering (Haiku for routine, Sonnet for complex) further optimizes.</p>
         </div>
         <div class="pitch-card">
-          <h3 class="font-bold text-lg mb-2">Scenario: Cloudflare Free Tier Changes</h3>
-          <p class="text-sm text-text-secondary">If Cloudflare significantly changes its free tier, infrastructure costs would rise. At 50,000 households, estimated cost is $25-100/mo — negligible compared to $48,000-72,000/mo revenue. Mitigation: architecture is Cloudflare-native but not Cloudflare-locked. Durable Objects pattern can be replicated on Fly.io or Supabase Edge Functions.</p>
+          <h3 class="font-bold text-lg mb-2">Scenario: Infrastructure Costs Rise</h3>
+          <p class="text-sm text-text-secondary">If hosting infrastructure costs increase significantly, margins would be affected. At 50,000 households, estimated infrastructure cost is $25-100/mo — negligible compared to $48,000-72,000/mo revenue. Mitigation: the production stack can be optimized for cost efficiency. Infrastructure costs remain a small fraction of revenue at scale.</p>
         </div>
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-2">Scenario: Premium Conversion Is 5% Instead of 10%</h3>
@@ -195,8 +195,8 @@ import swotData from '../../data/pitch/swot.json';
           <p class="text-sm text-text-secondary">Couples who adopt the "shared kitchen" metaphor build pantry inventory, meal history, shopping habits, and adaptive cooking preferences. Leaving means losing all of that — and disrupting their partner's experience too. The social lock-in (two users per household) doubles the switching cost compared to single-user apps.</p>
         </div>
         <div class="pitch-card-sage">
-          <h3 class="font-bold text-sage-dark mb-2">5. Technical Architecture</h3>
-          <p class="text-sm text-text-secondary">Durable Objects + AI Gateway + PWA is an architectural choice that most competitors would need to rebuild from scratch to match. Cloudflare-native means zero infrastructure cost at launch and sub-100ms sync at the edge. The working prototype (HouseholdSync.ts, tdee.ts, full React frontend) proves the architecture is functional, not theoretical.</p>
+          <h3 class="font-bold text-sage-dark mb-2">5. Proven Architecture</h3>
+          <p class="text-sm text-text-secondary">A working prototype demonstrates the full feature set — real-time sync, TDEE calculation, adaptive plating, and the complete frontend. The architecture is functional, not theoretical. A production build would use a standard, robust technology stack chosen for scalability across all platforms.</p>
         </div>
       </div>
     </div>
@@ -211,7 +211,7 @@ import swotData from '../../data/pitch/swot.json';
           <h3 class="font-bold text-lg mb-3 text-sage">What Gives Confidence</h3>
           <ul class="space-y-2 text-sm text-text-secondary">
             <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> The gap is real and verified by 3 independent AI analyses</li>
-            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> 34 competitors analyzed — zero have the complete stack</li>
+            <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> 25+ competitors analyzed — zero have the complete stack</li>
             <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Market is growing at 28% CAGR in the AI segment</li>
             <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Technical architecture is proven (working prototype exists)</li>
             <li class="flex items-start gap-2"><span class="text-sage mt-0.5">✓</span> Unit economics are strong (85-90% gross margin)</li>

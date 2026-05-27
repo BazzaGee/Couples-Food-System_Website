@@ -148,21 +148,21 @@ import BuildChain from '../../components/pitch/BuildChain.astro';
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-3">Partner A — Sarah (Cutting)</h3>
           <div class="space-y-2 text-sm text-text-secondary">
-            <p><strong class="text-text-primary">Profile:</strong> Female, 30, 5'6", 150 lbs, moderately active</p>
-            <p><strong class="text-text-primary">BMR (Mifflin-St Jeor):</strong> 10 × 68kg + 6.25 × 167.6cm - 5 × 30 - 161 = 1,392 cal/day</p>
-            <p><strong class="text-text-primary">TDEE (1.55 activity):</strong> 1,392 × 1.55 = 2,158 cal/day</p>
-            <p><strong class="text-text-primary">Cutting target (-500):</strong> 1,658 cal/day</p>
-            <p><strong class="text-sage font-semibold">Dinner allocation (30%):</strong> ~497 cal</p>
+            <p><strong class="text-text-primary">Profile:</strong> Female, 30, 5'6" (167.6cm), 150 lbs (68kg), moderately active</p>
+            <p><strong class="text-text-primary">BMR (Mifflin-St Jeor):</strong> 10 × 68 + 6.25 × 167.6 - 5 × 30 - 161 = 1,417 cal/day</p>
+            <p><strong class="text-text-primary">TDEE (1.55 activity):</strong> 1,417 × 1.55 = 2,196 cal/day</p>
+            <p><strong class="text-text-primary">Cutting target (-500):</strong> 1,696 cal/day</p>
+            <p><strong class="text-sage font-semibold">Dinner allocation (30%):</strong> ~509 cal</p>
           </div>
         </div>
         <div class="pitch-card">
           <h3 class="font-bold text-lg mb-3">Partner B — Mike (Bulking)</h3>
           <div class="space-y-2 text-sm text-text-secondary">
-            <p><strong class="text-text-primary">Profile:</strong> Male, 32, 5'10", 180 lbs, very active</p>
-            <p><strong class="text-text-primary">BMR (Mifflin-St Jeor):</strong> 10 × 81.6kg + 6.25 × 177.8cm - 5 × 32 + 5 = 1,818 cal/day</p>
-            <p><strong class="text-text-primary">TDEE (1.725 activity):</strong> 1,818 × 1.725 = 3,136 cal/day</p>
-            <p><strong class="text-text-primary">Bulking target (+300):</strong> 3,436 cal/day</p>
-            <p><strong class="text-terracotta-dark font-semibold">Dinner allocation (30%):</strong> ~1,031 cal</p>
+            <p><strong class="text-text-primary">Profile:</strong> Male, 32, 5'10" (177.8cm), 180 lbs (81.6kg), very active</p>
+            <p><strong class="text-text-primary">BMR (Mifflin-St Jeor):</strong> 10 × 81.6 + 6.25 × 177.8 - 5 × 32 + 5 = 1,772 cal/day</p>
+            <p><strong class="text-text-primary">TDEE (1.725 activity):</strong> 1,772 × 1.725 = 3,057 cal/day</p>
+            <p><strong class="text-text-primary">Bulking target (+300):</strong> 3,357 cal/day</p>
+            <p><strong class="text-terracotta-dark font-semibold">Dinner allocation (30%):</strong> ~1,007 cal</p>
           </div>
         </div>
       </div>
@@ -171,118 +171,15 @@ import BuildChain from '../../components/pitch/BuildChain.astro';
         <p class="text-sm text-text-secondary mb-3">The AI generates a teriyaki chicken stir-fry for the household. But the plating instructions differ:</p>
         <div class="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <p class="font-semibold text-sage-dark">Sarah's Plate (497 cal):</p>
+            <p class="font-semibold text-sage-dark">Sarah's Plate (~509 cal):</p>
             <p class="text-text-secondary">4oz chicken, 1 cup rice, 1.5 cups broccoli, 1 tsp oil</p>
           </div>
           <div>
-            <p class="font-semibold text-terracotta-dark">Mike's Plate (1,031 cal):</p>
+            <p class="font-semibold text-terracotta-dark">Mike's Plate (~1,007 cal):</p>
             <p class="text-text-secondary">6oz chicken, 1.5 cups rice, 1 cup broccoli, 2 tsp oil, side of edamame</p>
           </div>
         </div>
         <p class="text-sm text-text-secondary mt-3"><strong class="text-text-primary">Same pan. Same recipe. Different plates.</strong> The AI handles the math. The couple just cooks.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECHNICAL ARCHITECTURE -->
-  <section class="spoke-section-alt">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="proposal-section-title mb-6">Technical Architecture — This Is Buildable</h2>
-      <p class="text-text-secondary mb-6">This is not vaporware. A working prototype already exists with the core real-time sync engine, TDEE calculator, and full React frontend. Here is the architecture:</p>
-      <div class="space-y-4">
-        <div class="overflow-x-auto">
-          <table class="comparison-table w-full">
-            <thead>
-              <tr>
-                <th class="rounded-tl-xl">Layer</th>
-                <th>Technology</th>
-                <th>Purpose</th>
-                <th class="rounded-tr-xl">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="font-semibold">Frontend</td>
-                <td>React + Vite (PWA)</td>
-                <td>Installable web app, offline-capable</td>
-                <td><span class="text-sage font-semibold text-xs">Built</span></td>
-              </tr>
-              <tr>
-                <td class="font-semibold">API</td>
-                <td>Hono Worker</td>
-                <td>Edge API routing, REST endpoints</td>
-                <td><span class="text-sage font-semibold text-xs">Built</span></td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Real-time</td>
-                <td>Durable Objects</td>
-                <td>WebSocket sync, sub-100ms latency</td>
-                <td><span class="text-sage font-semibold text-xs">Built</span></td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Database</td>
-                <td>D1 (SQLite)</td>
-                <td>Profiles, meal plans, households</td>
-                <td><span class="text-sage font-semibold text-xs">Schema defined</span></td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Sessions</td>
-                <td>KV</td>
-                <td>JWT validation, invite codes (24hr TTL)</td>
-                <td><span class="text-sage font-semibold text-xs">Designed</span></td>
-              </tr>
-              <tr>
-                <td class="font-semibold">AI</td>
-                <td>AI Gateway → Anthropic</td>
-                <td>Meal plan generation with 24hr caching</td>
-                <td><span class="text-sage font-semibold text-xs">Designed</span></td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Deployment</td>
-                <td>Cloudflare Pages</td>
-                <td>CDN-cached, zero-config HTTPS</td>
-                <td><span class="text-sage font-semibold text-xs">Ready</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="mt-6 pitch-card">
-        <h3 class="font-bold text-lg mb-3">Working Prototype Evidence</h3>
-        <div class="space-y-3 text-sm text-text-secondary">
-          <p><strong class="text-text-primary">HouseholdSync.ts (448 lines):</strong> Full WebSocket real-time sync implementation with grocery list CRUD (add, check, delete, reorder), pantry management (add, delete), "Move to Pantry" bridge, bulk item addition, broadcast to all connected sessions, SQLite persistence inside the Durable Object.</p>
-          <p><strong class="text-text-primary">tdee.ts (54 lines):</strong> Full TDEE/BMI calculation engine using Mifflin-St Jeor equation, 5 activity level multipliers, goal adjustments (lose/maintain/gain), BMI calculation and categorization.</p>
-          <p><strong class="text-text-primary">React Frontend:</strong> ShoppingTab, PantryTab, MealPlanTab, ProfilesTab components. useHousehold.ts WebSocket hook. BodyProfileForm, PlatingView, WeekCalendar, SyncIndicator, OfflineBanner, InstallBanner. PWA configured with manifest and service worker.</p>
-          <p><strong class="text-text-primary">D1 Database Schema:</strong> households, partners (with body profiles), meal_plans (with plan_json and pantry_snapshot), push_subscriptions — all designed and ready to implement.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUTH FLOW -->
-  <section class="spoke-section">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="proposal-section-title mb-6">Auth Flow — Designed for Exactly Two People</h2>
-      <p class="text-text-secondary mb-6">No email/password for MVP. The auth flow is designed for the simplest possible onboarding:</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="pitch-card">
-          <div class="flex items-start gap-3">
-            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <div>
-              <h4 class="font-semibold text-text-primary">Partner 1 Creates Household</h4>
-              <p class="text-sm text-text-secondary">Taps "Create Household" → gets a 6-digit invite code stored in KV with 24-hour TTL. Shares code with partner via text, WhatsApp, or in person.</p>
-            </div>
-          </div>
-        </div>
-        <div class="pitch-card">
-          <div class="flex items-start gap-3">
-            <span class="w-8 h-8 rounded-full bg-sage text-white text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <div>
-              <h4 class="font-semibold text-text-primary">Partner 2 Joins with Code</h4>
-              <p class="text-sm text-text-secondary">Taps "Join with Code" → enters 6-digit code → both partners get JWTs. The household is created. Both can now see and edit the same grocery list, pantry, and meal plan in real time.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>

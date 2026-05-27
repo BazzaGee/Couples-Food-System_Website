@@ -1,0 +1,384 @@
+---
+import SpokeLayout from '../../layouts/SpokeLayout.astro';
+import ProductCycle from '../../components/pitch/ProductCycle.astro';
+import SplitPlate from '../../components/pitch/SplitPlate.astro';
+import BuildChain from '../../components/pitch/BuildChain.astro';
+---
+
+<SpokeLayout
+  title="The Features — CUPLA Proposal"
+  description="Complete tab-by-tab feature walkthrough: Shopping, Pantry, Meal Plan, Profiles. The product loop. Adaptive shared cooking deep-dive. Competitive feature comparison."
+>
+  <!-- HERO -->
+  <section class="pt-20 md:pt-28 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">The Features</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">Five Tabs.<br/>One Loop. Zero Friction.</h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        The app is not a collection of features — it is a <strong class="text-text-primary">self-reinforcing loop</strong>. Each tab feeds into the next. The more you use it, the smarter it gets. Here is exactly how each tab works, what makes it different from competitors, and how they connect into a single cohesive system.
+      </p>
+    </div>
+  </section>
+
+  <!-- TAB 1: SHOPPING -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Tab 1: Shopping — "Our Shopping List"</h2>
+      <div class="pitch-card-sage">
+        <h3 class="font-bold text-sage-dark mb-2">What It Does</h3>
+        <p class="text-sm text-text-secondary">A real-time shared grocery list that both partners see and edit simultaneously. Changes appear in under 100 milliseconds. No polling, no "pull to refresh."</p>
+      </div>
+      <div class="pitch-card-sage mt-4">
+        <h3 class="font-bold text-sage-dark mb-2">How It Works</h3>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><strong class="text-text-primary">Add items</strong> manually via text input, or tap quick-add chips (Milk, Eggs, Bread, Chicken, etc.)</li>
+          <li><strong class="text-text-primary">Auto-categorize</strong> into sections: Produce, Meat, Dairy, Pantry, Other</li>
+          <li><strong class="text-text-primary">Check off items</strong> — they move to a "Checked" section at the bottom</li>
+          <li><strong class="text-text-primary">Partner badges</strong> show who added each item (color-coded: Partner A = sage, Partner B = terracotta)</li>
+          <li><strong class="text-text-primary">"Move to Pantry"</strong> — on checked items, one tap moves them into your shared pantry inventory. This is the critical bridge between shopping and cooking.</li>
+          <li><strong class="text-text-primary">Offline queue</strong> — if you lose signal in the supermarket, actions queue locally and sync when you reconnect</li>
+        </ul>
+      </div>
+      <div class="pitch-card mt-4">
+        <h3 class="font-bold text-text-primary mb-2">What Competitors Lack</h3>
+        <p class="text-sm text-text-secondary mb-2"><strong class="text-text-primary">AnyList</strong> has shared lists but charges $30/year for real-time sync. This is free.</p>
+        <p class="text-sm text-text-secondary"><strong class="text-text-primary">No competitor</strong> has "Move to Pantry" — the bridge between shopping and cooking. Other apps treat shopping and cooking as separate products. This app treats them as one continuous loop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: PANTRY -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Tab 2: Pantry — "Our Kitchen"</h2>
+      <div class="pitch-card-terracotta">
+        <h3 class="font-bold text-terracotta-dark mb-2">What It Does</h3>
+        <p class="text-sm text-text-secondary">Track what you actually have at home right now. This is the input for AI meal generation.</p>
+      </div>
+      <div class="pitch-card-terracotta mt-4">
+        <h3 class="font-bold text-terracotta-dark mb-2">How It Works</h3>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><strong class="text-text-primary">Natural language input</strong>: Type "chicken, 2 cups rice, spinach" → the app parses this into 3 separate items automatically</li>
+          <li><strong class="text-text-primary">Category-grouped</strong> (same categories as Shopping)</li>
+          <li><strong class="text-text-primary">Real-time sync</strong> — both partners see the same pantry, changes appear instantly</li>
+          <li><strong class="text-text-primary">Delete items</strong> as you use them</li>
+          <li><strong class="text-text-primary">Auto-move from Shopping</strong> — items from the Shopping tab move to Pantry when you tap "Move to Pantry" on checked-off items</li>
+        </ul>
+      </div>
+      <div class="pitch-card mt-4">
+        <h3 class="font-bold text-text-primary mb-2">What Competitors Lack</h3>
+        <p class="text-sm text-text-secondary mb-2"><strong class="text-text-primary">No mainstream competitor has a pantry tab at all.</strong> This is the input for AI meal generation. Without knowing what you have, meal suggestions are useless.</p>
+        <p class="text-sm text-text-secondary">Natural language input beats barcode scanning (which competitors push) — it is faster, less friction, works for any item including produce and bulk items.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: MEAL PLAN -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Tab 3: Meal Plan — "What Should We Cook?"</h2>
+      <div class="pitch-card-sage">
+        <h3 class="font-bold text-sage-dark mb-2">What It Does</h3>
+        <p class="text-sm text-text-secondary">AI generates dinner suggestions based on your pantry contents + both partners' dietary preferences. This is the "magic moment" where the app goes from useful tool to "wow."</p>
+      </div>
+      <div class="pitch-card-sage mt-4">
+        <h3 class="font-bold text-sage-dark mb-2">How It Works</h3>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><strong class="text-text-primary">Tap "Generate a Meal"</strong> → the AI looks at pantry contents, both partners' dietary preferences, allergies, and restrictions</li>
+          <li><strong class="text-text-primary">Recipe card output</strong>: name, description, cook time, calories, macros (protein/carbs/fat)</li>
+          <li><strong class="text-text-primary">Ingredient markers</strong>: ✅ = in pantry, 🔴 = need to buy</li>
+          <li><strong class="text-text-primary">"Add Missing to Shopping List"</strong> — one tap populates your Shopping tab with everything you need</li>
+          <li><strong class="text-text-primary">"Week" mode</strong> — generates 7 days of meals</li>
+          <li><strong class="text-text-primary">"Populate List"</strong> — aggregates all missing ingredients for the entire week, deduplicated</li>
+        </ul>
+      </div>
+      <div class="pitch-card mt-4">
+        <h3 class="font-bold text-text-primary mb-2">What Competitors Lack</h3>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><strong>AnyList</strong> has recipe saving but no AI generation from pantry</li>
+          <li><strong>Mealime</strong> has meal plans but does not know your pantry or your partner's diet</li>
+          <li><strong>Yummo</strong> has adaptive portions but no pantry-first AI — it works recipe → grocery list, not pantry → meals</li>
+          <li><strong>Fitia</strong> has nutrition intelligence but no pantry awareness</li>
+          <li><strong>Leanlife</strong> has real-time sync but no AI at all</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 4: PROFILES -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Tab 4: Profiles — "Who Are You Cooking For?"</h2>
+      <div class="pitch-card-terracotta">
+        <h3 class="font-bold text-terracotta-dark mb-2">What It Does</h3>
+        <p class="text-sm text-text-secondary">Set up both partners' dietary preferences, allergies, and body goals. No competitor has dual-profile awareness.</p>
+      </div>
+      <div class="pitch-card-terracotta mt-4">
+        <h3 class="font-bold text-terracotta-dark mb-2">How It Works</h3>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><strong class="text-text-primary">Dietary preference</strong>: Omnivore, Vegetarian, Vegan, Pescatarian, Keto, Paleo, Gluten Free, "No Specific Diet," or Custom</li>
+          <li><strong class="text-text-primary">Allergies</strong>: Multi-select common allergies + custom add</li>
+          <li><strong class="text-text-primary">Partner visibility</strong>: You can see your partner's profile so you always cook for both people</li>
+          <li><strong class="text-text-primary">Body Profile</strong> (collapsible): weight, height, age, gender, activity level, goal (lose/maintain/gain)</li>
+          <li><strong class="text-text-primary">Auto-calculates TDEE</strong> using the Mifflin-St Jeor equation</li>
+          <li><strong class="text-text-primary">Shows target calories</strong> based on goal</li>
+        </ul>
+      </div>
+      <div class="pitch-card mt-4">
+        <h3 class="font-bold text-text-primary mb-2">What Competitors Lack</h3>
+        <p class="text-sm text-text-secondary"><strong class="text-text-primary">No competitor has dual-profile awareness.</strong> Most apps assume one user. This app is built from the ground up for two people. The body profile + TDEE calculation powers the adaptive cooking feature — without knowing each person's calorie targets, you cannot do "one meal, two plates."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 5: SETTINGS -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Tab 5: Settings</h2>
+      <div class="pitch-card">
+        <p class="text-sm text-text-secondary">Reserved for future features: notifications, account management, data export. Not a focus for the current build.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PRODUCT LOOP -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">The Product Loop</h2>
+      <p class="text-center text-text-secondary mb-8">This loop is the product. Each step reinforces the next. The more you use it, the smarter it gets.</p>
+      <ProductCycle />
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-sage font-bold text-lg mb-1">1. Pantry</p>
+          <p class="text-xs text-text-secondary">Track what you have at home</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-terracotta-dark font-bold text-lg mb-1">2. AI Meals</p>
+          <p class="text-xs text-text-secondary">Generate meals from pantry + goals</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-sage font-bold text-lg mb-1">3. Shopping</p>
+          <p class="text-xs text-text-secondary">Missing ingredients auto-populate list</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-xl border border-border">
+          <p class="text-terracotta-dark font-bold text-lg mb-1">4. Repeat</p>
+          <p class="text-xs text-text-secondary">Check off → move to pantry → loop</p>
+        </div>
+      </div>
+      <div class="mt-6 pitch-card-sage">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-sage-dark">The key insight:</strong> No competitor connects all four steps. AnyList owns the shopping list but stops there. Mealime generates meals but ignores your pantry. Yummo adapts portions but has no pantry-first AI. This app connects Pantry → AI Meals → Shopping → Pantry into one continuous, self-reinforcing cycle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MOAT: ADAPTIVE SHARED COOKING -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">The Moat: Adaptive Shared Cooking</h2>
+      <p class="text-center text-text-secondary mb-8">One cooking session. Two different plates. Both hit their goals. No competitor does this with real-time collaboration.</p>
+      <SplitPlate />
+      <div class="space-y-4 mt-8">
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-sage-dark mb-2">The Problem</h3>
+          <p class="text-sm text-text-secondary">Partner A wants to lose weight (low carb, calorie deficit). Partner B wants to build muscle (high protein, calorie surplus). They want to cook ONE meal together, not two separate meals. They want to eat TOGETHER, not at separate tables.</p>
+        </div>
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-sage-dark mb-2">The Solution</h3>
+          <p class="text-sm text-text-secondary">The AI generates ONE shared prep/cooking workflow but provides TWO distinct plating instructions. Same pan, same ingredients, different assembly.</p>
+          <div class="grid grid-cols-2 gap-4 text-sm mt-3">
+            <div>
+              <p class="font-semibold text-sage-dark">Partner A's Plate (cutting):</p>
+              <p class="text-text-secondary">4oz chicken over bed of spinach, ½ cup rice ≈ 509 cal</p>
+            </div>
+            <div>
+              <p class="font-semibold text-terracotta-dark">Partner B's Plate (bulking):</p>
+              <p class="text-text-secondary">6oz chicken over full cup of rice, side of edamame ≈ 1,007 cal</p>
+            </div>
+          </div>
+          <p class="text-sm text-text-secondary mt-2"><strong class="text-text-primary">Same pan. Same recipe. Different plates. No arguments.</strong></p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-text-primary mb-2">What Competitors Have vs. What They Lack</h3>
+          <div class="overflow-x-auto">
+            <table class="comparison-table w-full text-sm">
+              <thead>
+                <tr>
+                  <th class="rounded-tl-xl">Competitor</th>
+                  <th>Adaptive Portions</th>
+                  <th>Real-Time Sync</th>
+                  <th>Pantry-First AI</th>
+                  <th class="rounded-tr-xl">Relationship UX</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-semibold">Yummo</td>
+                  <td class="text-sage">✅ Yes</td>
+                  <td>❌ No</td>
+                  <td>❌ No</td>
+                  <td>❌ No</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Fitia</td>
+                  <td class="text-amber-500">⚠️ Partial</td>
+                  <td class="text-amber-500">⚠️ Synced, not live</td>
+                  <td>❌ No</td>
+                  <td>❌ No</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">PlateMates</td>
+                  <td class="text-amber-500">⚠️ Split-diet only</td>
+                  <td>❌ No</td>
+                  <td>❌ No</td>
+                  <td>❌ No</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Leanlife</td>
+                  <td>❌ No</td>
+                  <td class="text-sage">✅ Yes</td>
+                  <td>❌ No</td>
+                  <td class="text-amber-500">⚠️ Partial</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">AnyList</td>
+                  <td>❌ No</td>
+                  <td class="text-sage">✅ Yes</td>
+                  <td>❌ No</td>
+                  <td>❌ No</td>
+                </tr>
+                <tr class="bg-sage/5">
+                  <td class="font-semibold text-sage-dark">This App</td>
+                  <td class="text-sage font-semibold">✅ Yes</td>
+                  <td class="text-sage font-semibold">✅ Yes</td>
+                  <td class="text-sage font-semibold">✅ Yes</td>
+                  <td class="text-sage font-semibold">✅ Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES THIS DIFFERENT -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">What Makes This Different</h2>
+      <div class="overflow-x-auto">
+        <table class="comparison-table w-full">
+          <thead>
+            <tr>
+              <th class="rounded-tl-xl">Dimension</th>
+              <th>Other Apps</th>
+              <th class="rounded-tr-xl">This App</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Who it is for</td>
+              <td class="text-text-secondary text-xs">Individuals (sharing is bolted on)</td>
+              <td class="text-sage text-xs font-semibold">Couples (built for two from day one)</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Language</td>
+              <td class="text-text-secondary text-xs">"You," "Your macros," "Track your calories"</td>
+              <td class="text-sage text-xs font-semibold">"We," "Our kitchen," "What are we eating?"</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Meal flow</td>
+              <td class="text-text-secondary text-xs">Browse recipes → make grocery list → cook</td>
+              <td class="text-sage text-xs font-semibold">Tell app what you have → AI suggests dinner → buy what is missing → cook</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Different goals</td>
+              <td class="text-text-secondary text-xs">Cook separate meals or compromise</td>
+              <td class="text-sage text-xs font-semibold">One meal, two plates, both hit their targets</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Sync</td>
+              <td class="text-text-secondary text-xs">Polling or Firebase (delayed)</td>
+              <td class="text-sage text-xs font-semibold">WebSocket (sub-100ms, feels instant)</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Distribution</td>
+              <td class="text-text-secondary text-xs">App Store download required</td>
+              <td class="text-sage text-xs font-semibold">Share a link → works instantly (PWA)</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Setup friction</td>
+              <td class="text-text-secondary text-xs">Barcode scanning, manual entry</td>
+              <td class="text-sage text-xs font-semibold">Natural language: "chicken, rice, spinach"</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">The feeling</td>
+              <td class="text-text-secondary text-xs">Clinical, fitness-focused, analytical</td>
+              <td class="text-sage text-xs font-semibold">Warm, collaborative, relationship-first</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-6 pitch-card-sage">
+        <p class="text-sm text-text-secondary">
+          <strong class="text-sage-dark">The food is just the medium.</strong> What people are actually buying is less stress, fewer decisions, smoother evenings, and shared responsibility. No competitor sells this emotional outcome — they sell features. This app sells harmony.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7-STEP BUILD ORDER -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-4">The 7-Step Build Order</h2>
+      <p class="text-center text-text-secondary mb-8">Built sequentially. Each step works as a standalone product.</p>
+      <BuildChain />
+      <div class="mt-6 pitch-card">
+        <h3 class="font-bold text-lg mb-3">Current Status</h3>
+        <div class="space-y-2 text-sm text-text-secondary">
+          <p><span class="text-sage font-semibold">✅ Step 1: Shared Grocery List</span> — Built. Real-time sync, invite code pairing, category grouping, partner badges, "Move to Pantry" bridge.</p>
+          <p><span class="text-amber-500 font-semibold">⚠️ Step 2: PWA Install + Mobile Polish</span> — Partial. vite-plugin-pwa configured, needs refinement.</p>
+          <p><span class="text-amber-500 font-semibold">⚠️ Step 3: Partner Profiles + D1</span> — Skeleton. UI built, needs real D1 integration.</p>
+          <p><span class="text-amber-500 font-semibold">⚠️ Step 4: Pantry Tracking</span> — UI built, needs backend.</p>
+          <p><span class="text-text-secondary font-semibold">❌ Step 5: AI Meal Generation</span> — Not built. Needs Anthropic API key + AI Gateway.</p>
+          <p><span class="text-text-secondary font-semibold">❌ Step 6: Meal Calendar</span> — Not built. WeekCalendar component exists, needs AI + D1.</p>
+          <p><span class="text-text-secondary font-semibold">❌ Step 7: Adaptive Shared Cooking</span> — Not built. PlatingView component exists, needs TDEE + complex AI prompts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 8: MEAL PICKER -->
+  <section class="spoke-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Feature 8: Couple's Meal Picker (On Hold)</h2>
+      <div class="pitch-card">
+        <p class="text-sm text-text-secondary mb-3">A collaborative recipe voting experience — fully designed but intentionally parked for future development.</p>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li>Both partners see 3-5 AI-generated recipe cards</li>
+          <li>Each votes independently: "Let's do it" or "Not tonight"</li>
+          <li>First mutual approval becomes "our meal"</li>
+          <li>Real-time vote sync via WebSocket</li>
+          <li>Diet-constraint-aware (every suggestion works for both partners)</li>
+          <li>Pantry ingredient matching visible on each card</li>
+        </ul>
+        <p class="text-xs text-text-secondary mt-3 bg-cream-dark p-3 rounded border border-border"><strong class="text-text-primary">Closest competitor:</strong> Cloche ("Swipe. Match. Cook.") — pre-launch, 500+ waitlist. This app does it better because AI generates from your actual pantry (not browsing a database), every suggestion works for both partners, and real-time vote sync (not async).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="pitch-card-sage max-w-2xl mx-auto">
+        <p class="text-lg text-text-primary leading-relaxed">
+          <strong class="text-sage-dark">The hardest truth:</strong> Overbuilding is the #1 risk. Too many features = failure risk. The best MVP is a shared grocery list that syncs so fast it feels like magic. Everything else is an upgrade.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="/proposal/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Proposal Hub</a>
+      </div>
+    </div>
+  </section>
+</SpokeLayout>

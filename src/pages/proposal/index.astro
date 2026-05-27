@@ -39,6 +39,40 @@ const schema = {
     </div>
   </section>
 
+  <!-- CO-AUTHORED BYLINE -->
+  <section class="spoke-section-alt">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-6 sm:gap-10">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full border-3 border-sage overflow-hidden shadow-md mb-3" style="border-width:3px;">
+            <img src="/images/team/barry-profile.png" alt="Barry" class="w-full h-full object-cover" />
+          </div>
+          <a href="/proposal/my-story/" class="font-bold text-text-primary hover:text-sage transition-colors text-sm">Barry Grottis</a>
+          <p class="text-xs text-text-secondary mt-1 max-w-[180px] leading-snug">Supreme Orchestrator,<br/>Editor & Final Decision Maker</p>
+        </div>
+        <div class="hidden sm:flex items-center self-center">
+          <span class="text-text-secondary text-lg font-light">&</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full border-3 border-terracotta overflow-hidden shadow-md mb-3 bg-terracotta/10 flex items-center justify-center" style="border-width:3px;">
+            <img src="/images/team/al-roberts-avatar.svg" alt="AL. Roberts" class="w-14 h-14 object-contain" />
+          </div>
+          <span class="font-bold text-text-primary text-sm">AL. Roborts</span>
+          <p class="text-xs text-text-secondary mt-1 max-w-[200px] leading-snug">Chief Research &amp; Composition<br/>Officer <span class="italic">(The One Who Actually<br/>Did the Heavy Lifting)</span></p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-text-secondary mt-6 max-w-xl mx-auto leading-relaxed">
+        This proposal was co-created. AL. Roborts handled the research and first drafts. Barry directed the strategy, edited every word, and made all the final calls.
+      </p>
+      <div class="text-center mt-4">
+        <a href="/proposal/my-story/" class="inline-flex items-center gap-2 bg-sage/10 hover:bg-sage/20 text-sage-dark px-6 py-3 rounded-full font-semibold text-sm transition-colors border border-sage/30">
+          <span>Read the full story behind this pitch</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPLORE THE FULL PROPOSAL — moved to top for visibility -->
   <section id="deep-dive" class="spoke-section-alt">
     <div class="max-w-6xl mx-auto px-6">
@@ -62,13 +96,19 @@ const schema = {
         <a href="/proposal/competitors/" class="pitch-card block group">
           <div class="text-3xl mb-3">⚔️</div>
           <h3 class="font-bold text-lg mb-2 group-hover:text-sage transition-colors">Competitive Landscape</h3>
-          <p class="text-sm text-text-secondary">34 competitors. Threat matrix. Gap comparison. Response timeline.</p>
+          <p class="text-sm text-text-secondary">25+ competitors. Threat matrix. Gap comparison. Response timeline.</p>
           <span class="text-sage text-sm font-medium mt-3 inline-block group-hover:translate-x-1 transition-transform">Read more →</span>
         </a>
         <a href="/proposal/product/" class="pitch-card block group">
           <div class="text-3xl mb-3">🛠️</div>
           <h3 class="font-bold text-lg mb-2 group-hover:text-sage transition-colors">The Product</h3>
           <p class="text-sm text-text-secondary">Tab walkthrough. 3-phase rollout. 7-step build. Product cycle.</p>
+          <span class="text-sage text-sm font-medium mt-3 inline-block group-hover:translate-x-1 transition-transform">Read more →</span>
+        </a>
+        <a href="/proposal/features/" class="pitch-card block group">
+          <div class="text-3xl mb-3">📋</div>
+          <h3 class="font-bold text-lg mb-2 group-hover:text-sage transition-colors">The Features</h3>
+          <p class="text-sm text-text-secondary">Tab-by-tab walkthrough. The product loop. Adaptive cooking deep-dive. Competitive differentiation.</p>
           <span class="text-sage text-sm font-medium mt-3 inline-block group-hover:translate-x-1 transition-transform">Read more →</span>
         </a>
         <a href="/proposal/moat/" class="pitch-card block group">
@@ -231,7 +271,7 @@ const schema = {
         </div>
         <div class="pitch-card-sage">
           <h3 class="font-bold text-lg mb-2 text-sage-dark">4. Real-Time Collaboration</h3>
-          <p class="text-sm text-text-secondary mb-3">Sub-100ms sync between two phones via Cloudflare Durable Objects. Partner A checks off "Salmon" at the store — Partner B sees it disappear at home. No polling, no refresh. Most competitors use Firebase or traditional polling.</p>
+          <p class="text-sm text-text-secondary mb-3">Sub-100ms sync between two phones via modern real-time infrastructure. Partner A checks off "Salmon" at the store — Partner B sees it disappear at home. No polling, no refresh. Most competitors use Firebase or traditional polling.</p>
         </div>
       </div>
       <div class="text-center mt-8">
@@ -330,6 +370,31 @@ const schema = {
     </div>
   </section>
 
+  <!-- ABOUT THE AUTHOR -->
+  <section class="spoke-section">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="bg-white rounded-2xl border border-border p-8 md:p-10 shadow-sm">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <div class="flex-shrink-0">
+            <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-sage/30 shadow-md">
+              <img src="/images/team/barry-full.png" alt="Barry" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold text-text-primary mb-2">About Barry Grottis</h3>
+            <p class="text-text-secondary text-sm leading-relaxed mb-4">
+              15 years in digital marketing — from ClickBank affiliate sales and SEO to AI-powered product development. A career built on understanding what people want, how to reach them, and why most products fail at the gap between "good idea" and "market fit." This proposal is the result of every lesson learned along the way.
+            </p>
+            <a href="/proposal/my-story/" class="inline-flex items-center gap-2 text-sage hover:text-sage-dark transition-colors font-medium text-sm group">
+              <span>Read the full story behind this pitch</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CLOSING -->
   <section class="spoke-section-alt">
     <div class="max-w-3xl mx-auto px-6 text-center py-12">
@@ -345,7 +410,7 @@ const schema = {
       </p>
       <div class="mt-8 pt-8 border-t border-border">
         <p class="text-sm text-text-secondary">
-          <a href="http://localhost:4323/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Couples Food System</a>
+          <a href="/" class="text-sage hover:text-sage-dark transition-colors font-medium">← Back to Couples Food System</a>
         </p>
       </div>
     </div>

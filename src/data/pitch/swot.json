@@ -10,8 +10,8 @@
         "description": "One-prep-two-plates workflow is genuinely difficult to replicate. Addresses a real pain point no one else solves."
       },
       {
-        "title": "Cloudflare-Native Architecture",
-        "description": "Zero infrastructure cost at launch. Sub-100ms real-time sync. PWA distribution. Global edge deployment."
+        "title": "Modern Edge Architecture",
+        "description": "Low infrastructure cost at launch. Sub-100ms real-time sync. PWA distribution. Global edge deployment. Production-ready stack chosen for scalability."
       },
       {
         "title": "Relationship-First UX Philosophy",
@@ -34,10 +34,6 @@
       {
         "title": "Complexity Risk",
         "description": "The product is ambitious. Balancing power with simplicity is the hardest design challenge."
-      },
-      {
-        "title": "Single-Platform Dependency",
-        "description": "Everything runs on Cloudflare. If Cloudflare has issues, the product has issues."
       },
       {
         "title": "No Native App Presence",
