@@ -236,6 +236,25 @@ import BuildChain from '../../components/pitch/BuildChain.astro';
     </div>
   </section>
 
+  <!-- SOURCES & NOTES -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-sm font-semibold text-text-secondary mb-4">Sources &amp; Notes</h2>
+      <ol class="text-xs text-text-secondary space-y-2">
+        <li><sup>1</sup> Mifflin-St Jeor equation for BMR calculation: Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. "A new predictive equation for resting metabolic rate in healthy individuals." The American Journal of Clinical Nutrition, 51(2):241-247, 1990.</li>
+        <li><sup>2</sup> TDEE activity multipliers (1.2 sedentary, 1.375 light, 1.55 moderate, 1.725 very active, 1.9 extra active) are widely accepted derived values from the Harris-Benedict framework, standard in nutrition and fitness applications.</li>
+        <li><sup>3</sup> AnyList charges $30/year for real-time sync features: confirmed via AnyList public pricing page (anylistapp.com) as of May 2026.</li>
+        <li><sup>4</sup> PWA supports push notifications on iOS 16.4+: Apple Developer Documentation, "Web Push" (developer.apple.com). Requires user gesture, valid push subscription, and HTTPS.</li>
+        <li><sup>5</sup> WebSocket sub-100ms sync latency is an architectural design target, not a third-party benchmark. Actual latency depends on network conditions, edge node proximity, and message payload size.</li>
+        <li><sup>6</sup> "No mainstream competitor has a pantry tab": based on analysis of 25+ competitors on the Competitive Landscape page. Pantry/inventory tracking was not found as a primary feature in any direct competitor.</li>
+        <li><sup>7</sup> Natural language pantry input (e.g., "chicken, 2 cups rice, spinach" → 3 items): product design specification. Parsing implemented via AI-assisted NLP. No competitor offers equivalent friction-free input based on competitive review.</li>
+        <li><sup>8</sup> "Move to Pantry" bridge between shopping and cooking: proprietary product design. No equivalent feature found in competitor analysis.</li>
+        <li><sup>9</sup> Dual-body-profile TDEE calculation with adaptive plating: product design specification. No competitor was found to combine dual-profile awareness with AI-generated plating instructions. See also The Moat page for defensibility analysis.</li>
+        <li><sup>10</sup> 3-phase rollout plan and 7-step build order timelines (~3 months to full MVP) are engineering estimates based on the defined feature scope. Actual timelines depend on team size, experience, and scope changes.</li>
+      </ol>
+    </div>
+  </section>
+
   <!-- CLOSING -->
   <section class="spoke-section">
     <div class="max-w-4xl mx-auto px-6 text-center">
