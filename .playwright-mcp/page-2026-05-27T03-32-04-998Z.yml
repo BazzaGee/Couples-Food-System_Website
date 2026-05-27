@@ -1,0 +1,345 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "← Couples Food System" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: ←
+        - generic [ref=e6]: Couples Food System
+      - generic [ref=e7]:
+        - generic [ref=e8]: CUPLA
+        - generic [ref=e9]: × Proposal
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - generic [ref=e13]: Strategic Proposal · Confidential
+      - heading "A $1.8 Billion Opportunity Sitting in Your Blind Spot" [level=1] [ref=e14]:
+        - text: A $1.8 Billion Opportunity
+        - text: Sitting in Your Blind Spot
+      - paragraph [ref=e15]:
+        - text: CUPLA already has the audience, the brand, and the distribution. There is an entirely new software category —
+        - strong [ref=e16]: Collaborative Adaptive Nutrition
+        - text: — that nobody owns. This proposal shows you the gap, the product that fills it, and what it is worth.
+      - generic [ref=e17]:
+        - link "Explore Full Proposal" [ref=e18] [cursor=pointer]:
+          - /url: "#deep-dive"
+        - link "See the Numbers" [ref=e19] [cursor=pointer]:
+          - /url: "#opportunity"
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - img "Barry" [ref=e25]
+          - link "Barry Grottis" [ref=e26] [cursor=pointer]:
+            - /url: /proposal/my-story/
+          - paragraph [ref=e27]:
+            - text: Supreme Orchestrator,
+            - text: Editor & Final Decision Maker
+        - generic [ref=e29]: "&"
+        - generic [ref=e30]:
+          - img "AL. Roberts" [ref=e32]
+          - generic [ref=e33]: AL. Roborts
+          - paragraph [ref=e34]:
+            - text: Chief Research & Composition
+            - text: Officer
+            - generic [ref=e35]:
+              - text: (The One Who Actually
+              - text: Did the Heavy Lifting)
+      - paragraph [ref=e36]: This proposal was co-created. AL. Roborts handled the research and first drafts. Barry directed the strategy, edited every word, and made all the final calls.
+      - link "Read the full story behind this pitch →" [ref=e38] [cursor=pointer]:
+        - /url: /proposal/my-story/
+        - generic [ref=e39]: Read the full story behind this pitch
+        - generic [ref=e40]: →
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - heading "Explore the Full Proposal" [level=2] [ref=e44]
+        - paragraph [ref=e45]: Each section below is a deep-dive with detailed data, analysis, and strategic recommendations. Click any card to explore.
+      - generic [ref=e46]:
+        - link "📊 Market Opportunity $1.8B → $5.2B market. 28% CAGR. TAM/SAM/SOM. Growth drivers. Read more →" [ref=e47] [cursor=pointer]:
+          - /url: /proposal/opportunity/
+          - generic [ref=e48]: 📊
+          - heading "Market Opportunity" [level=3] [ref=e49]
+          - paragraph [ref=e50]: $1.8B → $5.2B market. 28% CAGR. TAM/SAM/SOM. Growth drivers.
+          - generic [ref=e51]: Read more →
+        - link "🔍 The Market Gap Venn diagram. 4 structural reasons. Positioning map. Fragmentation. Read more →" [ref=e52] [cursor=pointer]:
+          - /url: /proposal/market-gap/
+          - generic [ref=e53]: 🔍
+          - heading "The Market Gap" [level=3] [ref=e54]
+          - paragraph [ref=e55]: Venn diagram. 4 structural reasons. Positioning map. Fragmentation.
+          - generic [ref=e56]: Read more →
+        - link "⚔️ Competitive Landscape 34 competitors. Threat matrix. Gap comparison. Response timeline. Read more →" [ref=e57] [cursor=pointer]:
+          - /url: /proposal/competitors/
+          - generic [ref=e58]: ⚔️
+          - heading "Competitive Landscape" [level=3] [ref=e59]
+          - paragraph [ref=e60]: 34 competitors. Threat matrix. Gap comparison. Response timeline.
+          - generic [ref=e61]: Read more →
+        - link "🛠️ The Product Tab walkthrough. 3-phase rollout. 7-step build. Product cycle. Read more →" [ref=e62] [cursor=pointer]:
+          - /url: /proposal/product/
+          - generic [ref=e63]: 🛠️
+          - heading "The Product" [level=3] [ref=e64]
+          - paragraph [ref=e65]: Tab walkthrough. 3-phase rollout. 7-step build. Product cycle.
+          - generic [ref=e66]: Read more →
+        - link "🛡️ The Moat 4 differentiators. Adaptive cooking deep-dive. Defensibility analysis. Read more →" [ref=e67] [cursor=pointer]:
+          - /url: /proposal/moat/
+          - generic [ref=e68]: 🛡️
+          - heading "The Moat" [level=3] [ref=e69]
+          - paragraph [ref=e70]: 4 differentiators. Adaptive cooking deep-dive. Defensibility analysis.
+          - generic [ref=e71]: Read more →
+        - link "🚀 CUPLA Advantage Trojan horse analysis. Audience crossover. Distribution. Urgency. Read more →" [ref=e72] [cursor=pointer]:
+          - /url: /proposal/cupla-advantage/
+          - generic [ref=e73]: 🚀
+          - heading "CUPLA Advantage" [level=3] [ref=e74]
+          - paragraph [ref=e75]: Trojan horse analysis. Audience crossover. Distribution. Urgency.
+          - generic [ref=e76]: Read more →
+        - link "💰 Financials & Strategy Revenue projections. Monetization. Unit economics. KPIs. Read more →" [ref=e77] [cursor=pointer]:
+          - /url: /proposal/financials/
+          - generic [ref=e78]: 💰
+          - heading "Financials & Strategy" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Revenue projections. Monetization. Unit economics. KPIs.
+          - generic [ref=e81]: Read more →
+        - link "⚠️ SWOT & Risks Full SWOT. 9 risk scenarios. Moat sustainability. Read more →" [ref=e82] [cursor=pointer]:
+          - /url: /proposal/risks/
+          - generic [ref=e83]: ⚠️
+          - heading "SWOT & Risks" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Full SWOT. 9 risk scenarios. Moat sustainability.
+          - generic [ref=e86]: Read more →
+        - link "🏷️ Brand Identity Naming conventions. Top names & taglines. Domain availability. Slogans, hooks, and positioning. Read more →" [ref=e87] [cursor=pointer]:
+          - /url: /proposal/naming-branding/
+          - generic [ref=e88]: 🏷️
+          - heading "Brand Identity" [level=3] [ref=e89]
+          - paragraph [ref=e90]: Naming conventions. Top names & taglines. Domain availability. Slogans, hooks, and positioning.
+          - generic [ref=e91]: Read more →
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - heading "The Gap at a Glance" [level=2] [ref=e95]
+        - paragraph [ref=e96]: Four categories converge. Nobody sits at the center.
+      - img [ref=e98]:
+        - generic [ref=e100]: PANTRY AI
+        - generic [ref=e101]: Ingredient tracking
+        - generic [ref=e102]: "& recipe generation"
+        - generic [ref=e104]: NUTRITION
+        - generic [ref=e105]: Macros, goals, portions
+        - generic [ref=e106]: (Fitia)
+        - generic [ref=e108]: COLLABORATION
+        - generic [ref=e109]: Shared planning
+        - generic [ref=e110]: (Leanlife)
+        - generic [ref=e112]: GROCERY SYNC
+        - generic [ref=e113]: (AnyList)
+        - generic [ref=e115]: THE GAP
+        - generic [ref=e116]: EMPTY
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: Pantry AI
+          - paragraph [ref=e120]: What you have → what to cook
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: Nutrition
+          - paragraph [ref=e123]: Macros, goals, portions
+        - generic [ref=e124]:
+          - paragraph [ref=e125]: Collaboration
+          - paragraph [ref=e126]: Shared planning, real-time sync
+        - generic [ref=e127]:
+          - paragraph [ref=e128]: Grocery Sync
+          - paragraph [ref=e129]: Shared lists, no duplicates
+      - generic [ref=e130]:
+        - paragraph [ref=e131]: The center is empty. The category does not exist yet. This is the window.
+        - 'link "→ Dive deeper: The Market Gap Analysis" [ref=e132] [cursor=pointer]':
+          - /url: /proposal/market-gap/
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - heading "The Opportunity in Numbers" [level=2] [ref=e136]
+        - paragraph [ref=e137]: The market is converging toward this category. The data is unambiguous.
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - generic [ref=e140]: $1.8B
+          - generic [ref=e141]: Meal Planning Market
+          - paragraph [ref=e142]: 2025 global value
+        - generic [ref=e143]:
+          - generic [ref=e144]: 28.10%
+          - generic [ref=e145]: AI Segment Growth
+          - paragraph [ref=e146]: 28% CAGR — 2x overall market
+        - generic [ref=e147]:
+          - generic [ref=e148]: 35M
+          - generic [ref=e149]: U.S. Couples (25-45)
+          - paragraph [ref=e150]: Census data estimate
+        - generic [ref=e151]:
+          - generic [ref=e152]: "0"
+          - generic [ref=e153]: Complete Stacks
+          - paragraph [ref=e154]: No product owns all 4 categories
+      - img [ref=e157]:
+        - generic [ref=e159]: TAM — $1.8B
+        - generic [ref=e160]: Global meal planning market
+        - generic [ref=e162]: SAM — $300-500M
+        - generic [ref=e163]: Health-conscious couples
+        - generic [ref=e165]: SOM
+        - generic [ref=e166]: $1M+ ARR
+        - generic [ref=e167]: 10K households
+      - 'link "→ Dive deeper: Full Market Opportunity Analysis" [ref=e169] [cursor=pointer]':
+        - /url: /proposal/opportunity/
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - heading "The Product in One Image" [level=2] [ref=e173]
+        - paragraph [ref=e174]: One dinner. Two plates. Zero arguments. This is the moat.
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - generic [ref=e179]: 🥗
+            - heading "Partner A" [level=4] [ref=e180]
+            - paragraph [ref=e181]: Weight Loss
+            - generic [ref=e182]:
+              - paragraph [ref=e183]: 4oz chicken
+              - paragraph [ref=e184]: Bed of spinach
+              - paragraph [ref=e185]: ½ cup rice
+              - paragraph [ref=e186]: Extra vegetables
+            - generic [ref=e187]:
+              - paragraph [ref=e188]: ~450 cal
+              - paragraph [ref=e189]: 35g protein · 30g carbs
+          - generic [ref=e190]:
+            - generic [ref=e191]: 🍗
+            - heading "Partner B" [level=4] [ref=e192]
+            - paragraph [ref=e193]: Muscle Gain
+            - generic [ref=e194]:
+              - paragraph [ref=e195]: 6oz chicken
+              - paragraph [ref=e196]: Full cup of rice
+              - paragraph [ref=e197]: Same vegetables
+            - generic [ref=e198]:
+              - paragraph [ref=e199]: ~700 cal
+              - paragraph [ref=e200]: 55g protein · 65g carbs
+        - paragraph [ref=e201]: Same recipe. Same pan. Same cooking session. Two different plates.
+      - generic [ref=e202]:
+        - paragraph [ref=e203]:
+          - text: Partner A wants to lose weight. Partner B wants to build muscle. They cook
+          - strong [ref=e204]: one meal together
+          - text: — the AI generates different plating instructions for each person. Same pan, same recipe, different plates.
+          - strong [ref=e205]: No other product does this with real-time collaboration.
+        - 'link "→ Dive deeper: Full Product Walkthrough" [ref=e206] [cursor=pointer]':
+          - /url: /proposal/product/
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - heading "Why CUPLA" [level=2] [ref=e210]
+        - paragraph [ref=e211]: You are not starting from scratch. You already have the three things that matter most.
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - generic [ref=e214]: 👥
+          - heading "Existing Audience" [level=3] [ref=e215]
+          - paragraph [ref=e216]: CUPLA already serves couples. This product speaks to the exact same users — just solving a different daily problem. Zero customer acquisition cost for the initial launch.
+        - generic [ref=e217]:
+          - generic [ref=e218]: 🎯
+          - heading "Brand Alignment" [level=3] [ref=e219]
+          - paragraph [ref=e220]: CUPLA's brand is about couples, connection, and shared experiences. A shared food system fits naturally — it is the same emotional positioning applied to a daily ritual.
+        - generic [ref=e221]:
+          - generic [ref=e222]: 📡
+          - heading "Distribution Advantage" [level=3] [ref=e223]
+          - paragraph [ref=e224]: You have the channels, the social presence, and the trust. A new product launched under the CUPLA umbrella gets instant credibility and reach that a standalone startup would spend years building.
+      - 'link "→ Dive deeper: CUPLA as Trojan Horse — Full Analysis" [ref=e226] [cursor=pointer]':
+        - /url: /proposal/cupla-advantage/
+    - generic [ref=e228]:
+      - generic [ref=e229]:
+        - heading "The Moat — Four Pillars" [level=2] [ref=e230]
+        - paragraph [ref=e231]: Each pillar is defensible. Together, they are nearly impossible to replicate.
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - heading "1. Adaptive Shared Cooking" [level=3] [ref=e234]
+          - paragraph [ref=e235]:
+            - text: One prep, two plates. The AI generates a single cooking workflow with distinct plating instructions per person. This requires nutrition intelligence, portion mathematics, recipe generation, and relationship-aware UX working together.
+            - strong [ref=e236]: No competitor has all four.
+        - generic [ref=e237]:
+          - heading "2. Pantry-First AI" [level=3] [ref=e238]
+          - paragraph [ref=e239]: "Most apps work: recipe → grocery list. This inverts it: what you have → optimized meals. Reduces waste, saves money, feels magical. The AI must understand ingredient compatibility, nutritional profiles, and multi-person dietary goals simultaneously."
+        - generic [ref=e240]:
+          - heading "3. Relationship-First UX" [level=3] [ref=e241]
+          - paragraph [ref=e242]: Instead of "Hit your protein target" → "What are WE eating tonight?" The entire experience uses "we" language. Feels like a shared digital kitchen, not a medical chart. UX philosophy is embedded — competitors cannot bolt it on.
+        - generic [ref=e243]:
+          - heading "4. Real-Time Collaboration" [level=3] [ref=e244]
+          - paragraph [ref=e245]: Sub-100ms sync between two phones via Cloudflare Durable Objects. Partner A checks off "Salmon" at the store — Partner B sees it disappear at home. No polling, no refresh. Most competitors use Firebase or traditional polling.
+      - 'link "→ Dive deeper: Full Moat Analysis — Why Each Is Defensible" [ref=e247] [cursor=pointer]':
+        - /url: /proposal/moat/
+    - generic [ref=e249]:
+      - generic [ref=e250]:
+        - heading "Financial Snapshot" [level=2] [ref=e251]
+        - paragraph [ref=e252]: Conservative projections. Organic growth only. Path to $1M ARR in under 3 years.
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - generic [ref=e256]:
+            - generic [ref=e257]: Month 6
+            - generic [ref=e260]: $400-600/mo
+          - generic [ref=e261]:
+            - generic [ref=e262]: Year 1
+            - generic [ref=e265]: $2,400-3,600/mo
+          - generic [ref=e266]:
+            - generic [ref=e267]: Year 2
+            - generic [ref=e270]: $14,400-21,600/mo
+          - generic [ref=e271]:
+            - generic [ref=e272]: Year 3
+            - generic [ref=e275]: $48K-72K/mo
+          - generic [ref=e276]:
+            - generic [ref=e277]: Year 5
+            - generic [ref=e280]: $192K-288K/mo
+        - paragraph [ref=e281]: Conservative estimates · 10% premium conversion · $10/mo per household
+      - generic [ref=e282]:
+        - generic [ref=e283]:
+          - paragraph [ref=e284]: $10/mo
+          - paragraph [ref=e285]: Per household
+        - generic [ref=e286]:
+          - paragraph [ref=e287]: 85-90%
+          - paragraph [ref=e288]: Gross margin
+        - generic [ref=e289]:
+          - paragraph [ref=e290]: $0
+          - paragraph [ref=e291]: Organic CAC
+        - generic [ref=e292]:
+          - paragraph [ref=e293]: 10K
+          - paragraph [ref=e294]: Households to $1M ARR
+      - 'link "→ Dive deeper: Full Financials, Pricing & Strategy" [ref=e296] [cursor=pointer]':
+        - /url: /proposal/financials/
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - heading "The Clock Is Ticking" [level=2] [ref=e300]
+        - paragraph [ref=e301]: The window is open now. It will not stay open forever.
+      - generic [ref=e302]:
+        - generic [ref=e304]:
+          - generic [ref=e305]:
+            - generic [ref=e306]: HIGH THREAT
+            - generic [ref=e307]: 6-12 months
+          - heading "Yummo adds real-time sync" [level=4] [ref=e308]
+          - paragraph [ref=e309]: They already have the adaptive portions concept. Adding live collaboration makes them a direct competitor with the same moat.
+        - generic [ref=e311]:
+          - generic [ref=e312]:
+            - generic [ref=e313]: HIGH THREAT
+            - generic [ref=e314]: 12-18 months
+          - heading "Fitia pivots to relationship-first UX" [level=4] [ref=e315]
+          - paragraph [ref=e316]: 10M+ users, already adding shared features. If they shift from clinical to emotional, they become a direct competitor with massive distribution.
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]: MEDIUM THREAT
+            - generic [ref=e321]: 12-24 months
+          - heading "Leanlife adds AI features" [level=4] [ref=e322]
+          - paragraph [ref=e323]: They already own the emotional positioning and real-time collaboration. AI meal generation is the missing piece.
+        - generic [ref=e325]:
+          - generic [ref=e326]:
+            - generic [ref=e327]: MEDIUM THREAT
+            - generic [ref=e328]: 18-24 months
+          - heading "Samsung Food or MyFitnessPal adds collaboration" [level=4] [ref=e329]
+          - paragraph [ref=e330]: They have resources, recipe databases, and existing user bases. But they move slowly and serve everyone — not couples specifically.
+      - generic [ref=e331]:
+        - paragraph [ref=e332]: The gap exists because nobody has assembled all the pieces yet. Move fast and own the category definition.
+        - 'link "→ Dive deeper: Full Competitive Landscape — 34 Competitors Analyzed" [ref=e333] [cursor=pointer]':
+          - /url: /proposal/competitors/
+    - generic [ref=e337]:
+      - img "Barry" [ref=e340]
+      - generic [ref=e341]:
+        - heading "About Barry Grottis" [level=3] [ref=e342]
+        - paragraph [ref=e343]: 15 years in digital marketing — from ClickBank affiliate sales and SEO to AI-powered product development. A career built on understanding what people want, how to reach them, and why most products fail at the gap between "good idea" and "market fit." This proposal is the result of every lesson learned along the way.
+        - link "Read the full story behind this pitch →" [ref=e344] [cursor=pointer]:
+          - /url: /proposal/my-story/
+          - generic [ref=e345]: Read the full story behind this pitch
+          - generic [ref=e346]: →
+    - generic [ref=e348]:
+      - heading "The Window Is Open" [level=2] [ref=e349]
+      - paragraph [ref=e350]: Yummo proves demand for adaptive portions. Fitia is converging from the nutrition side. Leanlife owns collaboration but lacks AI. The center of the Venn diagram is still empty.
+      - paragraph [ref=e351]: CUPLA has the audience, the brand alignment, and the distribution. The product is defined. The market is growing at 28% CAGR. The path to $1M ARR is clear.
+      - paragraph [ref=e352]: Move fast. Own the category. Build the moat.
+      - paragraph [ref=e354]:
+        - link "← Back to Couples Food System" [ref=e355] [cursor=pointer]:
+          - /url: /
+  - contentinfo [ref=e356]:
+    - generic [ref=e357]:
+      - paragraph [ref=e358]: A strategic proposal for CUPLA · Built with data from comprehensive market analysis
+      - paragraph [ref=e359]:
+        - link "← Back to Couples Food System" [ref=e360] [cursor=pointer]:
+          - /url: /
