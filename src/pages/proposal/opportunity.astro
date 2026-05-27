@@ -8,51 +8,108 @@ import marketData from '../../data/pitch/market-data.json';
 
 <SpokeLayout
   title="Market Opportunity — CUPLA Proposal"
-  description="The $1.8B meal planning market is growing at 28% CAGR in the AI segment. Here is the full market size breakdown with source citations and competitive revenue anchors."
+  description="The relationship app market and the nutrition app market together represent over $6.6B in annual consumer spending. Nobody has built the product that lives at their intersection."
 >
   <!-- HERO -->
   <section class="pt-20 md:pt-28 pb-16 px-6">
     <div class="max-w-4xl mx-auto">
       <span class="text-xs text-text-secondary font-medium uppercase tracking-wider">Market Opportunity</span>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">The Market Is Converging<br/>Toward This Category</h1>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mt-3 mb-6">The Market Is Real.<br/>The Category Doesn't Exist Yet.</h1>
       <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
-        The global meal planning app market is projected to grow from $1.8 billion in 2025 to $5.2 billion by 2034. But the real story is the AI-driven segment — growing at <strong class="text-text-primary">28.1% CAGR</strong>, more than double the overall market. This indicates strong, accelerating demand for intelligent, adaptive solutions. Three independent AI analyses (Claude, Gemini, GPT) all concluded independently that nobody fully owns the category of real-time collaborative adaptive household nutrition.
+        The $1.8 billion meal planning headline is borrowed from the broad market — a figure that includes solo dieters, hospital nutrition software, and family recipe apps. That is not this product's market. This product sits at the intersection of <strong class="text-text-primary">two distinct, growing, and measurable markets</strong> — and nobody has built the product that lives where they overlap.
       </p>
     </div>
   </section>
 
-  <!-- MARKET SIZE BREAKDOWN -->
+  <!-- TWO MARKETS. ONE INTERSECTION. -->
   <section class="spoke-section-alt">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="proposal-section-title text-center mb-8">Two Markets. One Intersection. Zero Products.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="pitch-card-sage">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">💑</span>
+            <h3 class="font-bold text-lg text-sage-dark">Relationship Apps for Couples</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-4">Tools couples use to reduce friction, increase connection, and share daily life.</p>
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div>
+              <p class="text-lg font-bold text-sage-dark">{marketData.intersectingMarkets.relationshipApps.market2025}</p>
+              <p class="text-xs text-text-secondary">2025</p>
+            </div>
+            <div>
+              <p class="text-lg font-bold text-sage-dark">{marketData.intersectingMarkets.relationshipApps.market2034}</p>
+              <p class="text-xs text-text-secondary">By 2034</p>
+            </div>
+            <div>
+              <p class="text-lg font-bold text-sage-dark">{marketData.intersectingMarkets.relationshipApps.cagr}</p>
+              <p class="text-xs text-text-secondary">CAGR</p>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-card-terracotta">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">🥗</span>
+            <h3 class="font-bold text-lg text-terracotta-dark">Diet & Nutrition Apps</h3>
+          </div>
+          <p class="text-sm text-text-secondary mb-4">Tools individuals use to track food, manage goals, and eat better.</p>
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div>
+              <p class="text-lg font-bold text-terracotta-dark">{marketData.intersectingMarkets.nutritionApps.market2025}</p>
+              <p class="text-xs text-text-secondary">2025</p>
+            </div>
+            <div>
+              <p class="text-lg font-bold text-terracotta-dark">{marketData.intersectingMarkets.nutritionApps.market2030}</p>
+              <p class="text-xs text-text-secondary">By 2030</p>
+            </div>
+            <div>
+              <p class="text-lg font-bold text-terracotta-dark">{marketData.intersectingMarkets.nutritionApps.cagr}</p>
+              <p class="text-xs text-text-secondary">CAGR</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-lg text-text-primary font-semibold mb-3">
+          Combined: <span class="text-sage">{marketData.intersectingMarkets.combined}</span> in active consumer spending on the exact two problems this product solves.
+        </p>
+        <p class="text-sm text-text-secondary">
+          Neither market owns the overlap. No product has been built for couples who share a kitchen but have different dietary goals. That intersection is the category.
+        </p>
+      </div>
+      <div class="mt-4 text-xs text-text-secondary text-center">
+        <strong class="text-text-primary">Sources:</strong> Relationship apps market from Market Reports World. Diet & nutrition apps market from Mordor Intelligence.
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET SIZE BREAKDOWN -->
+  <section class="spoke-section">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="proposal-section-title text-center mb-8">Market Size Breakdown</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <StatCard number={marketData.marketSize.overallMarket2025} label="Overall Market" sublabel="2025 — $1.8B → $5.2B by 2034" />
-        <StatCard number={marketData.marketSize.aiMealPlanning2024} label="AI Segment (2024)" sublabel="→ $11.6B by 2034" />
-        <StatCard number={marketData.marketSize.cagr} label="AI Segment CAGR" sublabel="28.10% — 2x overall growth" />
-        <StatCard number={marketData.marketSize.northAmericaShare} label="North America Share" sublabel="Largest regional market" />
-      </div>
-      <div class="mt-6 max-w-2xl mx-auto">
-        <p class="text-xs text-text-secondary">
-          <strong class="text-text-primary">Sources:</strong> Overall market size ($1.8B → $5.2B at 12.5% CAGR) and AI segment ($972M → $11.6B at 28.1% CAGR) from Grand View Research and industry market analysis reports. North America market share (34%+) from regional market distribution data. U.S. couples household estimates from U.S. Census Bureau data.
-        </p>
+        <StatCard number={marketData.intersectingMarkets.relationshipApps.market2025} label="Relationship Apps" sublabel="2025 — $854M → $2.6B by 2034" />
+        <StatCard number={marketData.intersectingMarkets.nutritionApps.market2025} label="Nutrition Apps" sublabel="2025 — $5.76B → $10.15B by 2030" />
+        <StatCard number={marketData.marketSize.cagr} label="AI Segment CAGR" sublabel="28.10% — the real tailwind" />
+        <StatCard number="35M" label="US Couples (25-45)" sublabel="The starting point — Census data" />
       </div>
     </div>
   </section>
 
   <!-- AI MARKET GROWTH -->
-  <section class="spoke-section">
+  <section class="spoke-section-alt">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="proposal-section-title text-center mb-4">AI Market Growth Trajectory</h2>
-      <p class="text-center text-text-secondary mb-8 max-w-xl mx-auto">The AI-driven meal planning segment is growing at 28.1% CAGR — from $972M in 2024 to $11.6B by 2034.</p>
+      <h2 class="proposal-section-title text-center mb-4">The AI Segment Is the Real Tailwind</h2>
+      <p class="text-center text-text-secondary mb-8 max-w-xl mx-auto">The AI-driven meal planning segment is growing at 28.1% CAGR — more than double the broader market rate. This signals that consumers are actively demanding intelligent, adaptive, personalized food solutions. Collaborative Adaptive Nutrition sits directly in this growth trajectory.</p>
       <MarketGrowthChart />
     </div>
   </section>
 
   <!-- TAM / SAM / SOM -->
-  <section class="spoke-section-alt">
+  <section class="spoke-section">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="proposal-section-title text-center mb-4">TAM / SAM / SOM</h2>
-      <p class="text-center text-text-secondary mb-8 max-w-xl mx-auto">From the total addressable market down to what is realistically obtainable.</p>
+      <h2 class="proposal-section-title text-center mb-4">TAM / SAM / SOM — Built From the Ground Up</h2>
+      <p class="text-center text-text-secondary mb-8 max-w-xl mx-auto">Not borrowed from a broad market report. Built from census data, category analysis, and bottom-up logic.</p>
       <TAMFunnel />
       <div class="space-y-4 mt-8 max-w-2xl mx-auto">
         <div class="pitch-card">
@@ -61,6 +118,9 @@ import marketData from '../../data/pitch/market-data.json';
             <span class="font-bold text-lg">{marketData.tam.value}</span>
           </div>
           <p class="text-sm text-text-secondary">{marketData.tam.description}</p>
+          <p class="text-xs text-text-secondary mt-2 bg-cream-dark p-2 rounded border border-border">
+            <strong class="text-text-primary">TAM derivation:</strong> The combined addressable market of relationship apps ($854M) and diet/nutrition apps ($5.76B) represents over $6.6B in active consumer spending on the exact two problems this product solves — relationship friction and individual nutrition. Capturing even a fraction of either justifies the business.
+          </p>
         </div>
         <div class="pitch-card">
           <div class="flex items-center gap-3 mb-2">
@@ -69,7 +129,7 @@ import marketData from '../../data/pitch/market-data.json';
           </div>
           <p class="text-sm text-text-secondary">{marketData.sam.description}</p>
           <p class="text-xs text-text-secondary mt-2 bg-cream-dark p-2 rounded border border-border">
-            <strong class="text-text-primary">SAM derivation:</strong> 7-10M health-conscious couples (20-30% of 35M U.S. couples 25-45) × $8-12/mo subscription × 12 months = $672M-$1.44B. This represents the full addressable revenue pool for health-conscious couples with divergent dietary goals.
+            <strong class="text-text-primary">SAM derivation:</strong> 35M US couples aged 25-45 (Census Bureau). Approximately 20-30% — 7-10M households — are actively health-conscious with at least one partner tracking nutrition goals. At $10/month per household: $840M-$1.2B SAM. This is grounded, defensible, and does not rely on claiming a broad market that includes hospital dietetics and solo users.
           </p>
         </div>
         <div class="pitch-card">
@@ -79,8 +139,29 @@ import marketData from '../../data/pitch/market-data.json';
           </div>
           <p class="text-sm text-text-secondary">{marketData.som.description}</p>
           <p class="text-xs text-text-secondary mt-2 bg-cream-dark p-2 rounded border border-border">
-            <strong class="text-text-primary">Path to $1M ARR:</strong> 10,000 paying households at $10/month = $1.2M ARR. This represents 0.1-0.3% of the SAM — an extremely conservative target achievable through organic growth alone.
+            <strong class="text-text-primary">Path to $1M ARR:</strong> 10,000 paying households at $10/month = $1.2M ARR. This represents 0.1-0.3% of the SAM — an extremely conservative target achievable through organic growth alone, without a single dollar of paid acquisition.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THE CATEGORY DOESN'T EXIST YET -->
+  <section class="spoke-section-alt">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="proposal-section-title mb-6">Why the Category Doesn't Exist Yet</h2>
+      <div class="space-y-4">
+        <div class="pitch-card-sage">
+          <h3 class="font-bold text-lg mb-2 text-sage-dark">Nutrition apps were built by nutritionists who think in macros</h3>
+          <p class="text-sm text-text-secondary">They bolt on "sharing" as an afterthought. Fitia's Sync Plan uses a master/slave model that reportedly deletes the receiving user's existing meal plan — this is not real-time collaboration, it is data transfer. You cannot retrofit a solo app to feel like it was built for two people from the ground up.</p>
+        </div>
+        <div class="pitch-card-terracotta">
+          <h3 class="font-bold text-lg mb-2 text-terracotta-dark">Relationship apps were built for emotional connection</h3>
+          <p class="text-sm text-text-secondary">They have never touched nutrition intelligence. The "what should we eat?" argument is the most repeated daily friction point in a shared household — and no relationship app has built the system to solve it. The emotional positioning is there, but the product depth is not.</p>
+        </div>
+        <div class="pitch-card">
+          <h3 class="font-bold text-lg mb-2">Neither camp built from the couples-sharing-a-kitchen perspective up</h3>
+          <p class="text-sm text-text-secondary">That is not a problem to explain away. <strong class="text-text-primary">That is the opportunity.</strong> The gap is structural, not accidental. The category of "real-time collaborative adaptive household nutrition" does not exist yet as a measured segment. Three independent AI analyses (Claude, Gemini, GPT) all concluded independently that nobody fully owns it.</p>
         </div>
       </div>
     </div>
@@ -176,14 +257,14 @@ import marketData from '../../data/pitch/market-data.json';
   <!-- COMPETITIVE REVENUE ANCHORS -->
   <section class="spoke-section">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="proposal-section-title mb-6">Competitive Revenue Anchors — The Market Is Real</h2>
-      <p class="text-text-secondary mb-6">These are not theoretical numbers. Existing competitors are already generating significant revenue in adjacent categories:</p>
+      <h2 class="proposal-section-title mb-6">The Market Is Validated — By Competitors Charging Real Money</h2>
+      <p class="text-text-secondary mb-6">This is not speculative. Existing products in adjacent categories are generating real revenue right now:</p>
       <div class="overflow-x-auto">
         <table class="comparison-table w-full">
           <thead>
             <tr>
               <th class="rounded-tl-xl">Competitor</th>
-              <th>Revenue</th>
+              <th>Revenue / Traction</th>
               <th>Users</th>
               <th class="rounded-tr-xl">What This Proves</th>
             </tr>
@@ -205,7 +286,19 @@ import marketData from '../../data/pitch/market-data.json';
               <td class="font-semibold">Yummo</td>
               <td>$9.99/mo per user</td>
               <td>Unknown</td>
-              <td class="text-text-secondary text-xs">Adaptive portions concept has proven willingness to pay.</td>
+              <td class="text-text-secondary text-xs">Adaptive portions concept has proven willingness to pay — EU only, zero marketing.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">DuoDine</td>
+              <td>Free app, no revenue</td>
+              <td>1,000+ couples</td>
+              <td class="text-text-secondary text-xs">Demand exists before the full product exists. A free, basic couples meal app with no AI and no nutrition features still attracts 1,000+ active couples.</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Cloche</td>
+              <td>Pre-launch</td>
+              <td>500+ waitlist</td>
+              <td class="text-text-secondary text-xs">A couples food app that hasn't launched yet has 500+ sign-ups. Demand exists before the product ships.</td>
             </tr>
             <tr>
               <td class="font-semibold">Cozi</td>
@@ -224,7 +317,7 @@ import marketData from '../../data/pitch/market-data.json';
       </div>
       <div class="mt-4 pitch-card-sage">
         <p class="text-sm text-text-secondary">
-          <strong class="text-sage-dark">Key insight:</strong> Fitia alone generates $3.5M/year with a clinical, single-user nutrition app. A collaborative, relationship-first, adaptive cooking product serving the same market with a superior value proposition can reasonably target the same or higher revenue. The market is not speculative — it is validated by existing revenue.
+          <strong class="text-sage-dark">Key insight:</strong> The market is not waiting to be created. It is waiting to be served properly. Fitia alone generates $3.5M/year with a clinical, single-user nutrition app. A collaborative, relationship-first, adaptive cooking product serving the same market with a superior value proposition can reasonably target the same or higher revenue.
         </p>
       </div>
     </div>
@@ -255,9 +348,12 @@ import marketData from '../../data/pitch/market-data.json';
   <!-- KEY INSIGHT -->
   <section class="spoke-section">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="proposal-section-title mb-4">The Key Insight</h2>
+      <h2 class="proposal-section-title mb-4">The Pitch in One Sentence</h2>
       <p class="text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
-        The AI-driven segment is growing at <strong class="text-sage">28% CAGR</strong> — more than double the overall market rate. This is not a niche trend. It signals that the market is actively demanding intelligent, adaptive, personalized solutions. The category of Collaborative Adaptive Nutrition sits directly in this growth trajectory. The revenue is validated. The gap is real. The timing is right.
+        The relationship app market and the nutrition app market together represent over <strong class="text-sage">$6.6B in annual consumer spending</strong>. Nobody has built the product that lives at their intersection. The category is open. <strong class="text-text-primary">The timing is now.</strong>
+      </p>
+      <p class="text-sm text-text-secondary mt-4 max-w-xl mx-auto">
+        The broader meal planning market is $1.8B — but this product is not chasing all of it. It is targeting the 35M US couples actively navigating different dietary goals. That is a <strong class="text-text-primary">$840M-$1.2B SAM</strong> that nobody has purpose-built for.
       </p>
     </div>
   </section>
@@ -267,16 +363,19 @@ import marketData from '../../data/pitch/market-data.json';
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-sm font-semibold text-text-secondary mb-4">Sources &amp; Notes</h2>
       <ol class="text-xs text-text-secondary space-y-2">
-        <li><sup>1</sup> Overall meal planning app market ($1.8B → $5.2B at 12.5% CAGR): Grand View Research, "Meal Planning App Market Size, Share &amp; Trends Analysis Report" (2024-2034 forecast).</li>
-        <li><sup>2</sup> AI-driven meal planning segment ($972.1M → $11.6B at 28.1% CAGR): Industry market analysis reports aggregating AI meal planning sector data (2024-2034 forecast).</li>
-        <li><sup>3</sup> North America market share (34%+): Regional market distribution data from industry analysis reports.</li>
-        <li><sup>4</sup> U.S. couples households (25-45 age range, ~35M): U.S. Census Bureau, "Families and Living Arrangements" data tables (2025). See census.gov/topics/families.</li>
-        <li><sup>5</sup> Health-conscious couples estimate (7-10M, 20-30%): Derived from Census household data × estimated health/fitness engagement rates. Not a primary source figure.</li>
-        <li><sup>6</sup> Multi-goal households (3-5M): Derived estimate based on couples with divergent dietary/fitness goals.</li>
-        <li><sup>7</sup> SAM ($672M-$1.44B): Calculated as 7-10M couples × $8-12/mo × 12 months. Full theoretical addressable revenue.</li>
-        <li><sup>8</sup> SOM ($1M+ ARR): 10,000 paying households × $10/mo = $1.2M ARR. Represents 0.1-0.3% of SAM.</li>
-        <li><sup>9</sup> Competitor revenue figures (Fitia ~$3.5M/yr, etc.): Based on public filings, YC data, and industry estimates. Some figures are approximations.</li>
-        <li><sup>10</sup> Revenue projections are illustrative and based on organic growth assumptions. Actual results will vary based on market conditions, execution, and competitive dynamics.</li>
+        <li><sup>1</sup> Relationship apps for couples market ($854M in 2025, growing to $2.6B by 2034 at 13.35% CAGR): Market Reports World, "Relationship Apps for Couples Market" (2025).</li>
+        <li><sup>2</sup> Diet & nutrition apps market ($5.76B in 2025, forecast to reach $10.15B by 2030 at 12% CAGR): Mordor Intelligence, "Diet and Nutrition Apps Market" (2025).</li>
+        <li><sup>3</sup> Overall meal planning app market ($1.8B → $5.2B at 12.5% CAGR): Grand View Research, "Meal Planning App Market Size, Share &amp; Trends Analysis Report" (2024-2034 forecast). Referenced for context only — not claimed as this product's TAM.</li>
+        <li><sup>4</sup> AI-driven meal planning segment ($972.1M → $11.6B at 28.1% CAGR): Market.us, "AI-Driven Meal Planning Apps Market" (2024-2034 forecast).</li>
+        <li><sup>5</sup> North America market share (34%+): Regional market distribution data from industry analysis reports.</li>
+        <li><sup>6</sup> U.S. couples households (25-45 age range, ~35M): U.S. Census Bureau, "Families and Living Arrangements" data tables (2025). See census.gov/topics/families.</li>
+        <li><sup>7</sup> Health-conscious couples estimate (7-10M, 20-30%): Derived from Census household data × estimated health/fitness engagement rates. Not a primary source figure.</li>
+        <li><sup>8</sup> SAM ($840M-$1.2B): Calculated as 7-10M health-conscious couples × $10/mo × 12 months. Bottom-up, defensible derivation from census data.</li>
+        <li><sup>9</sup> Multi-goal households (3-5M): Derived estimate based on couples with divergent dietary/fitness goals.</li>
+        <li><sup>10</sup> SOM ($1M+ ARR): 10,000 paying households × $10/mo = $1.2M ARR. Represents 0.1-0.3% of SAM.</li>
+        <li><sup>11</sup> Competitor revenue figures (Fitia ~$3.5M/yr, etc.): Based on public filings, YC data, and industry estimates. Some figures are approximations.</li>
+        <li><sup>12</sup> DuoDine (1,000+ active couples) and Cloche (500+ waitlist): Pre-launch and free-tier user validation data from public sources.</li>
+        <li><sup>13</sup> Revenue projections are illustrative and based on organic growth assumptions. Actual results will vary based on market conditions, execution, and competitive dynamics.</li>
       </ol>
     </div>
   </section>

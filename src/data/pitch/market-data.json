@@ -8,15 +8,30 @@
     "overallCAGR": "12.5%",
     "northAmericaShare": "34%+"
   },
+  "intersectingMarkets": {
+    "relationshipApps": {
+      "market2025": "$854M",
+      "market2034": "$2.6B",
+      "cagr": "13.35%",
+      "source": "Market Reports World"
+    },
+    "nutritionApps": {
+      "market2025": "$5.76B",
+      "market2030": "$10.15B",
+      "cagr": "12%",
+      "source": "Mordor Intelligence"
+    },
+    "combined": "$6.6B+"
+  },
   "tam": {
     "label": "Total Addressable Market",
-    "value": "$1.8B",
-    "description": "Global meal planning app market (2025)"
+    "value": "$6.6B+",
+    "description": "Combined relationship apps ($854M) + diet & nutrition apps ($5.76B) markets. This product sits at their intersection — a space no product currently occupies."
   },
   "sam": {
     "label": "Serviceable Addressable Market",
-    "value": "$672M-$1.44B",
-    "description": "Health-conscious couples aged 22-45 with different dietary goals (7-10M couples × $8-12/mo × 12 months)"
+    "value": "$840M-$1.2B",
+    "description": "35M US couples aged 25-45. ~20-30% are health-conscious (7-10M households). At $10/mo per household, that yields $840M-$1.2B. Grounded, defensible, and built from census data."
   },
   "som": {
     "label": "Serviceable Obtainable Market",
