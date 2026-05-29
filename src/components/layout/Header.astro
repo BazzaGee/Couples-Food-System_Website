@@ -1,42 +1,64 @@
 ---
 import navigation from '../../data/navigation.json';
+import navigationV2 from '../../data/v2/navigation.json';
 
-const { primary, cta } = navigation.navigation;
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const nav = version === 'v2' ? navigationV2.navigation : navigation.navigation;
+const { primary, cta } = nav;
+
+const currentPath = Astro.url.pathname;
+const togglePath = version === 'v2'
+  ? currentPath.replace(/^\/v2/, '') || '/'
+  : '/v2' + (currentPath === '/' ? '' : currentPath);
 ---
 
-<header class="fixed top-0 w-full bg-cream/90 backdrop-blur-md z-50 border-b border-border transition-all">
+<header class={`fixed top-0 w-full z-50 border-b transition-all ${version === 'v2' ? 'bg-v2-surface/90 backdrop-blur-md border-v2-outline-variant' : 'bg-cream/90 backdrop-blur-md border-border'}`}>
   <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 text-text-primary hover:text-sage transition-colors">
+    <a href={version === 'v2' ? '/v2/' : '/'} class={`flex items-center gap-2 transition-colors ${version === 'v2' ? 'text-v2-on-surface hover:text-v2-primary' : 'text-text-primary hover:text-sage'}`}>
       <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-8 h-8" />
       <span class="font-semibold text-xl tracking-tight">Couples Food System</span>
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8 text-text-secondary font-medium">
+    <nav class="hidden md:flex items-center gap-6 font-medium">
       {primary.map((item) => (
-        <a href={item.href} class="hover:text-sage transition-colors">{item.label}</a>
+        <a href={item.href} class={`transition-colors ${version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}`}>{item.label}</a>
       ))}
-      <a href="/proposal/" class="pulse-link font-semibold transition-colors" title="Strategic Proposal for CUPLA">
-        Proposal
-      </a>
-      <a href={cta.href} class="bg-sage text-white px-5 py-2.5 rounded-xl hover:bg-sage-dark transition-colors shadow-sm">
+      
+      <!-- Version Toggle -->
+      <div class={`flex items-center rounded-full p-1 ${version === 'v2' ? 'bg-v2-surface-container border border-v2-outline-variant' : 'bg-cream-dark border border-border'}`}>
+        <a href="/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v1' ? (version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white') : (version === 'v2' ? 'text-v2-on-surface-variant' : 'text-text-secondary')}`}>V1</a>
+        <a href="/v2/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white'}`}>V2</a>
+      </div>
+
+      <a href={cta.href} class={`${version === 'v2' ? 'bg-v2-primary text-v2-on-primary hover:bg-v2-primary/90' : 'bg-sage text-white hover:bg-sage-dark'} px-5 py-2.5 rounded-xl transition-colors shadow-sm`}>
         {cta.label}
       </a>
     </nav>
 
     <!-- Mobile Toggle -->
-    <button id="mobile-menu-btn" class="md:hidden text-text-primary" aria-label="Toggle Menu">
-      <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    <button id="mobile-menu-btn" class={`md:hidden ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`} aria-label="Toggle Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
     </button>
   </div>
 
   <!-- Mobile Nav -->
-  <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-border px-6 py-4 flex flex-col gap-4 text-lg font-medium shadow-lg">
+  <div id="mobile-menu" class={`hidden md:hidden border-b px-6 py-4 flex flex-col gap-4 text-lg font-medium shadow-lg ${version === 'v2' ? 'bg-v2-surface border-v2-outline-variant' : 'bg-cream border-border'}`}>
     {primary.map((item) => (
-      <a href={item.href} class="text-text-secondary hover:text-sage">{item.label}</a>
+      <a href={item.href} class={version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}>{item.label}</a>
     ))}
-    <a href="/proposal/" class="pulse-link font-semibold">Proposal</a>
-    <a href={cta.href} class="bg-sage text-white text-center px-5 py-3 rounded-xl mt-4">{cta.label}</a>
+    
+    <!-- Mobile Version Toggle -->
+    <div class={`flex items-center rounded-full p-1 self-start ${version === 'v2' ? 'bg-v2-surface-container border border-v2-outline-variant' : 'bg-cream-dark border border-border'}`}>
+      <a href="/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v1' ? (version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white') : (version === 'v2' ? 'text-v2-on-surface-variant' : 'text-text-secondary')}`}>V1</a>
+      <a href="/v2/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white'}`}>V2</a>
+    </div>
+    
+    <a href={cta.href} class={`${version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white'} text-center px-5 py-3 rounded-xl mt-4`}>{cta.label}</a>
   </div>
 </header>
 

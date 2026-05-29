@@ -9,21 +9,22 @@ interface Props {
   description: string;
   canonicalURL?: string;
   ogImage?: string;
+  version?: 'v1' | 'v2';
 }
 
-const { title, description, canonicalURL, ogImage } = Astro.props;
+const { title, description, canonicalURL, ogImage, version = 'v1' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage} />
+    <BaseHead title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage} version={version} />
   </head>
-  <body class="min-h-screen flex flex-col pt-20">
-    <Header />
+  <body class={`min-h-screen flex flex-col pt-20 ${version === 'v2' ? 'bg-v2-surface text-v2-on-surface' : ''}`}>
+    <Header version={version} />
     <main class="flex-grow">
       <slot />
     </main>
-    <Footer />
+    <Footer version={version} />
   </body>
 </html>

@@ -1,0 +1,36 @@
+{
+  "navigation": {
+    "primary": [
+      {
+        "label": "Features",
+        "href": "/v2/features",
+        "children": [
+          { "label": "Dual-Mode Meal Picker", "href": "/v2/features/dual-mode-meal-picker" },
+          { "label": "Adaptive Cooking", "href": "/v2/features/adaptive-cooking" },
+          { "label": "Shared Grocery List", "href": "/v2/features/shared-grocery-list" },
+          { "label": "Pantry AI", "href": "/v2/features/pantry-ai" }
+        ]
+      },
+      { "label": "How It Works", "href": "/v2/how-it-works" },
+      { "label": "Compare", "href": "/v2/compare" },
+      { "label": "About", "href": "/v2/about" },
+      { "label": "FAQ", "href": "/v2/faq" }
+    ],
+    "cta": {
+      "label": "Join Free Beta",
+      "href": "#waitlist"
+    },
+    "footer": {
+      "product": [
+        { "label": "Features", "href": "/v2/features" },
+        { "label": "How It Works", "href": "/v2/how-it-works" },
+        { "label": "Compare", "href": "/v2/compare" }
+      ],
+      "company": [
+        { "label": "About Us", "href": "/v2/about" },
+        { "label": "FAQ", "href": "/v2/faq" },
+        { "label": "Contact", "href": "/v2/contact" }
+      ]
+    }
+  }
+}

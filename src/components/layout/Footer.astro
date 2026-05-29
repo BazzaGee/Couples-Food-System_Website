@@ -1,39 +1,46 @@
 ---
 import navigation from '../../data/navigation.json';
+import navigationV2 from '../../data/v2/navigation.json';
 
-const { product, company } = navigation.navigation.footer;
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const nav = version === 'v2' ? navigationV2.navigation : navigation.navigation;
+const { product, company } = nav.footer;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-cream-dark border-t border-border py-16">
+<footer class={`py-16 ${version === 'v2' ? 'bg-v2-surface-dim border-t border-v2-outline-variant' : 'bg-cream-dark border-t border-border'}`}>
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
     <div class="md:col-span-2">
-      <a href="/" class="font-semibold text-xl text-text-primary flex items-center gap-2 mb-4 tracking-tight">
+      <a href={version === 'v2' ? '/v2/' : '/'} class={`font-semibold text-xl flex items-center gap-2 mb-4 tracking-tight ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>
         <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-6 h-6" />
         Couples Food System
       </a>
-      <p class="text-text-secondary max-w-sm text-lg">
+      <p class={`max-w-sm text-lg ${version === 'v2' ? 'text-v2-on-surface-variant' : 'text-text-secondary'}`}>
         Your shared kitchen, smarter. End the dinnertime debate and enjoy meals together, perfectly portioned for both of you.
       </p>
     </div>
     <div>
-      <h4 class="font-semibold mb-4 text-text-primary text-lg">Product</h4>
-      <ul class="space-y-3 text-text-secondary">
+      <h4 class={`font-semibold mb-4 text-lg ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>Product</h4>
+      <ul class="space-y-3">
         {product.map((item) => (
-          <li><a href={item.href} class="hover:text-sage transition-colors">{item.label}</a></li>
+          <li><a href={item.href} class={`transition-colors ${version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}`}>{item.label}</a></li>
         ))}
       </ul>
     </div>
     <div>
-      <h4 class="font-semibold mb-4 text-text-primary text-lg">Company</h4>
-      <ul class="space-y-3 text-text-secondary">
+      <h4 class={`font-semibold mb-4 text-lg ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>Company</h4>
+      <ul class="space-y-3">
         {company.map((item) => (
-          <li><a href={item.href} class="hover:text-sage transition-colors">{item.label}</a></li>
+          <li><a href={item.href} class={`transition-colors ${version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}`}>{item.label}</a></li>
         ))}
       </ul>
     </div>
   </div>
-  <div class="max-w-6xl mx-auto px-6 mt-16 pt-8 border-t border-border text-center text-text-secondary">
+  <div class={`max-w-6xl mx-auto px-6 mt-16 pt-8 border-t text-center ${version === 'v2' ? 'border-v2-outline-variant text-v2-on-surface-variant' : 'border-border text-text-secondary'}`}>
     &copy; {currentYear} Couples Food System. All rights reserved.
   </div>
 </footer>

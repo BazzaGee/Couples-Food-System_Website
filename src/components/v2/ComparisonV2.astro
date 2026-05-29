@@ -1,0 +1,102 @@
+---
+import comparison from '../../data/v2/comparison.json';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { title = 'Why Generic Apps Fail Couples', subtitle = 'Most popular apps are designed for isolated individuals. They force you to choose between eating the exact same portions or cooking completely separate meals. Here is how we change the game.' } = Astro.props;
+---
+
+<section class="py-20 max-w-5xl mx-auto px-6">
+  <div class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">{title}</h1>
+    <p class="text-xl text-v2-on-surface-variant max-w-3xl mx-auto">{subtitle}</p>
+  </div>
+
+  <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant overflow-hidden shadow-sm">
+    <div class="grid grid-cols-3 bg-v2-surface-container p-6 border-b border-v2-outline-variant font-semibold text-v2-on-surface text-sm md:text-base">
+      <div>Feature</div>
+      <div class="text-center text-v2-primary">Couples Food System V2</div>
+      <div class="text-center text-v2-on-surface-variant">Standard Apps</div>
+    </div>
+
+    {comparison.comparisons.map((item) => (
+      <div class="grid grid-cols-3 p-6 border-b border-v2-outline-variant items-center">
+        <div class="font-medium text-sm md:text-base text-v2-on-surface">{item.feature}</div>
+        <div class="flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary w-7 h-7"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+        </div>
+        <div class="flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-on-surface-variant/30 w-7 h-7"><path d="m15 9-6 6"/><path d="m9 9 6 6"/><path d="M20 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-16 space-y-8 text-lg text-v2-on-surface-variant">
+    {comparison.genericCompetitors.map((competitor) => (
+      <div>
+        <p class="font-semibold text-v2-on-surface mb-2">{competitor.type}</p>
+        <p>{competitor.problem}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-12 bg-v2-surface-container rounded-3xl p-8 md:p-12 text-center border border-v2-outline-variant">
+    <p class="text-xl text-v2-on-surface font-medium">
+      Couples Food System V2 is the only app built from the ground up for two people sharing one kitchen — whether you're dieting or not. We combine real-time collaboration, dual-mode meal picking, AI meal generation, adaptive portions, pantry-first intelligence, and relationship-first design into one seamless experience.
+    </p>
+  </div>
+
+  <!-- V2 Product Loop Diagram -->
+  <section class="mt-16 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold text-center mb-8 tracking-tight text-v2-on-surface">The V2 Product Loop</h2>
+    <div class="bg-v2-surface-container rounded-3xl p-8 border border-v2-outline-variant">
+      <div class="text-center space-y-4">
+        <div class="bg-v2-surface-container-highest rounded-2xl p-4 inline-block">
+          <p class="font-semibold text-v2-primary">PANTRY</p>
+          <p class="text-sm text-v2-on-surface-variant">What you have</p>
+        </div>
+        <div class="flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-v2-primary/10 rounded-2xl p-4 border border-v2-primary/30">
+            <p class="font-semibold text-v2-primary">Cook Now</p>
+            <p class="text-sm text-v2-on-surface-variant">Zero shopping → straight to cooking</p>
+          </div>
+          <div class="bg-v2-secondary-container/20 rounded-2xl p-4 border border-v2-secondary/30">
+            <p class="font-semibold text-v2-secondary">I Want This</p>
+            <p class="text-sm text-v2-on-surface-variant">Browse → pick → add missing to list</p>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </div>
+        <div class="bg-v2-surface-container-highest rounded-2xl p-4 inline-block">
+          <p class="font-semibold text-v2-primary">ADAPTIVE COOKING</p>
+          <p class="text-sm text-v2-on-surface-variant">One meal, two plates, both perfect</p>
+        </div>
+        <div class="flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </div>
+        <div class="bg-v2-surface-container-highest rounded-2xl p-4 inline-block">
+          <p class="font-semibold text-v2-primary">PANTRY</p>
+          <p class="text-sm text-v2-on-surface-variant">What you brought home</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-v2-on-surface-variant mt-4 text-sm">Two entry points. One loop. The more you use it, the smarter it gets.</p>
+  </section>
+
+  <!-- Venn Diagram -->
+  <section class="mt-16 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold text-center mb-8 tracking-tight text-v2-on-surface">Where We Fit In</h2>
+    <div class="rounded-3xl overflow-hidden shadow-lg border border-v2-outline-variant">
+      <img src="/images/diagrams/venn-diagram.webp" alt="Venn diagram showing Couples Food System at the intersection of Pantry AI, Nutrition Intelligence, Real-Time Collaboration, and Grocery Sync" class="w-full h-auto" loading="lazy" />
+    </div>
+    <p class="text-center text-v2-on-surface-variant mt-4 text-sm">No other app sits at the center of all four circles.</p>
+  </section>
+</section>

@@ -4,12 +4,14 @@ interface Props {
   description: string;
   canonicalURL?: string;
   ogImage?: string;
+  version?: 'v1' | 'v2';
 }
 
-const { title, description, canonicalURL, ogImage } = Astro.props;
+const { title, description, canonicalURL, ogImage, version = 'v1' } = Astro.props;
 const siteURL = 'https://couples-food-system.com';
 const canonical = canonicalURL ? `${siteURL}${canonicalURL}` : Astro.url;
 const ogImg = ogImage || `${siteURL}/images/hero/og-homepage.webp`;
+const themeColor = version === 'v2' ? '#44664a' : '#7A9E7E';
 ---
 
 <meta charset="utf-8" />
@@ -40,7 +42,7 @@ const ogImg = ogImage || `${siteURL}/images/hero/og-homepage.webp`;
 
 <!-- PWA -->
 <link rel="manifest" href="/manifest.json" />
-<meta name="theme-color" content="#7A9E7E" />
+<meta name="theme-color" content={themeColor} />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <meta name="apple-mobile-web-app-title" content="Couples Food System" />

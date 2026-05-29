@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroV2 from '../../components/v2/HeroV2.astro';
+import FeaturesV2 from '../../components/v2/FeaturesV2.astro';
+import WaitlistV2 from '../../components/v2/WaitlistV2.astro';
+import WaitlistFormV2 from '../../components/v2/WaitlistFormV2.astro';
+---
+
+<BaseLayout title="Couples Food System V2 | Two Ways to Cook. One Perfect Dinner." description="The flexible kitchen companion for every couple. Cook now with what you have, or browse hundreds of meals and we'll tell you what to buy." version="v2">
+  <HeroV2
+    badge="Now accepting Beta waitlist couples"
+    headline="One dinner.&#10;Two plates.&#10;Zero arguments."
+    subheadline="Two ways to cook, one perfect dinner. Don't know what to make? We'll show you what you can cook right now with what you have. Craving something specific? Browse hundreds of meals — we'll tell you exactly what to buy. Either way, one shared recipe, two perfectly portioned plates."
+    ctaPrimaryText="Join Free Beta Waitlist"
+    ctaSecondaryText="See How It Works"
+    ctaSecondaryHref="/v2/how-it-works"
+  />
+
+  <!-- Hero Image -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="rounded-3xl overflow-hidden shadow-lg border border-v2-outline-variant">
+      <img src="/images/hero/hero-homepage.webp" alt="A happy couple cooking together in a bright modern kitchen with sage green accents and warm morning light" class="w-full h-auto" loading="eager" />
+    </div>
+  </section>
+
+  <!-- Problem Section with Image -->
+  <section class="bg-v2-surface-container py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-v2-on-surface">
+            The "What's for dinner?" argument ends tonight.
+          </h2>
+          <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-8">
+            Sharing a kitchen shouldn't mean compromising on your personal wellness goals — or even just on what to eat. Whether one of you is dieting and the other isn't, or you both just want dinner without the stress, <strong>Couples Food System V2</strong> does the heavy lifting. Two ways to find your meal, one cooking session, both plates perfect.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-secondary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              <span class="text-lg text-v2-on-surface-variant">Endless scrolling on delivery apps.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-secondary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              <span class="text-lg text-v2-on-surface-variant">One person dieting while the other just wants dinner.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-secondary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              <span class="text-lg text-v2-on-surface-variant">Forgotten ingredients rotting in the fridge.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-lg border border-v2-outline-variant">
+          <img src="/images/hero/problem-section.webp" alt="A couple standing together in a sun-drenched modern kitchen, preparing fresh vegetables on a terracotta cutting board" class="w-full h-auto" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturesV2
+    title="Two ways to cook. One shared kitchen."
+  />
+
+  <WaitlistV2>
+    <WaitlistFormV2 />
+  </WaitlistV2>
+</BaseLayout>

@@ -24,7 +24,34 @@ export default {
         },
         border: '#E5E1DA',
         error: '#E07A5F',
-        success: '#7A9E7E'
+        success: '#7A9E7E',
+        v2: {
+          surface: '#ebffe7',
+          'surface-dim': '#cae0c8',
+          'surface-bright': '#ebffe7',
+          'surface-container-lowest': '#ffffff',
+          'surface-container-low': '#e4fae1',
+          'surface-container': '#def4db',
+          'surface-container-high': '#d8eed6',
+          'surface-container-highest': '#d3e8d0',
+          primary: '#44664a',
+          'on-primary': '#ffffff',
+          'primary-container': '#7a9e7e',
+          'on-primary-container': '#13341c',
+          'inverse-primary': '#aad0ad',
+          secondary: '#85532e',
+          'on-secondary': '#ffffff',
+          'secondary-container': '#febb8e',
+          'on-secondary-container': '#794925',
+          tertiary: '#615e57',
+          'on-surface': '#0e1f10',
+          'on-surface-variant': '#424842',
+          outline: '#727971',
+          'outline-variant': '#c2c8bf',
+          'text-primary': '#0e1f10',
+          'text-secondary': '#424842',
+          border: '#c2c8bf'
+        }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']

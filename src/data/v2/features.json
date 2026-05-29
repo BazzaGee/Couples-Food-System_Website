@@ -1,0 +1,116 @@
+{
+  "features": [
+    {
+      "id": "dual-mode-meal-picker",
+      "title": "Dual-Mode Meal Picker",
+      "headline": "Two Ways to Cook. One Perfect Dinner.",
+      "shortDescription": "Don't know what to make? Cook Now shows you what you can make with what you have. Craving something specific? I Want This lets you browse, pick, and we'll tell you what to buy.",
+      "longDescription": "V2 replaces the single \"Generate a Meal\" button with two modes that share the same adaptive cooking layer underneath. Cook Now scans your pantry and generates a list of meals you can make with zero extra shopping — prioritized by pantry match %, cook time, and both partners' preferences. I Want This shows a visual grid of meals with stock photos, filters for cook time, cuisine, difficulty, and dietary fit. Tap any meal to see what you have vs. what you need, then add missing ingredients to your shared grocery list in one tap.",
+      "badge": "New in V2",
+      "badgeType": "primary",
+      "icon": "toggle",
+      "href": "/v2/features/dual-mode-meal-picker",
+      "benefits": [
+        "Cook Now: zero shopping, go straight to cooking",
+        "I Want This: browse, filter, pick, and shop",
+        "Both modes share the same adaptive cooking layer",
+        "Visual grid with stock photos, not text-only"
+      ],
+      "example": {
+        "cookNow": { "label": "Cook Now", "meals": "AI generates 8-12 meals from your pantry", "badge": "100% — You have everything" },
+        "iWantThis": { "label": "I Want This", "meals": "Browse 50-100 curated recipes", "badge": "See what you need" }
+      },
+      "order": 1
+    },
+    {
+      "id": "adaptive-cooking",
+      "title": "Adaptive Shared Cooking",
+      "headline": "One Dinner. Two Plates.",
+      "shortDescription": "One cooking session, two different plates. We generate a unified recipe with AI-adapted plating instructions so you both hit your goals.",
+      "longDescription": "When you share a life, you share meals. But traditional meal planning apps treat everyone as an isolated individual. They expect you to either abandon your goals to eat the same thing, or cook completely separate dinners. We solved this. You follow one single cooking workflow together. When the food is ready, the app provides visual, AI-adapted plating guides. It tells you exactly how much chicken to give Partner A, and how much extra rice to give Partner B.",
+      "badge": "Signature Feature",
+      "badgeType": "primary",
+      "icon": "utensils",
+      "href": "/v2/features/adaptive-cooking",
+      "benefits": [
+        "Same meal prep, different portions",
+        "Automatically optimized for each partner's goals",
+        "No more cooking two separate meals",
+        "Reduces dishes and kitchen time"
+      ],
+      "example": {
+        "partnerA": { "name": "Partner A", "goal": "Weight Loss", "calories": 450, "plate": "Chicken over bed of spinach, ½ cup rice" },
+        "partnerB": { "name": "Partner B", "goal": "Muscle Gain", "calories": 700, "plate": "Extra chicken over full cup of rice" }
+      },
+      "order": 2
+    },
+    {
+      "id": "shared-grocery-list",
+      "title": "Real-Time Sync",
+      "headline": "Never Buy Milk Twice",
+      "shortDescription": "Our lightning-fast shared grocery list updates instantly for both of you, whether you are at home or in the aisle.",
+      "longDescription": "Our shared grocery list uses lightning-fast real-time sync. Add an item from home and it appears on your partner's phone at the store in under 100ms. Check off an item at the store and it disappears from the shared list instantly. No phone calls, no duplicate purchases, no confusion. In V2, Mode B (I Want This) feeds missing ingredients directly into this list — one tap and both partners see the update.",
+      "badge": null,
+      "badgeType": null,
+      "icon": "refresh-cw",
+      "href": "/v2/features/shared-grocery-list",
+      "benefits": [
+        "Updates in under 100 milliseconds",
+        "Both partners see changes instantly",
+        "Works offline — queues sync when reconnected",
+        "No more duplicate purchases"
+      ],
+      "order": 3
+    },
+    {
+      "id": "pantry-ai",
+      "title": "Pantry-First AI",
+      "headline": "Your Fridge Just Became a Menu",
+      "shortDescription": "Tell the app what you have, and our AI generates a list of perfect meals to reduce waste and save a trip to the store.",
+      "longDescription": "Stop staring into the fridge wondering what to cook. Tell Couples Food System what you have, and our AI generates a list of meals that use your existing ingredients. Type or dictate naturally: \"We have chicken, rice, spinach, and half an onion.\" The AI understands and creates meals around what you already own. In V2, the AI generates multiple meals — not just one — so you can choose what appeals to you tonight.",
+      "badge": null,
+      "badgeType": null,
+      "icon": "carrot",
+      "href": "/v2/features/pantry-ai",
+      "benefits": [
+        "Natural language input — just type what you have",
+        "Generates a list of meals, not just one",
+        "Reduces food waste by using existing ingredients",
+        "Saves money on unnecessary grocery trips"
+      ],
+      "order": 4
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Invite Your Partner",
+      "description": "Link your accounts to create your shared digital kitchen. \"We\" replaces \"You\".",
+      "icon": "user-plus"
+    },
+    {
+      "number": 2,
+      "title": "Set Your Goals",
+      "description": "Partner A wants more energy; Partner B wants to build strength. Or neither of you is dieting — that's fine too. V2 handles it all.",
+      "icon": "target"
+    },
+    {
+      "number": 3,
+      "title": "Stock the Pantry",
+      "description": "Quickly log what you already have. Our AI uses this to suggest smart, waste-free meals.",
+      "icon": "package"
+    },
+    {
+      "number": 4,
+      "title": "Choose Your Mode",
+      "description": "Cook Now for zero-shopping meals from your pantry, or I Want This to browse, pick, and shop for what you're craving.",
+      "icon": "toggle"
+    },
+    {
+      "number": 5,
+      "title": "Cook Together",
+      "description": "Follow one simple recipe, then plate it two ways based on your individual needs. Eat together in peace.",
+      "icon": "chef-hat"
+    }
+  ]
+}

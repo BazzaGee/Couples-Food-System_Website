@@ -1,0 +1,20 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+}
+
+const { title = 'Be Among the First', subtitle = 'Join thousands of couples completely free during our Beta. No credit card required.', buttonText = 'Join Free Beta Waitlist' } = Astro.props;
+---
+
+<section id="waitlist" class="max-w-6xl mx-auto px-6 w-full py-12">
+  <div class="bg-v2-surface-container rounded-3xl p-8 md:p-12 shadow-sm border border-v2-outline-variant max-w-2xl mx-auto">
+    <div class="text-center mb-8">
+      <h3 class="text-3xl font-semibold text-v2-on-surface mb-3 tracking-tight">{title}</h3>
+      <p class="text-v2-on-surface-variant text-lg">{subtitle}</p>
+    </div>
+    <slot />
+    <p class="text-sm text-v2-on-surface-variant text-center mt-3">We respect your privacy. No spam, ever.</p>
+  </div>
+</section>
