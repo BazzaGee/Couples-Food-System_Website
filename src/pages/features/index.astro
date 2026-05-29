@@ -30,7 +30,7 @@ import WaitlistForm from '../../components/forms/WaitlistForm.astro';
             </a>
           </div>
           <div class="flex-1 w-full rounded-xl aspect-video overflow-hidden border border-border">
-            <img src="/images/screenshots/screenshot-adaptive.webp" alt="Adaptive cooking illustration showing one pan split into two distinct plates" class="w-full h-full object-cover" loading="lazy" />
+            <img src={`/images/v1/screenshot-${feature.id === 'adaptive-cooking' ? 'adaptive' : feature.id === 'shared-grocery-list' ? 'shopping' : feature.id === 'pantry-ai' ? 'pantry' : 'mealplan'}.webp`} alt="{feature.title} app interface" class="w-full h-full object-cover" decoding="async" />
           </div>
         </div>
       ))}

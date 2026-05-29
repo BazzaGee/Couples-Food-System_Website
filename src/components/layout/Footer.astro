@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
     <div class="md:col-span-2">
       <a href={version === 'v2' ? '/v2/' : '/'} class={`font-semibold text-xl flex items-center gap-2 mb-4 tracking-tight ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>
-        <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-6 h-6" />
+        <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-6 h-6" decoding="async" />
         Couples Food System
       </a>
       <p class={`max-w-sm text-lg ${version === 'v2' ? 'text-v2-on-surface-variant' : 'text-text-secondary'}`}>

@@ -9,17 +9,12 @@ interface Props {
 const { version = 'v1' } = Astro.props;
 const nav = version === 'v2' ? navigationV2.navigation : navigation.navigation;
 const { primary, cta } = nav;
-
-const currentPath = Astro.url.pathname;
-const togglePath = version === 'v2'
-  ? currentPath.replace(/^\/v2/, '') || '/'
-  : '/v2' + (currentPath === '/' ? '' : currentPath);
 ---
 
 <header class={`fixed top-0 w-full z-50 border-b transition-all ${version === 'v2' ? 'bg-v2-surface/90 backdrop-blur-md border-v2-outline-variant' : 'bg-cream/90 backdrop-blur-md border-border'}`}>
   <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
     <a href={version === 'v2' ? '/v2/' : '/'} class={`flex items-center gap-2 transition-colors ${version === 'v2' ? 'text-v2-on-surface hover:text-v2-primary' : 'text-text-primary hover:text-sage'}`}>
-      <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-8 h-8" />
+      <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-8 h-8" decoding="async" fetchpriority="high" />
       <span class="font-semibold text-xl tracking-tight">Couples Food System</span>
     </a>
 
@@ -28,13 +23,9 @@ const togglePath = version === 'v2'
       {primary.map((item) => (
         <a href={item.href} class={`transition-colors ${version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}`}>{item.label}</a>
       ))}
-      
-      <!-- Version Toggle -->
-      <div class={`flex items-center rounded-full p-1 ${version === 'v2' ? 'bg-v2-surface-container border border-v2-outline-variant' : 'bg-cream-dark border border-border'}`}>
-        <a href="/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v1' ? (version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white') : (version === 'v2' ? 'text-v2-on-surface-variant' : 'text-text-secondary')}`}>V1</a>
-        <a href="/v2/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white'}`}>V2</a>
-      </div>
-
+      <a href="/proposal/" class="pulse-link font-semibold transition-colors" title="Strategic Proposal for CUPLA">
+        Proposal
+      </a>
       <a href={cta.href} class={`${version === 'v2' ? 'bg-v2-primary text-v2-on-primary hover:bg-v2-primary/90' : 'bg-sage text-white hover:bg-sage-dark'} px-5 py-2.5 rounded-xl transition-colors shadow-sm`}>
         {cta.label}
       </a>
@@ -51,13 +42,7 @@ const togglePath = version === 'v2'
     {primary.map((item) => (
       <a href={item.href} class={version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}>{item.label}</a>
     ))}
-    
-    <!-- Mobile Version Toggle -->
-    <div class={`flex items-center rounded-full p-1 self-start ${version === 'v2' ? 'bg-v2-surface-container border border-v2-outline-variant' : 'bg-cream-dark border border-border'}`}>
-      <a href="/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v1' ? (version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white') : (version === 'v2' ? 'text-v2-on-surface-variant' : 'text-text-secondary')}`}>V1</a>
-      <a href="/v2/" class={`px-3 py-1 rounded-full text-sm font-medium transition-all ${version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white'}`}>V2</a>
-    </div>
-    
+    <a href="/proposal/" class="pulse-link font-semibold">Proposal</a>
     <a href={cta.href} class={`${version === 'v2' ? 'bg-v2-primary text-v2-on-primary' : 'bg-sage text-white'} text-center px-5 py-3 rounded-xl mt-4`}>{cta.label}</a>
   </div>
 </header>

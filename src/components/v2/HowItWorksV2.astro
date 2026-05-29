@@ -52,7 +52,7 @@ const steps = features.steps;
           )}
           
           <div class="rounded-2xl overflow-hidden border border-v2-outline-variant mt-4">
-            <img src="/images/steps/step-{step.number}.png" alt="Step {step.number}: {step.title} illustration" class="w-full h-auto" loading="lazy" />
+            <img src={`/images/v2/step-${step.number === 1 ? '1-invite' : step.number === 2 ? '2-goals' : step.number === 3 ? '3-pantry' : step.number === 4 ? '4-choose-mode' : '5-cook'}.webp`} alt="Step {step.number}: {step.title} illustration" class="w-full h-auto" decoding="async" />
           </div>
         </div>
       </div>

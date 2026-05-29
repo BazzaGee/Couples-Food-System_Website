@@ -30,7 +30,7 @@ import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
             </a>
           </div>
           <div class="flex-1 w-full rounded-2xl aspect-video overflow-hidden border border-v2-outline-variant">
-            <img src="/images/screenshots/screenshot-adaptive.webp" alt="Adaptive cooking illustration showing one pan split into two distinct plates" class="w-full h-full object-cover" loading="lazy" />
+            <img src={`/images/v2/screenshot-${feature.id === 'dual-mode-meal-picker' ? 'dual-mode' : feature.id === 'adaptive-cooking' ? 'adaptive' : feature.id === 'shared-grocery-list' ? 'shopping' : feature.id === 'pantry-ai' ? 'pantry' : 'mealplan'}.webp`} alt="{feature.title} illustration" class="w-full h-full object-cover" decoding="async" />
           </div>
         </div>
       ))}
