@@ -59,6 +59,12 @@
       "description": "Type 'chicken, rice, spinach' and the AI understands your ingredients",
       "weDo": true,
       "othersDo": false
+    },
+    {
+      "feature": "Self-Reinforcing Product Loop",
+      "description": "Pantry → AI Meals → Shopping → Pantry — the more you use it, the smarter it gets",
+      "weDo": true,
+      "othersDo": false
     }
   ],
   "genericCompetitors": [
@@ -68,19 +74,36 @@
     },
     {
       "type": "Standard diet tracking apps",
-      "problem": "Know your macros but don't know your partner exists. Clinical, isolating, and ignore that cooking together should be a bonding experience."
+      "problem": "Know your macros but don't know your partner exists. Clinical, isolating, and ignore that cooking together should be a bonding experience, not a math equation."
     },
     {
       "type": "Grocery list apps",
-      "problem": "Sync your shopping perfectly, but have zero idea what meals you're planning, what's in your pantry, or what your body needs."
+      "problem": "Sync your shopping perfectly, but have zero idea what meals you're planning, what's in your pantry, or what your body needs. They solve one slice of the problem."
     },
     {
       "type": "AI meal generators",
-      "problem": "Plan for one person only. Don't understand couples, shared kitchens, or different dietary goals."
+      "problem": "Plan for one person only. Don't understand couples, shared kitchens, or different dietary goals. They suggest meals but don't connect to your actual pantry."
     },
     {
       "type": "Other couples apps",
       "problem": "Some have shared lists, some have meal planning — but none connect pantry, meal selection, shopping, and adaptive cooking into one seamless loop."
+    }
+  ],
+  "whyThisMatters": [
+    {
+      "stat": "$600/year",
+      "label": "Wasted on duplicate groceries and expired food",
+      "detail": "Without a shared system, couples buy the same things twice and forget what they already have."
+    },
+    {
+      "stat": "20 minutes",
+      "label": "Spent every night deciding what to cook",
+      "detail": "Endless scrolling on delivery apps. Staring into the fridge. The \"what's for dinner?\" argument starts the stress cycle."
+    },
+    {
+      "stat": "2x the work",
+      "label": "Two meals, two grocery lists, twice the cleanup",
+      "detail": "When partners have different dietary goals, they cook separately. Two pans, two recipes, double the dishes."
     }
   ]
 }

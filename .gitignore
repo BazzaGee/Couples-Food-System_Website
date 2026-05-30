@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# playwright mcp logs
+.playwright-mcp/
+
+# cloudflare workers
+.wrangler/
+
+# root-level screenshots (not website assets)
+/*.png

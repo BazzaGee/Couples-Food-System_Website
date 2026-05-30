@@ -4,57 +4,62 @@ import features from '../../../data/v2/features.json';
 import WaitlistV2 from '../../../components/v2/WaitlistV2.astro';
 import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
 
-const feature = features.features.find(f => f.id === 'dual-mode-meal-picker')!;
+const feature = features.features.find(f => f.id === 'meal-planning')!;
 ---
 
-<BaseLayout title="Collaborative Planning | Couples Food System V2" description="A shared kitchen metaphor that ends the what's for dinner argument. Plan your week together with zero mental load." version="v2">
+<BaseLayout title="Collaborative Planning | Couples Food System V2" description="Your week, planned together. A shared kitchen metaphor that ends the 'what's for dinner?' argument. Plan your week together with zero mental load." version="v2">
   <section class="py-20 max-w-4xl mx-auto px-6">
     <a href="/v2/features" class="text-v2-primary hover:text-v2-primary/80 mb-8 inline-block font-medium">&larr; Back to all features</a>
     <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant p-8 md:p-16 shadow-sm">
-      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">Collaborative Planning</h1>
-      <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">Plan your entire week with two ways to find your meals. Our AI creates a shared meal plan that respects both partners' dietary preferences and goals — whether you're dieting or not. Missing ingredients automatically populate your shared grocery list. Both partners see and edit the same plan in real-time. Sunday planning becomes a 5-minute conversation, not an hour-long negotiation.</p>
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">{feature.title}</h1>
+      <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">{feature.longDescription}</p>
 
       <div class="rounded-2xl aspect-video w-full overflow-hidden border border-v2-outline-variant mb-10">
-        <img src="/images/v2/screenshot-mealplan.webp" alt="Collaborative meal planning showing weekly plan with dual-mode toggle" class="w-full h-full object-cover" decoding="async" />
+        <img src="/images/v2/screenshot-mealplan.webp" alt="Collaborative meal planning app interface showing weekly calendar with meals for both partners" class="w-full h-full object-cover" decoding="async" />
       </div>
 
-      <div class="bg-v2-surface-container rounded-2xl p-8 border border-v2-outline-variant mb-10">
-        <h3 class="text-xl font-semibold text-v2-on-surface mb-6">Plan Your Week Two Ways</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-v2-surface-container-lowest rounded-2xl p-6 border border-v2-primary/30">
-            <p class="font-semibold text-v2-primary mb-2">Quick Weeknight Dinners</p>
-            <p class="text-sm text-v2-on-surface-variant">Use Cook Now to generate meals from what you already have. No shopping needed.</p>
-          </div>
-          <div class="bg-v2-surface-container-lowest rounded-2xl p-6 border border-v2-outline-variant">
-            <p class="font-semibold text-v2-secondary mb-2">Weekend Cooking</p>
-            <p class="text-sm text-v2-on-surface-variant">Use I Want This to browse something special. Add missing ingredients to your list.</p>
-          </div>
+      <!-- The Problem This Solves -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">The Problem This Solves</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          Sunday meal planning shouldn't be an hour-long negotiation. One person carries the entire mental load while the other checks out. Traditional meal planners are built for one person — single calorie target, single portion size, single grocery list. Great if you live alone. Useless if you're cooking for two with different goals.
+        </p>
+      </div>
+
+      <!-- How It Works -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">How It Works</h3>
+        <div class="space-y-4 text-lg text-v2-on-surface-variant">
+          <p>
+            <strong class="text-v2-on-surface">One tap generates a week.</strong> Our AI creates a shared meal plan that respects both partners' dietary preferences and goals. Monday through Sunday, planned in seconds.
+          </p>
+          <p>
+            <strong class="text-v2-on-surface">Missing ingredients auto-populate.</strong> Every meal's missing ingredients are aggregated into one unified grocery list. No manual addition. No forgotten items.
+          </p>
+          <p>
+            <strong class="text-v2-on-surface">Real-time collaborative editing.</strong> Both partners see and edit the same plan. Swap a meal, adjust a day, add a note — changes appear instantly for both.
+          </p>
+          <p>
+            <strong class="text-v2-on-surface">5 minutes, not 50.</strong> What used to be an hour-long Sunday negotiation becomes a 5-minute conversation. More time for what matters.
+          </p>
         </div>
       </div>
 
-      <div class="text-lg text-v2-on-surface-variant space-y-6">
-        <p>
-          Whether you're planning a quick weeknight dinner or a special weekend meal, V2 gives you two ways to find your meals. Both modes feed into the same weekly plan, so you can mix and match throughout the week.
+      <!-- Why Others Don't Do This -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">Why Others Don't Do This</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          Mealime has meal plans but doesn't know your pantry or partner's diet. AnyList has recipe saving but no AI generation from pantry. No mainstream app combines pantry-aware AI, dual-profile optimization, and real-time collaborative planning into one workflow.
         </p>
       </div>
 
       <ul class="mt-10 space-y-3">
-        <li class="flex items-start gap-3 text-lg text-v2-on-surface-variant">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-          AI generates a full week of meals
-        </li>
-        <li class="flex items-start gap-3 text-lg text-v2-on-surface-variant">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-          Respects both partners' dietary needs
-        </li>
-        <li class="flex items-start gap-3 text-lg text-v2-on-surface-variant">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-          Missing ingredients auto-populate grocery list
-        </li>
-        <li class="flex items-start gap-3 text-lg text-v2-on-surface-variant">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-          Real-time collaborative editing
-        </li>
+        {feature.benefits.map((benefit) => (
+          <li class="flex items-start gap-3 text-lg text-v2-on-surface-variant">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-v2-primary w-6 h-6 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            {benefit}
+          </li>
+        ))}
       </ul>
     </div>
   </section>

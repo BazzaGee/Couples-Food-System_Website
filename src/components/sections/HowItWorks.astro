@@ -6,7 +6,7 @@ interface Props {
   subtitle?: string;
 }
 
-const { title = 'From Plan to Plate in 5 Steps', subtitle = "We've streamlined the entire process so you spend less time planning and more time enjoying dinner together." } = Astro.props;
+const { title = 'From Plan to Plate in 5 Steps', subtitle = "A self-reinforcing loop that makes dinner easier every single day." } = Astro.props;
 const steps = features.steps;
 ---
 
@@ -34,5 +34,13 @@ const steps = features.steps;
         </div>
       </div>
     ))}
+  </div>
+
+  <!-- Product Loop Explanation -->
+  <div class="mt-16 bg-sage/10 rounded-2xl p-8 md:p-12 text-center border border-border">
+    <h3 class="text-2xl font-semibold text-text-primary mb-4">The Loop That Never Stops</h3>
+    <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+      Pantry → AI suggests meals → Shopping list for missing items → Buy groceries → Move to Pantry → repeat. The more you use it, the smarter it gets. This self-reinforcing cycle is what makes Couples Food System different from every other app.
+    </p>
   </div>
 </section>

@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import features from '../../../data/v2/features.json';
 import WaitlistV2 from '../../../components/v2/WaitlistV2.astro';
 import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
+import OnePrepTwoPlates from '../../../components/infographics/OnePrepTwoPlates.astro';
 
 const feature = features.features.find(f => f.id === 'adaptive-cooking')!;
 ---
@@ -15,9 +16,8 @@ const feature = features.features.find(f => f.id === 'adaptive-cooking')!;
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">{feature.title}</h1>
       <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">{feature.longDescription}</p>
 
-      <div class="rounded-2xl aspect-video w-full overflow-hidden border border-v2-outline-variant mb-10">
-        <img src="/images/v2/screenshot-adaptive.webp" alt="Adaptive cooking infographic: one pan splits into two plates - 450 cal plate with more vegetables and 700 cal plate with more protein" class="w-full h-full object-cover" decoding="async" />
-      </div>
+      <!-- The Big Visual -->
+      <OnePrepTwoPlates version="v2" />
 
       <div class="bg-v2-surface-container rounded-2xl p-8 border border-v2-outline-variant mb-10">
         <h3 class="text-xl font-semibold text-v2-on-surface mb-6">The Adaptive Plating Example</h3>
@@ -38,13 +38,36 @@ const feature = features.features.find(f => f.id === 'adaptive-cooking')!;
         <p class="text-center text-v2-on-surface-variant mt-6 font-medium">Same stir-fry. Same pan. Different plates.</p>
       </div>
 
+      <!-- The Problem This Solves -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">The Problem This Solves</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          When you share a life, you share meals. But traditional meal planning apps treat everyone as an isolated individual. They expect you to either abandon your goals to eat the same thing, or cook completely separate dinners. Two pans, two recipes, twice the cleanup. The shared kitchen becomes two solo kitchens.
+        </p>
+      </div>
+
+      <!-- How It Works -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">How It Works</h3>
+        <div class="space-y-4 text-lg text-v2-on-surface-variant">
+          <p>
+            <strong class="text-v2-on-surface">We solved this.</strong> You follow one single cooking workflow together. When the food is ready, the app provides visual, AI-adapted plating guides. It tells you exactly how much chicken to give Partner A, and how much extra rice to give Partner B.
+          </p>
+          <p>
+            Both partners enter their body stats (weight, height, age, activity level, goal). The app calculates each person's exact calorie target. Then the AI generates a single recipe with two plating outputs — same ingredients, different portions, different macros.
+          </p>
+        </div>
+      </div>
+
+      <!-- Why Others Don't Do This -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">Why Others Don't Do This</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          Adaptive shared cooking requires combining real-time collaboration, nutrition intelligence, portion mathematics, recipe generation, and relationship-aware UX into a single workflow. Most nutrition apps started as solo fitness tools and can't retrofit collaboration. Most collaboration apps lack nutrition intelligence. The complexity is the moat.
+        </p>
+      </div>
+
       <div class="text-lg text-v2-on-surface-variant space-y-6">
-        <p>
-          When you share a life, you share meals. But traditional meal planning apps treat everyone as an isolated individual. They expect you to either abandon your goals to eat the same thing, or cook completely separate dinners.
-        </p>
-        <p>
-          <strong class="text-v2-on-surface">We solved this.</strong> You follow one single cooking workflow together. When the food is ready, the app provides visual, AI-adapted plating guides. It tells you exactly how much chicken to give Partner A, and how much extra rice to give Partner B.
-        </p>
         <p>
           It eliminates friction, reduces dishes, and brings the joy back to a shared kitchen.
         </p>

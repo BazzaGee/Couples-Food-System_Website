@@ -1,0 +1,140 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v2' } = Astro.props;
+const isV2 = version === 'v2';
+const primaryColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const primaryBg = isV2 ? 'bg-v2-primary' : 'bg-sage';
+const primaryLight = isV2 ? 'bg-v2-primary/10' : 'bg-sage/10';
+const primaryBorder = isV2 ? 'border-v2-primary/30' : 'border-sage/30';
+const surfaceBg = isV2 ? 'bg-v2-surface-container-lowest' : 'bg-white';
+const surfaceBorder = isV2 ? 'border-v2-outline-variant' : 'border-border';
+const textColor = isV2 ? 'text-v2-on-surface' : 'text-text-primary';
+const textSecondary = isV2 ? 'text-v2-on-surface-variant' : 'text-text-secondary';
+const accentColor = isV2 ? 'text-v2-secondary' : 'text-terracotta-dark';
+const accentBg = isV2 ? 'bg-v2-secondary' : 'bg-terracotta';
+const accentLight = isV2 ? 'bg-v2-secondary-container/20' : 'bg-terracotta/10';
+const accentBorder = isV2 ? 'border-v2-secondary/30' : 'border-terracotta/30';
+---
+
+<section class="py-16 md:py-24 max-w-5xl mx-auto px-6">
+  <div class="text-center mb-12">
+    <h2 class={`text-3xl md:text-4xl font-semibold tracking-tight mb-4 ${textColor}`}>
+      Two Ways to Find Dinner Tonight
+    </h2>
+    <p class={`text-lg md:text-xl ${textSecondary} max-w-2xl mx-auto`}>
+      Don't know what to cook? We'll show you what you can make right now. Craving something specific? We'll tell you exactly what to buy.
+    </p>
+  </div>
+
+  <div class={`${surfaceBg} rounded-3xl border ${surfaceBorder} p-8 md:p-12 shadow-sm`}>
+    <!-- Mode Toggle Visual -->
+    <div class="flex items-center justify-center mb-10">
+      <div class={`inline-flex items-center ${isV2 ? 'bg-v2-surface-container' : 'bg-cream-dark'} rounded-full p-1.5 border ${surfaceBorder}`}>
+        <button class={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${primaryBg} text-white shadow-sm`}>
+          Cook Now
+        </button>
+        <button class={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${textSecondary} hover:${textColor}`}>
+          I Want This
+        </button>
+      </div>
+    </div>
+
+    <!-- Two Mode Cards -->
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      <!-- Cook Now Mode -->
+      <div class={`${primaryLight} rounded-2xl p-6 border ${primaryBorder}`}>
+        <div class="flex items-center gap-3 mb-4">
+          <div class={`w-12 h-12 rounded-xl ${primaryBg} flex items-center justify-center`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h3 class={`font-semibold ${textColor}`}>Cook Now</h3>
+            <p class={`text-sm ${textSecondary}`}>Pantry-first, zero shopping</p>
+          </div>
+        </div>
+        <p class={`text-sm ${textSecondary} mb-4`}>
+          Tell us what's in your kitchen. Our AI scans your pantry and shows you everything you can cook right now — no extra shopping needed.
+        </p>
+        <div class={`${surfaceBg} rounded-xl p-4 border ${surfaceBorder}`}>
+          <p class={`text-xs font-semibold ${primaryColor} mb-2`}>Example:</p>
+          <p class={`text-xs ${textSecondary} mb-2`}>You have: chicken, rice, spinach, onion</p>
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <div class={`w-2 h-2 rounded-full ${primaryBg}`}></div>
+              <span class={`text-xs ${textSecondary}`}>Chicken stir-fry with rice</span>
+              <span class={`text-xs ${primaryColor} font-semibold ml-auto`}>100%</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class={`w-2 h-2 rounded-full ${primaryBg}`}></div>
+              <span class={`text-xs ${textSecondary}`}>Spinach & chicken bowl</span>
+              <span class={`text-xs ${primaryColor} font-semibold ml-auto`}>100%</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class={`w-2 h-2 rounded-full ${primaryBg}`}></div>
+              <span class={`text-xs ${textSecondary}`}>Chicken fried rice</span>
+              <span class={`text-xs ${primaryColor} font-semibold ml-auto`}>100%</span>
+            </div>
+          </div>
+        </div>
+        <div class={`mt-4 flex items-center gap-2 text-sm ${primaryColor} font-medium`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          Tap a meal → start cooking immediately
+        </div>
+      </div>
+
+      <!-- I Want This Mode -->
+      <div class={`${accentLight} rounded-2xl p-6 border ${accentBorder}`}>
+        <div class="flex items-center gap-3 mb-4">
+          <div class={`w-12 h-12 rounded-xl ${accentBg} flex items-center justify-center`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <div>
+            <h3 class={`font-semibold ${textColor}`}>I Want This</h3>
+            <p class={`text-sm ${textSecondary}`}>Browse, pick, and shop</p>
+          </div>
+        </div>
+        <p class={`text-sm ${textSecondary} mb-4`}>
+          Browse hundreds of curated meals. Filter by cuisine, cook time, or difficulty. Pick what you're craving — we'll tell you exactly what to buy.
+        </p>
+        <div class={`${surfaceBg} rounded-xl p-4 border ${surfaceBorder}`}>
+          <p class={`text-xs font-semibold ${accentColor} mb-2`}>Example:</p>
+          <p class={`text-xs ${textSecondary} mb-2`}>You want: Thai green curry</p>
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              <span class={`text-xs ${textSecondary}`}>Chicken ✓</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              <span class={`text-xs ${textSecondary}`}>Rice ✓</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+              <span class={`text-xs ${textSecondary}`}>Coconut milk</span>
+              <span class={`text-xs ${accentColor} font-semibold ml-auto`}>Need to buy</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+              <span class={`text-xs ${textSecondary}`}>Green curry paste</span>
+              <span class={`text-xs ${accentColor} font-semibold ml-auto`}>Need to buy</span>
+            </div>
+          </div>
+        </div>
+        <div class={`mt-4 flex items-center gap-2 text-sm ${accentColor} font-medium`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          One tap → missing items added to shared list
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Tagline -->
+    <div class="text-center mt-8">
+      <p class={`text-lg font-semibold ${primaryColor} ${primaryLight} inline-block px-6 py-3 rounded-xl`}>
+        Either way: one meal, two plates, both perfect.
+      </p>
+    </div>
+  </div>
+</section>

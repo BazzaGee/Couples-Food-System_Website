@@ -4,21 +4,21 @@
       "id": "adaptive-cooking",
       "title": "Adaptive Shared Cooking",
       "headline": "One Dinner. Two Plates.",
-      "shortDescription": "One cooking session, two different plates. We generate a unified recipe with AI-adapted plating instructions so you both hit your goals.",
+      "shortDescription": "Same recipe. Two plates. Both partners hit their goals — automatically. No math, no separate cooking, no arguments.",
       "longDescription": "When you share a life, you share meals. But traditional meal planning apps treat everyone as an isolated individual. They expect you to either abandon your goals to eat the same thing, or cook completely separate dinners. We solved this. You follow one single cooking workflow together. When the food is ready, the app provides visual, AI-adapted plating guides. It tells you exactly how much chicken to give Partner A, and how much extra rice to give Partner B.",
       "badge": "Signature Feature",
       "badgeType": "primary",
       "icon": "utensils",
       "href": "/features/adaptive-cooking",
       "benefits": [
-        "Same meal prep, different portions",
-        "Automatically optimized for each partner's goals",
-        "No more cooking two separate meals",
-        "Reduces dishes and kitchen time"
+        "Same meal prep, different portions — automatically optimized",
+        "No more cooking two separate meals or doing separate cleanup",
+        "Both partners hit their calorie and macro targets without thinking",
+        "Reduces kitchen time, dish count, and dinnertime stress"
       ],
       "example": {
-        "partnerA": { "name": "Partner A", "goal": "Weight Loss", "calories": 450, "plate": "Chicken over bed of spinach, ½ cup rice" },
-        "partnerB": { "name": "Partner B", "goal": "Muscle Gain", "calories": 700, "plate": "Extra chicken over full cup of rice" }
+        "partnerA": { "name": "Partner A", "goal": "Weight Loss", "calories": 450, "plate": "4oz chicken over bed of spinach, ½ cup rice" },
+        "partnerB": { "name": "Partner B", "goal": "Muscle Gain", "calories": 700, "plate": "6oz chicken over full cup of rice, side of vegetables" }
       },
       "order": 1
     },
@@ -26,17 +26,17 @@
       "id": "shared-grocery-list",
       "title": "Real-Time Sync",
       "headline": "Never Buy Milk Twice",
-      "shortDescription": "Never buy milk twice. Our lightning-fast shared grocery list updates instantly for both of you, whether you are at home or in the aisle.",
-      "longDescription": "Our shared grocery list uses lightning-fast real-time sync. Add an item from home and it appears on your partner's phone at the store in under 100ms. Check off an item at the store and it disappears from the shared list instantly. No phone calls, no duplicate purchases, no confusion.",
+      "shortDescription": "Add milk at home. It appears on your partner's phone at the store in under 100ms. No phone calls. No 'did you already buy this?' texts.",
+      "longDescription": "Our shared grocery list uses lightning-fast real-time sync. Add an item from home and it appears on your partner's phone at the store in under 100ms. Check off an item at the store and it disappears from the shared list instantly. No phone calls, no duplicate purchases, no confusion. When you check something off, tap 'Move to Pantry' and the cycle starts again.",
       "badge": null,
       "badgeType": null,
       "icon": "refresh-cw",
       "href": "/features/shared-grocery-list",
       "benefits": [
-        "Updates in under 100 milliseconds",
-        "Both partners see changes instantly",
-        "Works offline — queues sync when reconnected",
-        "No more duplicate purchases"
+        "Updates in under 100 milliseconds — faster than blinking",
+        "Both partners see changes instantly, no matter where they are",
+        "Works offline — queues sync when reconnected, never lose data",
+        "No more duplicate purchases or 'I thought you bought it' arguments"
       ],
       "order": 2
     },
@@ -44,17 +44,17 @@
       "id": "pantry-ai",
       "title": "Pantry-First AI",
       "headline": "Your Fridge Just Became a Menu",
-      "shortDescription": "\"We have chicken, rice, and spinach...\" Tell the app what you have, and our AI suggests perfect meals to reduce waste and save a trip to the store.",
+      "shortDescription": "Type 'chicken, rice, spinach.' AI shows you meals you can make right now with zero shopping. Less waste, fewer trips, more money saved.",
       "longDescription": "Stop staring into the fridge wondering what to cook. Tell Couples Food System what you have, and our AI generates meal suggestions that use your existing ingredients. Type or dictate naturally: \"We have chicken, rice, spinach, and half an onion.\" The AI understands and creates meals around what you already own. Less waste, fewer trips to the store, more money in your pocket.",
       "badge": null,
       "badgeType": null,
       "icon": "carrot",
       "href": "/features/pantry-ai",
       "benefits": [
-        "Natural language input — just type what you have",
-        "Reduces food waste by using existing ingredients",
+        "Natural language input — just type what you have, no barcode scanning",
+        "Reduces food waste by prioritizing meals that use existing ingredients",
         "Saves money on unnecessary grocery trips",
-        "AI suggests meals you'd never think of"
+        "AI suggests meals you'd never think of on your own"
       ],
       "order": 3
     },
@@ -62,17 +62,17 @@
       "id": "meal-planning",
       "title": "Collaborative Planning",
       "headline": "Your Week, Planned Together",
-      "shortDescription": "A shared kitchen metaphor that ends the \"what's for dinner?\" argument. Plan your week together with zero mental load.",
+      "shortDescription": "One tap generates 7 days of meals for both of you. Missing ingredients auto-populate your grocery list. Sunday planning: 5 minutes, not 50.",
       "longDescription": "Plan your entire week in one tap. Our AI creates a shared meal plan that respects both partners' dietary preferences and goals. Missing ingredients automatically populate your shared grocery list. Both partners see and edit the same plan in real-time. Sunday planning becomes a 5-minute conversation, not an hour-long negotiation.",
       "badge": null,
       "badgeType": null,
       "icon": "calendar-heart",
       "href": "/features/meal-planning",
       "benefits": [
-        "AI generates a full week of meals",
-        "Respects both partners' dietary needs",
-        "Missing ingredients auto-populate grocery list",
-        "Real-time collaborative editing"
+        "AI generates a full week of meals respecting both partners' needs",
+        "Missing ingredients auto-populate your shared grocery list",
+        "Real-time collaborative editing — both partners contribute",
+        "Reduces weekly planning from 50 minutes to 5"
       ],
       "order": 4
     }
@@ -81,31 +81,31 @@
     {
       "number": 1,
       "title": "Invite Your Partner",
-      "description": "Link your accounts to create your shared digital kitchen. \"We\" replaces \"You\".",
+      "description": "Link your accounts to create your shared digital kitchen. \"We\" replaces \"You\" from day one.",
       "icon": "user-plus"
     },
     {
       "number": 2,
       "title": "Set Your Goals",
-      "description": "Partner A wants more energy; Partner B wants to build strength. Set your individual preferences behind the scenes.",
+      "description": "Partner A wants more energy; Partner B wants to build strength. Set your individual preferences behind the scenes — the app handles the math.",
       "icon": "target"
     },
     {
       "number": 3,
       "title": "Stock the Pantry",
-      "description": "Quickly log what you already have. Our AI uses this to suggest smart, waste-free meals.",
+      "description": "Quickly log what you already have. Type \"chicken, rice, spinach\" — no barcode scanning, no friction. Our AI uses this to suggest smart, waste-free meals.",
       "icon": "package"
     },
     {
       "number": 4,
       "title": "Generate Meals",
-      "description": "Hit generate. We create a weekly plan with one unified, real-time grocery list.",
+      "description": "Hit generate. We create a weekly plan with one unified, real-time grocery list. Missing ingredients are flagged automatically.",
       "icon": "sparkles"
     },
     {
       "number": 5,
       "title": "Cook Together",
-      "description": "Follow one simple recipe, then plate it two ways based on your individual needs. Eat together in peace.",
+      "description": "Follow one simple recipe, then plate it two ways based on your individual needs. Same pan. Same meal. Different plates. Eat together in peace.",
       "icon": "chef-hat"
     }
   ]

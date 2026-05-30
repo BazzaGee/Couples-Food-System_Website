@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import features from '../../../data/v2/features.json';
 import WaitlistV2 from '../../../components/v2/WaitlistV2.astro';
 import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
+import DualModeToggle from '../../../components/infographics/DualModeToggle.astro';
 
 const feature = features.features.find(f => f.id === 'dual-mode-meal-picker')!;
 ---
@@ -15,9 +16,8 @@ const feature = features.features.find(f => f.id === 'dual-mode-meal-picker')!;
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">{feature.title}</h1>
       <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">{feature.longDescription}</p>
 
-      <div class="rounded-2xl aspect-video w-full overflow-hidden border border-v2-outline-variant mb-10">
-        <img src="/images/v2/screenshot-dual-mode.webp" alt="Dual-mode meal picker showing Cook Now and I Want This toggle with meal cards" class="w-full h-full object-cover" decoding="async" />
-      </div>
+      <!-- The Big Visual -->
+      <DualModeToggle version="v2" />
 
       <!-- Dual Mode Example -->
       <div class="bg-v2-surface-container rounded-2xl p-8 border border-v2-outline-variant mb-10">
@@ -43,15 +43,32 @@ const feature = features.features.find(f => f.id === 'dual-mode-meal-picker')!;
         <p class="text-center text-v2-on-surface-variant mt-6 font-medium">Same adaptive cooking layer underneath. Two ways to get there.</p>
       </div>
 
-      <div class="text-lg text-v2-on-surface-variant space-y-6">
-        <p>
-          V1 gave you one meal with no choice. V2 gives you a list of meals to choose from, or a visual grid to browse through. Both modes feed into the same adaptive cooking layer — one meal, two plates, both perfect.
+      <!-- The Problem This Solves -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">The Problem This Solves</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          V1's biggest weakness was no choice in meal selection. The AI generated one meal and that was it. No recipe database. No filtering by cuisine or cook time. No visual browsing. And it assumed both partners were dieting. V2 fixes all of this.
         </p>
-        <p>
-          <strong class="text-v2-on-surface">Cook Now</strong> is for when you want dinner without a trip to the store. AI scans your pantry and shows you everything you can make right now.
-        </p>
-        <p>
-          <strong class="text-v2-on-surface">I Want This</strong> is for when you're craving something specific. Browse a curated recipe database, see what you have vs. what you need, and add missing ingredients to your shopping list in one tap.
+      </div>
+
+      <!-- How It Works -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">How It Works</h3>
+        <div class="space-y-4 text-lg text-v2-on-surface-variant">
+          <p>
+            <strong class="text-v2-on-surface">Cook Now</strong> is for when you want dinner without a trip to the store. AI scans your pantry and shows you everything you can make right now — prioritized by pantry match %, cook time, and both partners' preferences.
+          </p>
+          <p>
+            <strong class="text-v2-on-surface">I Want This</strong> is for when you're craving something specific. Browse a curated recipe database, see what you have vs. what you need, and add missing ingredients to your shopping list in one tap.
+          </p>
+        </div>
+      </div>
+
+      <!-- Why Others Don't Do This -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">Why Others Don't Do This</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          Most meal apps force you into one workflow: browse recipes → grocery list → cook. We give you two entry points that both feed into the same adaptive cooking layer. Pantry-first OR browse-first — your choice, your kitchen, your rules.
         </p>
       </div>
 

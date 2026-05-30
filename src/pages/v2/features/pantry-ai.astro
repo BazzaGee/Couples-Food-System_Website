@@ -7,7 +7,7 @@ import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
 const feature = features.features.find(f => f.id === 'pantry-ai')!;
 ---
 
-<BaseLayout title="Pantry-First AI | Couples Food System V2" description="Your fridge just became a menu. Tell the app what you have, and our AI generates a list of perfect meals." version="v2">
+<BaseLayout title="Pantry-First AI | Couples Food System V2" description="Your fridge just became a menu. Tell the app what you have, and our AI generates a list of perfect meals to reduce waste and save a trip to the store." version="v2">
   <section class="py-20 max-w-4xl mx-auto px-6">
     <a href="/v2/features" class="text-v2-primary hover:text-v2-primary/80 mb-8 inline-block font-medium">&larr; Back to all features</a>
     <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant p-8 md:p-16 shadow-sm">
@@ -15,18 +15,38 @@ const feature = features.features.find(f => f.id === 'pantry-ai')!;
       <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">{feature.longDescription}</p>
 
       <div class="rounded-2xl aspect-video w-full overflow-hidden border border-v2-outline-variant mb-10">
-        <img src="/images/v2/screenshot-pantry.webp" alt="Pantry-First AI showing natural language input and meal suggestions" class="w-full h-full object-cover" decoding="async" />
+        <img src="/images/v2/screenshot-pantry.webp" alt="Pantry-first AI app interface showing natural language input and AI-generated meal suggestions" class="w-full h-full object-cover" decoding="async" />
       </div>
 
-      <div class="text-lg text-v2-on-surface-variant space-y-6">
-        <p>
-          Stop staring into the fridge wondering what to cook. Tell Couples Food System what you have, and our AI generates a list of meals that use your existing ingredients. Type or dictate naturally: "We have chicken, rice, spinach, and half an onion."
+      <!-- The Problem This Solves -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">The Problem This Solves</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          Stop staring into the fridge wondering what to cook. Most meal apps start with recipes and work backward to a grocery list. But that assumes you're starting from scratch. What about the chicken that expires tomorrow? The half-onion from last night's dinner? The rice you bought in bulk? Traditional apps ignore what you already have.
         </p>
-        <p>
-          <strong class="text-v2-on-surface">In V2, the AI generates multiple meals — not just one.</strong> This means you can choose what appeals to you tonight instead of taking whatever the app gives you. Less waste, fewer trips to the store, more money in your pocket.
-        </p>
-        <p>
-          The pantry also powers I Want This mode — when you browse a meal, the app checks your pantry and shows you exactly what you have vs. what you need. One tap adds missing ingredients to your shared grocery list.
+      </div>
+
+      <!-- How It Works -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">How It Works</h3>
+        <div class="space-y-4 text-lg text-v2-on-surface-variant">
+          <p>
+            <strong class="text-v2-on-surface">Natural language input.</strong> Type or dictate: "We have chicken, rice, spinach, and half an onion." No barcode scanning. No manual item entry. The AI parses your ingredients automatically.
+          </p>
+          <p>
+            <strong class="text-v2-on-surface">AI generates a list of meals.</strong> In V2, the AI generates multiple meals — not just one — so you can choose what appeals to you tonight. Every ingredient marked green (you have it) or orange (you need it).
+          </p>
+          <p>
+            <strong class="text-v2-on-surface">One tap to shop.</strong> Missing ingredients? One tap adds them to your shared grocery list. Both partners see the update instantly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Why Others Don't Do This -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-v2-on-surface mb-4">Why Others Don't Do This</h3>
+        <p class="text-lg text-v2-on-surface-variant leading-relaxed">
+          No mainstream app has a pantry tab at all. This is the input for AI meal generation. Without knowing what you have, meal suggestions are useless. Most apps push barcode scanning — slow, friction-heavy, and impractical for a full pantry. Natural language input is faster and more intuitive.
         </p>
       </div>
 

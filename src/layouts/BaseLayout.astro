@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/layout/BaseHead.astro';
 import Header from '../components/layout/Header.astro';
+import VersionToggle from '../components/layout/VersionToggle.astro';
 import Footer from '../components/layout/Footer.astro';
 import '../styles/global.css';
 
@@ -20,8 +21,9 @@ const { title, description, canonicalURL, ogImage, version = 'v1' } = Astro.prop
   <head>
     <BaseHead title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage} version={version} />
   </head>
-  <body class={`min-h-screen flex flex-col pt-20 ${version === 'v2' ? 'bg-v2-surface text-v2-on-surface' : ''}`}>
+  <body class={`min-h-screen flex flex-col ${version === 'v2' ? 'pt-28 bg-v2-surface text-v2-on-surface' : 'pt-28'}`}>
     <Header version={version} />
+    <VersionToggle version={version} />
     <main class="flex-grow">
       <slot />
     </main>

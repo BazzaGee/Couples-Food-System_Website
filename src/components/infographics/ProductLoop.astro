@@ -1,0 +1,130 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const isV2 = version === 'v2';
+const primaryColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const primaryBg = isV2 ? 'bg-v2-primary' : 'bg-sage';
+const primaryLight = isV2 ? 'bg-v2-primary/10' : 'bg-sage/10';
+const surfaceBg = isV2 ? 'bg-v2-surface-container-lowest' : 'bg-white';
+const surfaceBorder = isV2 ? 'border-v2-outline-variant' : 'border-border';
+const textColor = isV2 ? 'text-v2-on-surface' : 'text-text-primary';
+const textSecondary = isV2 ? 'text-v2-on-surface-variant' : 'text-text-secondary';
+const accentColor = isV2 ? 'text-v2-secondary' : 'text-terracotta-dark';
+const accentBg = isV2 ? 'bg-v2-secondary' : 'bg-terracotta';
+---
+
+<section class="py-16 md:py-24 max-w-5xl mx-auto px-6">
+  <div class="text-center mb-12">
+    <h2 class={`text-3xl md:text-4xl font-semibold tracking-tight mb-4 ${textColor}`}>
+      The Loop That Never Stops
+    </h2>
+    <p class={`text-lg md:text-xl ${textSecondary} max-w-2xl mx-auto`}>
+      {isV2 
+        ? 'Two entry points. One loop. The more you use it, the smarter it gets.'
+        : 'A self-reinforcing cycle that makes dinner easier every single day.'}
+    </p>
+  </div>
+
+  <div class={`${surfaceBg} rounded-3xl border ${surfaceBorder} p-8 md:p-12 shadow-sm`}>
+    <!-- V2: Dual Entry Points -->
+    {isV2 && (
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class={`${primaryLight} rounded-2xl p-6 border ${surfaceBorder}`}>
+          <div class="flex items-center gap-3 mb-3">
+            <div class={`w-10 h-10 rounded-xl ${primaryBg} flex items-center justify-center`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <p class={`font-semibold ${textColor}`}>Cook Now</p>
+              <p class={`text-sm ${textSecondary}`}>Pantry-first, zero shopping</p>
+            </div>
+          </div>
+          <p class={`text-sm ${textSecondary}`}>Scan your pantry → AI shows meals you can make right now → Cook → Move to pantry → repeat</p>
+        </div>
+        <div class={`${isV2 ? 'bg-v2-secondary-container/20' : 'bg-terracotta/10'} rounded-2xl p-6 border ${surfaceBorder}`}>
+          <div class="flex items-center gap-3 mb-3">
+            <div class={`w-10 h-10 rounded-xl ${accentBg} flex items-center justify-center`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <div>
+              <p class={`font-semibold ${textColor}`}>I Want This</p>
+              <p class={`text-sm ${textSecondary}`}>Browse, pick, and shop</p>
+            </div>
+          </div>
+          <p class={`text-sm ${textSecondary}`}>Browse meals → Pick what you crave → Add missing to shopping list → Buy → Move to pantry → repeat</p>
+        </div>
+      </div>
+    )}
+
+    <!-- Product Loop Diagram -->
+    <div class="relative">
+      <!-- Loop Nodes -->
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Pantry -->
+        <div class="text-center">
+          <div class={`w-20 h-20 mx-auto rounded-2xl ${primaryBg} flex items-center justify-center mb-4 shadow-sm`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <h3 class={`font-semibold ${textColor} mb-1`}>Pantry</h3>
+          <p class={`text-sm ${textSecondary}`}>What you have at home</p>
+        </div>
+
+        <!-- AI Meals -->
+        <div class="text-center">
+          <div class={`w-20 h-20 mx-auto rounded-2xl ${accentBg} flex items-center justify-center mb-4 shadow-sm`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/><path d="M12 11v2"/><path d="M12 17v2"/></svg>
+          </div>
+          <h3 class={`font-semibold ${textColor} mb-1`}>AI Meals</h3>
+          <p class={`text-sm ${textSecondary}`}>Smart suggestions for both</p>
+        </div>
+
+        <!-- Shopping -->
+        <div class="text-center">
+          <div class={`w-20 h-20 mx-auto rounded-2xl ${isV2 ? 'bg-v2-primary' : 'bg-sage'} flex items-center justify-center mb-4 shadow-sm`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3 class={`font-semibold ${textColor} mb-1`}>Shopping</h3>
+          <p class={`text-sm ${textSecondary}`}>Shared list, real-time sync</p>
+        </div>
+      </div>
+
+      <!-- Loop Arrows -->
+      <div class="hidden md:flex items-center justify-center mt-6 mb-4">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <div class={`w-2 h-2 rounded-full ${primaryBg}`}></div>
+            <div class={`w-12 h-0.5 ${isV2 ? 'bg-v2-primary' : 'bg-sage'}`}></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <span class={`text-sm font-medium ${primaryColor}`}>AI suggests from pantry</span>
+          <div class="flex items-center gap-2">
+            <div class={`w-2 h-2 rounded-full ${accentBg}`}></div>
+            <div class={`w-12 h-0.5 ${accentBg}`}></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <span class={`text-sm font-medium ${accentColor}`}>Missing → shopping list</span>
+        </div>
+      </div>
+
+      <!-- Feedback Arrow -->
+      <div class={`mt-6 ${primaryLight} rounded-xl p-4 border ${surfaceBorder} text-center`}>
+        <div class="flex items-center justify-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={primaryColor}><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
+          <p class={`text-sm font-medium ${textColor}`}>
+            <span class={primaryColor}>"Move to Pantry"</span> — checked items return to your pantry, and the cycle starts again
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Tagline -->
+    <div class="text-center mt-8">
+      <p class={`text-lg font-semibold ${primaryColor} ${primaryLight} inline-block px-6 py-3 rounded-xl`}>
+        Pick a meal → it tells you what to buy → buy it → it knows you have it → picks the next meal. Forever.
+      </p>
+    </div>
+  </div>
+</section>

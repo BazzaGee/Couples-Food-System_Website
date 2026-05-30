@@ -1,0 +1,19 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const currentPath = Astro.url.pathname;
+const v1Href = version === 'v2' ? currentPath.replace(/^\/v2/, '') || '/' : currentPath;
+const v2Href = version === 'v1' ? '/v2' + (currentPath === '/' ? '' : currentPath) : currentPath;
+---
+
+<div class={`w-full border-b ${version === 'v2' ? 'bg-v2-surface/95 backdrop-blur-md border-v2-outline-variant' : 'bg-cream/95 backdrop-blur-md border-border'}`}>
+  <div class="max-w-6xl mx-auto px-6 py-2 flex items-center justify-center">
+    <div class={`flex items-center rounded-full p-1 ${version === 'v2' ? 'bg-v2-surface-container border border-v2-outline-variant' : 'bg-cream-dark border border-border'}`}>
+      <a href={v1Href} class={`px-4 py-1 rounded-full text-sm font-semibold transition-all ${version === 'v1' ? 'bg-sage text-white shadow-sm' : (version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage')}`}>V1</a>
+      <a href={v2Href} class={`px-4 py-1 rounded-full text-sm font-semibold transition-all ${version === 'v2' ? 'bg-v2-primary text-v2-on-primary shadow-sm' : 'bg-sage text-white shadow-sm'}`}>V2</a>
+    </div>
+  </div>
+</div>

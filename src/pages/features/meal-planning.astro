@@ -7,7 +7,7 @@ import WaitlistForm from '../../components/forms/WaitlistForm.astro';
 const feature = features.features.find(f => f.id === 'meal-planning')!;
 ---
 
-<BaseLayout title="Collaborative Meal Planning | Couples Food System" description="Plan your entire week in one tap. AI creates a shared meal plan that respects both partners' dietary preferences." version="v1">
+<BaseLayout title="Collaborative Planning | Couples Food System" description="Your week, planned together. A shared kitchen metaphor that ends the 'what's for dinner?' argument. Plan your week together with zero mental load." version="v1">
   <section class="py-20 max-w-4xl mx-auto px-6">
     <a href="/features" class="text-sage hover:text-sage-dark mb-8 inline-block font-medium">&larr; Back to all features</a>
     <div class="bg-white rounded-2xl border border-border p-8 md:p-16 shadow-sm">
@@ -15,18 +15,41 @@ const feature = features.features.find(f => f.id === 'meal-planning')!;
       <p class="text-xl text-text-secondary leading-relaxed mb-10">{feature.longDescription}</p>
 
       <div class="rounded-xl aspect-video w-full overflow-hidden border border-border mb-10">
-        <img src="/images/v1/screenshot-mealplan.webp" alt="Collaborative meal planning app interface showing weekly plan with partner editing indicators" class="w-full h-full object-cover" decoding="async" />
+        <img src="/images/v1/screenshot-mealplan.webp" alt="Collaborative meal planning app interface showing weekly calendar with meals for both partners" class="w-full h-full object-cover" decoding="async" />
       </div>
 
-      <div class="text-lg text-text-secondary space-y-6">
-        <p>
-          Plan your entire week in one tap. Our AI creates a shared meal plan that respects both partners' dietary preferences and goals. Missing ingredients automatically populate your shared grocery list.
+      <!-- The Problem This Solves -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-text-primary mb-4">The Problem This Solves</h3>
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Sunday meal planning shouldn't be an hour-long negotiation. One person carries the entire mental load while the other checks out. Traditional meal planners are built for one person — single calorie target, single portion size, single grocery list. Great if you live alone. Useless if you're cooking for two with different goals.
         </p>
-        <p>
-          Both partners see and edit the same plan in real-time. Sunday planning becomes a 5-minute conversation, not an hour-long negotiation.
-        </p>
-        <p>
-          The "we" framing is throughout — this isn't your meal plan or your partner's meal plan. It's our meal plan, decided together.
+      </div>
+
+      <!-- How It Works -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-text-primary mb-4">How It Works</h3>
+        <div class="space-y-4 text-lg text-text-secondary">
+          <p>
+            <strong>One tap generates a week.</strong> Our AI creates a shared meal plan that respects both partners' dietary preferences and goals. Monday through Sunday, planned in seconds.
+          </p>
+          <p>
+            <strong>Missing ingredients auto-populate.</strong> Every meal's missing ingredients are aggregated into one unified grocery list. No manual addition. No forgotten items.
+          </p>
+          <p>
+            <strong>Real-time collaborative editing.</strong> Both partners see and edit the same plan. Swap a meal, adjust a day, add a note — changes appear instantly for both.
+          </p>
+          <p>
+            <strong>5 minutes, not 50.</strong> What used to be an hour-long Sunday negotiation becomes a 5-minute conversation. More time for what matters.
+          </p>
+        </div>
+      </div>
+
+      <!-- Why Others Don't Do This -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-text-primary mb-4">Why Others Don't Do This</h3>
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Mealime has meal plans but doesn't know your pantry or partner's diet. AnyList has recipe saving but no AI generation from pantry. No mainstream app combines pantry-aware AI, dual-profile optimization, and real-time collaborative planning into one workflow.
         </p>
       </div>
 

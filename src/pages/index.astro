@@ -4,62 +4,129 @@ import Hero from '../components/sections/Hero.astro';
 import Features from '../components/sections/Features.astro';
 import Waitlist from '../components/sections/Waitlist.astro';
 import WaitlistForm from '../components/forms/WaitlistForm.astro';
+import OnePrepTwoPlates from '../components/infographics/OnePrepTwoPlates.astro';
+import ProductLoop from '../components/infographics/ProductLoop.astro';
+import BeforeAfter from '../components/infographics/BeforeAfter.astro';
+import ValueMetrics from '../components/infographics/ValueMetrics.astro';
 ---
 
-<BaseLayout title="Couples Food System | One dinner. Two plates. Zero arguments." description="The collaborative food operating system for couples with different dietary goals." version="v1">
+<BaseLayout title="Couples Food System | One dinner. Two plates. Zero arguments." description="The first collaborative meal app for couples. Cook one meal together, and our AI adapts the plating so you both hit your unique goals." version="v1">
   <Hero
     badge="Now accepting Beta waitlist couples"
     headline="One dinner.&#10;Two plates.&#10;Zero arguments."
-    subheadline="The first collaborative meal app for couples. Cook one meal together, and our AI adapts the plating so you both hit your unique goals."
-    ctaPrimaryText="Join Free Beta Waitlist"
+    subheadline="The only app that lets you cook one meal together and plate it two different ways. Partner A eats for weight loss. Partner B eats for muscle gain. Same pan. Same recipe. Different results."
+    ctaPrimaryText="Get Early Access — Free During Beta"
     ctaSecondaryText="See How It Works"
     ctaSecondaryHref="/how-it-works"
   />
 
-  <!-- Hero Image -->
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <div class="rounded-2xl overflow-hidden shadow-lg border border-border">
-      <img src="/images/hero/hero-homepage.webp" alt="A happy couple cooking together in a bright modern kitchen with sage green accents and warm morning light" class="w-full h-auto" loading="eager" fetchpriority="high" decoding="async" />
-    </div>
-  </section>
+  <!-- Value Metrics Bar -->
+  <ValueMetrics version="v1" />
 
-  <!-- Problem Section with Image -->
+  <!-- The Big Idea: One Prep, Two Plates -->
+  <OnePrepTwoPlates version="v1" />
+
+  <!-- Before/After Section -->
+  <BeforeAfter version="v1" />
+
+  <!-- Problem Section -->
   <section class="bg-sage/10 py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-text-primary">
-            The "What's for dinner?" argument ends tonight.
-          </h2>
-          <p class="text-xl text-text-secondary leading-relaxed mb-8">
-            Sharing a kitchen shouldn't mean compromising on your personal wellness goals. Whether one of you wants to feel lighter and the other wants to build strength, <strong>Couples Food System</strong> does the heavy lifting. No math, no separate cooking, just quality time together.
-          </p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              <span class="text-lg text-text-secondary">Endless scrolling on delivery apps.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              <span class="text-lg text-text-secondary">Mismatched diet goals causing separate cooking.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error w-6 h-6 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              <span class="text-lg text-text-secondary">Forgotten ingredients rotting in the fridge.</span>
-            </li>
-          </ul>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 tracking-tight text-text-primary">
+          The "What's for dinner?" argument ends tonight.
+        </h2>
+        <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+          Sharing a kitchen shouldn't mean compromising on your personal wellness goals. Couples Food System does the heavy lifting.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl border border-border p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">20 Minutes Scrolling</h3>
+          <p class="text-text-secondary">Endless delivery app scrolling. Still no dinner decided. Sound familiar?</p>
         </div>
-        <div class="rounded-2xl overflow-hidden shadow-lg border border-border">
-          <img src="/images/hero/problem-section.webp" alt="A couple standing together in a sun-drenched modern kitchen, preparing fresh vegetables on a terracotta cutting board" class="w-full h-auto" decoding="async" />
+        <div class="bg-white rounded-2xl border border-border p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Two Meals, Two Lists</h3>
+          <p class="text-text-secondary">One person cooks chicken, the other cooks tofu. Two pans, two recipes, twice the cleanup.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-border p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">$600/Year Wasted</h3>
+          <p class="text-text-secondary">Forgotten ingredients rotting in the fridge. Duplicate purchases. Wasted food, wasted money.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <Features
-    title="Your shared kitchen, smarter."
-  />
+  <!-- How It Works Preview -->
+  <section class="py-24 max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4 tracking-tight text-text-primary">
+        From Plan to Plate in 5 Steps
+      </h2>
+      <p class="text-xl text-text-secondary">
+        A self-reinforcing loop that makes dinner easier every single day.
+      </p>
+    </div>
+    <div class="space-y-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-sage text-white text-lg font-semibold flex items-center justify-center">1</div>
+        <div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Invite Your Partner</h3>
+          <p class="text-text-secondary">Link your accounts to create your shared digital kitchen. "We" replaces "You" from day one.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-sage text-white text-lg font-semibold flex items-center justify-center">2</div>
+        <div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Set Your Goals</h3>
+          <p class="text-text-secondary">Partner A wants more energy; Partner B wants to build strength. The app handles the math.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-sage text-white text-lg font-semibold flex items-center justify-center">3</div>
+        <div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Stock the Pantry</h3>
+          <p class="text-text-secondary">Type "chicken, rice, spinach" — no barcode scanning. AI uses this to suggest waste-free meals.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-sage text-white text-lg font-semibold flex items-center justify-center">4</div>
+        <div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Generate Meals</h3>
+          <p class="text-text-secondary">One tap creates a weekly plan. Missing ingredients auto-populate your shared grocery list.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-sage text-white text-lg font-semibold flex items-center justify-center">5</div>
+        <div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Cook Together</h3>
+          <p class="text-text-secondary">Follow one recipe, plate two ways. Same pan. Same meal. Different plates. Eat together in peace.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="/how-it-works" class="text-sage font-medium hover:text-sage-dark inline-flex items-center gap-1">
+        See the full walkthrough with illustrations &rarr;
+      </a>
+    </div>
+  </section>
 
+  <!-- Features Section -->
+  <Features title="Your shared kitchen, smarter." />
+
+  <!-- Product Loop -->
+  <ProductLoop version="v1" />
+
+  <!-- Waitlist CTA -->
   <Waitlist>
     <WaitlistForm />
   </Waitlist>

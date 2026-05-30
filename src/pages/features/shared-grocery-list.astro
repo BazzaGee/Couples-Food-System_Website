@@ -7,7 +7,7 @@ import WaitlistForm from '../../components/forms/WaitlistForm.astro';
 const feature = features.features.find(f => f.id === 'shared-grocery-list')!;
 ---
 
-<BaseLayout title="Real-Time Shared Grocery List | Couples Food System" description="Never buy milk twice. Our lightning-fast shared grocery list updates instantly for both of you." version="v1">
+<BaseLayout title="Real-Time Shared Grocery List | Couples Food System" description="Never buy milk twice. Our lightning-fast shared grocery list updates instantly for both of you, whether you are at home or in the aisle." version="v1">
   <section class="py-20 max-w-4xl mx-auto px-6">
     <a href="/features" class="text-sage hover:text-sage-dark mb-8 inline-block font-medium">&larr; Back to all features</a>
     <div class="bg-white rounded-2xl border border-border p-8 md:p-16 shadow-sm">
@@ -15,18 +15,41 @@ const feature = features.features.find(f => f.id === 'shared-grocery-list')!;
       <p class="text-xl text-text-secondary leading-relaxed mb-10">{feature.longDescription}</p>
 
       <div class="rounded-xl aspect-video w-full overflow-hidden border border-border mb-10">
-        <img src="/images/v1/screenshot-shopping.webp" alt="Shared grocery list app interface showing real-time sync between two partners" class="w-full h-full object-cover" decoding="async" />
+        <img src="/images/v1/screenshot-shopping.webp" alt="Real-time shared grocery list app interface showing items being checked off by both partners" class="w-full h-full object-cover" decoding="async" />
       </div>
 
-      <div class="text-lg text-text-secondary space-y-6">
-        <p>
-          Our shared grocery list uses lightning-fast real-time sync. Add an item from home and it appears on your partner's phone at the store in under 100ms. Check off an item at the store and it disappears from the shared list instantly.
+      <!-- The Problem This Solves -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-text-primary mb-4">The Problem This Solves</h3>
+        <p class="text-lg text-text-secondary leading-relaxed">
+          "Did you already buy milk?" — the question that starts the duplicate purchase cycle. Both partners buy the same thing because they can't see each other's lists in real time. Phone calls from the store. Text messages. "I thought you were getting it." It's a daily friction point that adds up.
         </p>
-        <p>
-          No phone calls, no duplicate purchases, no confusion. Whether you're at home planning or in the aisle shopping, both of you see the same list in real time.
-        </p>
-        <p>
-          Lost signal in the supermarket? No problem. Your changes queue locally and sync automatically when you reconnect. You'll never lose data.
+      </div>
+
+      <!-- How It Works -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-text-primary mb-4">How It Works</h3>
+        <div class="space-y-4 text-lg text-text-secondary">
+          <p>
+            <strong>Add from anywhere.</strong> Partner A adds "milk" from home. Partner B sees it appear on their phone at the store in under 100ms. No refresh. No waiting.
+          </p>
+          <p>
+            <strong>Check off in real time.</strong> Partner B checks off "milk" at the store. Partner A sees it disappear from the list at home. No "did you get it?" texts needed.
+          </p>
+          <p>
+            <strong>Move to Pantry.</strong> When you check something off, tap "Move to Pantry" and the item moves from your shopping list to your pantry inventory. This bridges shopping → cooking seamlessly.
+          </p>
+          <p>
+            <strong>Works offline.</strong> Lose signal in the supermarket? Your changes queue locally and sync automatically when you reconnect. You'll never lose data.
+          </p>
+        </div>
+      </div>
+
+      <!-- Why Others Don't Do This -->
+      <div class="mb-10">
+        <h3 class="text-xl font-semibold text-text-primary mb-4">Why Others Don't Do This</h3>
+        <p class="text-lg text-text-secondary leading-relaxed">
+          AnyList has shared lists but charges $30/year for real-time sync. Most grocery apps use Firebase or traditional polling — slow, battery-draining, and unreliable. Our WebSocket-based sync via Cloudflare Durable Objects delivers sub-100ms latency at zero infrastructure cost.
         </p>
       </div>
 

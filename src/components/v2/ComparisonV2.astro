@@ -15,7 +15,8 @@ const { title = 'Why Generic Apps Fail Couples', subtitle = 'Most popular apps a
     <p class="text-xl text-v2-on-surface-variant max-w-3xl mx-auto">{subtitle}</p>
   </div>
 
-  <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant overflow-hidden shadow-sm">
+  <!-- Comparison Table -->
+  <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant overflow-hidden shadow-sm mb-12">
     <div class="grid grid-cols-3 bg-v2-surface-container p-6 border-b border-v2-outline-variant font-semibold text-v2-on-surface text-sm md:text-base">
       <div>Feature</div>
       <div class="text-center text-v2-primary">Couples Food System V2</div>
@@ -35,10 +36,25 @@ const { title = 'Why Generic Apps Fail Couples', subtitle = 'Most popular apps a
     ))}
   </div>
 
-  <div class="mt-16 space-y-8 text-lg text-v2-on-surface-variant">
+  <!-- Why This Matters -->
+  <div class="mb-16">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-8 text-center text-v2-on-surface">Why This Matters</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {comparison.whyThisMatters.map((item) => (
+        <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant p-6 shadow-sm text-center">
+          <p class="text-3xl font-bold text-v2-primary mb-2">{item.stat}</p>
+          <p class="font-semibold text-v2-on-surface mb-2">{item.label}</p>
+          <p class="text-sm text-v2-on-surface-variant">{item.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Competitor Breakdown -->
+  <div class="space-y-8 text-lg text-v2-on-surface-variant mb-12">
     {comparison.genericCompetitors.map((competitor) => (
-      <div>
-        <p class="font-semibold text-v2-on-surface mb-2">{competitor.type}</p>
+      <div class="bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant p-6 shadow-sm">
+        <p class="font-semibold text-v2-on-surface mb-2 text-xl">{competitor.type}</p>
         <p>{competitor.problem}</p>
       </div>
     ))}

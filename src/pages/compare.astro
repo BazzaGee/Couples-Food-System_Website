@@ -3,10 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Comparison from '../components/sections/Comparison.astro';
 import Waitlist from '../components/sections/Waitlist.astro';
 import WaitlistForm from '../components/forms/WaitlistForm.astro';
+import ValueMetrics from '../components/infographics/ValueMetrics.astro';
 ---
 
 <BaseLayout title="Compare | Couples Food System" description="Why generic apps fail couples. See how Couples Food System compares to standard diet apps." version="v1">
   <Comparison />
+  <ValueMetrics version="v1" />
   <Waitlist>
     <WaitlistForm />
   </Waitlist>

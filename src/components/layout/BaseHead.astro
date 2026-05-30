@@ -10,7 +10,7 @@ interface Props {
 const { title, description, canonicalURL, ogImage, version = 'v1' } = Astro.props;
 const siteURL = 'https://couples-food-system.com';
 const canonical = canonicalURL ? `${siteURL}${canonicalURL}` : Astro.url;
-const ogImg = ogImage || `${siteURL}/images/hero/og-homepage.webp`;
+const ogImg = ogImage || (version === 'v2' ? `${siteURL}/images/v2/og-homepage.webp` : `${siteURL}/images/hero/og-homepage.webp`);
 const themeColor = version === 'v2' ? '#44664a' : '#7A9E7E';
 ---
 
@@ -20,6 +20,9 @@ const themeColor = version === 'v2' ? '#44664a' : '#7A9E7E';
 
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="keywords" content="couples meal planning, shared grocery list, adaptive cooking, meal planning for couples, pantry AI, collaborative meal planning, couples food app" />
+<meta name="author" content="Couples Food System" />
+<meta name="robots" content="index, follow" />
 
 <link rel="canonical" href={canonical} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +35,10 @@ const themeColor = version === 'v2' ? '#44664a' : '#7A9E7E';
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImg} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Couples Food System" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -49,3 +55,4 @@ const themeColor = version === 'v2' ? '#44664a' : '#7A9E7E';
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/images/logo/logo-icon.png" />

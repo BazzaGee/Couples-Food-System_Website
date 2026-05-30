@@ -1,0 +1,123 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const isV2 = version === 'v2';
+const primaryColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const primaryLight = isV2 ? 'bg-v2-primary/10' : 'bg-sage/10';
+const errorColor = isV2 ? 'text-v2-secondary' : 'text-error';
+const successColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const surfaceBg = isV2 ? 'bg-v2-surface-container-lowest' : 'bg-white';
+const surfaceBorder = isV2 ? 'border-v2-outline-variant' : 'border-border';
+const textColor = isV2 ? 'text-v2-on-surface' : 'text-text-primary';
+const textSecondary = isV2 ? 'text-v2-on-surface-variant' : 'text-text-secondary';
+---
+
+<section class="py-16 md:py-24 max-w-5xl mx-auto px-6">
+  <div class="text-center mb-12">
+    <h2 class={`text-3xl md:text-4xl font-semibold tracking-tight mb-4 ${textColor}`}>
+      Before Couples Food System vs. After
+    </h2>
+    <p class={`text-lg md:text-xl ${textSecondary} max-w-2xl mx-auto`}>
+      See the difference a shared kitchen makes.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+    <!-- Before -->
+    <div class={`${surfaceBg} rounded-3xl border-2 ${isV2 ? 'border-v2-secondary/30' : 'border-error/30'} p-8 shadow-sm`}>
+      <div class="flex items-center gap-3 mb-6">
+        <div class={`w-10 h-10 rounded-xl ${isV2 ? 'bg-v2-secondary/20' : 'bg-error/10'} flex items-center justify-center`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#E8A87C' : '#DC2626'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </div>
+        <h3 class={`text-xl font-semibold ${isV2 ? 'text-v2-secondary' : 'text-error'}`}>Before</h3>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#E8A87C' : '#DC2626'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>Two separate meals</p>
+            <p class={`text-sm ${textSecondary}`}>One person cooks chicken, the other cooks tofu. Two pans, two recipes, twice the cleanup.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#E8A87C' : '#DC2626'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>Two grocery lists</p>
+            <p class={`text-sm ${textSecondary}`}>Both partners buy the same things. Duplicate purchases waste money and fridge space.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#E8A87C' : '#DC2626'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>20 minutes scrolling</p>
+            <p class={`text-sm ${textSecondary}`}>Endless delivery app scrolling. Still no dinner decided. Sound familiar?</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#E8A87C' : '#DC2626'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>$600/year wasted</p>
+            <p class={`text-sm ${textSecondary}`}>Forgotten ingredients rotting in the fridge. Duplicate purchases. Wasted food, wasted money.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#E8A87C' : '#DC2626'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>The nightly argument</p>
+            <p class={`text-sm ${textSecondary}`}>"What's for dinner?" — the question that starts the stress cycle every single evening.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- After -->
+    <div class={`${surfaceBg} rounded-3xl border-2 ${isV2 ? 'border-v2-primary/30' : 'border-sage/30'} p-8 shadow-sm`}>
+      <div class="flex items-center gap-3 mb-6">
+        <div class={`w-10 h-10 rounded-xl ${primaryLight} flex items-center justify-center`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+        </div>
+        <h3 class={`text-xl font-semibold ${primaryColor}`}>After</h3>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>One meal, two plates</p>
+            <p class={`text-sm ${textSecondary}`}>Same stir-fry, same pan. Partner A gets 450 cal, Partner B gets 700 cal. Both hit their goals.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>One shared grocery list</p>
+            <p class={`text-sm ${textSecondary}`}>Real-time sync. Partner A checks off milk at the store, Partner B sees it disappear at home.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>5-minute dinner decisions</p>
+            <p class={`text-sm ${textSecondary}`}>Type what you have → AI suggests meals → pick one → cook. Done in minutes, not 20.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>Zero food waste</p>
+            <p class={`text-sm ${textSecondary}`}>AI uses what you already have. Less waste, fewer trips to the store, more money saved.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isV2 ? '#44664a' : '#7A9E7E'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <div>
+            <p class={`font-medium ${textColor}`}>Cooking together again</p>
+            <p class={`text-sm ${textSecondary}`}>One recipe, one cooking session, eating together in peace. The way it should be.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

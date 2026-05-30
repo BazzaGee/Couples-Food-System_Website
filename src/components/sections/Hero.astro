@@ -14,7 +14,8 @@ const { badge, headline, subheadline, ctaPrimaryText, ctaPrimaryHref = '#waitlis
 
 <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto text-center">
   {badge && (
-    <div class="inline-block bg-terracotta/20 text-terracotta-dark px-4 py-1.5 rounded-full text-sm font-semibold mb-6 tracking-wide uppercase">
+    <div class="inline-flex items-center gap-2 bg-terracotta/20 text-terracotta-dark px-4 py-2 rounded-full text-sm font-semibold mb-6 tracking-wide">
+      <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
       {badge}
     </div>
   )}
@@ -39,4 +40,7 @@ const { badge, headline, subheadline, ctaPrimaryText, ctaPrimaryHref = '#waitlis
       </a>
     )}
   </div>
+  <p class="text-sm text-text-secondary mt-6">
+    No credit card required. Free during Beta.
+  </p>
 </section>

@@ -15,11 +15,12 @@ const { title = 'Why Generic Apps Fail Couples', subtitle = 'Most popular apps a
     <p class="text-xl text-text-secondary max-w-3xl mx-auto">{subtitle}</p>
   </div>
 
-  <div class="bg-white rounded-2xl border border-border overflow-hidden shadow-sm">
+  <!-- Comparison Table -->
+  <div class="bg-white rounded-2xl border border-border overflow-hidden shadow-sm mb-12">
     <div class="grid grid-cols-3 bg-cream-dark p-6 border-b border-border font-semibold text-text-primary text-sm md:text-base">
       <div>Feature</div>
       <div class="text-center text-sage-dark">Couples Food System</div>
-      <div class="text-center text-text-secondary">Standard Diet Apps</div>
+      <div class="text-center text-text-secondary">Standard Apps</div>
     </div>
 
     {comparison.comparisons.map((item) => (
@@ -35,16 +36,31 @@ const { title = 'Why Generic Apps Fail Couples', subtitle = 'Most popular apps a
     ))}
   </div>
 
-  <div class="mt-16 space-y-8 text-lg text-text-secondary">
+  <!-- Why This Matters -->
+  <div class="mb-16">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-8 text-center text-text-primary">Why This Matters</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {comparison.whyThisMatters.map((item) => (
+        <div class="bg-white rounded-2xl border border-border p-6 shadow-sm text-center">
+          <p class="text-3xl font-bold text-sage mb-2">{item.stat}</p>
+          <p class="font-semibold text-text-primary mb-2">{item.label}</p>
+          <p class="text-sm text-text-secondary">{item.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Competitor Breakdown -->
+  <div class="space-y-8 text-lg text-text-secondary mb-12">
     {comparison.genericCompetitors.map((competitor) => (
-      <div>
-        <p class="font-semibold text-text-primary mb-2">{competitor.type}</p>
+      <div class="bg-white rounded-2xl border border-border p-6 shadow-sm">
+        <p class="font-semibold text-text-primary mb-2 text-xl">{competitor.type}</p>
         <p>{competitor.problem}</p>
       </div>
     ))}
   </div>
 
-  <div class="mt-12 bg-sage/10 rounded-2xl p-8 md:p-12 text-center">
+  <div class="mt-12 bg-sage/10 rounded-2xl p-8 md:p-12 text-center border border-border">
     <p class="text-xl text-text-primary font-medium">
       Couples Food System is the only app built from the ground up for two people sharing one kitchen with different goals. We combine real-time collaboration, AI meal generation, adaptive portions, pantry-first intelligence, and relationship-first design into one seamless experience.
     </p>

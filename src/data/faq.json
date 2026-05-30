@@ -16,9 +16,14 @@
       "answer": "Couples Food System works on any device with a web browser — iPhone, Android, tablet, or desktop. No app store download needed. Just open the link and start planning."
     },
     {
+      "category": "getting-started",
+      "question": "How long does setup take?",
+      "answer": "About 5 minutes. Invite your partner with a 6-digit code, set your dietary preferences and goals, and log what's in your pantry. That's it — you're ready to cook."
+    },
+    {
       "category": "features",
       "question": "How does Adaptive Plating work?",
-      "answer": "You cook the exact same meal in one pan. At the end, our AI gives you visual plating guides — for example, suggesting Partner A takes a larger portion of protein, while Partner B adds extra rice and greens."
+      "answer": "You cook the exact same meal in one pan. At the end, our AI gives you visual plating guides — for example, suggesting Partner A takes 4oz chicken over spinach (450 cal), while Partner B takes 6oz chicken over rice (700 cal). Same recipe, different portions, both hit their targets."
     },
     {
       "category": "features",
@@ -34,6 +39,11 @@
       "category": "features",
       "question": "Does it work offline?",
       "answer": "Yes. If you lose signal in the supermarket (we've all been there), your changes queue locally and sync automatically when you reconnect. You'll never lose data."
+    },
+    {
+      "category": "features",
+      "question": "What is the 'Product Loop'?",
+      "answer": "It's the self-reinforcing cycle that makes the app smarter over time: Pantry → AI suggests meals → Shopping list for missing items → Buy groceries → Move to Pantry → repeat. The more you use it, the better it knows what you have and what you like."
     },
     {
       "category": "beta",
@@ -54,12 +64,33 @@
       "category": "privacy",
       "question": "Do you sell our data?",
       "answer": "Absolutely not. We will never sell, share, or monetize your personal data. Your kitchen stays your kitchen."
+    },
+    {
+      "category": "business",
+      "question": "How does Couples Food System make money?",
+      "answer": "After Beta, we'll offer a freemium model. Core features like shared grocery lists and basic meal planning will remain free. Advanced AI features — pantry-to-meal generation, adaptive shared cooking, weekly planning — will be part of a premium tier at approximately $10/month per household (not per person)."
+    },
+    {
+      "category": "business",
+      "question": "What's your competitive advantage?",
+      "answer": "Our moat is the combination of four pillars that no competitor has assembled: (1) Adaptive Shared Cooking — one meal, two plates, different macros; (2) Pantry-First AI — invert the industry standard from recipe→list to pantry→meals; (3) Relationship-First UX — built for 'we' not 'you'; (4) Real-Time Collaboration — sub-100ms sync via modern infrastructure. Together, these create a self-reinforcing product loop that's nearly impossible to replicate."
+    },
+    {
+      "category": "business",
+      "question": "What's the market size?",
+      "answer": "The relationship app market ($854M) and nutrition app market ($5.76B) together represent over $6.6B in annual consumer spending. There are 35M+ US couples in the 22-45 age range. The AI-driven meal planning segment is growing at 28% CAGR — the fastest-growing segment in the category."
+    },
+    {
+      "category": "business",
+      "question": "Why hasn't anyone built this before?",
+      "answer": "It's genuinely difficult. Adaptive shared cooking requires combining real-time collaboration, nutrition intelligence, portion mathematics, recipe generation, and relationship-aware UX into a single workflow. Most nutrition apps started as solo fitness tools and can't retrofit collaboration. Most collaboration apps lack nutrition intelligence. The complexity is the moat."
     }
   ],
   "categories": [
     { "id": "getting-started", "label": "Getting Started" },
     { "id": "features", "label": "Features" },
     { "id": "beta", "label": "Beta Program" },
-    { "id": "privacy", "label": "Privacy & Security" }
+    { "id": "privacy", "label": "Privacy & Security" },
+    { "id": "business", "label": "Business & Market" }
   ]
 }

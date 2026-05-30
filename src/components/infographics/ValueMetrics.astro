@@ -1,0 +1,47 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const isV2 = version === 'v2';
+const primaryColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const primaryBg = isV2 ? 'bg-v2-primary' : 'bg-sage';
+const primaryLight = isV2 ? 'bg-v2-primary/10' : 'bg-sage/10';
+const surfaceBg = isV2 ? 'bg-v2-surface-container-lowest' : 'bg-white';
+const surfaceBorder = isV2 ? 'border-v2-outline-variant' : 'border-border';
+const textColor = isV2 ? 'text-v2-on-surface' : 'text-text-primary';
+const textSecondary = isV2 ? 'text-v2-on-surface-variant' : 'text-text-secondary';
+const accentColor = isV2 ? 'text-v2-secondary' : 'text-terracotta-dark';
+---
+
+<section class="py-8 max-w-5xl mx-auto px-6">
+  <div class={`${surfaceBg} rounded-2xl border ${surfaceBorder} p-6 md:p-8 shadow-sm`}>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <!-- Metric 1 -->
+      <div class="text-center">
+        <p class={`text-3xl md:text-4xl font-bold ${primaryColor} mb-1`}>$600</p>
+        <p class={`text-sm font-medium ${textColor} mb-1`}>Wasted Per Year</p>
+        <p class={`text-xs ${textSecondary}`}>On duplicate groceries &amp; expired food</p>
+      </div>
+      <!-- Metric 2 -->
+      <div class="text-center">
+        <p class={`text-3xl md:text-4xl font-bold ${accentColor} mb-1`}>100ms</p>
+        <p class={`text-sm font-medium ${textColor} mb-1`}>Sync Speed</p>
+        <p class={`text-xs ${textSecondary}`}>Faster than you can blink</p>
+      </div>
+      <!-- Metric 3 -->
+      <div class="text-center">
+        <p class={`text-3xl md:text-4xl font-bold ${primaryColor} mb-1`}>35M</p>
+        <p class={`text-sm font-medium ${textColor} mb-1`}>US Couples</p>
+        <p class={`text-xs ${textSecondary}`}>Ages 22-45 who share a kitchen</p>
+      </div>
+      <!-- Metric 4 -->
+      <div class="text-center">
+        <p class={`text-3xl md:text-4xl font-bold ${accentColor} mb-1`}>0</p>
+        <p class={`text-sm font-medium ${textColor} mb-1`}>Math Required</p>
+        <p class={`text-xs ${textSecondary}`}>AI handles all the calculations</p>
+      </div>
+    </div>
+  </div>
+</section>
