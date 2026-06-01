@@ -2,8 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroV2 from '../../components/v2/HeroV2.astro';
 import FeaturesV2 from '../../components/v2/FeaturesV2.astro';
-import WaitlistV2 from '../../components/v2/WaitlistV2.astro';
-import WaitlistFormV2 from '../../components/v2/WaitlistFormV2.astro';
 import OnePrepTwoPlates from '../../components/infographics/OnePrepTwoPlates.astro';
 import ProductLoop from '../../components/infographics/ProductLoop.astro';
 import DualModeToggle from '../../components/infographics/DualModeToggle.astro';
@@ -13,16 +11,14 @@ import ValueMetrics from '../../components/infographics/ValueMetrics.astro';
 
 <BaseLayout title="Couples Food System V2 | Two ways to cook. One perfect dinner." description="The flexible kitchen companion for every couple. Cook now with what you have, or browse hundreds of meals and we'll tell you what to buy." version="v2">
   <HeroV2
-    badge="Now accepting Beta waitlist couples"
     headline="One dinner.&#10;Two plates.&#10;Zero arguments."
     subheadline="Don't know what to cook? We'll show you what you can make right now with what you have. Craving something specific? Browse hundreds of meals — we'll tell you exactly what to buy. Either way, one shared recipe, two perfectly portioned plates."
-    ctaPrimaryText="Get Early Access — Free During Beta"
     ctaSecondaryText="See How It Works"
     ctaSecondaryHref="/v2/how-it-works"
   />
 
-  <!-- Value Metrics Bar -->
-  <ValueMetrics version="v2" />
+  <!-- Service Cards -->
+  <FeaturesV2 title="Two ways to cook. One shared kitchen." showLink={true} />
 
   <!-- The Big Idea: One Prep, Two Plates -->
   <OnePrepTwoPlates version="v2" />
@@ -124,14 +120,6 @@ import ValueMetrics from '../../components/infographics/ValueMetrics.astro';
     </div>
   </section>
 
-  <!-- Features Section -->
-  <FeaturesV2 title="Two ways to cook. One shared kitchen." />
-
   <!-- Product Loop -->
   <ProductLoop version="v2" />
-
-  <!-- Waitlist CTA -->
-  <WaitlistV2>
-    <WaitlistFormV2 />
-  </WaitlistV2>
 </BaseLayout>

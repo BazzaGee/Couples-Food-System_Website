@@ -1,0 +1,398 @@
+---
+// Chat Widget for Couples Food System
+// Connects to n8n backend at /webhook/couples-food-system-chatbot
+---
+
+<div id="chatToggleWrapper" class="chat-toggle-wrapper">
+  <button id="chatToggle" class="chat-toggle-btn" aria-label="Open chat">
+    <svg class="chat-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span class="chat-toggle-text">Got a question? Ask me anything</span>
+  </button>
+</div>
+
+<div id="chatWrapper" class="chat-wrapper">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">AL</div>
+      <div>
+        <div class="chat-header-name">AL. Roborts</div>
+        <div class="chat-header-status">Online</div>
+      </div>
+    </div>
+    <button id="chatClose" class="chat-close-btn" aria-label="Close chat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="chatMessages" class="chat-messages">
+    <div class="chat-message bot">
+      <div class="msg-content">Hi this is AL. Roborts. I'm here to answer any questions and help guide you. Ask me anything about the app, the website, or whatever is on your mind.</div>
+      <span class="msg-time"></span>
+    </div>
+  </div>
+
+  <div id="chatQuickReplies" class="chat-quick-replies"></div>
+
+  <button id="chatScrollBottom" class="chat-scroll-bottom" aria-label="Scroll to bottom">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+
+  <div class="chat-input-area">
+    <textarea id="chatInput" class="chat-input" placeholder="Type your message..." rows="1"></textarea>
+    <button id="chatSend" class="chat-send-btn" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const webhookUrl = 'https://bazzagee.app.n8n.cloud/webhook/couples-food-system-chatbot';
+  const chatSessionKey = 'cfs-session-id';
+  let chatOpen = false;
+  let isSending = false;
+  let sessionId = localStorage.getItem(chatSessionKey) || generateSessionId();
+  let typingTimeout = null;
+  let typingInterval = null;
+  let abortController = null;
+  let pendingRetryMessage = null;
+
+  const typingMessages = [
+    'Working on it...',
+    'Searching through the database...',
+    'There\'s a lot of info — pulling it together...',
+    'Almost there, crafting your answer...',
+    'Still working on it, thanks for your patience...',
+  ];
+  let typingIndex = 0;
+
+  function generateSessionId() {
+    const id = crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    localStorage.setItem(chatSessionKey, id);
+    return id;
+  }
+
+  function formatTime() {
+    return new Date().toLocaleTimeString('en-NZ', { hour: '2-digit', minute: '2-digit', hour12: false });
+  }
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    const wrapper = document.getElementById('chatWrapper');
+    const toggleWrapper = document.getElementById('chatToggleWrapper');
+    if (chatOpen) {
+      wrapper.classList.add('open');
+      toggleWrapper.classList.add('hidden');
+      document.getElementById('chatInput').focus();
+    } else {
+      wrapper.classList.remove('open');
+      toggleWrapper.classList.remove('hidden');
+      if (abortController) {
+        abortController.abort();
+        abortController = null;
+      }
+      hideTyping();
+    }
+  }
+
+  function scrollToBottom(smooth) {
+    if (smooth === undefined) smooth = true;
+    const messages = document.getElementById('chatMessages');
+    if (smooth) {
+      messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+    } else {
+      messages.scrollTop = messages.scrollHeight;
+    }
+  }
+
+  function addMessage(text, type, status) {
+    const messages = document.getElementById('chatMessages');
+    const msg = document.createElement('div');
+    msg.className = 'chat-message ' + type;
+
+    if (type === 'bot') {
+      msg.innerHTML = '<div class="msg-content">' + renderMarkdown(text) + '</div><span class="msg-time">' + formatTime() + '</span>';
+    } else if (type === 'system') {
+      msg.textContent = text;
+    } else {
+      const statusClass = status || 'sent';
+      let statusHTML = '';
+      if (statusClass === 'sending') {
+        statusHTML = '<span class="msg-status sending">Sending...</span>';
+      } else if (statusClass === 'sent') {
+        statusHTML = '<span class="msg-status sent">&#10003;</span>';
+      } else if (statusClass === 'failed') {
+        statusHTML = '<span class="msg-status failed">Failed</span><button class="msg-retry" onclick="window.__chatRetry()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Retry</button>';
+      }
+      msg.innerHTML = text + '<span class="msg-time">' + formatTime() + '</span>' + statusHTML;
+    }
+
+    messages.appendChild(msg);
+    scrollToBottom();
+    return msg;
+  }
+
+  function showTyping() {
+    hideTyping();
+    const messages = document.getElementById('chatMessages');
+    const typing = document.createElement('div');
+    typing.className = 'chat-typing';
+    typing.id = 'chatTyping';
+    typing.innerHTML = '<div class="chat-typing-dot"></div><div class="chat-typing-dot"></div><div class="chat-typing-dot"></div><span class="chat-typing-text">Working on it...</span>';
+    messages.appendChild(typing);
+    scrollToBottom();
+
+    typingIndex = 0;
+    typingInterval = setInterval(() => {
+      typingIndex = (typingIndex + 1) % typingMessages.length;
+      const textEl = document.querySelector('.chat-typing-text');
+      if (textEl) {
+        textEl.textContent = typingMessages[typingIndex];
+      }
+    }, 4000);
+  }
+
+  function hideTyping() {
+    const typing = document.getElementById('chatTyping');
+    if (typing) typing.remove();
+    clearInterval(typingInterval);
+    typingInterval = null;
+  }
+
+  function showQuickReplies() {
+    const container = document.getElementById('chatQuickReplies');
+    if (container.children.length > 0) return;
+    const suggestions = ['What is it?', 'How does it work?', 'Who is it for?'];
+    suggestions.forEach(text => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-quick-reply';
+      btn.textContent = text;
+      btn.addEventListener('click', () => {
+        document.getElementById('chatInput').value = text;
+        sendMessage();
+      });
+      container.appendChild(btn);
+    });
+  }
+
+  function hideQuickReplies() {
+    document.getElementById('chatQuickReplies').innerHTML = '';
+  }
+
+  function renderMarkdown(text) {
+    let html = text;
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    html = html.replace(/`(.+?)`/g, '<code>$1</code>');
+    html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+    html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+    html = html.replace(/\n\n/g, '</p><p>');
+    html = html.replace(/\n/g, '<br>');
+    html = '<p>' + html + '</p>';
+    html = html.replace(/<p><\/p>/g, '');
+    return html;
+  }
+
+  function resetTextarea() {
+    const input = document.getElementById('chatInput');
+    input.value = '';
+    input.style.height = 'auto';
+  }
+
+  function autoResizeTextarea() {
+    const input = document.getElementById('chatInput');
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+  }
+
+  function cleanToolNarration(text) {
+    var cleaned = text
+      .replace(/Calling\s+[\w.]+\s+with\s+input:\s*\{[^}]*\}/gi, '')
+      .replace(/Tool\s+call:\s*\{[^}]*\}/gi, '')
+      .replace(/"id":"call_[^"]*"/gi, '')
+      .replace(/\{[^}]*"id":"call_[^"]*"[^}]*\}/gi, '')
+      .replace(/\n\s*\n/g, '\n')
+      .trim();
+    if (!cleaned || cleaned.length < 5) {
+      return 'The assistant had trouble generating a response. Please try asking again.';
+    }
+    return cleaned;
+  }
+
+  async function sendMessage(retryData) {
+    if (isSending) return;
+    const input = document.getElementById('chatInput');
+    const message = retryData ? retryData.message : input.value.trim();
+    if (!message) return;
+
+    isSending = true;
+    const sendBtn = document.getElementById('chatSend');
+    sendBtn.disabled = true;
+
+    const userMsgEl = addMessage(message, 'user', 'sending');
+
+    showTyping();
+    hideQuickReplies();
+
+    try {
+      abortController = new AbortController();
+      const timeoutId = setTimeout(() => {
+        abortController.abort();
+      }, 90000);
+
+      const formData = new FormData();
+      formData.append('chatInput', message);
+      formData.append('sessionId', sessionId);
+
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        body: formData,
+        signal: abortController.signal,
+      });
+
+      if (!response.ok) {
+        throw new Error('Response not OK');
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let fullText = '';
+      let botMsgEl = null;
+      let typingHidden = false;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed) continue;
+          try {
+            const parsed = JSON.parse(trimmed);
+            if (parsed.type === 'item' && parsed.content) {
+              fullText += parsed.content;
+              if (!typingHidden) {
+                hideTyping();
+                typingHidden = true;
+                botMsgEl = addMessage('', 'bot', 'sending');
+              }
+              const cleaned = cleanToolNarration(fullText);
+              botMsgEl.innerHTML = '<div class="msg-content">' + renderMarkdown(cleaned) + '</div><span class="msg-time">' + formatTime() + '</span>';
+              scrollToBottom();
+            } else if (parsed.type === 'end') {
+              const cleaned = cleanToolNarration(fullText);
+              if (botMsgEl) {
+                botMsgEl.innerHTML = '<div class="msg-content">' + renderMarkdown(cleaned) + '</div><span class="msg-time">' + formatTime() + '</span><span class="msg-status sent">&#10003;</span>';
+              }
+            }
+          } catch (e) {
+            // Not valid JSON, skip
+          }
+        }
+      }
+
+      if (!fullText) {
+        hideTyping();
+        fullText = 'No response was received. Please try again.';
+        const cleaned = cleanToolNarration(fullText);
+        botMsgEl = addMessage(cleaned, 'bot', 'sent');
+      }
+
+      clearTimeout(timeoutId);
+      showQuickReplies();
+
+      if (!retryData) {
+        resetTextarea();
+      }
+    } catch (error) {
+      hideTyping();
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') return;
+
+      console.error('[ChatWidget] Request failed:', {
+        message: error.message,
+        name: error.name,
+        input: message,
+        timestamp: new Date().toISOString(),
+      });
+
+      userMsgEl.innerHTML = message + '<span class="msg-time">' + formatTime() + '</span><span class="msg-status failed">Failed</span><button class="msg-retry" onclick="window.__chatRetry()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Retry</button>';
+
+      pendingRetryMessage = { message };
+    } finally {
+      isSending = false;
+      sendBtn.disabled = false;
+      input.focus();
+      abortController = null;
+    }
+  }
+
+  function retryMessage() {
+    if (pendingRetryMessage && !isSending) {
+      sendMessage(pendingRetryMessage);
+    }
+  }
+
+  window.__chatRetry = retryMessage;
+
+  document.getElementById('chatSend')?.addEventListener('click', sendMessage);
+  document.getElementById('chatSend')?.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    sendMessage();
+  });
+  document.getElementById('chatInput')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+  document.getElementById('chatInput')?.addEventListener('input', autoResizeTextarea);
+  document.getElementById('chatClose')?.addEventListener('click', () => { if (chatOpen) toggleChat(); });
+  document.getElementById('chatToggle')?.addEventListener('click', () => { toggleChat(); });
+
+  const scrollBtn = document.getElementById('chatScrollBottom');
+  const messagesEl = document.getElementById('chatMessages');
+  messagesEl?.addEventListener('scroll', () => {
+    if (!messagesEl) return;
+    const isNearBottom = messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight < 100;
+    if (isNearBottom) {
+      scrollBtn.classList.remove('visible');
+    } else {
+      scrollBtn.classList.add('visible');
+    }
+  });
+  scrollBtn?.addEventListener('click', () => {
+    scrollToBottom();
+    scrollBtn.classList.remove('visible');
+  });
+
+  let keyboardHeight = 0;
+  window.visualViewport?.addEventListener('resize', () => {
+    const wrapper = document.getElementById('chatWrapper');
+    if (!wrapper) return;
+    const currentHeight = window.visualViewport.height;
+    const maxHeight = window.innerHeight;
+    if (currentHeight < maxHeight * 0.8) {
+      keyboardHeight = maxHeight - currentHeight;
+      wrapper.style.height = (maxHeight - keyboardHeight - 100) + 'px';
+    } else {
+      wrapper.style.height = '480px';
+    }
+  });
+})();
+</script>

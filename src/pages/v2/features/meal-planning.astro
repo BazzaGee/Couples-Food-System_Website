@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import features from '../../../data/v2/features.json';
-import WaitlistV2 from '../../../components/v2/WaitlistV2.astro';
-import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
+import AppMockMealPlan from '../../../components/app-mocks/MealPlan.astro';
 
 const feature = features.features.find(f => f.id === 'meal-planning')!;
 ---
@@ -14,12 +13,11 @@ const feature = features.features.find(f => f.id === 'meal-planning')!;
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">{feature.title}</h1>
       <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">{feature.longDescription}</p>
 
-      <div class="rounded-2xl aspect-video w-full overflow-hidden border border-v2-outline-variant mb-10">
-        <img src="/images/v2/screenshot-mealplan.webp" alt="Collaborative meal planning app interface showing weekly calendar with meals for both partners" class="w-full h-full object-cover" decoding="async" />
-      </div>
+      <!-- App Mockup -->
+      <AppMockMealPlan version="v2" />
 
       <!-- The Problem This Solves -->
-      <div class="mb-10">
+      <div class="mb-10 mt-10">
         <h3 class="text-xl font-semibold text-v2-on-surface mb-4">The Problem This Solves</h3>
         <p class="text-lg text-v2-on-surface-variant leading-relaxed">
           Sunday meal planning shouldn't be an hour-long negotiation. One person carries the entire mental load while the other checks out. Traditional meal planners are built for one person — single calorie target, single portion size, single grocery list. Great if you live alone. Useless if you're cooking for two with different goals.
@@ -63,8 +61,4 @@ const feature = features.features.find(f => f.id === 'meal-planning')!;
       </ul>
     </div>
   </section>
-
-  <WaitlistV2>
-    <WaitlistFormV2 />
-  </WaitlistV2>
 </BaseLayout>

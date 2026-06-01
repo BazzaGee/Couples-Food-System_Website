@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import features from '../../../data/v2/features.json';
-import WaitlistV2 from '../../../components/v2/WaitlistV2.astro';
-import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
+import AppMockGrocery from '../../../components/app-mocks/Grocery.astro';
 
 const feature = features.features.find(f => f.id === 'shared-grocery-list')!;
 ---
@@ -14,12 +13,11 @@ const feature = features.features.find(f => f.id === 'shared-grocery-list')!;
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-v2-on-surface">{feature.title}</h1>
       <p class="text-xl text-v2-on-surface-variant leading-relaxed mb-10">{feature.longDescription}</p>
 
-      <div class="rounded-2xl aspect-video w-full overflow-hidden border border-v2-outline-variant mb-10">
-        <img src="/images/v2/screenshot-shopping.webp" alt="Real-time shared grocery list app interface showing items being checked off by both partners" class="w-full h-full object-cover" decoding="async" />
-      </div>
+      <!-- App Mockup -->
+      <AppMockGrocery version="v2" />
 
       <!-- The Problem This Solves -->
-      <div class="mb-10">
+      <div class="mb-10 mt-10">
         <h3 class="text-xl font-semibold text-v2-on-surface mb-4">The Problem This Solves</h3>
         <p class="text-lg text-v2-on-surface-variant leading-relaxed">
           "Did you already buy milk?" — the question that starts the duplicate purchase cycle. Both partners buy the same thing because they can't see each other's lists in real time. Phone calls from the store. Text messages. "I thought you were getting it." It's a daily friction point that adds up.
@@ -66,8 +64,4 @@ const feature = features.features.find(f => f.id === 'shared-grocery-list')!;
       </ul>
     </div>
   </section>
-
-  <WaitlistV2>
-    <WaitlistFormV2 />
-  </WaitlistV2>
 </BaseLayout>

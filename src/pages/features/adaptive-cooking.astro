@@ -1,9 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import features from '../../data/features.json';
-import Waitlist from '../../components/sections/Waitlist.astro';
-import WaitlistForm from '../../components/forms/WaitlistForm.astro';
-import OnePrepTwoPlates from '../../components/infographics/OnePrepTwoPlates.astro';
+import AppMockAdaptive from '../../components/app-mocks/Adaptive.astro';
 
 const feature = features.features.find(f => f.id === 'adaptive-cooking')!;
 ---
@@ -16,10 +14,10 @@ const feature = features.features.find(f => f.id === 'adaptive-cooking')!;
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">{feature.title}</h1>
       <p class="text-xl text-text-secondary leading-relaxed mb-10">{feature.longDescription}</p>
 
-      <!-- The Big Visual -->
-      <OnePrepTwoPlates version="v1" />
+      <!-- App Mockup -->
+      <AppMockAdaptive version="v1" />
 
-      <div class="bg-cream-dark rounded-xl p-8 border border-border mb-10">
+      <div class="bg-cream-dark rounded-xl p-8 border border-border mb-10 mt-10">
         <h3 class="text-xl font-semibold text-text-primary mb-6">The Adaptive Plating Example</h3>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl p-6 border border-border">
@@ -83,8 +81,4 @@ const feature = features.features.find(f => f.id === 'adaptive-cooking')!;
       </ul>
     </div>
   </section>
-
-  <Waitlist>
-    <WaitlistForm />
-  </Waitlist>
 </BaseLayout>

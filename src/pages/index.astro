@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/sections/Hero.astro';
 import Features from '../components/sections/Features.astro';
-import Waitlist from '../components/sections/Waitlist.astro';
-import WaitlistForm from '../components/forms/WaitlistForm.astro';
 import OnePrepTwoPlates from '../components/infographics/OnePrepTwoPlates.astro';
 import ProductLoop from '../components/infographics/ProductLoop.astro';
 import BeforeAfter from '../components/infographics/BeforeAfter.astro';
@@ -12,16 +10,14 @@ import ValueMetrics from '../components/infographics/ValueMetrics.astro';
 
 <BaseLayout title="Couples Food System | One dinner. Two plates. Zero arguments." description="The first collaborative meal app for couples. Cook one meal together, and our AI adapts the plating so you both hit your unique goals." version="v1">
   <Hero
-    badge="Now accepting Beta waitlist couples"
     headline="One dinner.&#10;Two plates.&#10;Zero arguments."
     subheadline="The only app that lets you cook one meal together and plate it two different ways. Partner A eats for weight loss. Partner B eats for muscle gain. Same pan. Same recipe. Different results."
-    ctaPrimaryText="Get Early Access — Free During Beta"
     ctaSecondaryText="See How It Works"
     ctaSecondaryHref="/how-it-works"
   />
 
-  <!-- Value Metrics Bar -->
-  <ValueMetrics version="v1" />
+  <!-- Service Cards -->
+  <Features title="Your shared kitchen, smarter." showLink={true} />
 
   <!-- The Big Idea: One Prep, Two Plates -->
   <OnePrepTwoPlates version="v1" />
@@ -120,14 +116,6 @@ import ValueMetrics from '../components/infographics/ValueMetrics.astro';
     </div>
   </section>
 
-  <!-- Features Section -->
-  <Features title="Your shared kitchen, smarter." />
-
   <!-- Product Loop -->
   <ProductLoop version="v1" />
-
-  <!-- Waitlist CTA -->
-  <Waitlist>
-    <WaitlistForm />
-  </Waitlist>
 </BaseLayout>

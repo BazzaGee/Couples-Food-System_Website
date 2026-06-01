@@ -16,10 +16,6 @@
       { "label": "About", "href": "/about" },
       { "label": "FAQ", "href": "/faq" }
     ],
-    "cta": {
-      "label": "Join Free Beta",
-      "href": "#waitlist"
-    },
     "footer": {
       "product": [
         { "label": "Features", "href": "/features" },

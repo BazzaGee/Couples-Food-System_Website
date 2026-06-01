@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import features from '../../../data/v2/features.json';
-import WaitlistV2 from '../../../components/v2/WaitlistV2.astro';
-import WaitlistFormV2 from '../../../components/v2/WaitlistFormV2.astro';
 import OnePrepTwoPlates from '../../../components/infographics/OnePrepTwoPlates.astro';
 import DualModeToggle from '../../../components/infographics/DualModeToggle.astro';
+import AppMockAdaptive from '../../../components/app-mocks/Adaptive.astro';
+import AppMockGrocery from '../../../components/app-mocks/Grocery.astro';
+import AppMockPantry from '../../../components/app-mocks/Pantry.astro';
+import AppMockMealPlan from '../../../components/app-mocks/MealPlan.astro';
+import AppMockDualMode from '../../../components/app-mocks/DualMode.astro';
+
+const mockMap: Record<string, typeof AppMockAdaptive> = {
+  'dual-mode-meal-picker': AppMockDualMode,
+  'adaptive-cooking': AppMockAdaptive,
+  'shared-grocery-list': AppMockGrocery,
+  'pantry-ai': AppMockPantry,
+  'meal-planning': AppMockMealPlan,
+};
 ---
 
 <BaseLayout title="Features | Couples Food System V2" description="Two ways to cook. One shared kitchen. Discover how V2 makes planning, shopping, and cooking together effortless." version="v2">
@@ -21,31 +32,30 @@ import DualModeToggle from '../../../components/infographics/DualModeToggle.astr
     <OnePrepTwoPlates version="v2" />
 
     <div class="space-y-8 mt-16">
-      {features.features.map((feature, index) => (
-        <div class={`bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center shadow-sm ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-          <div class="flex-1">
-            <h2 class="text-3xl font-semibold mb-4 tracking-tight flex items-center gap-3 text-v2-on-surface">
-              {feature.title}
-              {feature.badge && (
-                <span class="bg-v2-primary/10 text-v2-primary text-xs px-2 py-1 rounded-full uppercase tracking-wider font-semibold">
-                  {feature.badge}
-                </span>
-              )}
-            </h2>
-            <p class="text-lg text-v2-on-surface-variant mb-6">{feature.shortDescription}</p>
-            <a href={feature.href} class="text-v2-primary font-medium hover:text-v2-primary/80 inline-flex items-center gap-1">
-              Learn more &rarr;
-            </a>
+      {features.features.map((feature, index) => {
+        const MockComponent = mockMap[feature.id];
+        return (
+          <div class={`bg-v2-surface-container-lowest rounded-3xl border border-v2-outline-variant p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center shadow-sm ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+            <div class="flex-1">
+              <h2 class="text-3xl font-semibold mb-4 tracking-tight flex items-center gap-3 text-v2-on-surface">
+                {feature.title}
+                {feature.badge && (
+                  <span class="bg-v2-primary/10 text-v2-primary text-xs px-2 py-1 rounded-full uppercase tracking-wider font-semibold">
+                    {feature.badge}
+                  </span>
+                )}
+              </h2>
+              <p class="text-lg text-v2-on-surface-variant mb-6">{feature.shortDescription}</p>
+              <a href={feature.href} class="text-v2-primary font-medium hover:text-v2-primary/80 inline-flex items-center gap-1">
+                Learn more &rarr;
+              </a>
+            </div>
+            <div class="flex-1 w-full">
+              {MockComponent && <MockComponent version="v2" />}
+            </div>
           </div>
-          <div class="flex-1 w-full rounded-2xl aspect-video overflow-hidden border border-v2-outline-variant">
-            <img src={`/images/v2/screenshot-${feature.id === 'dual-mode-meal-picker' ? 'dual-mode' : feature.id === 'adaptive-cooking' ? 'adaptive' : feature.id === 'shared-grocery-list' ? 'shopping' : feature.id === 'pantry-ai' ? 'pantry' : 'mealplan'}.webp`} alt="{feature.title} app interface" class="w-full h-full object-cover" decoding="async" />
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </section>
-
-  <WaitlistV2>
-    <WaitlistFormV2 />
-  </WaitlistV2>
 </BaseLayout>

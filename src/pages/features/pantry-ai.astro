@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import features from '../../data/features.json';
-import Waitlist from '../../components/sections/Waitlist.astro';
-import WaitlistForm from '../../components/forms/WaitlistForm.astro';
+import AppMockPantry from '../../components/app-mocks/Pantry.astro';
 
 const feature = features.features.find(f => f.id === 'pantry-ai')!;
 ---
@@ -14,12 +13,11 @@ const feature = features.features.find(f => f.id === 'pantry-ai')!;
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">{feature.title}</h1>
       <p class="text-xl text-text-secondary leading-relaxed mb-10">{feature.longDescription}</p>
 
-      <div class="rounded-xl aspect-video w-full overflow-hidden border border-border mb-10">
-        <img src="/images/v1/screenshot-pantry.webp" alt="Pantry-first AI app interface showing natural language input and AI-generated meal suggestions" class="w-full h-full object-cover" decoding="async" />
-      </div>
+      <!-- App Mockup -->
+      <AppMockPantry version="v1" />
 
       <!-- The Problem This Solves -->
-      <div class="mb-10">
+      <div class="mb-10 mt-10">
         <h3 class="text-xl font-semibold text-text-primary mb-4">The Problem This Solves</h3>
         <p class="text-lg text-text-secondary leading-relaxed">
           Stop staring into the fridge wondering what to cook. Most meal apps start with recipes and work backward to a grocery list. But that assumes you're starting from scratch. What about the chicken that expires tomorrow? The half-onion from last night's dinner? The rice you bought in bulk? Traditional apps ignore what you already have.
@@ -60,8 +58,4 @@ const feature = features.features.find(f => f.id === 'pantry-ai')!;
       </ul>
     </div>
   </section>
-
-  <Waitlist>
-    <WaitlistForm />
-  </Waitlist>
 </BaseLayout>

@@ -1,0 +1,132 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const isV2 = version === 'v2';
+const primaryColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const primaryBg = isV2 ? 'bg-v2-primary' : 'bg-sage';
+const partnerAColor = isV2 ? 'border-v2-primary' : 'border-sage';
+const partnerBColor = isV2 ? 'border-v2-secondary' : 'border-terracotta';
+const partnerAName = isV2 ? 'text-v2-primary' : 'text-sage-dark';
+const partnerBName = isV2 ? 'text-v2-secondary' : 'text-terracotta-dark';
+const surfaceBg = isV2 ? 'bg-v2-surface-container-lowest' : 'bg-white';
+const surfaceBorder = isV2 ? 'border-v2-outline-variant' : 'border-border';
+const textColor = isV2 ? 'text-v2-on-surface' : 'text-text-primary';
+const textSecondary = isV2 ? 'text-v2-on-surface-variant' : 'text-text-secondary';
+---
+
+<div class={`${surfaceBg} rounded-2xl border ${surfaceBorder} overflow-hidden shadow-sm`}>
+  <!-- App Header -->
+  <div class={`px-4 py-3 border-b ${surfaceBorder} flex items-center justify-between`}>
+    <div class="flex items-center gap-2">
+      <div class={`w-6 h-6 rounded-lg ${primaryBg}`}></div>
+      <span class={`text-sm font-semibold ${textColor}`}>Couples Food System</span>
+    </div>
+    <span class={`text-xs ${textSecondary}`}>Adaptive Cooking</span>
+  </div>
+
+  <!-- Recipe Header -->
+  <div class={`px-4 py-3 border-b ${surfaceBorder} bg-opacity-50`}>
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class={`font-semibold ${textColor}`}>Chicken Stir-Fry</h3>
+        <p class={`text-xs ${textSecondary}`}>One recipe · Two plates · 25 min</p>
+      </div>
+      <div class={`text-xs font-medium ${primaryColor} bg-opacity-10 px-2 py-1 rounded-full`}>
+        AI Adapted
+      </div>
+    </div>
+  </div>
+
+  <!-- Cooking Steps -->
+  <div class={`px-4 py-3 border-b ${surfaceBorder}`}>
+    <p class={`text-xs font-semibold ${textColor} mb-2`}>Cooking Steps:</p>
+    <div class="space-y-1.5">
+      <div class="flex items-start gap-2">
+        <span class={`text-xs font-bold ${primaryColor}`}>1.</span>
+        <span class={`text-xs ${textSecondary}`}>Heat oil in wok over high heat</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class={`text-xs font-bold ${primaryColor}`}>2.</span>
+        <span class={`text-xs ${textSecondary}`}>Stir-fry chicken until cooked through</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class={`text-xs font-bold ${primaryColor}`}>3.</span>
+        <span class={`text-xs ${textSecondary}`}>Add vegetables and sauce, toss to combine</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class={`text-xs font-bold ${primaryColor}`}>4.</span>
+        <span class={`text-xs ${textSecondary}`}>Serve over rice — see plating guide below</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plating Guide -->
+  <div class="p-4">
+    <p class={`text-xs font-semibold ${textColor} mb-3`}>AI Plating Guide:</p>
+    <div class="grid grid-cols-2 gap-3">
+      <!-- Partner A Plate -->
+      <div class={`rounded-xl border-2 ${partnerAColor} p-3`}>
+        <div class="flex items-center gap-2 mb-2">
+          <div class={`w-3 h-3 rounded-full ${primaryBg}`}></div>
+          <span class={`text-xs font-semibold ${partnerAName}`}>Partner A</span>
+        </div>
+        <div class="space-y-1 mb-2">
+          <p class={`text-xs ${textSecondary}`}>4oz chicken breast</p>
+          <p class={`text-xs ${textSecondary}`}>Bed of spinach</p>
+          <p class={`text-xs ${textSecondary}`}>½ cup rice</p>
+        </div>
+        <div class={`pt-2 border-t ${surfaceBorder} grid grid-cols-3 gap-1 text-center`}>
+          <div>
+            <p class={`text-xs font-bold ${partnerAName}`}>35g</p>
+            <p class={`text-xs ${textSecondary}`}>Protein</p>
+          </div>
+          <div>
+            <p class={`text-xs font-bold ${partnerAName}`}>40g</p>
+            <p class={`text-xs ${textSecondary}`}>Carbs</p>
+          </div>
+          <div>
+            <p class={`text-xs font-bold ${partnerAName}`}>12g</p>
+            <p class={`text-xs ${textSecondary}`}>Fat</p>
+          </div>
+        </div>
+        <p class={`text-xs ${primaryColor} font-semibold mt-2 text-center`}>~450 cal · Weight Loss</p>
+      </div>
+
+      <!-- Partner B Plate -->
+      <div class={`rounded-xl border-2 ${partnerBColor} p-3`}>
+        <div class="flex items-center gap-2 mb-2">
+          <div class={`w-3 h-3 rounded-full ${isV2 ? 'bg-v2-secondary' : 'bg-terracotta'}`}></div>
+          <span class={`text-xs font-semibold ${partnerBName}`}>Partner B</span>
+        </div>
+        <div class="space-y-1 mb-2">
+          <p class={`text-xs ${textSecondary}`}>6oz chicken breast</p>
+          <p class={`text-xs ${textSecondary}`}>Full cup rice</p>
+          <p class={`text-xs ${textSecondary}`}>Side of vegetables</p>
+        </div>
+        <div class={`pt-2 border-t ${surfaceBorder} grid grid-cols-3 gap-1 text-center`}>
+          <div>
+            <p class={`text-xs font-bold ${partnerBName}`}>52g</p>
+            <p class={`text-xs ${textSecondary}`}>Protein</p>
+          </div>
+          <div>
+            <p class={`text-xs font-bold ${partnerBName}`}>75g</p>
+            <p class={`text-xs ${textSecondary}`}>Carbs</p>
+          </div>
+          <div>
+            <p class={`text-xs font-bold ${partnerBName}`}>15g</p>
+            <p class={`text-xs ${textSecondary}`}>Fat</p>
+          </div>
+        </div>
+        <p class={`text-xs ${partnerBName} font-semibold mt-2 text-center`}>~700 cal · Muscle Gain</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Action -->
+  <div class={`px-4 py-3 border-t ${surfaceBorder} flex items-center justify-center`}>
+    <span class={`text-xs ${textSecondary}`}>Same stir-fry. Same pan. Different plates.</span>
+  </div>
+</div>

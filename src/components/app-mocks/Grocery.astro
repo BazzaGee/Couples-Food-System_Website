@@ -1,0 +1,131 @@
+---
+interface Props {
+  version?: 'v1' | 'v2';
+}
+
+const { version = 'v1' } = Astro.props;
+const isV2 = version === 'v2';
+const primaryColor = isV2 ? 'text-v2-primary' : 'text-sage';
+const primaryBg = isV2 ? 'bg-v2-primary' : 'bg-sage';
+const partnerAColor = isV2 ? 'text-v2-primary' : 'text-sage-dark';
+const partnerBColor = isV2 ? 'text-v2-secondary' : 'text-terracotta-dark';
+const partnerABg = isV2 ? 'bg-v2-primary' : 'bg-sage';
+const partnerBBg = isV2 ? 'bg-v2-secondary' : 'bg-terracotta';
+const surfaceBg = isV2 ? 'bg-v2-surface-container-lowest' : 'bg-white';
+const surfaceBorder = isV2 ? 'border-v2-outline-variant' : 'border-border';
+const textColor = isV2 ? 'text-v2-on-surface' : 'text-text-primary';
+const textSecondary = isV2 ? 'text-v2-on-surface-variant' : 'text-text-secondary';
+---
+
+<div class={`${surfaceBg} rounded-2xl border ${surfaceBorder} overflow-hidden shadow-sm`}>
+  <!-- App Header -->
+  <div class={`px-4 py-3 border-b ${surfaceBorder} flex items-center justify-between`}>
+    <div class="flex items-center gap-2">
+      <div class={`w-6 h-6 rounded-lg ${primaryBg}`}></div>
+      <span class={`text-sm font-semibold ${textColor}`}>Couples Food System</span>
+    </div>
+    <span class={`text-xs ${textSecondary}`}>Our Shopping List</span>
+  </div>
+
+  <!-- Add Item Input -->
+  <div class={`px-4 py-3 border-b ${surfaceBorder}`}>
+    <div class="flex items-center gap-2">
+      <div class={`flex-1 px-3 py-2 rounded-lg border ${surfaceBorder} text-xs ${textSecondary}`}>
+        Add an item...
+      </div>
+      <div class={`px-3 py-2 rounded-lg ${primaryBg} text-white text-xs font-medium`}>
+        Add
+      </div>
+    </div>
+    <!-- Quick Add Chips -->
+    <div class="flex flex-wrap gap-1.5 mt-2">
+      <span class={`text-xs px-2 py-1 rounded-full border ${surfaceBorder} ${textSecondary}`}>Milk</span>
+      <span class={`text-xs px-2 py-1 rounded-full border ${surfaceBorder} ${textSecondary}`}>Eggs</span>
+      <span class={`text-xs px-2 py-1 rounded-full border ${surfaceBorder} ${textSecondary}`}>Bread</span>
+      <span class={`text-xs px-2 py-1 rounded-full border ${surfaceBorder} ${textSecondary}`}>Chicken</span>
+      <span class={`text-xs px-2 py-1 rounded-full border ${surfaceBorder} ${textSecondary}`}>Rice</span>
+    </div>
+  </div>
+
+  <!-- Grocery List Items -->
+  <div class="p-4">
+    <p class={`text-xs font-semibold ${textColor} mb-3`}>To Buy (5 items):</p>
+    <div class="space-y-2">
+      <!-- Item 1 - Added by Partner A -->
+      <div class="flex items-center justify-between py-2 px-3 rounded-lg border border-l-4 border-l-green-500 border-opacity-20">
+        <div class="flex items-center gap-3">
+          <div class={`w-4 h-4 rounded border-2 ${surfaceBorder}`}></div>
+          <div>
+            <p class={`text-sm ${textColor}`}>Whole Milk</p>
+            <p class={`text-xs ${textSecondary}`}>Dairy · 1 gallon</p>
+          </div>
+        </div>
+        <div class={`flex items-center gap-1`}>
+          <div class={`w-4 h-4 rounded-full ${partnerABg}`}></div>
+          <span class={`text-xs ${partnerAColor}`}>Alex</span>
+        </div>
+      </div>
+      <!-- Item 2 - Added by Partner B -->
+      <div class="flex items-center justify-between py-2 px-3 rounded-lg border border-l-4 border-l-orange-500 border-opacity-20">
+        <div class="flex items-center gap-3">
+          <div class={`w-4 h-4 rounded border-2 ${surfaceBorder}`}></div>
+          <div>
+            <p class={`text-sm ${textColor}`}>Chicken Breast</p>
+            <p class={`text-xs ${textSecondary}`}>Meat · 2 lbs</p>
+          </div>
+        </div>
+        <div class={`flex items-center gap-1`}>
+          <div class={`w-4 h-4 rounded-full ${partnerBBg}`}></div>
+          <span class={`text-xs ${partnerBColor}`}>Jordan</span>
+        </div>
+      </div>
+      <!-- Item 3 - Added by Partner A -->
+      <div class="flex items-center justify-between py-2 px-3 rounded-lg border border-l-4 border-l-green-500 border-opacity-20">
+        <div class="flex items-center gap-3">
+          <div class={`w-4 h-4 rounded border-2 ${surfaceBorder}`}></div>
+          <div>
+            <p class={`text-sm ${textColor}`}>Baby Spinach</p>
+            <p class={`text-xs ${textSecondary}`}>Produce · 1 bag</p>
+          </div>
+        </div>
+        <div class={`flex items-center gap-1`}>
+          <div class={`w-4 h-4 rounded-full ${partnerABg}`}></div>
+          <span class={`text-xs ${partnerAColor}`}>Alex</span>
+        </div>
+      </div>
+      <!-- Item 4 - Added by Partner B -->
+      <div class="flex items-center justify-between py-2 px-3 rounded-lg border border-l-4 border-l-orange-500 border-opacity-20">
+        <div class="flex items-center gap-3">
+          <div class={`w-4 h-4 rounded border-2 ${surfaceBorder}`}></div>
+          <div>
+            <p class={`text-sm ${textColor}`}>Jasmine Rice</p>
+            <p class={`text-xs ${textSecondary}`}>Pantry · 5 lb bag</p>
+          </div>
+        </div>
+        <div class={`flex items-center gap-1`}>
+          <div class={`w-4 h-4 rounded-full ${partnerBBg}`}></div>
+          <span class={`text-xs ${partnerBColor}`}>Jordan</span>
+        </div>
+      </div>
+      <!-- Item 5 - Checked off -->
+      <div class="flex items-center justify-between py-2 px-3 rounded-lg bg-opacity-50 opacity-60">
+        <div class="flex items-center gap-3">
+          <div class={`w-4 h-4 rounded ${primaryBg} flex items-center justify-center`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="m9 11 3 3L22 4"/></svg>
+          </div>
+          <div>
+            <p class={`text-sm line-through ${textSecondary}`}>Eggs</p>
+            <p class={`text-xs ${textSecondary}`}>Dairy · 1 dozen</p>
+          </div>
+        </div>
+        <span class={`text-xs ${primaryColor} font-medium`}>Move to Pantry</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Stats -->
+  <div class={`px-4 py-3 border-t ${surfaceBorder} flex items-center justify-between`}>
+    <span class={`text-xs ${textSecondary}`}>5 items · 2 partners</span>
+    <span class={`text-xs ${primaryColor} font-medium`}>Real-time sync active</span>
+  </div>
+</div>

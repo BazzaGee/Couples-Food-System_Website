@@ -2,11 +2,6 @@
   "faq": [
     {
       "category": "getting-started",
-      "question": "Is the beta really free?",
-      "answer": "Yes! Couples Food System is completely free during our Beta period. No credit card required. We just want your feedback to make the app perfect."
-    },
-    {
-      "category": "getting-started",
       "question": "Do we need two separate accounts?",
       "answer": "You'll each have your own login, but they link together securely to form one Shared Kitchen. This allows for individual goal-setting while keeping planning and shopping 100% collaborative."
     },
@@ -46,16 +41,6 @@
       "answer": "It's the self-reinforcing cycle that makes the app smarter over time: Pantry → AI suggests meals → Shopping list for missing items → Buy groceries → Move to Pantry → repeat. The more you use it, the better it knows what you have and what you like."
     },
     {
-      "category": "beta",
-      "question": "Will it always be free?",
-      "answer": "During Beta, everything is free. After launch, core collaboration features (shared lists, basic planning) will remain free. Advanced AI features may become part of a premium tier — but Beta users will get special early access pricing."
-    },
-    {
-      "category": "beta",
-      "question": "When will the app be ready?",
-      "answer": "We're working hard to launch soon! Join the waitlist and you'll be among the first to know when we open access. Beta users will get priority access."
-    },
-    {
       "category": "privacy",
       "question": "How is our data protected?",
       "answer": "We take privacy seriously. Your dietary data, health goals, and personal information are encrypted and never shared with third parties. Period."
@@ -68,7 +53,7 @@
     {
       "category": "business",
       "question": "How does Couples Food System make money?",
-      "answer": "After Beta, we'll offer a freemium model. Core features like shared grocery lists and basic meal planning will remain free. Advanced AI features — pantry-to-meal generation, adaptive shared cooking, weekly planning — will be part of a premium tier at approximately $10/month per household (not per person)."
+      "answer": "We offer a freemium model. Core features like shared grocery lists and basic meal planning are free. Advanced AI features — pantry-to-meal generation, adaptive shared cooking, weekly planning — are part of a premium tier at approximately $10/month per household (not per person)."
     },
     {
       "category": "business",
@@ -89,7 +74,6 @@
   "categories": [
     { "id": "getting-started", "label": "Getting Started" },
     { "id": "features", "label": "Features" },
-    { "id": "beta", "label": "Beta Program" },
     { "id": "privacy", "label": "Privacy & Security" },
     { "id": "business", "label": "Business & Market" }
   ]
