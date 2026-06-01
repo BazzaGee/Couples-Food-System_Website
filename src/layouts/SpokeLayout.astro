@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/layout/BaseHead.astro';
 import SpokeNav from '../components/layout/SpokeNav.astro';
+import ChatWidget from '../components/layout/ChatWidget.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -29,5 +30,6 @@ const { title, description, canonicalURL, ogImage } = Astro.props;
         </p>
       </div>
     </footer>
+    <ChatWidget />
   </body>
 </html>

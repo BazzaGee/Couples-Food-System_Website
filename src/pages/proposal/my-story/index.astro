@@ -13,6 +13,7 @@ const schema = {
   title="The Story Behind the Pitch — Barry Grottis"
   description="15 years of digital marketing, product creation, and relentless iteration. The full story."
   schema={schema}
+  hideChat={true}
 >
   <!-- HERO -->
   <section class="pt-24 md:pt-32 pb-12 md:pb-16 px-6">
@@ -81,13 +82,13 @@ const schema = {
       <!-- Photo Gallery: Prologue -->
       <div class="photo-mosaic">
         <div class="photo-frame">
-          <img src="/images/story/zimbabwe-lion.jpg" alt="Young Barry with a lion cub in Zimbabwe" loading="lazy" />
+          <img src="/images/story/zimbabwe-lion.jpg" alt="Young Barry with a lion cub in Zimbabwe" />
         </div>
         <div class="photo-frame">
-          <img src="/images/story/family-young.jpg" alt="Barry as a child with his parents and brother" loading="lazy" />
+          <img src="/images/story/family-young.jpg" alt="Barry as a child with his parents and brother" />
         </div>
         <div class="photo-frame">
-          <img src="/images/story/rugby-team-2001.jpg" alt="St. Thomas Aquinas rugby team, Southern African Schools Rugby Festival 2001" loading="lazy" />
+          <img src="/images/story/rugby-team-2001.jpg" alt="St. Thomas Aquinas rugby team, Southern African Schools Rugby Festival 2001" />
         </div>
       </div>
     </div>
@@ -143,9 +144,12 @@ const schema = {
 
   <!-- Photo: Between First Dollar & SEO -->
   <div class="max-w-3xl mx-auto px-6">
-    <div class="photo-single">
+    <div class="photo-mosaic">
       <div class="photo-frame">
-        <img src="/images/story/family-2017.jpg" alt="Barry with family, 2017" loading="lazy" />
+        <img src="/images/story/family-2017.jpg" alt="Barry with family, 2017" />
+      </div>
+      <div class="photo-frame">
+        <img src="/images/story/family-dscn4545.jpg" alt="Barry with family" />
       </div>
     </div>
   </div>
@@ -216,7 +220,7 @@ const schema = {
         <!-- Photo: Achilles Injury -->
         <div class="photo-single">
           <div class="photo-frame">
-            <img src="/images/story/achilles-injury.jpg" alt="Barry recovering from Achilles rupture with his son" loading="lazy" />
+            <img src="/images/story/achilles-injury.jpg" alt="Barry recovering from Achilles rupture with his son" />
           </div>
         </div>
 
@@ -326,7 +330,7 @@ const schema = {
         <!-- Photo: Rugby in NZ -->
         <div class="photo-single">
           <div class="photo-frame">
-            <img src="/images/story/rugby-nz.jpg" alt="Barry playing rugby in New Zealand" loading="lazy" />
+            <img src="/images/story/rugby-nz.jpg" alt="Barry playing rugby in New Zealand" />
           </div>
         </div>
 
@@ -394,13 +398,13 @@ const schema = {
         <!-- Photo Gallery: Family -->
         <div class="photo-mosaic">
           <div class="photo-frame">
-            <img src="/images/story/three-kids.jpg" alt="Barry with his three children" loading="lazy" />
+            <img src="/images/story/three-kids.jpg" alt="Barry with his three children" />
           </div>
           <div class="photo-frame">
-            <img src="/images/story/family-memorial.jpg" alt="Barry, partner, baby, and parents at the war memorial" loading="lazy" />
+            <img src="/images/story/family-memorial.jpg" alt="Barry, partner, baby, and parents at the war memorial" />
           </div>
           <div class="photo-frame">
-            <img src="/images/story/family-couch.jpg" alt="Barry with his children at home" loading="lazy" />
+            <img src="/images/story/family-couch.jpg" alt="Barry with his children at home" />
           </div>
         </div>
 
@@ -467,8 +471,9 @@ const schema = {
           I'm ready.
         </p>
         <p>
-          To be clear — this wasn't built to compete with Cupla. It started as a question: <em>what features could complement the app?</em> Exploring the markets around couples, food, and household nutrition kept pulling at threads, and the most honest way to map those threads was to build the full product out. Not to replace what Cupla does — but to show what could sit alongside it. New audiences, new entry points, new features that expand what's already there.
+          It started as a question: <em>what features could complement the app?</em> Exploring the markets around couples, food, and household nutrition kept pulling at threads, and the most honest way to map those threads was to build the full product out. Not to replace what Cupla does — but to show what could sit alongside it. New audiences, new entry points, new features that expand what's already there.
         </p>
+
         <p class="text-center">
           I would love the opportunity to be part of what Cupla is building. To learn from entrepreneurs who have already succeeded, to contribute everything I've built over the last fifteen years, and to grow alongside a team and a mission I genuinely believe in. I'm keen, I'm hungry, and I'm all in.
         </p>
@@ -483,7 +488,7 @@ const schema = {
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <div class="flex-shrink-0">
             <div class="w-36 h-36 rounded-2xl overflow-hidden border-2 border-sage/30 shadow-md">
-              <img src="/images/team/barry-full.webp" alt="Barry Grottis" class="w-full h-full object-cover" loading="lazy" />
+              <img src="/images/team/barry-full.webp" alt="Barry Grottis" class="w-full h-full object-cover" />
             </div>
           </div>
           <div class="text-center sm:text-left">
@@ -542,6 +547,7 @@ const schema = {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: contain;
     filter: saturate(0.85) contrast(1.05) brightness(1.02);
   }
   

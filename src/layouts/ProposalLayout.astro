@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/layout/BaseHead.astro';
 import ProposalNav from '../components/layout/ProposalNav.astro';
+import ChatWidget from '../components/layout/ChatWidget.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -8,8 +9,9 @@ interface Props {
   description: string;
   canonicalURL?: string;
   ogImage?: string;
+  hideChat?: boolean;
 }
-const { title, description, canonicalURL, ogImage } = Astro.props;
+const { title, description, canonicalURL, ogImage, hideChat = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -31,5 +33,6 @@ const { title, description, canonicalURL, ogImage } = Astro.props;
         </p>
       </div>
     </footer>
+    {!hideChat && <ChatWidget />}
   </body>
 </html>
