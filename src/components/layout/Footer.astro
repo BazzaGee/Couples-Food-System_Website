@@ -8,12 +8,12 @@ interface Props {
 
 const { version = 'v1' } = Astro.props;
 const nav = version === 'v2' ? navigationV2.navigation : navigation.navigation;
-const { product, company } = nav.footer;
+const { product } = nav.footer;
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class={`py-16 ${version === 'v2' ? 'bg-v2-surface-dim border-t border-v2-outline-variant' : 'bg-cream-dark border-t border-border'}`}>
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="md:col-span-2">
       <a href={version === 'v2' ? '/v2/' : '/'} class={`font-semibold text-xl flex items-center gap-2 mb-4 tracking-tight ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>
         <img src="/images/logo/logo-icon.png" alt="Couples Food System logo" class="w-6 h-6" decoding="async" />
@@ -36,14 +36,6 @@ const currentYear = new Date().getFullYear();
       <h4 class={`font-semibold mb-4 text-lg ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>Product</h4>
       <ul class="space-y-3">
         {product.map((item) => (
-          <li><a href={item.href} class={`transition-colors ${version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}`}>{item.label}</a></li>
-        ))}
-      </ul>
-    </div>
-    <div>
-      <h4 class={`font-semibold mb-4 text-lg ${version === 'v2' ? 'text-v2-on-surface' : 'text-text-primary'}`}>Company</h4>
-      <ul class="space-y-3">
-        {company.map((item) => (
           <li><a href={item.href} class={`transition-colors ${version === 'v2' ? 'text-v2-on-surface-variant hover:text-v2-primary' : 'text-text-secondary hover:text-sage'}`}>{item.label}</a></li>
         ))}
       </ul>

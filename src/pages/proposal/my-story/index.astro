@@ -30,7 +30,7 @@ const schema = {
       <div class="flex flex-col items-center pt-6 border-t border-border">
         <div class="flex flex-col items-center">
           <div class="w-16 h-16 rounded-full border-3 border-sage overflow-hidden shadow-sm mb-2" style="border-width:3px;">
-            <img src="/images/team/barry-profile.png" alt="Barry Grottis" class="w-full h-full object-cover" decoding="async" />
+            <img src="/images/team/barry-profile.webp" alt="Barry Grottis" class="w-full h-full object-cover" fetchpriority="high" />
           </div>
           <span class="font-bold text-text-primary text-sm">Barry Grottis</span>
           <span class="text-xs text-text-secondary">The Orchestrator</span>
@@ -76,6 +76,19 @@ const schema = {
         <p>
           In 2003, I moved to New Zealand with my parents and my brother. A fresh start in a new country, and that same instinct to adapt kicked in immediately. I didn't know it yet, but everything I'd learned growing up had been preparing me for what came next.
         </p>
+      </div>
+
+      <!-- Photo Gallery: Prologue -->
+      <div class="photo-mosaic">
+        <div class="photo-frame">
+          <img src="/images/story/zimbabwe-lion.jpg" alt="Young Barry with a lion cub in Zimbabwe" loading="lazy" />
+        </div>
+        <div class="photo-frame">
+          <img src="/images/story/family-young.jpg" alt="Barry as a child with his parents and brother" loading="lazy" />
+        </div>
+        <div class="photo-frame">
+          <img src="/images/story/rugby-team-2001.jpg" alt="St. Thomas Aquinas rugby team, Southern African Schools Rugby Festival 2001" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
@@ -190,6 +203,14 @@ const schema = {
         <p>
           Same result. The market didn't care about belief — it cared about demand, positioning, and timing.
         </p>
+
+        <!-- Photo: Achilles Injury -->
+        <div class="photo-single">
+          <div class="photo-frame">
+            <img src="/images/story/achilles-injury.jpg" alt="Barry recovering from Achilles rupture with his son" loading="lazy" />
+          </div>
+        </div>
+
         <p>
           Between 2014 and 2019, I dove deeper into <strong>marketing and copywriting</strong> — devouring books on direct response, studying sales letters, honing my craft. I ran affiliate marketing through SEO, but I was always looking for a product I could create myself. Something unique. Something I could believe in.
         </p>
@@ -325,6 +346,14 @@ const schema = {
         <p>
           It's a very distressing dream — frustrating because in my mind, I should have always been ready. And I find myself unprepared. And it's <em>always</em> the same.
         </p>
+
+        <!-- Photo: Rugby in NZ -->
+        <div class="photo-single">
+          <div class="photo-frame">
+            <img src="/images/story/rugby-nz.jpg" alt="Barry playing rugby in New Zealand" loading="lazy" />
+          </div>
+        </div>
+
         <p>
           Here's what I've come to understand: <strong>it was never about rugby.</strong> It was about readiness. About staying in shape for whatever game shows up next. And for the last fifteen years — through every failed product, every SEO campaign, every sales letter I handwritten to study copywriting, every book on direct response I devoured, every late night learning AI systems — <strong>I've been training.</strong>
         </p>
@@ -385,6 +414,20 @@ const schema = {
         <p>
           I have three children. A teenage boy who's figuring out who he is. A seven-year-old with special needs who requires more patience and care than most people will ever understand. And a toddler who's just starting primary school — wide-eyed, full of energy, still figuring out the world. They're the reason I get up at all.
         </p>
+
+        <!-- Photo Gallery: Family -->
+        <div class="photo-mosaic">
+          <div class="photo-frame">
+            <img src="/images/story/three-kids.jpg" alt="Barry with his three children" loading="lazy" />
+          </div>
+          <div class="photo-frame">
+            <img src="/images/story/family-memorial.jpg" alt="Barry, partner, baby, and parents at the war memorial" loading="lazy" />
+          </div>
+          <div class="photo-frame">
+            <img src="/images/story/family-couch.jpg" alt="Barry with his children at home" loading="lazy" />
+          </div>
+        </div>
+
         <p>
           My parents are retired. They came to New Zealand late in life after building up lives in another country, and they arrived here basically with nothing. They sacrificed everything for a fresh start. Watching that — watching them rebuild from zero — shaped my entire work ethic. I don't take opportunities for granted because I know what it costs to create them.
         </p>
@@ -467,7 +510,7 @@ const schema = {
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <div class="flex-shrink-0">
             <div class="w-36 h-36 rounded-2xl overflow-hidden border-2 border-sage/30 shadow-md">
-              <img src="/images/team/barry-full.png" alt="Barry Grottis" class="w-full h-full object-cover" decoding="async" />
+              <img src="/images/team/barry-full.webp" alt="Barry Grottis" class="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <div class="text-center sm:text-left">
@@ -501,5 +544,59 @@ const schema = {
   }
   .footnote-story p {
     @apply mb-4 text-sm;
+  }
+  
+  /* Nostalgic photo frame styles */
+  .photo-frame {
+    background: white;
+    padding: 10px;
+    box-shadow: 
+      0 2px 8px rgba(0,0,0,0.12),
+      0 8px 24px rgba(0,0,0,0.08);
+    transform: rotate(var(--rotation, 0deg));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .photo-frame:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 
+      0 4px 16px rgba(0,0,0,0.15),
+      0 16px 40px rgba(0,0,0,0.12);
+    z-index: 10;
+  }
+  
+  .photo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: saturate(0.85) contrast(1.05) brightness(1.02);
+  }
+  
+  /* Mosaic grid for multiple photos */
+  .photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0;
+  }
+  
+  .photo-mosaic .photo-frame:nth-child(1) { --rotation: -2.5deg; }
+  .photo-mosaic .photo-frame:nth-child(2) { --rotation: 1.8deg; }
+  .photo-mosaic .photo-frame:nth-child(3) { --rotation: -1.2deg; }
+  .photo-mosaic .photo-frame:nth-child(4) { --rotation: 2.2deg; }
+  
+  /* Single photo centered */
+  .photo-single {
+    max-width: 420px;
+    margin: 2.5rem auto;
+  }
+  
+  .photo-single .photo-frame {
+    --rotation: -1.5deg;
+  }
+  
+  .photo-single .photo-frame:hover {
+    --rotation: 0deg;
   }
 </style>
