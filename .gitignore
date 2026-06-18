@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # root-level screenshots (not website assets)
 /*.png
+
+# stray Windows command artifact
+nul

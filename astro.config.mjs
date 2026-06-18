@@ -6,7 +6,9 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://couples-food-system.com',
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/economics'),
+    }),
     mdx()
   ],
   output: 'static'

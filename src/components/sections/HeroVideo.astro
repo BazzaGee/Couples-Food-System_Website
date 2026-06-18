@@ -1,0 +1,93 @@
+---
+interface Props {
+  version: 'v1' | 'v2';
+}
+
+const { version } = Astro.props;
+const videoSrc = version === 'v1' ? '/videos/explainer-v1.mp4' : '/videos/explainer-v2.mp4';
+const posterSrc = version === 'v1' ? '/videos/poster-v1.jpg' : '/videos/poster-v2.jpg';
+---
+
+<section class="w-full bg-black/5 relative overflow-hidden">
+  <div class="max-w-5xl mx-auto px-4 py-6 md:py-8">
+    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
+      <video
+        id={`hero-video-${version}`}
+        class="w-full aspect-video object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster={posterSrc}
+      >
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <button
+        id={`video-play-btn-${version}`}
+        class="hidden absolute inset-0 w-full h-full bg-black/30 flex items-center justify-center cursor-pointer group"
+        aria-label="Play video"
+      >
+        <div class="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:bg-white group-hover:scale-110 transition-all duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#7A9E7E" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+      </button>
+
+      <div class="absolute top-4 right-4 flex gap-2">
+        <button
+          id={`video-mute-btn-${version}`}
+          class="w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors"
+          aria-label="Toggle mute"
+        >
+          <svg id={`volume-on-${version}`} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          <svg id={`volume-off-${version}`} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+      </div>
+    </div>
+    <p class="text-center text-sm text-text-secondary mt-3 opacity-70">
+      See how this website works — the app page, the proposal, and the story behind it.
+    </p>
+  </div>
+</section>
+
+<script define:vars={{ version }}>
+  const video = document.getElementById(`hero-video-${version}`);
+  const playBtn = document.getElementById(`video-play-btn-${version}`);
+  const muteBtn = document.getElementById(`video-mute-btn-${version}`);
+  const volumeOn = document.getElementById(`volume-on-${version}`);
+  const volumeOff = document.getElementById(`volume-off-${version}`);
+
+  if (video && playBtn) {
+    const attemptPlay = () => {
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise.catch(() => {
+          playBtn.classList.remove('hidden');
+          playBtn.classList.add('flex');
+        });
+      }
+    };
+
+    video.addEventListener('canplaythrough', attemptPlay, { once: true });
+
+    playBtn.addEventListener('click', () => {
+      video.play();
+      playBtn.classList.add('hidden');
+      playBtn.classList.remove('flex');
+    });
+
+    if (muteBtn) {
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        if (video.muted) {
+          volumeOn.classList.remove('hidden');
+          volumeOff.classList.add('hidden');
+        } else {
+          volumeOn.classList.add('hidden');
+          volumeOff.classList.remove('hidden');
+        }
+      });
+    }
+  }
+</script>

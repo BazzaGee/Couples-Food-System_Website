@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /proposal/my-story/
+Disallow: /economics
 
 Sitemap: https://couples-food-system.com/sitemap-index.xml
